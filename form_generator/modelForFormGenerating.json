@@ -1,0 +1,62 @@
+[
+    {
+        "level1": [
+            {
+                "title": "resource.introductionSection.title",
+                "formName": "testForm",
+                "id": "introductionSectionTitle",
+                "forNgClass": "{isvalid:info.isValidSection1,error:!info.actionWasSuccessful&&info.currentSection==1,expanded:info.currentSection==1,notexpanded:info.currentSection!=1}",
+                "forNgClick": "info.currentSection!=1&&saveForm('introductionSectionTitle')",
+                "formId": 1,
+                "level2": [
+                    {
+                        "title": "resource.firstName.title",
+                        "level3": [
+                            {
+                                "type": "inputText",
+                                "model": "firstName",
+                                "placeholder":"resource.url.placeholder",
+                                "pattern": "/^[a-zA-Z]+$/",
+                                "testType":"string"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "resource.customerAge.title",
+                        "level3": [
+                            {
+                                "type": "inputText",
+                                "model": "customerAge",
+                                "placeholder":"resource.customerAge.placeholder",
+                                "pattern": "/^\\d+$/",
+                                "testType":"number"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "resource.customerEmail.title",
+                        "level3": [
+                            {
+                                "type": "inputText",
+                                "model": "customerEmail",
+                                "placeholder":"resource.customerEmail.placeholder",
+                                "pattern": "/^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/",
+                                "testType":"email"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "",
+                        "level3": [
+                            {
+                                "type": "submitButton",
+                                "title": "Submit",
+                                "forNgClick": "submitButton.$valid&&submitForm(customerRelations,'5')"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

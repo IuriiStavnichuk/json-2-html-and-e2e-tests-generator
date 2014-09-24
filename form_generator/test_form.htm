@@ -1,0 +1,32 @@
+<form name=testForm novalidate>
+<h2 id="introductionSectionTitle" data-ng-class="{isvalid:info.isValidSection1,error:!info.actionWasSuccessful&&info.currentSection==1,expanded:info.currentSection==1,notexpanded:info.currentSection!=1}" data-ng-click="info.currentSection!=1&&saveForm('introductionSectionTitle')" data-ng-bind="resource.introductionSection.title"></h2>
+<div class="form-group">
+<div class='row'>
+<div class=col-sm-12>
+<label for="firstName" class="ng-binding"  data-ng-bind="resource.firstName.label"></label> <input type='text' class='form-control' data-ng-model="firstName" name="3" data-ng-pattern="/^[a-zA-Z]+$/" id="firstName" placeholder="{{resource.firstName.placeholder}}">
+</div>
+</div>
+</div>
+<div class="form-group">
+<div class='row'>
+<div class=col-sm-12>
+<label for="firstName" class="ng-binding"  data-ng-bind="resource.customerAge.label"></label> <input type='text' class='form-control' data-ng-model="customerAge" name="5" data-ng-pattern="/^\d+$/" id="customerAge" placeholder="{{resource.customerAge.placeholder}}">
+</div>
+</div>
+</div>
+<div class="form-group">
+<div class='row'>
+<div class=col-sm-12>
+<label for="firstName" class="ng-binding"  data-ng-bind="resource.customerEmail.label"></label> <input type='text' class='form-control' data-ng-model="customerEmail" name="7" data-ng-pattern="/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/" id="customerEmail" placeholder="{{resource.customerEmail.placeholder}}">
+</div>
+</div>
+</div>
+<div class="form-group">
+<div class='row'>
+<div class=col-sm-12>
+       <a class='btn btn-info ng-binding' id='btnSubmitSignupForm' data-ng-click='submitData(signupForm.info)'>Save and continue</a>
+        <a href='#' class='btn btn-link ng-binding' data-ng-click='hideElements()'>Cancel</a> 
+</div>
+</div>
+</div>
+</form>

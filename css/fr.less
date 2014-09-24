@@ -1,0 +1,175 @@
+﻿/* ------------------------------------------------------------------------------------------------------------------------------------------
+		 French Overwrites: includes fixes from the master CSS files (application.css, external.css) for French.
+			Note: When creating overwrites, follow the order the CSS rules were arranged in the master LESS files (application.less, external.less)
+--------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* --------------------------------
+		 Application (application.less)
+------------------------------------ */
+/* Components
+---------------- */
+
+// Advanced Security Panel
+.protect-ya-neck {
+    .panel-footer {
+        .btn {
+            font-size: 12px;
+            font-weight: normal;
+        }
+    }
+}
+
+
+
+/* Navigation (navigation.less) */ 
+.menu-section {min-height: 300px;}
+
+.menu-actions li a {width: 124px;}
+
+
+/* Page Level
+----------------*/
+
+/* D */
+/* Debit Cards (debit-card-promo.less) */
+.promo.home .banner h1 {background: url(../images/text/debitCard-promo-header-fr.png) no-repeat center top;}
+
+.promo.home .banner h2 {background: url(../images/text/order-lip-fr.jpg) no-repeat center top;}
+
+.promo.order.home .banner h2 {background: url(../images/text/order-lip-fr.jpg) no-repeat center top;}
+
+.promo.page .banner h1 {
+		background: url(../images/text/fees-and-limits-fr.png) no-repeat left top; 
+  width: 435px;}
+
+.prepaid-promo h1 {background-image: url(../images/text/ma-facon-de-payer.png);}
+
+.promo .tabs div {height: 125px;}
+
+.promo .sticker {background: url(../images/cards/preregister-sticker-fr.png);}
+
+.promo .CAD-tab .ribbon {background: url(../images/cards/ribbon-comingsoon-fr.png) no-repeat;}
+
+.promo .USD-tab .ribbon {background: url(../images/cards/ribbon-jan2012-fr.png) no-repeat;}
+
+.hide-promo-popup .button-container input[type="submit"]{
+		padding: 6px 12px; 
+		line-height: 20px;}
+
+.cardselect-popup {max-width: 775px;}
+
+.cardselect-popup .cardselect {width: 300px;}
+
+.cardselect-popup .interest .cardselect {width: 251px;}
+
+.cardselect-popup .interest {width: 670px;}
+
+.cardselect-popup .thanks-msg {width: 360px;}
+
+.order-cardselect {background: url(../images/cards/debit-card-back.jpg) no-repeat 0px 110px;}
+
+.listing-box {height: 320px !important;}
+
+.ui-widget-overlay {
+		background: black; 
+		opacity: 0.7;}
+
+.inline-fields input[type="text"] {width: 140px !important;}
+
+.inline-fields input.daterangepicker, 
+.block-fields input.daterangepicker {width: 125px !important;}
+
+.inline-fields select {width: 152px !important;}
+
+/* eGiftCard*/
+.withdraw-funds-egiftcard .egiftcard-gallery .cash-back-icon {
+    background: url(../images/icons/cash-back-fr.png) no-repeat;
+}
+
+/* AccountOverview.aspx */
+
+.block-receive-payments-checklist .bottom-block a { font-size:12px; }
+
+
+/* I */
+/* IPN */
+.ipn-api .feature-options .option {min-height: 230px;}
+
+.ipn-overview .feature-options .option h3 {
+		font-size: 16px;
+		line-height: 21px;}
+		
+/* P */
+/* Prepaid Card (prepaid-card.less) */
+.ppc .ppc-promo {min-height: 240px;}
+
+.ppc .ppc-limitation {min-height: 335px;}
+
+
+/* R */
+/* Referrals */
+.referrals .feature-options .option {min-height: 200px;}
+
+/* -------------------------------------
+		 End Application (application.less)
+---------------------------------------- */
+
+
+
+/* ---------------------------
+		 External (external.less)
+------------------------------ */
+
+
+/* Page Level 
+----------------*/
+
+/* Sign-up (signup.less) */
+.sign-up .sidebar h3 {font-size: 12px;}
+
+.sign-up .sidebar h6 {font-size: 12px;}
+
+.sign-up .how-it-works p {font-size: 12px;}
+
+.account-select-table .personal-starter {background-image: url(../images/icons/Payza-compte-debutant.png);}
+
+.account-select-table .personal-pro {background-image: url(../images/icons/Payza-compte-personnel.png);}
+
+.account-select-table .business {background-image: url(../images/icons/Payza-compte-affaires.png);}
+
+.how-it-works-dialog-content .column {min-height: 170px;}
+
+.how-it-works-dialog-content .load-e-wallet {background: url(../images/backgrounds/bank-or-cc.png) no-repeat right 20px;}
+
+.how-it-works-dialog-content .shop-send-request {background: url(../images/backgrounds/shop-send-request.png) no-repeat right 30px;}
+
+/* QAS (qas.less) */
+.QAS_Prompt {
+    min-height: 95px;
+}
+
+/*TODO remove this temporary block, put content into resource file*/
+.panel {
+    .panel-body {
+
+        h2.isvalid:after {
+            content: "	Complété " url(../images/icons/check.png);
+            float: right;
+            color: #637179;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        form h2:not(.isvalid):after {
+            content: "Pas complété";
+            float: right;
+            color: #637179;
+            font-weight: 800;
+            font-size: 14px;
+            margin-right: 23px;
+        }
+    }
+}
+    /* -------------------------------
+		 End External (external.less)
+---------------------------------- */

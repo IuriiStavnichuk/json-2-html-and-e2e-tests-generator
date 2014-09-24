@@ -1,0 +1,74 @@
+// ---------------------------------------------
+// FIX LESS contains browser specific fixes.
+// ---------------------------------------------
+
+// Re-visit to implement browser version string insertion on the html tag of the document. <html class="ie8"> to avoid using hacks.
+
+// Base
+// -------
+
+// Base
+
+.box {
+		.title {filter: none;}
+}
+
+
+.form-actions .lock {
+		background: url(../images/icons/login-lock.png) no-repeat 0 0; 
+		display: block; 
+		height: 18px; 
+		margin-left:12px; margin-top: 9px;
+		position: absolute; 
+		width: 18px;}
+
+
+.form-actions .lock + .btn-login {
+		//padding: 10px;
+		//padding-right: 20px; padding-left: 34px !important;
+		padding: 8px 35px 9px 35px !important;
+		}
+
+.ie8 .sidebar-container #carousel ul,
+.ie9 .sidebar-container #carousel ul,
+.ie10 .sidebar-container #carousel ul { top:-6px; }
+
+
+
+
+
+// Components
+// -------------
+
+// Buttons
+.btn {filter: none;}
+
+.add-icon {
+		background: url("../images/icons/button-add-arrow.png") no-repeat 0 0; 
+		display: block; 
+		height: 20px; 
+		margin-left: 20px;margin-top: 7px; 
+		position: absolute; 
+		width: 20px;}
+
+.bfb-icon {
+		background: url("../images/icons/mega-menu-icon.png") no-repeat 0 0; 
+		display: block; 
+		height: 12px; 
+		margin-left: 23px; margin-top: 32px; 
+		position: absolute; 
+		width: 16px; 
+		z-index:100;}
+
+.ie7 .calculator fieldset .button-field a.btn {filter: none;}
+
+// Breadcrumbs
+.ie7 .breadcrumbs ul li:first-child {padding-top: 7px;}
+
+.opera .breadcrumbs ul li:first-child {padding-top: 7px;}
+
+// Forms
+// Select Country + Icon
+.safari fieldset .field .select-country select {text-indent: 25px;}
+
+.safari fieldset .field .select-country .flag-16 {top: 8px}
