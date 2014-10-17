@@ -1,0 +1,481 @@
+// Forms
+// --------
+
+// Set font for forms
+label, input, button,
+select, textarea {
+	font-family: @baseFontFamily;
+	line-height: @baseLineHeight;}
+
+// Inputs, Textareas, Selects
+input[type="text"], 
+input[type="password"],
+textarea,
+select, .uneditable-input {
+	border: 1px solid #ccc;
+	color: @gray;
+	display: inline-block;
+	font-size: @baseFontSize;
+	//height: @baseLineHeight;
+	//line-height: @baseLineHeight;
+	padding: 4px;
+	//margin-bottom: 9px;
+	//width: 165px;
+		
+	// CSS3
+	.border-radius (3px);}
+
+
+// Mini reset for unique input types
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"] {
+	border: 0;
+	cursor: pointer;
+	height: auto;
+	line-height: normal;
+	margin: 3px 0;
+	*margin-top: 0; /* IE7 */
+	padding: 0;
+	width: auto;
+
+	// CSS3
+	.border-radius(0);}
+
+// Reset the file input to browser defaults
+input[type="file"] {
+	border: initial;
+	background-color: @white;
+	background-color: initial;
+	line-height: initial;
+	padding: initial;
+  
+	// CSS3
+	.box-shadow (none);}
+
+// Help out input buttons
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	height: auto;
+	width: auto;}
+
+// Set the height of select and file controls to match text inputs
+select/*,
+input[type="file"]*/ {
+	// In IE7, the height of the select element cannot be changed by height, only font-size
+	height: 30px;
+	line-height: 28px;
+	// For IE7, add top margin to align select with labels
+	*margin-top: 4px;}
+
+// Chrome on Linux and Mobile Safari need background-color
+select {
+	background-color: @white;
+	// Default input width + 10px of padding that doesn't get applied
+	width: 175px;}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {height: auto;}
+
+// Remove shadow from image inputs
+input[type="image"] {
+	// CSS3
+	.box-shadow (none);}
+
+// Make textarea height behave
+textarea {height: auto;}
+
+// Hidden inputs
+input[type="hidden"] {display: none;}
+
+
+// Focus State
+// --------------
+
+input,
+textarea {
+	// CSS3
+	.box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+	@transition: border linear .2s, box-shadow linear .2s;
+	.transition(@transition);}
+
+input:focus,
+textarea:focus {
+	border-color: rgba(82,168,236,.8);
+	outline: 0;
+	outline: thin dotted \9; // IE6-8
+
+	// CSS3
+	@shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+	.box-shadow (@shadow);}
+
+input[type="file"]:focus,
+input[type="checkbox"]:focus,
+select:focus {
+	.tab-focus();
+		
+	// Override for file inputs
+	// CSS3
+	.box-shadow (none);}
+
+
+
+// Standard Form
+// ----------------
+	
+fieldset {margin: 0 auto;}
+
+fieldset legend {
+	border-bottom: 1px dotted #ddd;
+	display: block;
+	font-size: 1.2em;
+	font-style: italic;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	width: 100%;}
+
+fieldset label,
+fieldset .field .field-label {
+	cursor: default;
+	display: block;
+	font-size: 1.3em;
+	font-weight: bold;
+	margin-bottom: 5px;}
+
+fieldset label em,
+fieldset .field .field-label em {font-size: 90%;}
+
+fieldset label .optional,
+fieldset .field .field-label .optional {
+	color: #999;
+	font-weight: normal;}
+	
+fieldset label .required,
+fieldset .field .field-label .required {
+	color: #669;
+	font-weight: normal;}	
+
+fieldset .side-note,
+fieldset .field .field-value {
+	clear: both;
+	display: block;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	margin-bottom: 5px;}
+
+fieldset .side-note,
+fieldset .field .field-value em {color: #999;}
+
+fieldset .field input + .field-value,
+fieldset .field select + .field-value,
+fieldset .field textarea + .field-value {margin-top: 8px;}
+	
+fieldset input[type="file"],
+fieldset input[type="text"],
+fieldset input[type="password"],
+
+// HTML5
+fieldset input[type="date"],
+fieldset input[type="datetime"],
+fieldset input[type="datetime-local"],
+fieldset input[type="email"],
+fieldset input[type="month"],
+fieldset input[type="number"],
+fieldset input[type="range"],
+
+fieldset textarea,
+fieldset select {font-size: 1.3em;}
+
+fieldset input[type="text"],
+fieldset input[type="password"],
+
+// HTML5
+fieldset input[type="date"],
+fieldset input[type="datetime"],
+fieldset input[type="datetime-local"],
+fieldset input[type="email"],
+fieldset input[type="month"],
+fieldset input[type="number"],
+fieldset input[type="range"],
+
+fieldset textarea,
+fieldset select {
+	border: 1px solid;
+	border-color: #c0c0c0 #d4d4d4 #d4d4d4;
+	padding: 5px;
+	
+	// CSS3 
+	.border-radius(3px);
+	@shadow: inset 0 1px 2px rgba(0,0,0,0.12);
+	.box-shadow(@shadow);}
+
+fieldset input[type="text"],
+fieldset input[type="password"],
+fieldset textarea {width: 98%;}
+
+fieldset input[type="file"] {
+	/*background-color: #efefef;
+	border: 1px solid #e0e0e0;
+	padding: 4px;*/
+	
+	// CSS3
+	.border-radius(3px);
+	@shadow: 0 1px 0 #fff inset;
+	.box-shadow(@shadow);}
+
+fieldset select {width: 100%;}
+
+fieldset select optgroup,
+fieldset select option {padding: 3px 5px;}
+
+fieldset select optgroup {
+	font-style: normal;
+	margin-left: 5px; margin-right: 5px;
+	padding-bottom: 0; padding-left: 0; padding-right: 0;}
+
+fieldset .field {margin-bottom: 15px;}
+
+fieldset .field-help {
+	display: block;
+	font-size: 1.2em;
+	margin-bottom: 5px;}
+
+fieldset .field-info {
+	display: block;
+	margin-bottom: 5px;}
+
+
+// Field Messages 
+// -----------------
+fieldset .field-message {
+	display: block;
+	margin-top: 5px;
+	
+	// CSS3
+	.border-radius(3px);}
+
+fieldset .field-message span {
+	display: inline-block;
+	margin: 5px;
+	margin-left: 0; margin-right: 0;
+	vertical-align: top;}
+
+fieldset .field-message .message-type {
+	display: block;
+	font-size: 1.1em;
+	
+	// CSS3
+	.border-radius(3px);}
+	
+fieldset .field-message .message-label {
+	color: @white;
+	font-weight: bold;
+	left: 0;
+	margin: 0;
+	padding: 3px 5px;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	
+	// CSS3
+	.border-radius-top-left(3px);
+	.border-radius-bottom-right(3px);}	
+
+fieldset .field-message .message-value {
+	display: block;
+	line-height: 1.6em;
+	margin: 0;
+	padding: 5px 8px;
+	text-shadow: 0 1px 0 @white;}
+
+// Field with Error 
+fieldset .field-error label {color: #b94a48;}
+
+fieldset .field-error .message {
+	padding: 5px;
+	margin-bottom: 5px;}
+	
+fieldset .field-error input[type="text"],
+fieldset .field-error input[type="password"],
+fieldset .field-error select,
+fieldset .field-error textarea,
+fieldset .field-error input[type="text"]:focus,
+fieldset .field-error input[type="password"]:focus,
+fieldset .field-error select:focus,
+fieldset .field-error textarea:focus,
+fieldset .field-error input[type="text"]:hover,
+fieldset .field-error input[type="password"]:hover,
+fieldset .field-error select:hover,
+fieldset .field-error textarea:hover {border: 1px solid #b94a48;}
+	
+fieldset .message-error {
+    background-color: #f2d6d6;
+    color: #b94a48;
+    font-size: 12px;
+    margin-bottom: 5px;
+    padding: 5px;
+
+    // CSS3
+    .border-radius(3px);
+}
+	
+fieldset .message-error .message-label {background-color: #b94a48;}	
+	
+fieldset .message-important {background-color: #e6f2fe;}
+	
+fieldset .message-important .message-label {
+	background-color: #acd0f3;
+	color: #444;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.8);}
+
+fieldset .radio-check-field .radio-check-item {clear: both;}
+
+fieldset .radio-check-field label,
+fieldset .radio-check-field input[type=radio],
+fieldset .radio-check-field input[type=checkbox] {float: left;}
+
+fieldset .radio-check-field input[type=radio],
+fieldset .radio-check-field input[type=checkbox] {
+	margin-right: 5px; margin-top: 3px;}
+
+fieldset .radio-check-field label,
+fieldset .field-item label {font-weight: normal;}
+	
+fieldset .radio-check-field label {
+	margin-bottom: 10px;
+	width: 95%;}	
+
+fieldset .radio-check-field .radio-check-item label {padding: 0;}
+
+fieldset .field-item {
+	display: inline-block;
+	margin-bottom: 5px;
+	margin-right: 15px;
+	vertical-align: top;
+	width: 174px;}
+
+fieldset .field-item select {width: 103%;}
+
+fieldset .with-button {width: 273px;}
+
+fieldset .with-button input[type=text],
+fieldset .with-button input[type=file],
+fieldset .with-button select,
+fieldset .with-button textarea,
+fieldset .with-button .btn {display: inline-block;}
+
+fieldset .with-button input[type=text] {width: 65%;}
+
+fieldset .with-button .btn {
+	margin-left: 5px; margin-right: 0;}
+
+fieldset .button-field a {
+	display: inline-block;
+	font-size: 1.2em;
+	margin-right: 10px;}
+	
+/* Field with Focus */	
+fieldset input[type="text"]:hover,
+fieldset input[type="password"]:hover,
+fieldset textarea:hover,
+fieldset select:hover,
+fieldset input[type="text"]:focus,
+fieldset input[type="password"]:focus,
+fieldset textarea:focus,
+fieldset select:focus {border-color: #bcd8f3;}
+
+fieldset input[type="text"][disabled="disabled"],
+fieldset input[type="password"][disabled="disabled"],
+fieldset textarea[disabled="disabled"],
+fieldset select[disabled="disabled"],
+fieldset input[type="text"][disabled="disabled"]:hover,
+fieldset input[type="password"][disabled="disabled"]:hover,
+fieldset textarea[disabled="disabled"]:hover,
+fieldset select[disabled="disabled"]:hover,
+fieldset input[type="text"][disabled="disabled"]:focus,
+fieldset input[type="password"][disabled="disabled"]:focus,
+fieldset textarea[disabled="disabled"]:focus,
+fieldset select[disabled="disabled"]:focus {
+	border-color: #ccc;
+	background: #f5f5f5;
+	color: #9f9f9f;
+	font-style: italic;}	
+
+
+/* Colors for form validity */
+fieldset input:valid, 
+fieldset textarea:valid {/*border-color: #bcd8f3;*/}
+
+fieldset input[type="text"]:invalid, 
+fieldset input[type="password"]:invalid, 
+/*HTML5*/
+fieldset input[type="date"]:invalid, 
+fieldset input[type="datetime"]:invalid, 
+fieldset input[type="datetime-local"]:invalid, 
+fieldset input[type="email"]:invalid,
+fieldset input[type="month"]:invalid,
+fieldset input[type="number"]:invalid,
+fieldset input[type="range"]:invalid,
+ 
+fieldset textarea:invalid, 
+fieldset select:invalid,
+textarea:invalid {
+	background-color: #f0dddd;
+	border: 1px solid #e28e8e;
+	color: #c00;}
+
+/* Field Help JS */
+.js fieldset .field label .field-help,
+.js fieldset .field .field-label .field-help {
+	font-size: 100%;
+	font-weight: normal;
+	display: inline-block;
+	margin: 0;
+	vertical-align: top;}
+
+.js fieldset .field label .field-help,
+.js fieldset .field .field-label .field-help {cursor: help;}
+
+.js fieldset .field label .icn-info,
+.js fieldset .field .field-label .icn-info {cursor: pointer;}
+
+.js fieldset .field label .field-help .icn-help,
+.js fieldset .field .field-label .field-help .icn-help {
+	display: block;
+	margin: 0;}
+
+.js fieldset .field label .field-help .icn-help .icn,
+.js fieldset .field .field-label .field-help .icn-help .icn,
+.js fieldset .field label .icn-info .icn,
+.js fieldset .field .field-label .icn-info .icn {
+	display: block;
+	margin: 0;
+	margin-left: 5px; margin-top: 1px;}
+
+.js fieldset .field label .field-help .icn-help .icn-txt,
+.js fieldset .field .field-label .field-help .icn-help .icn-txt,
+.js fieldset .field label .icn-info .icn-txt,
+.js fieldset .field .field-label .icn-info .icn-txt {display: none;}
+/* --- */
+
+// Select Country + Icon
+.js fieldset .field .select-country,
+.js fieldset .field .country-select {position: relative;}
+
+.js .fees fieldset .field .select-country,
+.js .fees fieldset .field .country-select {
+    width: 400px;
+    margin: 0 auto;}
+
+.js fieldset .field .select-country select,
+.js fieldset .field .country-select select {padding-left: 25px;}
+
+.js fieldset .field .select-country .flag-16,
+.js fieldset .field .country-select .flag-16 {
+	left: 7px;
+	position: absolute;
+	top: 7px;}
+
+.js fieldset .field .select-country .flag-16,
+.js fieldset .field .country-select .flag-16 {margin: 0;}
+// ---

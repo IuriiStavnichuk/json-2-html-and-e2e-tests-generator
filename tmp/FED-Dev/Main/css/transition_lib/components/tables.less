@@ -1,0 +1,145 @@
+// -----------------------------------------------------------
+// Tables LESS defines the default styling of tabular data.
+// -----------------------------------------------------------
+
+table {
+	background-color: #fbfbfb;
+	border-collapse: separate;
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	width: 100%;
+	text-shadow: 0 1px 0 #fff;
+	
+	// CSS3 
+	.border-radius-top-left();
+	.border-radius-top-right();}
+
+table caption {
+	background-color: #efefef;
+	caption-side: bottom;
+	font-size: 1.1em;
+	font-style: italic;
+	padding: 5px;
+	
+	// CSS3
+	.border-radius-bottom-left();
+	.border-radius-bottom-right();}
+
+table th,
+table td {
+	font-size: 1.2em;
+	padding: 10px 8px;}
+		
+table thead th {
+	background-color: #ececec;
+	text-align: left;
+	
+	// CSS3
+	@shadow: 0 1px 0 #fff inset, 0 -1px 0 #bbb inset;
+	.box-shadow(@shadow);}
+
+table thead th:nth-child(1) {
+	// CSS3
+	.border-radius-top-left();}
+
+table thead th:last-child {
+	// CSS3 
+	.border-radius-top-right();}
+
+table tfoot td {
+	border-top: 1px solid #fff;
+	color: #999;}
+	
+table tbody td {border-top: 1px solid #fff;}	
+
+table tbody tr:nth-child(2n) td {background-color: #f6f6f6;}
+
+table tbody tr:nth-child(2n+1) td {background-color: #fff;}
+
+table tbody tr:hover td {
+	background-color: rgba(229, 240, 251, 0.7);
+	
+	/* CSS3 */
+	@shadow: 0 1px 0 #dde8f2 inset, 0 -1px 0 #dde8f2 inset;
+	.box-shadow(@shadow);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.table .centered-item {text-align: center;}
+
+.header-table tr {
+		background: none repeat scroll 0 0 #727273!important; 
+		border-bottom: 1px solid #545454; 
+		border-top: 1px solid #545454; 
+		color: #fff; 
+		font-size: 13px;
+		font-weight: 700; 
+		text-shadow: 0 -1px 0 #333; 
+		vertical-align:bottom;}
+
+.table th a {color: #fff;}
+
+.table th a:hover {text-decoration: none;}
+
+.table .center-table-element {text-align: center;}
+
+.box .table {
+		border-bottom:1px solid #ddd;
+		clear: both; // FF - table inside a box with an "Add" action button
+		margin-bottom: 0;}
+
+.box .table>input {margin-top: 18px;}
+
+table+.footer-actions {margin-top: 0;}
+
+.tbl-summary-details {
+	font-size: 100%;
+	margin: 0;}
+
+.tbl-summary-details dt {margin-top: 8px;}
+
+.tbl-summary-details dd {margin: 0;}
+
+.tbl-summary-details dt:first-child {margin: 0;}
+
+table.radiostyle {
+		margin-bottom: 8px;
+		width: 345px;}
+
+table.radiostyle td {width: 345px;}
+
+table.radiostyle td .radiostyle {margin: 0;}
+
+table.radiostyle td label {display: inline-block;}
+
+.table-striped tbody tr:nth-child(odd) td, 
+.table-striped tbody tr:nth-child(odd) th {background: none;}
+
+.table-striped tbody tr:nth-child(even) td, 
+.table-striped tbody tr:nth-child(even) th {background-color: #f8f8f8;}
+
+.table th {
+		background: #fff !important; 
+		border: none; 
+		color: @gray; 
+		text-shadow:0 -1px 0 #efefef;}
+
+.table th a {color: #0a69c5;}

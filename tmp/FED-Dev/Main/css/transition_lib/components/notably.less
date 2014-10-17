@@ -1,0 +1,56 @@
+﻿// Notably
+// ----------
+
+.notably {
+	color: #98c3ec;
+	cursor: help;
+	border-bottom: 1px dotted #98c3ec;}
+
+	
+// JS Enabled
+.js .notably-backdrop {
+	background-color: transparent;
+	display: block;
+	left: 0;
+	position: fixed;
+	top: 0;}
+
+.js .notably-box {position: absolute;}
+
+.js .notably-box .up-arrow {
+	display: block;
+	border: 20px solid #767676;
+	border-left-color: transparent; 
+	border-right-color: transparent; 
+	border-top-color: transparent; 
+	height: 15px;
+	margin: 0 auto;
+	margin-bottom: -2px;
+	position: relative;
+	width: 0;
+	z-index: 100;}
+
+.js .notably-box .notably-content {
+	border: 1px solid #767676;
+	border-top-width: 5px;
+	padding: 15px;
+	text-shadow: 0 1px 0 @white;
+	width: 470px;
+	z-index: 10;
+
+	// CSS3
+	@startColor: @white;
+	@endColor: #e4e5f0;
+	#gradient > .vertical(@startColor, @endColor);
+				
+	.border-radius(3px);
+				
+	@shadow: 0 0 5px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.75) inset;
+	.box-shadow(@shadow);}
+
+.js .notably-box .notably-content hr {
+	border-color: #767676;
+	
+	// CSS3
+	@shadow: 0 1px 0 @white;
+	.box-shadow(@shadow);}

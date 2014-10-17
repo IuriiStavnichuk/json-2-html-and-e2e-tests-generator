@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html data-ng-app="MainWebApp" class="ng-scope">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-start{border-spacing:1px 1px;-ms-zoom:1.0001;}.ng-animate-active{border-spacing:0px 0px;-ms-zoom:1;}</style><title>
+    Payza.com - My Account | Secure Online Payments
+</title><meta content="money transfer, send money, send money online, money transfer services, send, money, payments, credit, credit card, instant, money, financial services,send cash online, online payments, online transfers,  online wire transfer, merchant account, free merchant,receive money, receive cash, receive payments, money send, credit card, instant payment, credit card, ACH, EFT, internet payments, internet transfers, send money instantly, international payments, money transfers, transfer money online, instant money transfer, online money transfer, internet payment, low cost money transfer, internet money transfers, receive payments online, receive money online, send payments online, receive money instantly, send money now, receive money now accept credit cards." name="Keywords"><meta content="Send money by email for free with Payza.  Payza provides a safe and secure method for consumers and businesses with email to send and receive internet payments quickly and at a low cost.  Buy online, sell online, escrow services, request money, and transfer funds You can settle debts, borrow cash, divide bills or split expenses with friends all without going to an ATM or looking for your checkbook." name="Description"><link href="./index_files/css" rel="stylesheet" type="text/css">
+
+    <script src="js/vendor/jquery-1.8.2.js"></script>
+    <!--<script src="js/vendor/jquery-ui-1.8.24.js"></script>-->
+    <!--<script src="js/vendor/jquery-plugins/jquery.counter.js"></script>-->
+    <!--<script src="js/vendor/jquery-plugins/jquery.dateentry.js"></script>-->
+    <!--<script src="js/vendor/jquery-plugins/jquery.daterangepicker.js"></script>-->
+    <!--<script src="js/vendor/jquery-plugins/jquery.inputfit.js"></script>-->
+    <!--<script src="js/vendor/jquery-plugins/jquery.mCustomScrollbar.js"></script><script src="js/vendor/jquery-plugins/jquery.mousewheel.min.js"></script>-->
+    <!--<script src="js/vendor/jquery-plugins/jquery.mousewheel.js"></script>-->
+    <script src="js/vendor/angular-1.2.2/angular.js"></script>
+    <script src="js/vendor/angular-1.2.2/angular-cookies.js"></script>
+    <script src="js/vendor/angular-1.2.2/angular-route.js"></script>
+    <script src="js/vendor/angular-1.2.2/angular-resource.js"></script>
+    <script src="js/vendor/angular-1.2.2/angular-sanitize.js"></script>
+    <!--<script src="js/vendor/d3.v3/d3.v3.js"></script>-->
+    <script src="js/vendor/ui-bootstrap-0.10.0/ui-bootstrap-custom-0.10.0.js"></script>
+    <script src="js/vendor/ui-bootstrap-0.10.0/ui-bootstrap-custom-tpls-0.10.0.js"></script>
+    <script src="js/app/ui.js"></script>
+    <script src="js/app/cedric.js"></script>
+    <script src="js/app/modules/accountActivities.js"></script>
+    <script src="js/app/pages/accountOverview.js"></script>
+    <script src="js/app/modules/donutChart.js"></script>
+    <script src="js/app/modules/questionnaireCheckout.js"></script>
+    <script src="js/app/app.js"></script>
+    <!--<script src="js/lib/payza/util/alias.js"></script>-->
+    <!--<script src="js/lib/payza/util/debounce.js"></script>-->
+    <!--<script src="js/lib/payza/util/menu.js"></script>-->
+    <!--<script src="js/lib/payza/util/optionsToJSON.js"></script>-->
+    <!--<script src="js/lib/payza/env/browser.js"></script>-->
+    <!--<script src="js/lib/payza/forms/onlyDigits.js"></script>-->
+    <!--<script src="js/lib/payza/plugins/accordion.js"></script>-->
+    <!--<script src="js/lib/payza/plugins/behaviorTrigger.js"></script>-->
+    <!--<script src="js/lib/payza/plugins/bootstrap.js"></script>-->
+    <!--<script src="js/lib/payza/plugins/fancyTable.js"></script>-->
+    <!--<script src="js/lib/payza/plugins/highlight.js"></script>-->
+    <!--<script src="js/lib/payza/plugins/modal.js"></script>-->
+    <!--<script src="js/lib/payza/plugins/moreLess.js"></script>-->
+    <!--<script src="js/lib/payza/plugins/notably.js"></script>-->
+    <!--<script src="js/lib/payza/plugins/passwordMeter.js"></script>-->
+    <!--<script src="js/lib/payza/plugins/placement.js"></script>-->
+    <!--<script src="js/lib/payza/plugins/subNav.js"></script>-->
+    <!--<script src="js/lib/payza/plugins/tooltip.js"></script>-->
+    <!--<script src="js/lib/payza/main.js"></script>-->
+
+    <script src="js/app/project.js"></script>
+
+    <script type="text/javascript">var baseUrl = "/Trunk/";</script>
+    <!--<script src="js/main.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="css/application.css">
+</head>
+
+<body>
+
+<div data-ng-controller="MainCtrl" style="width:600px;margin:0 auto;background-color:#fff;padding:30px">
+    <form name="signupForm" id="signupForm" novalidate="" data-ng-init="signupForm.info.countryId.value=countryId;" class="ng-pristine ng-invalid ng-invalid-required">
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="salutationId">{{resource.salutationId.title}}</label>
+                    <select class="form-control" id="salutationId"
+                            data-ng-model="signupForm.info.salutationId.value"
+                            data-ng-init="signupForm.info.salutationId.value=0"
+                            data-ng-options="item.id as item.name for item in salutationList"
+                            data-ng-required="true">
+                    </select>
+                </div>
+                <div class="col-sm-4">
+                    <label for="firstName" class="ng-binding">First name</label>
+                    <input type="text" name="firstName" id="firstName" class="form-control ng-pristine ng-invalid ng-invalid-required" tabindex="109"
+                           data-ng-required="true"
+                           data-ng-pattern="/^[a-zA-Z]+$/"
+                           data-ng-model="signupForm.info.firstName.value" required="required">
+                </div>
+                <div class="col-sm-5">
+                    <label for="lastName" class="ng-binding">Last name</label>
+                    <input type="text" name="lastName" id="lastName" class="form-control ng-pristine ng-valid" tabindex="110" data-ng-model="signupForm.info.lastName.value">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label for="emailAddress" class="ng-binding">Email address</label>
+                    <input type="text" name="emailAddress" id="emailAddress" class="form-control ng-pristine ng-valid" tabindex="120" placeholder="Email" data-ng-model="signupForm.info.emailAddress.value" data-ng-keyup="validationSignupForm.info.validationEmailAddress.value=signupForm.info.emailAddress.value;">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <a class="btn btn-info ng-binding" id="btnSubmitSignupForm" data-ng-click="submitData(signupForm.info)">Save and continue</a>
+                <a href="#" class="btn btn-link ng-binding" data-ng-click="hideElements('.complet-profile-box .alert.alert-error'); getAddress();getProfileProgress();currentStepVisibilityTurnOff()">Cancel</a>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+</body>
+
+</html>

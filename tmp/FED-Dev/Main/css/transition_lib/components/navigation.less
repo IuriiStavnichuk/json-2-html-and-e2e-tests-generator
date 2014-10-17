@@ -1,0 +1,598 @@
+// NAVIGATIONS
+// --------------
+
+
+// Mega Menu
+// ------------
+
+#mega-menu-dropdown {*zoom:1;}
+
+#mega-menu-dropdown:before,
+#mega-menu-dropdown:after {
+		display: table; 
+		content: "";}
+
+#mega-menu-dropdown:after {clear: both;}
+
+.faux-columns{*zoom: 1;}
+
+.faux-columns:before,
+.faux-columns:after {
+		display: table;
+		content: "";}
+
+.faux-columns:after {clear: both;}
+
+.main .nav-tabs>li {margin-bottom: -1px;}
+
+.menu-bar {
+		height: 78px; 
+		border-bottom: 1px solid #b5b5b5; border-top: 1px solid #fff;
+		position: relative;
+		background-color: #e8eaec; 
+		 }
+
+
+#btn-mega-menu {
+		border: 1px solid; 
+		border-bottom-color: #185f01;
+		border-left-color: #357d18;
+		border-right-color: #357d18; 
+		border-top-color: #5da839; 
+		color: #fff;
+		display: inline-block;
+		filter: none;
+		margin: 13px; 
+		margin-top: 8px;
+		padding-bottom: 16px; padding-left: 50px; padding-right: 25px; padding-top: 15px;
+		text-align: left; 
+		text-decoration: none;
+		background-color: #1eb056; 
+		
+		// CSS3
+		.border-radius(2px);
+}
+
+#btn-mega-menu:focus {outline: none;}
+
+.active-dropdown{
+		// CSS3
+		@radius: 4px 4px 0 0;
+		.border-radius(@radius);}
+
+#btn-mega-menu:hover { background-color: #1eb056; }
+
+#btn-mega-menu strong {
+		display: block; 
+		font-family: "OpenSansSemibold", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 1.4em;
+		font-weight: 600;}
+
+#btn-mega-menu em {
+	font-size: 1.2em;
+	font-style: normal;}
+
+#btn-mega-menu span {
+		//border-right: 1px solid #134b08;
+		display: block;
+		height: 61px;
+		width: 35px; 
+		margin-left: -50px; margin-top: -16px; 
+		position: absolute; 
+		
+		// CSS3
+		background: #009639 url(../images/icons/mega-menu-icon.png) no-repeat center center; 
+
+		@radius: 3px 0px 0px 3px;
+		.border-radius(@radius);
+		}
+
+#mega-menu-dropdown {
+		border-top: 5px solid #009639;
+		left: 4px;
+		margin-left: 9px; margin-top: -12px; 
+		position: absolute;
+		top: 77px;
+		z-index: 999999; 
+		background-color:#fbfcfc;
+		
+		// CSS3
+		.box-shadow(0px 1px 2px #666);}
+
+#mega-menu-dropdown .faux-columns {
+		/*background: url(../images/backgrounds/mega-menu-faux-columns.png) repeat-y 252px top; 
+		border-left: 1px solid #d3d3d3; 
+		border-right:1px solid #d3d3d3; 
+		border-bottom:1px solid #a8a8a8;*/
+		}
+
+#mega-menu-dropdown ul {
+		list-style-type: none; 
+		margin: 0; 
+		padding: 0;
+		text-shadow: 0 1px 0 #fff;}
+
+.menu-section {
+		border-left: 1px solid #bfbfbf; border-right: 1px solid #fff; 
+		float: left;
+		font-size: 1.3em;
+		min-height: 290px;
+		width: 250px;}
+
+#mega-menu-dropdown .first{border-left: none;}
+
+#mega-menu-dropdown .last{border-right: none;}
+
+.menu-section > li {padding-top: 16px;}
+
+.menu-section-title {
+		color: #2b2b2b;
+		//font-size: 12px; 
+		font-weight: bold; 
+		padding-left: 40px;
+		text-transform: uppercase;}
+
+#mega-menu-dropdown .menu-section-title ul {
+		font-size: 100%;
+		line-height: 1.5em;
+		margin-bottom: 10px; margin-top: 8px;}
+
+.menu-section-title li {
+		//font-size: 13px; 
+		font-weight: normal; 
+		margin-left: -40px;
+		text-transform: none;}
+
+.menu-section-title li a {
+		display: block; 
+		padding: 5px;
+		padding-left: 40px;
+		text-decoration: none;}
+
+.menu-section-title li .disabled-link {
+        color: #cfd0d0;
+        display: block;
+        padding: 5px;
+        padding-left: 40px;
+}
+
+.mega-menu-upgrade-promp {
+		background-color:#fff;
+		border-bottom: 1px solid #bfbfbf;
+		padding:10px 20px;
+		font-size:12px;
+		a {font-weight: bold }
+}
+
+.menu-section-title li a:hover {text-decoration: underline;}
+
+.menu-section .my-transactions {background: url(../images/icons/my-transactions.png) no-repeat 10px 15px;}
+
+.menu-section .advanced-settings {background: url(../images/icons/keyboard.png) no-repeat 18px 14px;}
+
+.menu-section .account-verification {background: url(../images/icons/account-verification.png) no-repeat 15px 14px;}
+
+.menu-section .manage-financial {background: url(../images/icons/manage-financial.png) no-repeat 12px 12px;}
+
+.menu-section .business-tools {background: url(../images/icons/business-tools.png) no-repeat 12px 15px;}
+
+.conditional-add a {background: url(../images/icons/conditional-add.png) no-repeat 10px center;}
+
+.menu-actions {
+		border-left: 1px solid #b5b5b5;
+		float: right; 
+		height: 78px;
+		list-style-type: none; 
+		margin: 0;
+		padding: 0;}
+
+.menu-actions li {
+		border-right: 1px solid #b5b5b5; 
+		border-left: 1px solid #fff; 
+		display: block; 
+		float: left;
+		margin: 0;
+		text-align: center;}
+
+.menu-actions li:first-child {/*border-left: 1px solid #b5b5b5;*/}
+
+.menu-actions li:last-child {border-right: none;}
+
+.menu-actions li a {
+		color: #333;
+		display: block; 
+		font-size: 12px;
+		/*font-weight: bold;*/
+		padding: 10px 0; 
+		text-decoration: none;
+		text-shadow: 0px 1px 0 #fff; 
+		width: 102px;
+		height: 58px;}
+
+.menu-actions li a:hover {
+		background: #d2d2d2; 
+		text-decoration: none;}
+
+.menu-actions span {
+		display: block; 
+		margin: 0 auto 5px;}
+
+.menu-actions .send-money {
+		background: url(../images/icons/send-money.png) no-repeat 0% 0%; 
+		height: 36px;
+		width: 33px;}
+
+.menu-actions .request-money {
+		background: url(../images/icons/request-money.png) no-repeat 0% 0%; 
+		height: 36px;
+		width: 33px;}
+
+.menu-actions .load-account {
+		background: url(../images/icons/load-account.png) no-repeat 0% 0%; 
+		height: 36px;
+		width: 33px;}
+
+.menu-actions .withdraw-funds {
+		background: url(../images/icons/withdraw-funds.png) no-repeat 0% 0%; 
+		height: 36px;
+		width: 33px;}
+
+.menu-actions .active a, 
+.menu-actions .active a:hover {
+		text-shadow:0px 1px 1px #062804;
+
+		// CSS3
+		#gradient > .vertical(rgba(58, 157, 40, 1), rgba(10, 79, 6, 1));}
+
+.menu-actions .active a {color: #fff;}
+
+.menu-actions .active .send-money {background: url(../images/icons/send-money-active.png) no-repeat 0% 0%;}
+
+.menu-actions .active .request-money {background: url(../images/icons/request-money-active.png) no-repeat 0% 0%;}
+
+.menu-actions .active .load-account {background: url(../images/icons/load-account-active.png) no-repeat 0% 0%;}
+
+.menu-actions .active .withdraw-funds {background: url(../images/icons/withdraw-funds-active.png) no-repeat 0% 0%;}
+
+.sub-menu-bar {
+		background: #f3f3f3; 
+		border-bottom: 1px solid #b5b5b5; border-top: 1px solid #fff; 
+		height: 48px;}
+
+.sub-menu-bar ul {
+		list-style-type: none; 
+		margin: 0;
+		padding: 0;
+		margin-left: 8px; margin-top: 11px;}
+
+.sub-menu-bar li {
+		display: inline-block; 
+		margin-right: 5px;}
+
+.sub-menu-bar li a {
+		display: block; 
+		padding: 10px; 
+		padding-bottom: 4px; padding-top: 2px;
+		text-decoration: none;
+		
+		// CSS3
+		.border-radius(3px);}
+
+.sub-menu-bar li a:hover {
+		background: #e1e1e1; 
+		color: @linkColor;
+		text-decoration: none;}
+
+.sub-menu-bar li a:focus, 
+.sub-menu-bar li a:active, 
+.sub-menu-bar li.active a {
+		background: #e1e1e1; 
+		color: #727272;}
+
+.sub-menu-bar .btn {
+	float: right;
+	position: relative;
+	top: 8px;
+	right: 8px;}
+
+// BASE CLASS
+// -------------
+
+.nav {
+  list-style: none;
+		margin-bottom: @baseLineHeight; margin-left: 0;}
+
+// Make links block level
+.nav > li > a {display: block;}
+
+.nav > li > a:hover {
+  background-color: @grayLighter;
+		text-decoration: none;}
+
+
+
+// NAV LIST
+// -----------
+
+.nav-list {
+  margin-bottom: 0;
+		padding-left: 14px; padding-right: 14px;}
+
+.nav-list > li > a,
+.nav-list .nav-header {
+  display: block;
+  margin-left:  -15px;
+  margin-right: -15px;
+  padding: 3px 15px;
+		text-shadow: 0 1px 0 rgba(255,255,255,.5);}
+
+.nav-list .nav-header {
+  color: @grayLight;
+		font-size: 11px;
+  font-weight: bold;
+  line-height: @baseLineHeight;
+  text-transform: uppercase;}
+
+.nav-list > li + .nav-header {margin-top: 9px;}
+
+.nav-list .active > a,
+.nav-list .active > a:hover {
+  background-color: @linkColor;
+		color: @white;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.2);}
+
+.nav-list [class^="icon-"] {margin-right: 2px;}
+
+
+
+// TABS AND PILLS
+// -----------------
+
+// Common styles
+.nav-tabs,
+.nav-pills {.clearfix();}
+
+.nav-tabs > li,
+.nav-pills > li {float: left;}
+
+.nav-tabs > li > a,
+.nav-pills > li > a {
+  line-height: 14px; // keeps the overall height an even number
+		padding-left: 12px; padding-right: 12px;
+  margin-right: 2px;}
+
+
+
+// TABS
+// -------
+
+// Give the tabs something to sit on
+.nav-tabs {border-bottom: 1px solid #ddd;}
+
+// Make the list-items overlay the bottom border
+.nav-tabs > li {margin-bottom: -1px;}
+
+// Actual tabs (as links)
+.nav-tabs > li > a {
+  border: 1px solid transparent;
+		padding-bottom: 9px; padding-top: 9px;
+  
+		// CSS3
+  .border-radius(4px 4px 0 0);
+
+  &:hover {border-color: @grayLighter @grayLighter #ddd;}
+}
+
+// Active state, and it's :hover to override normal :hover
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  background-color: @white;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+  color: @gray;
+		cursor: default;}
+
+
+
+// PILLS
+// --------
+
+// Links rendered as pills
+.nav-pills > li > a {
+  padding-bottom: 8px; padding-top: 8px;
+  margin-bottom: 2px; margin-top: 2px;
+  
+		// CSS3
+		.border-radius(5px);}
+
+// Active state
+.nav-pills .active > a,
+.nav-pills .active > a:hover {
+  background-color: @linkColor;
+		color: @white;}
+
+
+
+// STACKED NAV
+// --------------
+
+// Stacked tabs and pills
+.nav-stacked > li {float: none;}
+
+// No need for the gap between nav items
+.nav-stacked > li > a {margin-right: 0; }
+
+// Tabs
+.nav-tabs.nav-stacked {border-bottom: 0;}
+
+.nav-tabs.nav-stacked > li > a {
+  border: 1px solid #ddd;
+  
+		// CSS3
+		.border-radius(0);}
+
+.nav-tabs.nav-stacked > li:first-child > a {
+  // CSS3
+		.border-radius(4px 4px 0 0);}
+
+.nav-tabs.nav-stacked > li:last-child > a {
+  // CSS3
+		.border-radius(0 0 4px 4px);}
+
+.nav-tabs.nav-stacked > li > a:hover {
+  border-color: #ddd;
+  z-index: 2;}
+
+// Pills
+.nav-pills.nav-stacked > li > a {margin-bottom: 3px;}
+
+// Decrease margin to match sizing of stacked tabs
+.nav-pills.nav-stacked > li:last-child > a {margin-bottom: 1px;}
+
+
+
+// DROPDOWNS
+// ------------
+
+// Position the menu
+.nav-tabs .dropdown-menu,
+.nav-pills .dropdown-menu {
+  border-width: 1px;
+		margin-top: 1px;}
+
+.nav-pills .dropdown-menu {
+  // CSS3
+		.border-radius(4px);}
+
+
+
+// Default dropdown links
+// -------------------------
+
+// Make carets use linkColor to start
+.nav-tabs .dropdown-toggle .caret,
+.nav-pills .dropdown-toggle .caret {
+  border-top-color: @linkColor;
+  margin-top: 6px;}
+
+.nav-tabs .dropdown-toggle:hover .caret,
+.nav-pills .dropdown-toggle:hover .caret {border-top-color: @linkColorHover;}
+
+// Active dropdown links
+.nav-tabs .active .dropdown-toggle .caret,
+.nav-pills .active .dropdown-toggle .caret {border-top-color: @grayDark;}
+
+// Active:hover dropdown links
+.nav > .dropdown.active > a:hover {
+  color: @black;
+  cursor: pointer;}
+
+// Open dropdowns
+.nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle,
+.nav > .open.active > a:hover {
+  background-color: @grayLight;
+  border-color: @grayLight;
+		color: @white;}
+
+.nav .open .caret,
+.nav .open.active .caret,
+.nav .open a:hover .caret {
+  border-top-color: @white;
+  .opacity(100);}
+
+// Dropdowns in stacked tabs
+.tabs-stacked .open > a:hover {border-color: @grayLight;}
+
+
+
+// TABBABLE
+// -----------
+
+// Clear any floats
+.tabbable {.clearfix();}
+
+// Remove border on bottom, left, right
+.tabs-below .nav-tabs,
+.tabs-right .nav-tabs,
+.tabs-left .nav-tabs {border-bottom: 0;}
+
+// Show/hide tabbable areas
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {display: none;}
+
+.tab-content > .active,
+.pill-content > .active {display: block;}
+
+
+// BOTTOM
+.tabs-below .nav-tabs {border-top: 1px solid #ddd;}
+
+.tabs-below .nav-tabs > li {
+  margin-bottom: 0; margin-top: -1px;}
+
+.tabs-below .nav-tabs > li > a {
+  // CSS3
+		.border-radius(0 0 4px 4px);
+  
+		&:hover {
+    border-bottom-color: transparent; border-top-color: #ddd;}
+
+}
+
+.tabs-below .nav-tabs .active > a,
+.tabs-below .nav-tabs .active > a:hover {border-color: transparent #ddd #ddd #ddd;}
+
+
+
+// LEFT & RIGHT
+// ---------------
+
+// Common styles
+.tabs-left .nav-tabs > li,
+.tabs-right .nav-tabs > li {float: none;}
+
+.tabs-left .nav-tabs > li > a,
+.tabs-right .nav-tabs > li > a {
+  margin-bottom: 3px; margin-right: 0;
+  min-width: 74px;}
+
+// Tabs on the left
+.tabs-left .nav-tabs {
+  border-right: 1px solid #ddd;
+		float: left;
+  margin-right: 19px;}
+
+.tabs-left .nav-tabs > li > a {
+  margin-right: -1px;
+
+		// CSS3
+  .border-radius(4px 0 0 4px);}
+
+.tabs-left .nav-tabs > li > a:hover {border-color: @grayLighter #ddd @grayLighter @grayLighter;}
+
+.tabs-left .nav-tabs .active > a,
+.tabs-left .nav-tabs .active > a:hover {
+  border-color: #ddd transparent #ddd #ddd;
+  *border-right-color: @white;}
+
+// Tabs on the right
+.tabs-right .nav-tabs {
+  border-left: 1px solid #ddd;
+		float: right;
+  margin-left: 19px;}
+
+.tabs-right .nav-tabs > li > a {
+  margin-left: -1px;
+
+		// CSS3
+  .border-radius(0 4px 4px 0);}
+
+.tabs-right .nav-tabs > li > a:hover {border-color: @grayLighter @grayLighter @grayLighter #ddd;}
+
+.tabs-right .nav-tabs .active > a,
+.tabs-right .nav-tabs .active > a:hover {
+  border-color: #ddd #ddd #ddd transparent;
+  *border-left-color: @white;}
+
+.sub-navbar {margin-bottom: 25px;}

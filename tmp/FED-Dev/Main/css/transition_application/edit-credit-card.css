@@ -1,0 +1,38 @@
+.edit-credit-card span .icn-txt {
+  font-size: 12px;
+}
+.edit-credit-card .credit-card .field-item img {
+  vertical-align: top;
+}
+.edit-credit-card .edit-credit-card-fieldset {
+  margin: 0 auto 80px;
+  width: 94%;
+}
+.edit-credit-card .span3 {
+  filter: none;
+  background: none;
+}
+.edit-credit-card .field-value {
+  vertical-align: middle;
+}
+.edit-credit-card .btn-secondary,
+.edit-credit-card .btn-cancel {
+  font-size: 15px;
+  margin: 0 9px 0 0;
+  padding: 7px 18px 9px;
+  text-shadow: 0 1px 2px #383838;
+  box-shadow: 0 1px 0 0 #88d4fd inset, 0 0 0 3px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+.edit-credit-card .btn-cancel {
+  box-shadow: 0 1px 0 0 #fcfcfc inset, 0 0 0 3px rgba(0, 0, 0, 0.1);
+  color: #666666;
+  text-shadow: 0 1px 0 #FFFFFF;
+}
+.edit-credit-card #ctl00_ctl00_main_MainContent_lblCreditCardNumber {
+  font-family: sans-serif;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #545454;
+}

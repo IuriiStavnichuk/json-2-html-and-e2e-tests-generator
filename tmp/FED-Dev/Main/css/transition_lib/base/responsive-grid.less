@@ -1,0 +1,226 @@
+﻿/* --------------------------------------------------------------
+	Layout includes grid system [16 Grids]
+	
+	Basic Usage:
+	
+	<div class="container">
+		<div class="eight columns">-Content here-</div>
+		<div class="eight columns">-Content here-</div>
+	</div>
+	
+	---
+	
+	Nested Columns: The first column within a nested column group should have the selector "alpha" and the last column should have the selector "omega".
+	
+	<div class="container">
+		<div class="sixteen columns">
+			<div class="four columns alpha">-Content here-</div>
+			<div class="four columns">-Content here-</div>
+			<div class="four columns">-Content here-</div>
+			<div class="four columns omega">-Content here-</div>
+		</div>
+	</div>
+	
+	---
+	
+	Offset Columns:
+	
+	<div class="container">
+		<div class="fourteen columns offset-by-two">-Content here-</div>
+	</div>
+	
+----------------------------------------------------------------- */
+.container {
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	width: 960px;}
+
+/* Base 16-Column Grid 
+------------------------- */
+
+.container .column ,
+.container .columns {
+	float: left; 
+	display: inline; 
+	margin: 0;
+	margin-bottom: 10px; margin-left: 10px; margin-right: 10px;}
+
+/* .alpha ./ omega selectors are used for nested columns */
+.container .alpha {margin-left: 0;} 
+.container .omega {margin-right: 0;}
+
+/* Base Grid */
+.container .one {width: 40px;}
+.container .two {width: 100px;}
+.container .three { width: 160px;}
+.container .four {width: 220px;}
+.container .five {width: 280px;}
+.container .six {width: 340px;}
+.container .seven {width: 400px;}
+.container .eight {width: 460px;}
+.container .nine {width: 520px;}
+.container .ten {width: 580px;}
+.container .eleven {width: 640px;}
+.container .twelve {width: 700px;}
+.container .thirteen {width: 760px;}
+.container .fourteen {width: 820px;}
+.container .fifteen {width: 880px;}
+.container .sixteen {width: 940px;}
+
+.container .one-third {width: 300px;} /* 3 Equal Columns */
+
+/* Offsets */
+.container .offset-by-one {padding-left: 60px;}
+.container .offset-by-two {padding-left: 120px;}
+.container .offset-by-three {padding-left: 180px;}
+.container .offset-by-four {padding-left: 240px;}
+.container .offset-by-five {padding-left: 300px;}
+.container .offset-by-six {padding-left: 360px;}
+.container .offset-by-seven {padding-left: 420px;}
+.container .offset-by-eight {padding-left: 480px;}
+.container .offset-by-nine {padding-left: 540px;}
+.container .offset-by-ten {padding-left: 600px;}
+.container .offset-by-eleven {padding-left: 660px;}
+.container .offset-by-twelve {padding-left: 720px;}
+.container .offset-by-thirteen {padding-left: 780px;}
+.container .offset-by-fourteen {padding-left: 840px;}
+.container .offset-by-fifteen {padding-left: 900px;}
+
+
+
+/* Tablet (Portrait)
+----------------------- */
+
+/* Note: Design for a width of 768px */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.container {width: 768px;}
+	
+	.container .column ,
+	.container .columns {margin-left: 10px; margin-right: 10px;}
+	
+	/* Nested Columns */	
+	.container .alpha {margin-left: 0; margin-right: 10px;}
+	.container .omega {margin-left: 10px; margin-right: 0;}
+
+	.container .one {width: 28px;}
+	.container .two {width: 76px;}
+	.container .three {width: 124px;}
+	.container .four {width: 172px;}
+	.container .five {width: 220px;}
+	.container .six {width: 268px;}
+	.container .seven {width: 316px;}
+	.container .eight {width: 364px;}
+	.container .nine {width: 412px;}
+	.container .ten {width: 460px;}
+	.container .eleven {width: 508px;}
+	.container .twelve {width: 556px;}
+	.container .thirteen {width: 604px;}
+	.container .fourteen {width: 652px;}
+	.container .fifteen {width: 700px;}
+	.container .sixteen {width: 748px;}
+
+	.container .one-third {width: 236px;}
+	
+	/* Offsets */
+	.container .offset-by-one {padding-left: 48px;}
+	.container .offset-by-two {padding-left: 96px;}
+	.container .offset-by-three {padding-left: 144px;}
+	.container .offset-by-four {padding-left: 192px;}
+	.container .offset-by-five {padding-left: 240px;}
+	.container .offset-by-six {padding-left: 288px;}
+	.container .offset-by-seven {padding-left: 336px;}
+	.container .offset-by-eight {padding-left: 384px;}
+	.container .offset-by-nine {padding-left: 432px;}
+	.container .offset-by-ten {padding-left: 480px;}
+	.container .offset-by-eleven {padding-left: 528px;}
+	.container .offset-by-twelve {padding-left: 576px;}
+	.container .offset-by-thirteen {padding-left: 624px;}
+	.container .offset-by-fourteen {padding-left: 672px;}
+	.container .offset-by-fifteen {padding-left: 720px;}
+}
+
+
+/* Mobile (Portrait)
+---------------------- */
+
+/* Note: Design for a width of 320px */
+
+@media only screen and (max-width: 767px) {
+	.container {width: 300px;}
+	
+	.container .column,
+	.container .columns {
+		margin: 0;
+		margin-bottom: 5px;}
+
+	.container .one ,
+	.container .two,
+	.container .three,
+	.container .four,
+	.container .five,
+	.container .six,
+	.container .seven,
+	.container .eight,
+	.container .nine,
+	.container .ten,
+	.container .eleven,
+	.container .twelve,
+	.container .thirteen,
+	.container .fourteen,
+	.container .fifteen,
+	.container .sixteen ,
+	.container .one-third {width: 300px;}
+
+	/* Offsets */
+	.container .offset-by-one,
+	.container .offset-by-two,
+	.container .offset-by-three,
+	.container .offset-by-four,
+	.container .offset-by-five,
+	.container .offset-by-six,
+	.container .offset-by-seven,
+	.container .offset-by-eight,
+	.container .offset-by-nine,
+	.container .offset-by-ten,
+	.container .offset-by-eleven,
+	.container .offset-by-twelve,
+	.container .offset-by-thirteen,
+	.container .offset-by-fourteen,
+	.container .offset-by-fifteen {padding-left: 0;}
+
+}
+
+
+/* Mobile (Landscape)
+------------------------ */
+
+/* Note: Design for a width of 480px */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.container {width: 420px;}
+	
+	.container .column,
+	.container .columns {
+		margin: 0;
+		margin-bottom: 5px;}
+
+	.container .one,
+	.container .two,
+	.container .three,
+	.container .four,
+	.container .five,
+	.container .six,
+	.container .seven,
+	.container .eight,
+	.container .nine,
+	.container .ten,
+	.container .eleven,
+	.container .twelve,
+	.container .thirteen,
+	.container .fourteen,
+	.container .fifteen,
+	.container .sixteen,
+	.container .one-third{width: 420px;}
+}

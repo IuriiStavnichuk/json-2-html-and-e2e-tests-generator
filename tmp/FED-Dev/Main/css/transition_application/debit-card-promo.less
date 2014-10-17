@@ -1,0 +1,456 @@
+// Debit Card Promo
+// -------------------
+
+.nope-dont-want-this {
+		font-size: 1.2em;
+		padding-right: 18px; 
+		text-align: right; 
+		background: url(../images/icons/cross.png) no-repeat right center;}
+
+.nope-dont-want-this a {
+		color: #9d261d;
+		text-decoration: none;
+		
+		&:hover {
+				color: red;
+				text-decoration: underline;}
+				
+}
+
+.nope-dont-want-this + .featured {margin-top: 5px;}
+
+.featured {
+		color: @gray; 
+		height: 275px; 
+		margin: 25px 0; 
+		padding-right: 415px;}
+
+.featured h1 {
+		height: 64px; 
+		text-indent: -9999px;}
+
+.featured h2 {
+		color: @gray; 
+		font-size: 27px; 
+		font-weight: 400; 
+		line-height: 27px;}
+
+.featured h2 strong {
+		color: @payzaGreen;
+		font-weight: normal;}
+
+.featured p {
+		font-size: 16px; 
+		line-height: 24px;
+		margin: 0; 
+		padding: 16px 0;}
+
+.featured .register-button, 
+.featured .order-button {font-size: 20px;}
+
+
+// Prepaid Card promo
+
+.prepaid-promo {background: url("../images/AlertPay-DebitCard-CAD-generic.jpg") no-repeat 515px bottom;}
+
+.prepaid-promo h1 {background: url("../images/text/new-way-to-pay.png") no-repeat;}
+
+a.order-button,
+input.order-button[type="submit"] {
+		border: 1px solid;
+		border-bottom-color: #185f01;
+		border-left-color: #357d18;
+		border-right-color: #357d18;
+		border-top-color: #5da839;
+		color: @white;
+		text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+
+		// CSS3
+		#gradient > .vertical (#61b64a, #2e881d);
+		@shadow: inset 0 1px 0 0 #86c775, 0 0 0 3px rgba(0, 0, 0, 0.1);
+		.box-shadow (@shadow);}
+
+a.order-button:hover, 
+input.order-button[type="submit"]:hover {
+		border: 1px solid;
+		border-top: none;
+		border-bottom-color: #185f01;
+		border-left-color: #357d18;
+		border-right-color: #357d18;
+		color: @white; 
+		
+		// CSS3
+		#gradient > .vertical (#2e881d, #2e881d);}
+
+a.register-button, 
+input.register-button[type="submit"] {
+		background: #4895dd; 
+		border: 1px solid;
+		border-bottom-color: #1d6ac8; 
+		border-left-color: #317ed2; 
+		border-right-color: #317ed2; 
+		border-top-color: #4894dd; 
+		color: @white; 
+		text-shadow: 0 1px 1px rgba(0,0,0,0.5); 
+
+		// CSS3
+		.box-shadow (inset 0 1px 0 0 #72aee5);}
+
+a.register-button:hover, 
+input.register-button[type="submit"]:hover {
+		background-color: #317ed2; 
+		border: 1px solid;
+		border-bottom: none;
+		border-left-color: #317ed2;
+		border-right-color: #317ed2; 
+		border-top-color: #4894dd; 
+		color: @white;}
+
+.interest {height: 230px;}
+
+
+// Card selection Pop
+
+.cardselect-popup {
+		background: #fff; 
+		color: #404040;
+		padding: 15px 20px;}
+
+.cardselect-popup h1 {
+		color: #3D8909; 
+		font-size: 24px;}
+
+.cardselect-popup .thanks-msg h2 {
+		font-size: 14px;
+		margin: 0; 
+		margin-left: 3px; margin-top: 5px;}
+
+.cardselect-popup .card-select-msg h2 {
+		font-size: 14px; 
+		line-height: 14px;}
+
+.cardselect-popup .card-select-msg {height: 330px;}
+
+.cardselect-popup .thanks-msg,
+.cardselect-popup .interest .cardselect {
+		display: inline-block;
+		vertical-align: top;}
+
+.cardselect-popup .thanks-msg {
+	//	float: left; 
+		font-size: 13px; 
+		line-height: 21px;
+		width: 285px;}
+
+.cardselect-popup .interest .cardselect {
+		background-position: 0 5px; 
+		height: 175px;}
+
+.cardselect-popup .cardselect {
+		background: url(../images/cards/debit-card-back.jpg) no-repeat 0px 50px; 
+	//	float: left; 
+		display: inline-block;
+		font-size: 1.2em;
+		height: 285px; 
+		padding: 10px 20px;
+		vertical-align: top;
+		width: 270px;}
+
+.cardselect-popup .link-list {
+		margin: 0; 
+		padding: 0;}
+
+.cardselect-popup .link-list li {
+		list-style-type: none;
+		margin-bottom: 8px;}
+
+.cardselect-popup .link-list li a {
+		text-decoration: none;
+		
+		&:hover {text-decoration: underline;}
+		
+}
+
+.cardselect-popup .cardtop-USD, 
+.cardselect-popup .cardtop-CAD {
+		display: block;
+		height: 175px;}
+
+.cardselect-popup .cardtop-CAD {background: url(../images/cards/AlertPay-card-top.png) no-repeat 20px 10px;}
+
+.cardselect-popup .cardtop-USD {background: url(../images/cards/TruCash-card-top.png) no-repeat 20px 10px;}
+
+.cardselect-popup .CAD {
+		background: url(../images/Flags/ca.gif) no-repeat 0 5px;
+		padding: 0; 
+		padding-left: 20px; padding-top: 2px;}
+
+.cardselect-popup .USD {
+		background: url(../images/Flags/us.gif) no-repeat 0 5px;
+		padding: 0; 
+		padding-left: 20px; padding-top: 2px;}
+
+.cardselect-popup .card-select-msg .CAD {
+		background: url(../images/Flags/ca.gif) no-repeat 0 0;
+		padding: 0; 
+		padding-left: 20px;}
+
+.cardselect-popup .card-select-msg .USD {
+		background: url(../images/Flags/us.gif) no-repeat 0 0;
+		padding: 0; 
+		padding-left: 20px;}
+
+.cardorder-popup {
+		background: @white; 
+		color: #404040;
+		padding: 15px 20px;}
+
+.cardorder-popup h1 {
+		color: #3D8909; 
+		font-size: 24px;}
+
+.cardorder-popup h2 {
+		font-size: 14px; 
+		line-height: normal;}
+
+.cardorder-popup ul {
+		margin: 0; 
+		padding: 0;}
+
+.cardorder-popup .thanks-msg h2 {
+		margin: 0;
+		margin-left: 3px; margin-top: 5px; 
+		font-size: 14px;}
+
+.cardorder-popup .thanks-msg {
+		float: left; 
+		font-size: 13px; 
+		line-height: 21px;
+		width: 285px;}
+
+.cardorder-popup .interest .cardselect {
+		background-position: 0 5px; 
+		height: 175px;}
+
+.cardorder-popup .order-cardselect {
+		background: url(../images/cards/debit-card-back.jpg) no-repeat 0px 100px; 
+		float: left; 
+		height: 300px; 
+		padding: 10px 20px;
+		width: 275px;}
+
+.cardorder-popup .order-cardselect ul {
+		list-style-type: none; 
+		padding: 10px 0;}
+
+.cardorder-popup .link-list {
+		margin: 0; 
+		padding: 0;}
+
+.cardorder-popup .link-list li {list-style-type: none;}
+
+.cardorder-popup .cardtop-USD, 
+.cardorder-popup .cardtop-CAD {
+		display: block;
+		height: 175px;}
+
+.cardorder-popup .cardtop-CAD {background: url(../images/cards/AlertPay-card-top.png) no-repeat 20px 10px;}
+
+.cardorder-popup .cardtop-USD {background: url(../images/cards/TruCash-card-top.png) no-repeat 20px 10px;}
+
+.cardorder-popup h2.CAD {
+		background: url(../images/Flags/ca.gif) no-repeat 0 5px;
+		padding: 0; 
+		padding-left: 20px; padding-top: 2px;}
+
+.cardorder-popup h2.USD {
+		background: url(../images/Flags/us.gif) no-repeat 0 5px;
+		padding: 0; 
+		padding-left: 20px; padding-top: 2px;}
+
+.cardorder-popup .bottom {
+		padding: 0;
+		padding-bottom: 15px; padding-top: 30px;}
+
+
+.hide-promo-popup h2 {padding-bottom: 12px;}
+
+.hide-promo-popup .btn {
+		margin: 0;
+		margin-right: 10px;}
+
+
+// View Debit card 
+
+.card-section {
+		background: url(../images/backgrounds/card.png) no-repeat 0 -24px; 
+		height: 300px;
+		margin-left: -29px;}
+
+.card {
+		float: left; 
+		height: 268px; 
+		padding: 0; 
+		padding-left: 60px; padding-top: 25px;
+		position: relative;
+		text-shadow: 0 1px 1px @white; 
+		width: 360px;}
+
+.card select {width: 150px;}
+
+.card .status {
+		background: url(../images/icons/16/tick.png) top left no-repeat; 
+		color: #3d8909; 
+		font-size: 1.1em;
+		font-weight: bold; 
+		padding-left: 22px; 
+		position: absolute; 
+		top: 60px;}
+
+.card-number {
+        position: absolute;
+		font-size: 24px; 
+		top: 105px;}
+
+.card-number label, 
+.name-on-card label {
+		color: @gray; 
+		display: block;
+		font-size: 14px;}
+
+.card-number, 
+.name-on-card {color: #3d8909;}
+
+.name-on-card {
+        position: absolute;
+		font-size: 24px; 
+		top: 175px;}
+
+.card-info {
+		clear: right; 
+		float: right;
+		width: 150px;}
+
+.card .balance {
+		background-color: #e9ffd6; 
+		border: 5px solid #adcf91; 
+		color: #214c03; 
+		font-weight: normal; 
+		font-size: 21px; 
+		//left: 245px; 
+		padding: 10px; 
+		position: absolute; 
+		right: -18px;
+		text-align: left; 
+		top: 25px; 
+		width: 190px;
+
+		// CSS3
+		.border-radius (3px);}
+
+.card-info .links {
+		list-style-type: none; 
+		margin: 0; 
+		padding: 0;}
+
+.card-info .links li {margin: 8px 0;}
+
+.card-info .links li a {text-decoration: none;}
+
+.transfer-out, 
+.transfer-in {
+	position: relative; 
+	padding-left: 25px;}
+
+.transfer-out {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;}
+
+.transfer-in .icon, .transfer-out .icon {
+	display: block;
+	position: absolute;
+	top: -1px;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	background: transparent url(../images/sprites/in-out.png) no-repeat;}
+
+.transfer-out .icon {background-position: 0 -16px;}
+
+.card-number-input input[type="text"],
+.card-number-input input[type="password"] {
+  margin-right: 5px;
+  width: 60px;
+}
+
+
+// Payza-issued Prepaid Card
+.ppc-headline {
+    color: @payzaGreen;
+    text-align: center;}
+
+.ppc-promo {
+    float: left;
+    width: 33%;}
+
+.USD-ppc, .CAD-ppc {
+    position: relative;
+    height: 165px;
+    background: #eee;
+    border: 1px solid #e2e2e2;
+    margin-bottom: 30px;
+    
+	// CSS3
+    .border-radius (6px);}
+    
+.USD-ppc img, .CAD-ppc img {
+    position: absolute;
+    left: 35px;
+    top: 30px;}
+    
+.USD-ppc h2, .CAD-ppc h2 {
+    position: absolute;
+    left: 170px;
+    top: 22px;
+    padding-left: 25px;}
+    
+.USD-ppc h2 {background: url("../images/Flags/us.gif") no-repeat left center;}
+.CAD-ppc h2 {background: url("../images/Flags/ca.gif") no-repeat left center;}
+
+.USD-ppc ul, .CAD-ppc ul {
+    position: absolute;
+    left: 170px;
+    top: 57px;
+    margin-left: 25px;}
+
+//Manage Debit Card (ViewDebitCard.aspx)
+.view-debit-card h4 {
+	font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 15px;
+    text-rendering: optimizelegibility;}
+
+.view-debit-card input[type="text"], input[type="password"], select, textarea {
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #F7F7F7);
+    background-repeat: repeat-x;
+    border-image: none;
+    font-size: 13px;
+    margin-bottom: 9px;}
+
+.view-debit-card .balance label {
+	font-weight: bold;
+	display: block;
+    margin-bottom: 5px;
+	font-size: 13px;
+    line-height: 18px;	
+}
+
+
+.view-debit-card .card-number label, .name-on-card label {
+    color: #545454;
+    display: block;
+    font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 5px;
+
+}

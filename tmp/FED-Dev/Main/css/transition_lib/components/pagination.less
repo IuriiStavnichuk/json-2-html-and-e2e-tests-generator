@@ -1,0 +1,174 @@
+// Pagination - Default 
+// -----------------------
+
+.pagination {
+	border: 1px solid #bbb; 
+	margin-bottom: 0; 
+	overflow: hidden;
+	width: 100%; 
+
+	// CSS3
+	@startColor: rgba(239,239,239,1); @endColor: rgba(250,250,250,1);
+	#gradient > .vertical(@startColor, @endColor);
+
+	.border-radius();
+
+	@shadow: 0 -1px 0 @white, 0 1px 0 @white inset;
+	.box-shadow(@shadow);}
+
+.pagination .page-list,
+.pagination .goto-page,
+.pagination .page-counter,
+.pagination .rows-perpage {display: block;}
+
+.pagination .page-list {float: left;}
+
+.pagination .goto-page,
+.pagination .page-counter,
+.pagination .rows-perpage {
+	float: right;}
+
+.pagination .page-list,
+.pagination fieldset .field,
+.pagination .page-counter {margin: 0;}
+
+.pagination fieldset {margin: 0;}
+
+.pagination fieldset legend {display: none;}
+
+.pagination fieldset .field label {
+	display: block;
+	float: none;
+	font-size: 100%;
+	font-weight: normal;
+	margin-bottom: 2px;
+	text-shadow: 0 1px 0 @white;}
+
+.pagination fieldset .field input[type=text] {
+	font-size: 1.1em;
+	margin-right: 5px;
+	padding: 2px 4px;
+	width: 25px;}
+
+.pagination fieldset .field select {
+	font-size: 1.1em;
+	padding: 2px 4px;
+	padding-left: 0;
+	width: 50px;}
+
+.pagination fieldset input.btn {padding: 2px 5px;}	
+
+.pagination li {margin-bottom: 0;}
+
+.pagination .page-list {
+	border-left: 1px solid #bbb;
+	font-size: 1.1em;
+	margin: 5px;
+	margin-bottom: 0; margin-top: 12px;
+	padding: 0;
+	
+	// CSS3 
+	.border-radius(3px);}
+
+.pagination .page-list li {
+	display: block;
+	float: left;}
+	
+.pagination .page-list li a {
+	border: 1px solid #bbb;
+	border-left: none;
+	color: #666;
+	display: block;
+	font-weight: bold;
+	padding: 3px 8px;
+	text-shadow: 0 1px 0 #fff;
+	
+	// CSS3 
+	@startColor: rgba(250,250,250,1); @endColor: rgba(220,220,220,1);
+	#gradient > .vertical(@startColor, @endColor);
+
+	@shadow: 0 1px 0 @white inset, 0 -1px 0 @white inset, 1px 0 0 @white inset, -1px 0 0 @white inset;
+	.box-shadow(@shadow);}
+
+.pagination .page-list li:first-child a {
+	// CSS3
+	.border-radius-top-left(3px);
+	.border-radius-bottom-left(3px);}
+	
+.pagination .page-list li:last-child a {
+	// CSS3 
+	.border-radius-top-right(3px);
+	.border-radius-bottom-right(3px);}
+
+.pagination .page-list li a.active,
+.pagination .page-list li a.active:hover,	
+.pagination .page-list li a.selected,
+.pagination .page-list li a.selected:hover,	
+.pagination .page-list li a:hover {
+	background: #cdcdcd;
+	
+	// CSS3
+	@shadow: none;
+	.box-shadow(@shadow);}
+
+.pagination fieldset label, 
+.pagination fieldset .field .field-label {
+	font-size: 100%;
+	font-weight: normal;}
+	
+.pagination .goto-page,
+.pagination .page-counter,
+.pagination .rows-perpage {
+	padding: 0;
+	padding-left: 5px; padding-right: 5px;}
+	
+.pagination .goto-page,
+.pagination .rows-perpage,
+.pagination .page-counter li {
+	border-left: 1px solid #bbb;
+	padding-bottom: 5px;
+	
+	// CSS3 
+	@shadow: 1px 0 0 #fff inset;
+	.box-shadow(@shadow);}
+
+.pagination .goto-page {padding-bottom: 7px;}
+
+.pagination .goto-page input[type="submit"] {
+	padding: 2px 5px;}
+
+.pagination .rows-perpage select {
+	height: 23px;
+	line-height: 1.4em;
+	padding: 0;
+	margin-bottom: 0;}
+
+.pagination .page-counter {
+	border-left: none;
+	font-size: 100%;
+	text-shadow: 0 1px 0 @white;}
+
+.pagination .page-counter li {
+	display: inline-block;
+	padding: 0;
+	padding-bottom: 11px; padding-left: 5px; padding-right: 5px;}
+
+.pagination .page-counter li span {display: block;}
+
+.pagination .page-counter li .counter-label {
+	margin-bottom: 7px;}
+
+.pagination .page-counter li .counter-value {font-size: 1.2em;}
+
+
+/* Box Table Pagination */
+.box-table .pagination {
+	border: none;
+	border-top: 1px solid #bbb;
+	
+	// CSS3
+	.border-radius-top-left(0);
+	.border-radius-top-right(0);
+	.border-radius-bottom-right(6px);
+	.border-radius-bottom-left(6px);}
+/* --- */

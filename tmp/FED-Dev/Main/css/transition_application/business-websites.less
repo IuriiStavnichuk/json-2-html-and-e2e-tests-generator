@@ -1,0 +1,93 @@
+﻿.business-websites {padding: 0 10px;}
+
+.business-websites .website-list,
+.business-websites .website-faq {
+				display: inline-block;
+				vertical-align: top;}
+
+.business-websites .website-list {
+				width: 580px;}
+
+.business-websites .website-list .item-container-actions {margin-top: 20px;}
+
+.business-websites .website-list .item-list .item-actions .website-status {
+				border-left: 0;
+				float: left;
+				margin-left: 0;
+				padding: 0;}
+
+.business-websites .website-list .item-list .item-actions .website-status a {
+				color: @white;
+				font-size: 90%;
+				padding: 3px 8px;
+				text-decoration: none;
+				text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+
+				// CSS3 
+				.border-radius(3px);
+				@shadow: 0 2px 2px rgba(0,0,0,0.15) inset;
+				.box-shadow(@shadow);}
+
+.business-websites .website-list .item-list .item-actions .website-status .review-status-not-started {background-color: @linkColor;}
+
+.business-websites .website-list .item-list .item-actions .website-status .review-status-not-started:hover {background-color: @linkColorHover;}
+
+.business-websites .website-list .item-list .item-actions .website-status .review-status-open {
+				color: @gray;
+				background-color: @yellow;
+				font-weight: bold;
+				text-shadow: 0 1px 0 rgba(255,255,255,1);}
+
+.business-websites .website-list .item-list .item-actions .website-status .review-status-awaiting-approval {
+				color: @gray;
+				background-color: @almostWhite;
+				font-style: italic;
+				text-shadow: 0 1px 0 rgba(255,255,255,1);}
+
+.business-websites .website-list .item-list .item-actions .website-status .review-status-completed {
+				background-color: @payzaGreen;
+				font-weight: bold;}
+
+.business-websites .website-list .item-list .item-actions .website-status .review-status-resubmit,
+.business-websites .website-list .item-list .item-actions .website-status .review-status-declined {
+				background-color: @red;
+				font-weight: bold;}
+
+.business-websites .website-list .item-list .item-info .website-domain,
+.business-websites .website-list .item-list .item-info .website-details {
+				// CSS3
+				word-wrap: break-word;}
+
+.business-websites .website-list .item-list .item-info .accepted-payment {.clearfix();}
+
+.business-websites .website-faq {
+				margin-left: 15px;
+				width: 340px;}
+
+.business-websites .website-faq .sidebar-accordion {clear: both;}
+
+
+// Add Website
+.add-website .row {margin-left: 0;}
+
+.add-website .website-questionaire {
+				margin: 0 auto;
+				width: 80%;}
+
+
+
+/* Wizard Overwrite */
+.add-website .wizard-row,
+.add-website .wizard-row .span3 {
+				filter: none;
+				background: none;}
+
+.add-website .wizard-row .wizard .step {padding-left: 0;}
+
+.add-website .wizard-row .wizard .nav {padding-left: 60px;}
+
+.add-website .wizard input[type="text"], 
+.add-website .wizard input[type="password"], 
+.add-website .wizard textarea {width: 98%;}
+
+.add-website .wizard select {width: 100%;}

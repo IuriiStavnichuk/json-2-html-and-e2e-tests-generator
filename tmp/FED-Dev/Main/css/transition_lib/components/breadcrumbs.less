@@ -1,0 +1,43 @@
+// BREADCRUMBS
+// --------------
+
+.breadcrumbs {
+	border: 1px solid #dcdcdc;
+	color: #666;
+	height: 30px;
+	margin: 10px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	
+	// CSS3
+	@startColor: rgba(255,255,255,1);
+	@endColor: rgba(239,239,239,1);
+	#gradient > .vertical(@startColor, @endColor);
+
+	.border-radius(3px);
+	@shadow: 0 -1px 0 #FFFFFF inset;
+	.box-shadow(@shadow);}
+
+.breadcrumbs ul {
+	font-size: 1.2em;
+	list-style-type: none;
+	margin: 0; 
+	padding: 0;}
+
+.breadcrumbs ul li {
+	background: url(../images/sprites/bg.png) right -3px no-repeat;
+	//display: block;
+	float: left;
+	padding: 6px;
+	padding-left: 5px; padding-right: 20px;}
+
+.breadcrumbs ul li a {
+	color: #999;
+	text-decoration: none;}
+
+.breadcrumbs ul li a:hover {color: #666;}
+
+.breadcrumbs ul li:first-child {
+	padding-bottom: 7px; padding-left: 10px; padding-right: 15px; padding-top: 5px;}
+
+.breadcrumbs ul li:last-child {background-position: right -43px;}

@@ -1,0 +1,352 @@
+﻿/*.merchant-services { margin: 0 10px;}*/
+.content {
+    display: table;
+    border-collapse: collapse;
+    margin: 22px 0 0 43px;
+}
+.merchant-services h2 {
+    font-weight: 400 ;
+    font-size: 19px;
+    color: #323232;
+    width: 100%;
+    margin: 20px 0 18px 20px;
+}
+.merchant-services h4 {
+    font-weight: bold;
+    font-size: 19px;
+    color: #323232;
+}
+.merchant-services .span3 {
+    float: none;
+    width: 242px;
+    display: table-cell;
+    vertical-align: top;
+    background: url(../images/graypixel.png) repeat-y right;
+}
+.merchant-services .span5, .merchant-services .span7 {
+    padding-left: 34px;
+}
+.merchant-services .span5 {
+    width: 601px;
+    display: table-cell;
+    min-height: 300px;
+}
+.merchant-services h5 {
+    font-size: 15px;
+    margin: 12px 0 0 0;
+    padding: 0 0 0 20px;
+    text-align: left;
+    font-weight: 700;
+}
+.merchant-services h5.active {
+    color: #44a32e;
+    background: url(../images/icons/right-grey-arrow.png) no-repeat 0;
+}
+.merchant-services h5.opened, .merchant-services h5.error.opened {
+    background: url(../images/icons/down-grey-arrow.png) no-repeat 0;
+}
+.merchant-services h5.active:not(.error):after {
+    content: url(../images/icons/tick.png);
+    float: right;
+}
+.merchant-services h5.error {
+    color: #d86b6b;
+    background: url(../images/icons/right-red-arrow.png) no-repeat 0;
+}
+.merchant-services .space {
+    clear: both;
+    margin-top: 10px;
+}
+.merchant-services .field {
+    padding-top: 18px;
+}
+.merchant-services .help-text-field{
+    color: #888;
+}
+.merchant-services fieldset {
+    margin: 0 0 0 22px;
+}
+.merchant-services .radio-check-item.inline {
+    display: inline-block;
+    margin-right: 65px;
+}
+.merchant-services .radio-check-item.inline label {
+    width: 0;
+}
+.merchant-services .radio-check-item.two-column {
+    display: inline-block;
+    width: 200px;
+}
+.merchant-services .radio-check-field label {
+    width: auto;
+}
+.merchant-services fieldset p {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.merchant-services fieldset ul {
+    padding-left: 0;
+}
+.merchant-services fieldset li {
+    list-style-type: none;
+    margin: 9px 0 0 0;
+    padding: 0 0 0 30px;
+    text-align: left;
+    background: url(../images/icons/checker-icon.png) no-repeat 0 2px;
+}
+
+.merchant-services fieldset .field, .merchant-services .group-header {
+    float: left;
+    width: 100%;
+}
+
+
+.merchant-services input[type=text],
+.merchant-services textarea {
+    width: 264px;
+}
+.merchant-services select {
+    width: 275px;
+}
+.merchant-services input[type=text].half-width {
+    width: 116px;
+    margin-right: 11px;
+}
+.merchant-services select.half-width {
+    width: 134px;
+    height: 32px;
+    margin-top: 1px;
+}
+.merchant-services .nav * {
+    margin-right: 6px;
+}
+.merchant-services .nav {
+    margin-top: 22px;
+    font-size: 13px;
+    font-weight: normal;
+}
+.merchant-services .nav a {
+    font-size: 13px;
+    font-weight: normal;
+}
+.merchant-services p {
+    padding-bottom: 8px;
+}
+/*.merchant-services .merchant-service-menu {*/
+    /*background-color: #fff;*/
+    /*padding: 18px 18px;*/
+    /*border-right: #fff solid 1px;*/
+    /*border-bottom: #dadcde solid 1px;*/
+    /*width: 242px;*/
+/*}*/
+/*.merchant-services .merchant-service-menu:first-child {*/
+    /*border-top: #dadcde solid 1px;*/
+/*}*/
+/*.merchant-services .merchant-service-menu a {*/
+    /*width: 100%;*/
+    /*font-size: 14px;*/
+    /*font-weight: bold;*/
+    /*color: #333333;*/
+/*}*/
+/*.merchant-services .merchant-service-menu div {*/
+    /*color: #808080;*/
+    /*font-size: 13px;*/
+    /*margin-top: 8px;*/
+/*}*/
+/*.merchant-services .merchant-service-menu.disabled a {*/
+    /*color: #4895dd;*/
+    /*font-weight: normal;*/
+/*}*/
+/*.merchant-services .merchant-service-menu.disabled {*/
+    /*color: #bdc0c4;*/
+    /*background-color: #fafafa;*/
+    /*border-right: #dadcde solid 1px;*/
+/*}*/
+
+.merchant-services .btn-link[disabled],
+.merchant-services .btn-link[disabled]:hover {
+    background: #E8E8E8 none repeat scroll 0 0;
+    color: #9F9F9F;
+    text-shadow: 0 1px 0 #FFFFFF;
+    /*background-image: none;*/
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #CFCFCF !important;
+    cursor: default;
+}
+.merchant-services fieldset input[type="text"]:invalid,
+.merchant-services fieldset textarea:invalid,
+select:invalid {
+    background-color: #fffafa !important;
+    border: 1px solid #dbc7c9 !important;
+    color: #6a5c5e !important;
+}
+.prompt-checkout {
+    margin-top: 30px;
+    text-align: center;
+}
+/*.prompt-checkout .masspay {
+  background: url(../images/icons/add-website.png) no-repeat top;
+  height: 96px;
+}*/
+.prompt-checkout .checkout {
+    background: url(../images/icons/add-website.png) no-repeat top;
+    height: 96px;
+}
+.prompt-checkout h5 {
+    color: #333333;
+    font-size: 14px;
+}
+.prompt-checkout p {
+    width: 260px;
+    margin: 20px auto;
+}
+.merchant-services fieldset {
+    display: none;
+}
+.merchant-services #submitButton + fieldset {
+    display: block;
+}
+.merchant-services fieldset input[type="file"] {
+    background-color: #EFEFEF;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 0 #FFFFFF inset;
+    padding: 4px;
+}
+.merchant-services #checkout-document-upload-form {
+    display: none;
+}
+.merchant-services #checkout-document-upload-form p {
+    margin-top: 4px;
+    font-weight: normal;
+}
+.merchant-services #checkout-document-upload-form .link {
+    display: block;
+    font-size: 13px;
+    margin-top: 10px;
+}
+#id-of-page {
+    display: none;
+}
+.merchant-services .alert {
+    margin-top: 6px;
+}
+.merchant-services .disabled {
+    color: #b8b8b8;
+}
+.merchant-services .empty {
+    color: #999;
+}
+
+/*dialog-confirm*/
+/*.ui-dialog {
+    background-color: #fff;
+    border:14px solid white;
+}*/
+
+#confirm-revenuegenerationmethod-dialog-overlay,#confirm-businessmodel-dialog-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:3000px;
+    /*z-index: 9999;*/
+    background-color: #fff;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: 0.7;
+    display: block;
+    /*display:none;*/
+}
+
+#confirm-revenuegenerationmethod-dialog, #confirm-businessmodel-dialog {
+    position: fixed;
+    width:100%;
+    top: 0;
+    left: 0;
+}
+
+#confirm-revenuegenerationmethod-dialog .nav, #confirm-businessmodel-dialog .nav {
+    text-align:right;
+}
+
+.confirm-dialog-box {
+    position: relative;
+    margin:0 auto;
+    background: #fff;
+    padding:25px 40px 14px;
+    width: 300px;
+    border:1px solid #ccc;
+    border-top:4px solid #009639;
+}
+
+/*.ui-dialog-buttonpane {
+   text-align: center;
+}
+
+.ui-dialog-titlebar-close {
+    display:none;
+}
+.ui-button {
+    margin: 0 16px;
+
+background: #4895dd;
+border: 1px solid;
+border-top-color: #4894dd;
+border-right-color: #317ed2;
+border-left-color: #317ed2;
+border-bottom-color: #1d6ac8;
+color: #fff;
+cursor: pointer;
+display: inline-block;
+font-weight: 600;
+font-size: 1.3em;
+padding: 8px 10px;
+text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+-moz-box-shadow: 0 1px 0 0 #72aee5 inset;
+-webkit-box-shadow: 0 1px 0 0 #72aee5 inset;
+box-shadow: 0 1px 0 0 #72aee5 inset;
+
+}*/
+#loading-indicator {
+    background: url(../images/indicator.gif) no-repeat top;
+    width: 32px;
+    height: 32px;
+    margin: 160px auto;
+}
+#loading-indicator-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7) url(../images/indicator.gif) no-repeat center center;
+}
+/*TODO DELETE IT*/
+/*.debugMessage {
+  background-color: #FFFAF2;
+  line-height: 22px;
+  padding: 2px 7px;
+}
+.debugMessage span {
+  font-weight: bold;
+}
+.error {
+  background-color: #ff5f3c;
+  padding: 0 6px;
+}
+.success {
+  background-color: #51ff60;
+  padding: 0 6px;
+}
+textarea[ng-model="logic.Helper"] {
+  width: 0;
+  height: 0;
+}*/

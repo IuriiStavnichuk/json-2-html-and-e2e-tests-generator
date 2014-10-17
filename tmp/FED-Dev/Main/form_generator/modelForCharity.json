@@ -1,0 +1,494 @@
+[
+    {
+        "level1": [
+            {
+                "title": "resource.introductionSection.title",
+                "formName": "introductionSection",
+                "id": "introductionSectionTitle",
+                "forNgClass": "{isvalid:info.isValidSection1,error:!info.actionWasSuccessful&&info.currentSection==1,expanded:info.currentSection==1,notexpanded:info.currentSection!=1}",
+                "forNgClick": "info.currentSection!=1&&saveForm('introductionSectionTitle')",
+                "formId": 1,
+                "level2": [
+                    {
+                        "forNgShow": "debugMode==1?'1':'0'",
+                        "level3": [
+                            {"type": "logicElement","model": "logic.Helper"}
+                        ]
+                    },
+                    {
+                        "title": "info.revenueGenerationMethod.value==3&&info.urlQuestionnaireTypeId.value==3?resource.urlForDonation.title:resource.url.title",
+                        "isRequired":"1",
+                        "level3": [
+                            {
+                                "type": "textItem", "model": "info.url.value", "placeholder":"resource.url.placeholder", "name": "urlField"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "resource.revenueGenerationMethod.title",
+                        "message": "info.revenueGenerationMethod.value==3&&info.urlQuestionnaireTypeId.value==3?resource.urlMessage1.title:resource.urlMessage2.title",
+                        "messageforNgShow":"info.urlQuestionnaireTypeId.value==3&&info.questionnaireMode.value==2&&(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)",
+                        "level3": [
+                            {"type": "radioCheckItem","model": "info.revenueGenerationMethod.value","title": "resource.revenueGenerationMethodCheck1.title","value": 3,"forNgShow": "info.urlQuestionnaireTypeId.value==3" ,"forNgClick":"(info.idOfRecord.value != 0)&&(info.questionnaireMode.value != 1)&&(confirmRevenueGenerationMethodVisibility=1)" },
+                            {"type": "radioCheckItem","model": "info.revenueGenerationMethod.value","title": "resource.revenueGenerationMethodCheck2.title","value": 2,"forNgClick":"(info.idOfRecord.value != 0)&&(info.questionnaireMode.value != 1)&&(confirmRevenueGenerationMethodVisibility=1)" },
+                            {"type": "radioCheckItem","model": "info.revenueGenerationMethod.value","title": "resource.revenueGenerationMethodCheck3.title","value": 1,"forNgClick":"(info.idOfRecord.value != 0)&&(info.questionnaireMode.value != 1)&&(confirmRevenueGenerationMethodVisibility=1)" },
+                            {"type": "radioCheckItem","model": "info.revenueGenerationMethod.value","title": "resource.revenueGenerationMethodCheck4.title","value": 4,"forNgClick":"(info.idOfRecord.value != 0)&&(info.questionnaireMode.value != 1)&&(confirmRevenueGenerationMethodVisibility=1)" }
+                        ]
+                    },
+                    {
+                        "title": "resource.businessModel.title",
+                        "forNgInitTitleLevel2": "businessModelTitleIsVisible=1",
+                        "forNgShowTitleLevel2": "businessModelTitleIsVisible",
+                        "forNgShow": "info.questionnaireMode.value==2&&(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)",
+                        "level3": [
+                            {
+                                "type": "groupedRadio", "model":"info.businessModel.value", "value":"previouslySubmittedWebsites","forNgClick":"getWebsiteReviewQuestionnaire()"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "resource.urlType.title",
+                        "forNgShow": "info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4",
+                        "isRequired": "info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4",
+                        "level3": [
+                            {"type": "radioCheckItem","model": "info.urlType.value","fieldName": "urlType","title": "resource.urlTypeCheck1.title", "value": 1 },
+                            {"type": "radioCheckItem","model": "info.urlType.value","fieldName": "urlType","title": "resource.urlTypeCheck2.title","value": 2}
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldMembersAreaTypeId.title",
+                        "forNgShow": "info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4",
+                        "isRequired": "info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4",
+                        "level3": [
+                            {"type": "radioCheckItem","model": "info.urlFieldMembersAreaTypeId.value","title": "resource.urlFieldMembersAreaTypeIdCheck1.title","value": 1},
+                            {"type": "radioCheckItem","model": "info.urlFieldMembersAreaTypeId.value","title": "resource.urlFieldMembersAreaTypeIdCheck2.title","value": 2, "forNgClick":"info.membersAreaUrl=null;info.membersAreaDetails=null"}
+                        ]
+                    },
+                    {
+                        "title": "resource.membersAreaUrl.title",
+                        "forNgShow": "info.urlFieldMembersAreaTypeId.value==1&&(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)",
+                        "isRequired": "info.urlFieldMembersAreaTypeId.value==1&&(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)",
+                        "level3": [
+                            {
+                                "type": "textItem",
+                                "model": "info.membersAreaUrl.value",
+                                "placeholder":"resource.membersAreaUrl.placeholder"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "resource.membersAreaDetails.title",
+                        "forNgShow": "info.urlFieldMembersAreaTypeId.value==1&&(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)",
+                        "isRequired": "info.urlFieldMembersAreaTypeId.value==1&&(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)",
+                        "level3": [
+                            {"type": "textareaItem", "model": "info.membersAreaDetails.value" }
+                        ]
+                    },
+                    {
+                        "level3": [
+                            {
+                                "type": "navItem",
+                                "forNgClick": "saveForm()"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "level1": [
+            {
+                "title": "resource.donationSection.title","forNgShow": "info.urlQuestionnaireTypeId.value==3","formName": "donationRevenueDetails","id": "donationRevenueDetailsTitle", "formId": 6,
+                "forNgClass": "{isvalid:info.isValidSectionDonations6,error:!info.actionWasSuccessful&&info.currentSection==6,expanded:info.currentSection==6,notexpanded:info.currentSection!=6}",
+                "forNgClick": "info.currentSection!=6&&saveForm('donationRevenueDetailsTitle')",
+                "level2": [
+                    {
+                        "title": "resource.urlFieldDonorContactTypeId.title","isRequired": 1,
+                        "level3": [
+                            {"type": "radioCheckItem","model": "info.urlFieldDonorContactTypeId.value","title": "resource.urlFieldDonorContactTypeIdCheck1.title","value": 1},
+                            {"type": "radioCheckItem","model": "info.urlFieldDonorContactTypeId.value","title": "resource.urlFieldDonorContactTypeIdCheck2.title","value": 2, "forNgClick":"info.donorContactInfo=null"}
+                        ]
+                    },
+                    {
+                        "title": "resource.donorContactInfo.title","forNgShow": "info.urlFieldDonorContactTypeId.value==1","isRequired": "info.urlFieldDonorContactTypeId.value==1",
+                        "level3": [
+                            { "type": "textareaItem","model": "info.donorContactInfo.value"}
+                        ]
+                    },
+                    {
+                        "title": "resource.averageDonationAmount.title","isRequired": 1,
+                        "level3": [
+                            {"type": "textItem","model": "info.averageDonationAmount.value","pattern": "/^[0-9]*[.]?[0-9]+$/", "errorMessage":"resource.numberInvalidErrorMessage.title" }
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldRecurringDonationTypeId.title","isRequired": 1,
+                        "level3": [
+                            {"type": "radioCheckItem", "model": "info.urlFieldRecurringDonationTypeId.value","title": "resource.urlFieldRecurringDonationTypeIdCheck1.title","value": 1},
+                            {"type": "radioCheckItem","model": "info.urlFieldRecurringDonationTypeId.value","title": "resource.urlFieldRecurringDonationTypeIdCheck2.title","value": 2}
+                        ]
+                    },
+                    {
+                        "title": "resource.monthlyDonationAmount.title","isRequired": 1,
+                        "level3": [
+                            { "type": "textItem","model": "info.monthlyDonationAmount.value",
+                                "pattern": "/^[0-9]*[.]?[0-9]+$/",
+                                "width":"col-sm-12",
+                                "errorMessage":"resource.numberInvalidErrorMessage.title"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldDonationOriginTypeIdList.title",
+                        "level3": [
+                            {"type": "checkBoxItem","model": "info.urlFieldDonationOriginTypeIdList.northAmerica.value","title": "resource.urlFieldDonationOriginTypeIdListCheck1.title","value": 1,"checked":"info.urlFieldDonationOriginTypeIdList.northAmerica.checked"},
+                            {"type": "checkBoxItem","model": "info.urlFieldDonationOriginTypeIdList.southAmerica.value","title": "resource.urlFieldDonationOriginTypeIdListCheck2.title","value": 2,"checked":"info.urlFieldDonationOriginTypeIdList.southAmerica.checked" },
+                            {"type": "checkBoxItem","model": "info.urlFieldDonationOriginTypeIdList.westernEurope.value","title": "resource.urlFieldDonationOriginTypeIdListCheck3.title","value": 3,"checked":"info.urlFieldDonationOriginTypeIdList.westernEurope.checked" },
+                            {"type": "checkBoxItem","model": "info.urlFieldDonationOriginTypeIdList.africa.value","title": "resource.urlFieldDonationOriginTypeIdListCheck5.title","value": 5,"checked": "info.urlFieldDonationOriginTypeIdList.africa.checked"},
+                            {"type": "checkBoxItem","model": "info.urlFieldDonationOriginTypeIdList.asia.value", "title": "resource.urlFieldDonationOriginTypeIdListCheck6.title", "value": 6,"checked":"info.urlFieldDonationOriginTypeIdList.asia.checked"},
+                            {"type": "checkBoxItem","model": "info.urlFieldDonationOriginTypeIdList.middleEast.value","title": "resource.urlFieldDonationOriginTypeIdListCheck7.title","value": 7,"checked":"info.urlFieldDonationOriginTypeIdList.middleEast.checked"},
+                            {"type": "checkBoxItem","model": "info.urlFieldDonationOriginTypeIdList.oceania.value","title": "resource.urlFieldDonationOriginTypeIdListCheck8.title","value": 8,"checked":"info.urlFieldDonationOriginTypeIdList.oceania.checked"}
+                        ]
+                    },
+                    {
+                        "forNgShow": "debugMode==1?'1':'0'","isRequired": "!info.urlFieldDonationOriginTypeIdList.northAmerica.value&&!info.urlFieldDonationOriginTypeIdList.southAmerica.value&&!info.urlFieldDonationOriginTypeIdList.westernEurope.value&&!info.urlFieldDonationOriginTypeIdList.africa.value&&!info.urlFieldDonationOriginTypeIdList.asia.value&&!info.urlFieldDonationOriginTypeIdList.middleEast.value&&!info.urlFieldDonationOriginTypeIdList.oceania.value",
+                        "level3": [
+                            {"type": "textareaItem","model": "logic.Helper"}
+                        ]
+                    },
+                    {
+                        "level3": [
+                            {"type": "navItem","forNgClick": "saveForm()"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "level1": [
+            {
+                "title": "resource.productInfoSection.title","formName": "productInformation","id": "productInformationTitle", "formId": 2,
+                "forNgClass": "{isvalid:info.isValidSection2,error:!info.actionWasSuccessful&&info.currentSection==2,expanded:info.currentSection==2,notexpanded:info.currentSection!=2}",
+                "forNgClick": "info.currentSection!=2&&saveForm('productInformationTitle')",
+                "forNgShow": "info.revenueGenerationMethod.value!=3",
+
+                "level2": [
+                    {
+                        "title": "resource.averagePrice.title","isRequired": 1,
+                        "level3": [
+                            { "type": "textItem","model": "info.averagePrice.value","pattern": "/^[0-9]*[.]?[0-9]+$/", "errorMessage":"resource.numberInvalidErrorMessage.title"}
+                        ]
+                    },
+                    {
+                        "title": "resource.shippingCountryId.title","forNgShow": "info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4","isRequired": "info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4",
+                        "level3": [
+                            {"type": "selectItem","model": "info.shippingCountryId.value","value": "shippingCountryId.source"}
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldProductDeliveryMethodTypeIdList.title","forNgShow": "info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4",
+                        "level3": [
+                            {"type": "checkBoxItem","model": "info.urlFieldProductDeliveryMethodTypeIdList.online.value","title": "resource.urlFieldProductDeliveryMethodTypeIdListCheck1.title","value": 3,"checked":"info.urlFieldProductDeliveryMethodTypeIdList.online.checked"},
+                            {"type": "checkBoxItem","model": "info.urlFieldProductDeliveryMethodTypeIdList.regularPost.value","title": "resource.urlFieldProductDeliveryMethodTypeIdListCheck2.title","value": 2,"checked":"info.urlFieldProductDeliveryMethodTypeIdList.regularPost.checked"},
+                            {"type": "checkBoxItem","model": "info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.value","title": "resource.urlFieldProductDeliveryMethodTypeIdListCheck3.title", "value": 1,"checked":"info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.checked" },
+                            {"type": "checkBoxItem","model": "info.urlFieldProductDeliveryMethodTypeIdList.inPerson.value","title": "resource.urlFieldProductDeliveryMethodTypeIdListCheck4.title", "value": 4,"checked":"info.urlFieldProductDeliveryMethodTypeIdList.inPerson.checked"}
+                        ]
+                    },
+                    {
+                        "forNgShow": "debugMode==1?'1':'0'","isRequired": "(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4)&&!info.urlFieldProductDeliveryMethodTypeIdList.online.value&&!info.urlFieldProductDeliveryMethodTypeIdList.regularPost.value&&!info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.value&&!info.urlFieldProductDeliveryMethodTypeIdList.inPerson.value",
+                        "level3": [
+                            {"type": "logicElement","model": "logic.Helper"}
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldServiceProvisionMethodTypeIdList.title",
+                        "forNgShow": "info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4",
+                        "level3": [
+                            {"type": "checkBoxItem","model": "info.urlFieldServiceProvisionMethodTypeIdList.inPerson.value","title": "resource.urlFieldServiceProvisionMethodTypeIdListCheck1.title","value": 1,"checked":"info.urlFieldServiceProvisionMethodTypeIdList.inPerson.checked"},
+                            {"type": "checkBoxItem","model": "info.urlFieldServiceProvisionMethodTypeIdList.remotely.value","title": "resource.urlFieldServiceProvisionMethodTypeIdListCheck2.title","value": 2,"checked":"info.urlFieldServiceProvisionMethodTypeIdList.remotely.checked"}
+                        ]
+                    },
+                    {
+                        "forNgShow": "debugMode==1?'1':'0'",
+                        "isRequired": "(info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)&&!info.urlFieldServiceProvisionMethodTypeIdList.inPerson.value&&!info.urlFieldServiceProvisionMethodTypeIdList.remotely.value",
+                        "level3": [
+                            {"type": "logicElement","model": "logic.Helper"}
+                        ]
+                    },
+                    {
+                        "title": "resource.productDeliveryDelayTime.title","forNgShow": "info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4","isRequired": "info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4","level3": [
+                        {"type": "textItem", "model": "info.productDeliveryDelayTime.value", "pattern": "/^[0-9]*$/", "errorMessage":"resource.numberInvalidErrorMessage.title"}
+                    ]
+                    },
+                    {
+                        "title": "resource.serviceProvisionDelayTime.title","forNgShow": "info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4","isRequired": "info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4",
+                        "level3": [
+                            {"type": "textItem","model": "info.serviceProvisionDelayTime.value","pattern": "/^[0-9]*$/", "errorMessage":"resource.numberInvalidErrorMessage.title"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldProductSourceTypeId.title","forNgShow": "info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4","isRequired": "info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4",
+                        "level3": [
+                            {"type": "radioCheckItem","model": "info.urlFieldProductSourceTypeId.value","title": "resource.urlFieldProductSourceTypeIdCheck1.title", "value": 1
+                            },
+                            {"type": "radioCheckItem","model": "info.urlFieldProductSourceTypeId.value","title": "resource.urlFieldProductSourceTypeIdCheck2.title","value": 2
+                            }
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldServiceSourceTypeId.title","forNgShow": "info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4","isRequired": "info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4",
+                        "level3": [
+                            {"type": "radioCheckItem","model": "info.urlFieldServiceSourceTypeId.value","title": "resource.urlFieldServiceSourceTypeIdCheck1.title","value": 1, "forNgModel": "info.serviceSourceThirdPartyInfo==null", "forNgClick":"info.serviceSourceThirdPartyInfo.value=''" },
+                            {"type": "radioCheckItem","model": "info.urlFieldServiceSourceTypeId.value","title": "resource.urlFieldServiceSourceTypeIdCheck2.title","value": 2}
+                        ]
+                    },
+                    {
+                        "title": "resource.serviceSourceThirdPartyInfo.title",
+                        "forNgShow": "(info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)&&info.urlFieldServiceSourceTypeId.value==2",
+                        "isRequired": "(info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)&&info.urlFieldServiceSourceTypeId.value==2",
+                        "level3": [
+                            {"type": "textareaItem","model": "info.serviceSourceThirdPartyInfo.value"}
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldPromotionMethodTypeIdList.title",
+                        "isRequired": "1",
+                        "level3": [
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldPromotionMethodTypeIdList.email.value","title": "resource.urlFieldPromotionMethodTypeIdListEmail.title","value": 1,"checked":"info.urlFieldPromotionMethodTypeIdList.email.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldPromotionMethodTypeIdList.referral.value","title": "resource.urlFieldPromotionMethodTypeIdListReferral.title","value": 6,"checked":"info.urlFieldPromotionMethodTypeIdList.referral.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldPromotionMethodTypeIdList.searchEngine.value","title": "resource.urlFieldPromotionMethodTypeIdListSearchEngine.title","value": 2,"checked":"info.urlFieldPromotionMethodTypeIdList.searchEngine.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldPromotionMethodTypeIdList.regularMail.value","title": "resource.urlFieldPromotionMethodTypeIdListRegularMail.title","value": 7,"checked":"info.urlFieldPromotionMethodTypeIdList.regularMail.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldPromotionMethodTypeIdList.social.value","title": "resource.urlFieldPromotionMethodTypeIdListSocial.title","value": 3,"checked":"info.urlFieldPromotionMethodTypeIdList.social.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldPromotionMethodTypeIdList.print.value","title": "resource.urlFieldPromotionMethodTypeIdListPrint.title","value": 8,"checked":"info.urlFieldPromotionMethodTypeIdList.print.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldPromotionMethodTypeIdList.affiliate.value","title": "resource.urlFieldPromotionMethodTypeIdListAffiliate.title","value": 4,"checked":"info.urlFieldPromotionMethodTypeIdList.affiliate.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldPromotionMethodTypeIdList.televisionAndRadio.value","title": "resource.urlFieldPromotionMethodTypeIdListTelevisionAndRadio.title","value": 9,"checked":"info.urlFieldPromotionMethodTypeIdList.televisionAndRadio.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldPromotionMethodTypeIdList.webBanner.value","title": "resource.urlFieldPromotionMethodTypeIdListWebBanner.title","value": 5,"checked":"info.urlFieldPromotionMethodTypeIdList.webBanner.checked"}
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldDiscountTypeId.title","isRequired": 1,
+                        "level3": [
+                            {"type": "radioCheckItem","model": "info.urlFieldDiscountTypeId.value","title": "resource.urlFieldDiscountTypeIdCheck1.title","value": 1},
+                            {"type": "radioCheckItem","model": "info.urlFieldDiscountTypeId.value","title": "resource.urlFieldDiscountTypeIdCheck2.title","value": 2}
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldSupplierTypeId.title","isRequired": 1,
+                        "message": "resource.urlFieldSupplierTypeIdMessage.title",
+                        "messageforNgShow": "info.urlFieldSupplierTypeId.value==1",
+                        "level3": [
+                            {"type": "radioCheckItem","model": "info.urlFieldSupplierTypeId.value","title": "resource.urlFieldSupplierTypeIdCheck1.title","value": 1},
+                            {"type": "radioCheckItem","model": "info.urlFieldSupplierTypeId.value","title": "resource.urlFieldSupplierTypeIdCheck2.title","value": 2}
+                        ]
+                    },
+                    {
+                        "level3": [
+                            {"type": "navItem","forNgClick": "saveForm()"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "level1": [
+            {
+                "title": "resource.salesInfoSection.title","formName": "salesInformation","id": "salesInformationTitle", "formId": 3,
+                "forNgClass": "{isvalid:info.isValidSection3,error:!info.actionWasSuccessful&&info.currentSection==3,expanded:info.currentSection==3,notexpanded:info.currentSection!=3}",
+                "forNgClick": "info.currentSection!=3&&saveForm('salesInformationTitle')",
+                "forNgShow": "info.revenueGenerationMethod.value!=3",
+                "level2": [
+                    {"title": "resource.urlFieldCustomerContactMethodTypeIdList.title", "isRequired": 1,
+                        "level3": [
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldCustomerContactMethodTypeIdList.email.value","title": "resource.urlFieldCustomerContactMethodTypeIdListEmail.title","value": 1,"checked":"info.urlFieldCustomerContactMethodTypeIdList.email.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldCustomerContactMethodTypeIdList.phoneAndTelecomm.value","title": "resource.urlFieldCustomerContactMethodTypeIdListPhoneAndTelecomm.title","value": 5,"checked":"info.urlFieldCustomerContactMethodTypeIdList.phoneAndTelecomm.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldCustomerContactMethodTypeIdList.social.value","title": "resource.urlFieldCustomerContactMethodTypeIdListSocial.title","value": 2,"checked":"info.urlFieldCustomerContactMethodTypeIdList.social.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldCustomerContactMethodTypeIdList.regularMail.value","title": "resource.urlFieldCustomerContactMethodTypeIdListRegularMail.title","value": 6,"checked":"info.urlFieldCustomerContactMethodTypeIdList.regularMail.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldCustomerContactMethodTypeIdList.inPerson.value","title": "resource.urlFieldCustomerContactMethodTypeIdListInPerson.title","value": 3,"checked":"info.urlFieldCustomerContactMethodTypeIdList.inPerson.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldCustomerContactMethodTypeIdList.forumAndCommunity.value","title": "resource.urlFieldCustomerContactMethodTypeIdListForumAndCommunity.title","value": 7,"checked":"info.urlFieldCustomerContactMethodTypeIdList.forumAndCommunity.checked"},
+                            {"type": "checkBoxTwoColumn","model": "info.urlFieldCustomerContactMethodTypeIdList.chatService.value","title": "resource.urlFieldCustomerContactMethodTypeIdListChatService.title","value": 4,"checked":"info.urlFieldCustomerContactMethodTypeIdList.chatService.checked"}
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldSaleOriginTypeIdList.title",
+                        "level3": [
+                            {"type": "checkBoxItem","model": "info.urlFieldSaleOriginTypeIdList.northAmerica.value","title": "resource.urlFieldSaleOriginTypeIdListCheck1.title","value": 1,"checked":"info.urlFieldSaleOriginTypeIdList.northAmerica.checked"},
+                            {"type": "checkBoxItem","model": "info.urlFieldSaleOriginTypeIdList.southAmerica.value","title": "resource.urlFieldSaleOriginTypeIdListCheck2.title","value": 2,"checked":"info.urlFieldSaleOriginTypeIdList.southAmerica.checked" },
+                            {"type": "checkBoxItem","model": "info.urlFieldSaleOriginTypeIdList.westernEurope.value","title": "resource.urlFieldSaleOriginTypeIdListCheck3.title","value": 3,"checked":"info.urlFieldSaleOriginTypeIdList.westernEurope.checked" },
+                            {"type": "checkBoxItem","model": "info.urlFieldSaleOriginTypeIdList.africa.value","title": "resource.urlFieldSaleOriginTypeIdListCheck5.title","value": 5,"checked": "info.urlFieldSaleOriginTypeIdList.africa.checked"},
+                            {"type": "checkBoxItem","model": "info.urlFieldSaleOriginTypeIdList.asia.value", "title": "resource.urlFieldSaleOriginTypeIdListCheck6.title", "value": 6,"checked":"info.urlFieldSaleOriginTypeIdList.asia.checked"},
+                            {"type": "checkBoxItem","model": "info.urlFieldSaleOriginTypeIdList.middleEast.value","title": "resource.urlFieldSaleOriginTypeIdListCheck7.title","value": 7,"checked":"info.urlFieldSaleOriginTypeIdList.middleEast.checked"},
+                            {"type": "checkBoxItem","model": "info.urlFieldSaleOriginTypeIdList.oceania.value","title": "resource.urlFieldSaleOriginTypeIdListCheck8.title","value": 8,"checked":"info.urlFieldSaleOriginTypeIdList.oceania.checked"}
+                        ]
+                    },
+                    {
+                        "forNgShow": "debugMode==1?'1':'0'","isRequired": "!info.urlFieldSaleOriginTypeIdList.northAmerica.value&&!info.urlFieldSaleOriginTypeIdList.southAmerica.value&&!info.urlFieldSaleOriginTypeIdList.westernEurope.value&&!info.urlFieldSaleOriginTypeIdList.africa.value&&!info.urlFieldSaleOriginTypeIdList.asia.value&&!info.urlFieldSaleOriginTypeIdList.middleEast.value&&!info.urlFieldSaleOriginTypeIdList.oceania.value",
+                        "level3": [
+                            {"type": "logicElement","model":"logic.Helper"}
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldInvoiceTypeId.title","isRequired": 1,
+                        "level3": [
+                            {"type": "radioCheckItem","model": "info.urlFieldInvoiceTypeId.value","title": "resource.urlFieldInvoiceTypeIdCheck1.title","value": 1},
+                            {"type": "radioCheckItem","model": "info.urlFieldInvoiceTypeId.value","title": "resource.urlFieldInvoiceTypeIdCheck2.title","value": 2, "forNgClick":"info.urlFieldInvoiceSendingTypeIdList=null" }
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldInvoiceSendingTypeIdList.title","forNgShow": "info.urlFieldInvoiceTypeId.value==1",
+                        "level3": [
+                            {"type": "checkBoxItem","model": "info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.value","title": "resource.urlFieldInvoiceSendingTypeIdListCheck1.title","value": 1,"checked": "info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.checked"},
+                            {"type": "checkBoxItem","model": "info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.value","title": "resource.urlFieldInvoiceSendingTypeIdListCheck2.title","value": 2,"checked": "info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.checked"}
+                        ]
+                    },
+                    {
+                        "forNgShow": "debugMode==1?'1':'0'","isRequired": "info.urlFieldInvoiceTypeId.value==1&&!info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.value&&!info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.value",
+                        "level3": [
+                            {"type": "logicElement","model": "logic.Helper"}
+                        ]
+                    },
+                    {
+                        "title": "resource.monthlySaleAmount.title","isRequired": 1,
+                        "level3": [
+                            {"type": "textItem","model": "info.monthlySaleAmount.value"}
+                        ]
+                    },
+                    {
+                        "title": "resource.urlFieldRecurringBillingTypeId.title","isRequired": 1,
+                        "level3": [
+                            {"type": "radioCheckItem","model": "info.urlFieldRecurringBillingTypeId.value","title": "resource.urlFieldRecurringBillingTypeIdCheck1.title","value": 1},
+                            {"type": "radioCheckItem","model": "info.urlFieldRecurringBillingTypeId.value","title": "resource.urlFieldRecurringBillingTypeIdCheck2.title","value": 2}
+                        ]
+                    },
+                    {
+                        "level3": [
+                            {
+                                "type": "navItem","forNgClick": "saveForm()"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "level1": [
+            {
+                "title": "resource.customerRelationsSection.title","formName": "customerRelations","id": "customerRelationsTitle", "formId": 4,
+                "forNgClass": "{isvalid:info.isValidSection4,error:!info.actionWasSuccessful&&info.currentSection==4,expanded:info.currentSection==4,notexpanded:info.currentSection!=4}",
+                "forNgClick": "info.currentSection!=4&&saveForm('customerRelationsTitle')",
+                "forNgShow": "info.revenueGenerationMethod.value!=3",
+                "level2": [
+                    {"title": "resource.customerSupportPhoneNumber.title","isRequired": 1,
+                        "level3": [
+                            {"type": "textItem","model": "info.customerSupportPhoneNumber.value", "pattern": "/^[0-9]*[.]?[0-9]+$/", "errorMessage":"resource.numberInvalidErrorMessage.title"}
+                        ]
+                    },
+                    {
+                        "title": "resource.customerSupportEmailAddress.title","isRequired": 1,
+                        "level3": [
+                            {"type": "textItem","model": "info.customerSupportEmailAddress.value"}
+                        ]
+                    },
+                    {
+                        "title": "resource.returnRefundInfo.title","isRequired": 1,
+                        "level3": [
+                            {"type": "textareaItem","model": "info.returnRefundInfo.value"}
+                        ]
+                    },
+                    {
+                        "title": "resource.termsOfService.title","isRequired": 1,
+                        "level3": [
+                            {"type": "textareaItem", "model": "info.termsOfService.value"}
+                        ]
+                    },
+                    {
+                        "title": "resource.termsOfServiceLocation.title","isRequired": 1,
+                        "level3": [
+                            {   "type": "textItem",
+                                "model": "info.termsOfServiceLocation.value",
+                                "placeholder":"resource.termsOfServiceLocation.placeholder"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "resource.refundPolicy.title","isRequired": 1,
+                        "level3": [
+                            {"type": "textareaItem","model": "info.refundPolicy.value"}
+                        ]
+                    },
+                    {
+                        "title": "resource.refundPolicyLocation.title","isRequired": 1,
+                        "level3": [
+                            {   "type": "textItem",
+                                "model": "info.refundPolicyLocation.value",
+                                "placeholder":"resource.refundPolicyLocation.placeholder"
+}
+                        ]
+                    },
+                    {
+                        "title": "resource.fraudPrevention.title","isRequired": 1,
+                        "level3": [
+                            {"type": "textareaItem","model": "info.fraudPrevention.value"}
+                        ]
+                    },
+                    {
+                        "level3": [
+                            {
+                                "type": "navItem",
+                                "forNgClick": "saveForm()"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "level1": [
+            {
+                "title": "resource.submitDocumentsSection.title",
+                "formName": "",
+                "id": "submitDocTitle",
+                "forNgClass": "{expanded:info.currentSection==5,notexpanded:info.currentSection!=5}",
+                "forNgClick": "info.currentSection!=5&&saveForm('submitDocTitle')",
+                "formId": 5
+            }
+        ]
+    },
+    {
+        "level1": [
+            {
+                "title": "",
+                "id": "submitButton",
+                "formName": "submitButton",
+                "forNgClass": "true",
+                "formId": 5,
+                "level2": [
+                    {
+                        "forNgShow": "debugMode==1?'1':'0'",
+                        "level3": [
+                            {
+                                "type": "logicElement",
+                                "model": "logic.Helper"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "",
+                        "level3": [
+                            {
+                                "type": "submitButton",
+                                "title": "Submit",
+                                "forNgClick": "submitButton.$valid&&submitForm(customerRelations,'5')"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

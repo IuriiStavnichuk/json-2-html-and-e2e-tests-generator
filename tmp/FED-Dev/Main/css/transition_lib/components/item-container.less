@@ -1,0 +1,123 @@
+﻿// --------------------------------------------------------------------------------------------------------------------
+// Item container is used to replace table layouts that cannot accommodate information in a horizontal presentation 
+// --------------------------------------------------------------------------------------------------------------------
+
+.item-container h3 {
+	color: @payzaGreen;
+	font-size: 14px;
+	font-weight: normal;}
+
+.item-container .item-container-actions {
+	border-bottom: 1px solid #bbb;
+	margin-bottom: 15px;
+	min-height: 33px;
+	position: relative;}
+
+.item-container .item-container-actions ul {
+	.clearfix();
+	font-size: 12px;
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+				
+	// CSS3
+	.border-radius-top-left();
+	.border-radius-top-right();}
+
+.item-container .item-container-actions ul li,
+.item-container .item-container-actions ul li a {
+	display: block;}
+
+.item-container .item-container-actions ul li {
+	float: left;
+	margin: 0;
+	padding: 0;}
+
+
+.item-container .item-container-actions ul li a {
+	border: 1px solid;
+	border-color: #bbb;
+	color: @grayDark;
+	padding: 7px 10px;
+	text-decoration: none;
+				
+	// CSS3
+	@shadow: 1px 0 0 rgba(255,255,255,1) inset;
+	.box-shadow(@shadow);
+	@startColor: #f6f6f6; 
+	@endColor: #e6e6e6;
+	#gradient > .vertical(@startColor, @endColor);}
+
+.item-container .item-container-actions ul li:first-child a {
+	border-right: none;
+				
+	// CSS3
+	.border-radius-top-left();}
+
+.item-container .item-container-actions ul li:last-child a {
+	border: 1px solid;
+	border-color: #bbb;
+	// CSS3
+	.border-radius-top-right();}
+
+.item-container .item-container-actions ul li a:hover {
+	background: #cdcdcd;
+	color: @gray;
+	text-shadow: 0 1px 0 rgba(255,255,255,1);
+
+	// CSS3
+	@shadow: none;
+	.box-shadow(@shadow);
+}
+
+.item-container .item-list {
+	background-color: #f6f6f6;
+	border: 1px solid #bbb;
+	margin-bottom: 10px;
+
+	// CSS3
+	.border-radius();
+	@shadow: 0 0 2px rgba(255,255,255,1) inset, 0 0 3px rgba(0, 0, 0, 0.1);
+	.box-shadow(@shadow);}
+
+.item-container .item-list .item-actions {
+	background-color: #fff;
+	border-bottom: 1px dotted #bbb;
+	.clearfix();
+	font-size: 12px;
+	margin: 0;
+	margin-bottom: 15px;
+	padding: 10px;
+	text-align: right;
+				
+	// CSS3
+	.border-radius-top-left();
+	.border-radius-top-right();}
+
+.item-container .item-list .item-actions li {
+	border-left: 1px solid #bbb;
+	display: block;
+	float: right;
+	padding: 0 8px;}
+
+.item-container .item-list .item-actions li:nth-child(2n) {padding-right: 0;}
+
+.item-container .item-list .item-actions li:last-child {
+	border-left: none;
+	padding-left: 0; padding-right: 8px;}
+
+.item-container .item-list .item-actions li .icon-16 .icn {margin-right: 0;}
+
+.item-container .item-list .item-info {
+	margin: 0;
+	padding: 0 10px;}
+
+.item-container .item-list .item-info h4 {
+	color: @payzaGreen;
+	font-size: 13px;
+	font-weight: normal;
+	margin-bottom: 5px;}

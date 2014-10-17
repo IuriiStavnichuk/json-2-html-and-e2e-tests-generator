@@ -1,0 +1,224 @@
+// Verification
+// --------------- To be reviewed
+
+.status-submitted {color: #eda14f;}
+
+.status-inreview {
+	font-style: italic;
+	color: #999;}
+
+.status-approved {
+	font-weight: bold;
+	color: @payzaGreen;}
+
+.status-expired {
+	font-weight: bold;
+	color: #999;}
+
+.status-declined {
+	font-weight: bold;
+	color: #2e6da3;}
+
+.document-status {cursor: help;}
+
+.verification-box .title h3 small {
+		color: @gray; 
+		margin-left: 8px;}
+
+.verification-box .process {
+		border-top: 1px solid #e6e6e6;
+		padding: 10px 15px;}
+
+.verification-box .process:first-child {border: 0;}
+
+.verification-box .process h3 {
+		font-size: 16px;
+		font-weight: 400;}
+
+.verification-box .process p {
+		font-size: 12px;
+		line-height: 18px;
+		margin: 0; 
+		margin-bottom: 8px;
+		padding: 0;}
+
+.verification-box .process-pending {background: #fcf8e3;}
+
+.verification-box .process-pending h3 {
+		background: url(../images/icons/16/bullet_error.png) no-repeat center left; 
+		padding-left: 22px;}
+
+.verification-box .process-pending h3 a {color: #c09853;}
+
+.verification-box .process-completed {background: #dff0d8;}
+
+.verification-box .process-completed h3 {
+		background: url(../images/icons/16/tick.png) no-repeat center left; 
+		padding-left: 22px;}
+
+.verification-box .process-completed h3 a {color: #468847;}
+
+.verification-box .process-failed {background: #f2dede;}
+
+.verification-box .process-failed h3 {
+		background: url(../images/icons/cross.png) no-repeat center left; 
+		padding-left: 22px;}
+
+.verification-box .process-failed h3 a {color: #b94a48;}
+
+.pan-card-number .alert-very-important {margin-top: 10px;}
+
+.sidebar-accordion-header {cursor: pointer;}
+
+.process, 
+.process h5 {color: #2b2b2b;}
+
+.process.complete {
+		border-bottom: 1px solid #ddd; 
+		background: #dff0d8 url(../images/icons/header-check.png) no-repeat right -15px; 
+		padding-bottom: 10px;}
+
+.process.complete h5 {color: #468847;}
+
+.process.complete p {
+	margin: 0;
+	padding: 10px;
+	padding-bottom: 0;}
+
+.process.pending {
+		background:#fcf8e3 url(../images/icons/header-warning.png) no-repeat 520px 15px;
+		border-bottom: 1px solid #ddd;}
+
+.process.pending h5 {color: #C09853;}
+
+.process.error {
+		background: #f2dede url(../images/icons/header-error.png) no-repeat 520px 15px; 
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 10px;}
+
+.process.error h5 {color: #B94A48;}
+
+.process h3 + p {border: none;}
+
+.process .status-bullets {
+		list-style-type: none;
+		margin-left: 15px;
+		padding: 0; 
+		padding-bottom: 6px;}
+
+.process .status-bullets li {margin-bottom: 6px;}
+
+
+// Payment balance
+
+.payment-balance td {
+	padding: 2px; 
+	padding-left: 0; padding-right: 15px;}
+
+// Verification Document List
+	
+.verification-document-list .item-list .item-actions li.document-state {float: left;}
+
+
+
+// UI Refinement past this line
+// ----------------------------------
+
+
+// Verification 
+// ---------------
+.verification .bank-verification .select-account,
+.verification .bank-verification .confirm-account,
+.verification .bank-verification .add-micro-deposit,
+.verification .bank-verification .bank-statements, 
+
+.verification .business-verification .business-type,
+.verification .business-verification .submit-documents,
+.verification .business-verification .confirm-business, 
+
+.verification .attestation-form .submit-attestation,
+.verification .attestation-form .review-attestation,
+
+.verification .credit-file .credit-submit,
+
+.verification .phone-validation .request-code,
+.verification .phone-validation .submit-code,
+
+// Bangladesh
+.verification .bangladesh-verification,
+
+// UK
+.verification .identity-validation,
+.verification .documents-form {
+	margin: 0 auto;
+	width: 80%;}
+
+
+// Bank Verification
+// --------------------
+.verification .bank-verification .check-image {
+	margin-bottom: 15px;
+	text-align: center;}
+
+
+// Business Verification 
+// ------------------------
+//.verification .business-verification .business-type .add-director,
+//.verification .business-verification .business-type .beneficial-owner {
+//	background-color: #f6f6f6;
+//	border: 1px solid #efefef;
+//	margin-bottom: 10px;
+//	padding: 10px;
+	
+	// CSS3
+//	.border-radius();}
+
+.add-director fieldset .date-of-birth .field-item,
+.beneficial-owner fieldset .date-of-birth .field-item {width: 144px;}
+
+
+// UK Identity Validation
+.verification .identity-validation .id-modify fieldset .field .month,
+.verification .identity-validation .id-modify fieldset .field .year,
+.verification .identity-validation .id-modify fieldset .field .day {display: inline-block;}
+
+
+// Verification Wizard Overwrite
+.verification .bank-verification .wizard-row,
+.verification .bank-verification .wizard-row .span3 {
+	filter: none;
+	background: none;}
+
+
+.verification .bank-verification .step,
+.verification .business-verification .step,
+.verification .attestation-form .step,
+.verification .credit-file .step,
+.verification .phone-validation .step,
+
+// Bangladesh
+.verification .bangladesh-verification .step,
+
+// UK
+.verification .identity-validation .step,
+.verification .documents-form .step {padding-left: 0;}
+
+.verification .bank-verification .wizard .nav,
+.verification .business-verification .wizard .nav,
+.verification .attestation-form .wizard .nav,
+.verification .credit-file .wizard .nav,
+.verification .phone-validation .wizard .nav {padding-left: 60px;}
+
+// Bangladesh
+.verification .bangladesh-verification .wizard .nav,
+
+// UK
+.verification .identity-validation .wizard .nav,
+.verification .documents-form .wizard .nav {padding-left: 0;}
+
+.verification .wizard input[type="text"], 
+.verification .wizard input[type="password"], 
+.verification .wizard textarea {width: 98%;}
+
+.verification .wizard select {width: 100%;}
+

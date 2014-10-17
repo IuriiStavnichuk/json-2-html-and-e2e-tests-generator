@@ -1,0 +1,110 @@
+﻿// .feature-landing is the default structuring for any feature landing page, such as IPN, API, etc.
+// --------------------------------------------------------------------------------------------------
+.feature-landing {
+	margin: 0 15px;
+
+	p {line-height: 20px;}
+				
+	a {text-decoration: none;}
+
+}
+
+.feature-landing .feature-details {
+	.clearfix();
+	margin-bottom: 30px;
+
+	img {float: left;}
+}
+
+.feature-landing .feature-details h1 {
+	color: @payzaGreen;
+	margin-bottom: 20px;
+	text-align: center;}
+
+.feature-landing .feature-details h1 {
+	em {font-style: italic;}
+
+	strong {
+		color: @gray;
+		display: block;
+		font-size: 75%;
+		font-style: normal;
+		font-weight: normal;}
+
+}
+
+.feature-landing .feature-options {
+	clear: both;
+	.clearfix();
+	margin-bottom: 20px; margin-top: 40px;
+								
+	.option {
+		border-right: 1px solid #e0e0e0;
+		display: block;
+		float: left;
+		min-height: 200px;
+		padding: 0 10px;
+		position: relative;
+		width: 296px;
+								
+		.icon-64 {float: right;}
+
+		.icon-64 .icn {margin-right: 0;}
+
+		h6 {
+			border-bottom: 1px solid #e0e0e0;
+			font-weight: normal;
+			margin-bottom: 10px;
+			padding-bottom: 10px;
+			width: 75%;}
+								
+		.call-to-action {
+			bottom: 0;
+			position: absolute;
+			left: 10px;
+			margin-left: 0;
+			text-align: left;}
+
+	}
+
+	.option:first-child {
+		padding-left: 0;
+								
+		.call-to-action {left: 0;}
+	}
+
+	.option:last-child {
+		border-right: none;
+		padding-right: 0;}
+
+}
+
+.feature-landing .feature-more {
+	margin-bottom: 50px;
+
+	ul li {line-height: 20px;}
+
+	.misc {
+		background-color: @payzaGrayBgLighter;
+		padding: 15px;
+
+		// CSS3 
+		.border-radius();
+
+		h6 {
+			border-bottom: 1px solid #e0e0e0;
+			font-size: 1.4em;
+			font-weight: 400;
+			line-height: inherit;
+			margin-bottom: 15px;
+			padding-bottom: 10px;
+												
+			// CSS3
+			@shadow: 0 1px 0 @white;
+			.box-shadow(@shadow);}
+
+		ul {margin-top: 0;}
+																
+	}
+
+}

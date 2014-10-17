@@ -1,0 +1,325 @@
+﻿// ----------------------------------------------------------------------------------------------------------
+// Box Container: used to contain search forms, tabular data (with / without pagination)
+// Box Container is used to contain search forms to make its containing form distinct from the wizard form
+// ----------------------------------------------------------------------------------------------------------
+
+.box-container {
+	background-color: @white;
+	border: 1px solid #bbb;
+	margin-bottom: 20px;
+	position: relative;
+	
+	// CSS3 
+	.border-radius();}
+
+.box-container h5 {padding: 10px 15px 5px;}
+
+.box-container h6 { // Exclusively used for the box title, use h5 for headers inside box-container
+	border-bottom: 1px solid #bbb;
+	font-size: 1.4em;
+	font-weight: 600;
+	margin: 0;
+	padding: 9px 15px;
+	text-shadow: 0 1px 0 #fff;
+	
+	// CSS3 
+	@startColor: #eee; @endColor: #d0d0d0;
+	#gradient > .vertical(@startColor, @endColor);
+
+	.border-radius-top-left();
+	.border-radius-top-right();
+
+	@shadow: 0 -1px 0 @white inset;
+	.box-shadow(@shadow);}
+
+.box-container p,
+.box-container ul,
+.box-container ol {
+	font-size: 1.3em;
+	line-height: 1.5em;
+	margin: 15px;}
+	
+.box-container ul,
+.box-container ol {margin-left: 0}
+
+.box-container li {margin-bottom: 0}
+
+.box-container .container-action {
+	font-size: 1.2em;
+	list-style-type: none;
+	margin: 10px;
+	padding: 0;
+	text-align: right;
+	
+	// CSS3
+	.border-radius-top-right(6px);}
+		
+.box-container .container-action li {
+	display: inline-block;
+	margin-left: 10px;
+	vertical-align: top;}	
+
+.box-container .container-action ul {
+	font-size: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;}
+
+.box-container .container-action ul li {display: block;}
+
+/* JS Enabled - Default Container */
+.js .box-container {
+	//overflow: hidden;
+	position: relative;}
+
+.js .box-container .container-action {
+	margin: 0;
+	position: absolute;
+	right: 0;
+	text-shadow: 0 1px 0 @white;
+	top: 0;
+	
+	// CSS3
+	@startColor: rgba(246,246,246,1); @endColor: rgba(230,230,230,1);
+	#gradient > .vertical(@startColor, @endColor);}
+
+.js .box-container .container-action li {
+	border-left: 1px solid #bbb;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0 5px;
+	
+	// CSS3
+	@shadow: 1px 0 0 @white inset;
+	.box-shadow(@shadow);}
+
+.js .box-container .container-action li a {
+	color: #333;
+	display: block;
+	padding: 10px;}
+	
+.js .box-container .container-action li a:hover {color: #909090;}	
+
+.js .box-container .container-action li .icon-16 {padding-top: 11px;}
+
+.js .box-container .container-action li .trigger {
+	margin-top: 7px;
+	padding: 0;
+	padding-bottom: 0; padding-left: 10px; padding-top: 0;}
+
+.js .box-container .container-action li .selected,
+.js .box-container .container-action li .trigger:hover {
+	background-color: #fff;
+	color: #444;
+	
+	// CSS3
+	.border-radius-top-left();
+	.border-radius-top-right();
+
+	@shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+	.box-shadow(@shadow);}
+
+.js .box-container .container-action li .trigger .icon-16 {
+	padding: 10px;
+	padding-top: 5px;}
+
+.js .box-container .container-action li .trigger .icon-16 .icn {
+	background-position: -20px 0;
+	margin-right: 0;}
+
+.js .box-container .container-action li ul {
+	background-color: #fff;
+	padding: 10px;
+	padding-bottom: 0;
+	width: 150px;
+	z-index: 12;
+	
+	// CSS3 
+	.border-radius-top-right();
+	.border-radius-bottom-right();
+	.border-radius-bottom-left();
+
+	@shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	.box-shadow(@shadow);}
+
+.js .box-container .container-action li ul li {
+	border-bottom: 1px dotted #bbb;
+	border-left: none;
+	float: none;
+	margin: 0;
+	margin-bottom: 8px;
+	padding: 0;
+	padding-bottom: 8px;
+	text-align: left;
+	
+	// CSS3 
+	@shadow: none;
+	.box-shadow(@shadow);}
+
+.js .box-container .container-action li ul li:last-child {border-bottom: none;}
+
+.js .box-container .container-action li ul li a {padding: 0;}
+
+.js .box-container .nav-with-sub .sub-menu {
+	right: 5px;
+	
+	// CSS3
+	.border-radius-top-right(0);
+	.border-radius-top-left();}
+
+/* --- */
+
+
+
+// Box Container Types: Box Form, Box Table
+// -------------------------------------------
+
+// Box Form
+.box-form {
+	// CSS3
+	@startColor: rgba(240,240,240,1);
+	@endColor: rgba(255,255,255,1);
+	#gradient > .vertical(@startColor, @endColor);}
+
+.box-form fieldset legend {
+	border-bottom: 1px solid #fff;
+	color: @payzaGreen;
+	font-weight: 600;
+	font-size: 1.4em;
+	font-style: normal;
+	margin: 0;
+	padding: 12px 10px;
+	text-shadow: 0 1px 0 @white;
+				
+	// CSS3
+	@shadow: 0 -1px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 @white inset;
+	.box-shadow(@shadow);}
+
+.box-form fieldset .field {
+	background-color: #f9f9f9;
+	border-bottom: 1px solid #fff;
+	margin-bottom: 1px;
+	padding: 10px;
+	padding-bottom: 0;
+	
+	// CSS3
+	@shadow: 0 -1px 0 rgba(0, 0, 0, 0.2) inset;
+	.box-shadow(@shadow);}
+
+.box-form fieldset .first {
+	// CSS3
+	.border-radius-top-left();
+	.border-radius-top-right();}
+
+
+// Limits the number of fields in one row by 3 fields
+.box-form fieldset .field .field-item {
+	margin-right: 10px;
+	width: 32%;}
+
+.box-form fieldset .field .field-item input[type="text"],
+.box-form fieldset .field .field-item input[type="password"],
+.box-form fieldset .field .field-item textarea {width: 96%;}
+
+.box-form fieldset .field .field-item select {width: 100%;}
+
+
+.box-form fieldset .button-field {
+	border-bottom: none;
+	padding-bottom: 10px;
+	
+	// CSS3
+	@startColor: rgba(246,246,246,1);
+	@endColor: rgba(230,230,230,1);
+	#gradient > .vertical(@startColor, @endColor);
+	@shadow: none;
+	.box-shadow(@shadow);}
+
+.box-form fieldset .button-field .btn {margin-bottom: 0; /*temporary*/}
+
+// Box Form - moreless plugin (Advanced Search)
+.box-form .more-less-wrapper {margin-bottom: 0;}
+
+.box-form .more-less-wrapper .more-less-toggler {
+	background-color: @white;
+	border-bottom: none;}
+
+.box-form .more-less-wrapper .more-less-toggler:hover {
+	background-color: @payzaGrayBgLight;
+				
+	@shadow: 0 -1px 0 @white inset;
+	.box-shadow(@shadow);}
+
+
+
+// Box Table
+// ------------
+.box-table table {
+	border: none;
+	margin: 0;
+	
+	// CSS3 
+	.border-radius(0);}
+
+.box-table table thead th:nth-child(1) {
+	// CSS3 
+	.border-radius(0);}
+
+.box-table table thead th:last-child {
+	// CSS3
+	.border-radius(0);}
+
+// Line Number Column - Uncomment when line numbers are already available
+//.box-table table td:nth-child(1) {
+//	background-color: #f0f0f0;
+//	border-right: 1px solid #fff;
+//	color: #999;}
+
+//.box-table table tbody tr:hover td:nth-child(1) {
+	// CSS3 
+//	@shadow: none;
+//	.box-shadow(@shadow);}
+
+.box-table table .row-action ul {
+	font-size: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;}
+
+.box-table table .row-action ul li {display: block;}
+
+
+// JS Enabled - Box Table Action
+.js .box-table table .row-action {
+	border: none; 
+	height: 0;
+	padding: 0;
+	position: absolute;
+	width: 0;}
+
+.js .box-table table .row-action ul {
+	background-color: rgba(229, 240, 251, 0.7);
+	padding: 5px 10px;
+	position: absolute;
+	top: 1px; 
+	width: 100px;
+	
+	// CSS3 
+	.border-radius-top-right();
+	.border-radius-bottom-right();
+
+	@shadow: 2px 0 4px rgba(0, 0, 0, 0.1), 0 1px 0 #dde8f2 inset, 0 -1px 0 #dde8f2 inset;
+	.box-shadow(@shadow);}
+
+.js .box-table table .row-action ul li {
+	border-bottom: 1px dotted #ccc;
+	padding: 5px 0;}
+
+.js .box-table table .row-action ul li:last-child {border-bottom: none;}
+
+.js .box-table table .row-action ul li a {
+	color: #333;
+	display: block;}
+
+.js .box-table table .row-action ul li a:hover {color: #666;}

@@ -1,0 +1,388 @@
+﻿// ----------------------------------------------------------------
+// Withdraw Funds: used for bank transfer, bank wire, check, ppc
+// ----------------------------------------------------------------
+
+.withdraw-funds-overview table {
+    border: none;
+
+// CSS3
+	.border-radius-top-left(0);
+.border-radius-top-right(0);}
+
+
+.withdraw-funds .withdraw-info,
+.withdraw-funds .withdraw-confirm {
+    margin: 0 auto;
+    width: 80%;}
+
+.withdraw-funds .withdraw-confirm .span5 {margin-left: 7%;}
+
+
+/* PPC */
+.withdraw-funds .ppc-confirm .process-summary .item-label {width: 43%;}
+
+.withdraw-funds .ppc-confirm .process-summary .item-value {width: 55%;}
+
+
+
+
+/* Withdraw Funds Wizard Overwrite */
+.withdraw-funds .span3,
+.withdraw-funds .wizard-row {background: none;}
+
+.withdraw-funds .wizard-row .wizard .step {padding-left: 0;}
+
+.withdraw-funds .wizard-row .wizard .nav {padding-left: 60px;}
+
+.withdraw-funds .wizard input[type="text"],
+.withdraw-funds .wizard input[type="password"],
+.withdraw-funds .wizard textarea {width: 98%;}
+
+.withdraw-funds .wizard select {width: 100%;}
+
+.withdraw-info .radio-check-item input {display: none}
+
+/*eGiftCard*/
+
+.withdraw-funds-egiftcard .wizard-row { background: none; margin: 130px 0 0 22px; }
+
+.withdraw-funds-egiftcard .wizard-row .wizard .step { padding-right: 20px; }
+
+.withdraw-funds-egiftcard .sidebar { margin-left: -10px; }
+
+.withdraw-funds-egiftcard  .step { padding-left:0 !important;}
+
+.withdraw-funds-egiftcard .wizard .nav {
+    padding-left: 34px;
+    font-size:14px;
+    float: left;
+    width:100%;
+}
+
+/*eGiftCard Step2*/
+.withdraw-funds-egiftcard fieldset.step2 { padding: 0 34px; }
+
+.withdraw-funds-egiftcard fieldset.step3 { padding: 0 34px; margin-top: 14px; }
+
+.withdraw-funds-egiftcard fieldset.step2 .field-help { margin: 3px 0 !important;}
+
+.withdraw-funds-egiftcard fieldset.step2 .icn-help .icn { margin-top: 0 !important;}
+
+.withdraw-funds-egiftcard fieldset.step2 .radio-check-item { width: 100%; }
+.withdraw-funds-egiftcard fieldset.step2 .radio-check-item label  { display: inline; }
+
+.withdraw-funds-egiftcard .selected-egiftcard {
+    background-color:#dfdfdf;
+    margin-bottom: 28px;
+}
+.withdraw-funds-egiftcard .selected-egiftcard h3 {
+    font-size:24px;
+    text-align: center;
+    color:#24272a;
+    font-weight:normal;
+    padding-top:25px;
+}
+
+.egiftcard-search {
+    background-color: #e0e3e6;
+    width:876px;
+    float:left;
+    display:block;
+    padding: 18px 20px 11px;
+    margin-bottom:32px;
+}
+.egiftcard-search fieldset {
+    width: 762px;
+    float: left;
+}
+.egiftcard-search .styled-select select {
+    background: transparent;
+    width: 324px;
+    padding: 12px 13px 11px 13px;
+    font-size: 15px;
+    height: 50px;
+    box-shadow: none;
+    margin-right:1px;
+    border:none;
+    border-radius: 2px;
+}
+.egiftcard-search .styled-select {
+    width: 280px;
+    height: 50px;
+    margin-right:1px;
+    overflow: hidden;
+    float:left;
+    background: #fff url(../images/icons/icon-arrow-down.png) no-repeat 250px 21px;
+}
+.egiftcard-search input[type="text"] {
+    width:382px;
+    height: 40px;
+    font-size: 15px;
+    color: #24272a;
+    box-shadow: none;
+    border:none;
+    border-top-left-radius:2px;
+    border-bottom-left-radius:2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius:0;
+    background: #fff url(../images/icons/icon-search.png) no-repeat 16px 13px;
+    padding-left: 60px;
+    vertical-align: text-bottom;
+}
+.egiftcard-search input[type="text"]::-ms-clear {
+    display: none;
+}
+/*.egiftcard-search input[type="remove"] {*/
+.egiftcard-search a.clear-input {
+    display:inline-block;
+    background-color: #fff;
+    width:26px;
+    height: 50px;
+    box-shadow: none;
+    border:none;
+    border-top-left-radius:0;
+    border-bottom-left-radius:0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius:2px;
+    background-position: 6px 22px;
+    background-image: url(../images/icons/remove.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    vertical-align: text-bottom;
+}
+.egiftcard-search input[type="submit"] {
+    width:105px;
+    height: 50px;
+    background: #328fe6 none;
+    border:none;
+    box-shadow: none;
+    font-size: 15px;
+    text-shadow: none;
+}
+.egiftcard-search .sort-by {
+    float:left;
+    font-size:11px;
+    padding-top: 12px;
+}
+.egiftcard-search .sort-by a {
+    font-weight:bold;
+    color:#24272a;
+    margin-left: 16px;
+    text-shadow: 0 2px 2px rgba(255, 255, 255, 1);
+}
+.egiftcard-search .sort-by a.active {
+    color:#009639;
+}
+
+
+.withdraw-funds-egiftcard .egiftcard-gallery .radio-check-item {
+    display: block;
+    float: left;
+    width: 246px;
+    height: 212px;
+    margin:8px 18px 10px;
+}
+.withdraw-funds-egiftcard .egiftcard-gallery .radio-check-item img {
+    width:230px;
+    height:155px;
+    margin:9px auto 12px auto;
+    display:block;
+    border:1px solid #ccc;
+    box-shadow: 0 0 7px #aaa;
+}
+.withdraw-funds-egiftcard .selected-egiftcard img {
+    margin: 0 auto;
+    padding-bottom: 44px;
+    display: block;
+}
+.withdraw-funds-egiftcard .egiftcard-gallery .radio-check-item label {
+    display: block;
+    height: 20px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 15px;
+    color:#24272a;
+    margin-bottom:12px;
+}
+.withdraw-funds-egiftcard .cash-back-icon {
+    position:relative;
+    left:172px; 
+    top:-218px;
+    width: 86px;
+    height: 86px;
+    color: #009639;
+    padding-top: 19px;
+    background: url(../images/icons/cash-back.png) no-repeat;
+}
+.withdraw-funds-egiftcard  .cash-back-value  {
+    text-align: center;
+}
+.withdraw-funds-egiftcard  .cash-back-value .amount {
+    font-weight: bold;
+    font-size: 36px;
+    letter-spacing: -3px;
+}
+.withdraw-funds-egiftcard .cash-back-value .amount:before {
+    position:absolute;
+    content: "$";
+    font-weight: normal;
+    font-size: 12px;
+    margin-top: -7px;
+    margin-left: -7px;
+}
+
+.withdraw-funds-egiftcard .selected-egiftcard .cash-back-icon {
+    left:552px; 
+    top:-264px;
+}
+
+.withdraw-funds-egiftcard .egiftcard-search:after {
+    clear:both;
+}
+.withdraw-funds-egiftcard .egiftcard-gallery {
+    width: 890px;
+    height: 510px;
+}
+.withdraw-funds-egiftcard .radio-check-item {
+    margin-left:0;
+}
+.withdraw-funds-egiftcard .step2 .radio-check-item input+label {
+    margin-left: 6px;
+    font-weight: normal;
+}
+.withdraw-funds-egiftcard fieldset .field {
+    margin:15px 0;
+}
+.withdraw-funds-egiftcard fieldset .step2 label { color: #24272a; margin-top: 12px; }
+
+.withdraw-funds-egiftcard .promotional-offer {font-size: 12px; margin-top: -16px;}
+.withdraw-funds-egiftcard .radio-check-item+.promotional-offer { margin-top: 14px;}
+
+.egiftcard-gallery-shadow {
+    position:relative;
+    z-index:1;
+}
+.egiftcard-gallery-shadow .drop-shadow {
+    position:relative;
+    float:left;
+    width:90%;
+    height:1px;
+    padding:1em;
+    background:#fff;
+}
+.egiftcard-gallery-shadow .drop-shadow:before, .drop-shadow:after {
+    content:"";
+    position:absolute;
+    z-index:-2;
+}
+.egiftcard-gallery-shadow .drop-shadow p {
+    font-size:16px;
+    font-weight:bold;
+}
+.egiftcard-gallery-shadow .curved:before {
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:50%;
+    -webkit-box-shadow:0 0 15px rgba(0,0,0,0.4);
+    box-shadow:0 0 15px rgba(0,0,0,0.4);
+    border-radius:10px/100px;
+}
+.egiftcard-gallery-shadow .curved-vt-2:before {
+    top:0;
+    bottom:50%;
+    left:10px;
+    right:10px;
+    border-radius:100px/10px;
+}
+.egiftcard-gallery .radio-group {
+    float:left;
+    width:100%;
+}
+.egiftcard-gallery .radio-group>div:first-child  {
+    width: 92%;
+    float:left;
+}
+.egiftcard-gallery .radio-group .radio-group-title {
+    display:block;
+    font-size:17px;
+    font-weight:bold;
+    color:#9b9b9e;
+    float: left;
+    padding:0 18px 0 25px;
+}
+.egiftcard-gallery .radio-group hr  {
+    clear:none;
+    margin: 8px 0;
+}
+
+
+/* vertical scrollbar */
+.mCSB_container{
+    width:auto;
+    margin-right:0;
+    overflow:hidden;
+}
+.mCustomScrollBox>.mCSB_scrollTools{
+    width:16px;
+    height:100%;
+    top:0;
+    right:0;
+}
+.mCSB_scrollTools .mCSB_draggerContainer{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:auto;
+}
+.mCSB_scrollTools a+.mCSB_draggerContainer{
+    margin:20px 0;
+}
+.mCSB_scrollTools .mCSB_draggerRail{
+    width:2px;
+    height:100%;
+    margin:0 auto;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+}
+.mCSB_scrollTools .mCSB_dragger{
+    cursor:pointer;
+    width:100%;
+    height:30px;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+    width:4px;
+    height:100%;
+    margin:0 auto;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    text-align:center;
+}
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_draggerRail{
+    width:4px;
+    background:#fff;
+}
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+    width:6px;
+    background:#707274;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
+    background:rgba(0,0,0,0.85);
+}
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
+    background:rgba(0,0,0,0.9);
+}
+
+
+
+
+
+

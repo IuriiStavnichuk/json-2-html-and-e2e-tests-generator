@@ -1,0 +1,202 @@
+// Buttons
+// -------------
+
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"][disabled="disabled"],
+input[type="button"][disabled="disabled"],
+input[type="reset"][disabled="disabled"],
+button {
+	display: inline-block;
+	margin-right: 5px;}
+
+
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+button{
+	border: 1px solid;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1.3em;
+	font-weight: bold;
+	padding: 8px 10px;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+	
+	// CSS3
+	.border-radius(3px);}
+
+
+// Default Form Buttons
+input[type="submit"],
+button[type="submit"],
+.btn.submit {
+	border-bottom-color: #185f01;
+	border-left-color: #357d18;
+	border-right-color: #357d18;
+	border-top-color: #5da839;
+	
+	// CSS3 
+	@startColor: rgba(97,182,74,1); @endColor: rgba(46,136,29,1);
+	#gradient > .vertical(@startColor, @endColor);
+	
+	@shadow: 0 1px 0 0 #86c775 inset, 0 0 0 3px rgba(0, 0, 0, 0.05);
+	.box-shadow(@shadow);}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+.btn.submit:hover{
+	background: #2e881d;
+	
+	// CSS3
+	@shadow:  0 1px 0 0 #86c775 inset, 0 0 0 3px rgba(0, 0, 0, 0.1);
+	.box-shadow(@shadow);}
+
+input[type="button"],
+input[type="reset"],
+button[type="button"],
+button[type="reset"],
+a.btn {
+	border-color: #bbb;
+	color: #666;
+	text-shadow: 0 1px 0 #fff;
+	
+	// CSS3
+	@startColor: rgba(250,250,250,1); @endColor: rgba(220,220,220,1);
+	#gradient > .vertical(@startColor, @endColor);
+
+	@shadow: 0 1px 0 #fff inset, 0 -1px 0 #fff inset, 1px 0 0 #fff inset, -1px 0 0 #fff inset;
+	.box-shadow(@shadow);}
+
+.btn.submit {
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+input[type="button"]:hover,
+input[type="reset"]:hover,
+button[type="button"]:hover,
+button[type="reset"]:hover,
+a.btn:hover {background: rgba(220,220,220,1);}
+
+input[type="submit"][disabled="disabled"],
+input[type="button"][disabled="disabled"],
+input[type="reset"][disabled="disabled"],
+input[type="submit"][disabled="disabled"]:hover,
+input[type="button"][disabled="disabled"]:hover,
+input[type="reset"][disabled="disabled"]:hover,
+button[disabled="disabled"],
+button[disabled="disabled"]:hover {
+	background: rgba(232,232,232,1);
+	border-color: #cfcfcf;
+	color: #9f9f9f;
+	cursor: default;
+	text-shadow: 0 1px 0 rgba(255,255,255,1);
+	
+	// CSS3
+	@shadow: none;
+	.box-shadow(@shadow);}
+
+
+// Secondary Button (class="btn"): Applicable to input[type="button", type="reset"], button[type="button", type="reset"] and <a> with class "btn". 
+input[type="button"].btn,
+input[type="reset"].btn,
+button[type="button"].btn,
+button[type="reset"].btn,
+a.btn {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 1.1em;
+	padding: 10px;
+	padding-bottom: 5px; padding-top: 7px;
+
+	// CSS3
+	.border-radius(3px);}
+
+input[type="button"][disabled="disabled"].btn,
+input[type="reset"][disabled="disabled"].btn,
+button[type="button"][disabled="disabled"].btn,
+button[type="reset"][disabled="disabled"].btn,
+input[type="button"][disabled="disabled"].btn:hover,
+input[type="reset"][disabled="disabled"].btn:hover,
+button[type="button"][disabled="disabled"].btn:hover,
+button[type="reset"][disabled="disabled"].btn:hover {
+	background: rgba(232,232,232,1);
+	border-color: #cfcfcf;
+	color: #9f9f9f;
+	cursor: default;
+	text-shadow: 0 1px 0 rgba(255,255,255,1);
+	
+	// CSS3
+	@shadow: none;
+	.box-shadow(@shadow);} 
+
+a.btn {padding-bottom: 11px; padding-top: 12px;}
+
+// Button Link (class="btn-link"): Applicable to any anchor elements with class "btn-link" <a href="#" class="btn-link">
+// Replicates the look of "btn" for input[type="button", type="reset"], button[type="button", type="reset"] elements.
+a.btn-link {
+	background: #4895dd;
+	border: 1px solid;
+	border-top-color: #4894dd;
+	border-right-color: #317ed2;
+	border-left-color: #317ed2;
+	border-bottom-color: #1d6ac8;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 600;
+	font-size: 1.3em;
+	padding: 8px 10px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+
+	// CSS3
+	.border-radius(3px);
+
+	@shadow: 0 1px 0 0 #72aee5 inset;
+	.box-shadow(@shadow);}
+
+a.btn-link:hover {background-color: #317ed2;}
+
+
+// Promo Button Link (class="btn-promo"): Applicable to any anchor elements with class "btn-promo" <a href="#" class="btn-promo">
+//   Can be used for call to action buttons used in promotional content. 
+a.btn-promo {
+	border: 1px solid;
+	border-top-color: #1265cd;
+	border-right-color: #0053bb;
+	border-left-color: #0053bb;
+	border-bottom-color: #0053bb;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 2.3em;	
+	font-weight: 700;
+	padding: 15px 30px;
+	text-decoration: none;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+
+	// CSS3 
+	@startColor: rgba(78,165,235,1); @endColor: rgba(32,114,219,1);
+	#gradient > .vertical(@startColor, @endColor);
+
+	.border-radius(25px);
+
+	@shadow: inset 0 1px 0 0 #78bbf0, 0 0 0 3px rgba(0,0,0,0.1);
+	.box-shadow(@shadow);}
+
+a.btn-promo:hover {background: rgba(50,143,230,1);}
+
+a.btn-disabled,
+a.btn-disabled:hover {
+	background: rgba(232,232,232,1);
+	border-color: #cfcfcf;
+	color: #9f9f9f;
+	cursor: default;
+	text-shadow: 0 1px 0 rgba(255,255,255,1);
+	
+	// CSS3
+	@shadow: none;
+	.box-shadow(@shadow);}

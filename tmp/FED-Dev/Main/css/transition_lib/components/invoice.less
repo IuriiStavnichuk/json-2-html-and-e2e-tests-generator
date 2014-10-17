@@ -1,0 +1,58 @@
+﻿// Invoice
+// ----------
+
+.invoice {
+	background-color: #f6f6f6;
+	border: 1px solid #efefef;
+	padding: 10px;
+	text-shadow: 0 1px 0 @white;
+
+	// CSS3
+	.border-radius();}
+
+.invoice h6 {margin-bottom: 0;}
+
+.invoice table {
+	background: none;
+	border: none;
+	border-collapse: collapse;
+	margin: 0;
+	
+	// CSS3
+	.border-radius-top-left(0);
+	.border-radius-top-right(0);}
+
+.invoice table th,
+.invoice table td {text-align: right;}
+
+.invoice table thead th {
+	background: none;
+
+	// CSS3
+	@shadow: none;
+	.box-shadow(@shadow);}
+
+.invoice table thead th:nth-child(1) {
+	// CSS3
+	.border-radius-top-left(0);}
+
+.invoice table thead th:last-child {
+	// CSS3
+	.border-radius-top-right(0);}
+
+.invoice table tbody tr:hover td {
+	// CSS3
+	@shadow: none;
+	.box-shadow(@shadow);}
+
+
+.invoice table td {border-top-color: #efefef;}
+
+.invoice table .invoice-description {text-align: left;}
+
+.invoice table .invoice-description strong,
+.invoice table .invoice-description em {display: block;}
+
+.invoice table .total td {
+	font-size: 1.4em;
+	font-weight: 700;}

@@ -1,0 +1,301 @@
+// Modal Box
+// ------------
+
+.modal-window {
+		background: @white; 
+		border: 5px solid rgba(0, 0, 0, 0.6); 
+
+		h3 {
+			  color: rgb(68, 163, 46);
+		}
+		p {
+			margin: 15px 0;
+		}
+		.warning_box {
+			  padding: 10px; 
+			  border-radius: 6px 6px 6px 6px; 
+			  background: none repeat scroll 0% 0% rgb(255, 255, 204);}
+
+		// CSS3
+		.border-radius (10px);}
+
+.ui-dialog-titlebar-close {
+		background: url(../images/icons/modal-close.png) no-repeat center center; 
+		float: right; 
+		height: 30px; 
+		margin-right: -10px; margin-top: 10px; 
+		text-indent: -9999px; 
+		width: 30px;}
+
+.ui-widget-overlay, 
+.modalBackground {
+		background: @black; 
+		height: 100%; 
+		left: 0; 
+		.opacity(50); 
+		position: absolute; 
+		top: 0; 
+		width: 100%;}
+
+.modal-dialog {
+		min-width: 300px;
+		padding: 10px 15px;}
+
+// Choose Button
+
+.popup-choose-button {min-width: 500px;}
+
+.popup-choose-button table {width: 100%;}
+
+.popup-choose-button td {padding: 10px;}
+
+// Dropdown Menu
+
+.modal-open .dropdown-menu {z-index: 2050;}
+
+.modal-open .dropdown.open {*z-index:2050;}
+
+.modal-open .popover {z-index: 2060;}
+
+.modal-open .tooltip {z-index: 2070;}
+
+.modal-backdrop {
+		background-color: @black;
+		bottom: 0;
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+		z-index: 1040;}
+
+.modal-backdrop.fade {.opacity(0);}
+
+.modal-backdrop,
+.modal-backdrop.fade.in {.opacity(80);}
+
+.modal {
+		background-color: @white; 
+		border: 1px solid #999; 
+		border: 1px solid rgba(0,0,0,.3);
+		*border: 1px solid #999;
+		left: 50%; 
+		margin: -250px 0 0 -280px; 
+		max-height: 500px; 
+		overflow: auto; 
+		position: fixed;
+		top: 50%; 
+		width: 560px; 
+		z-index: 1050; 
+
+		// CSS3
+		.background-clip(padding-box);
+		.border-radius(6px);
+		.box-shadow(0 3px 7px rgba(0, 0, 0, 0.3));}
+
+.modal.fade {
+		top: -25%;
+
+		// CSS3
+		@transition: opacity .3s linear, top .3s ease-out;
+		.transition(@transition);}
+
+.modal.fade.in {top: 50%;}
+
+.modal-header {
+		border-bottom: 1px solid #eee;
+		padding: 9px 15px;}
+
+.modal-header .close {margin-top: 2px;}
+
+.modal-body {padding: 15px;}
+
+.modal-footer {
+		background-color: #f5f5f5; 
+		border-top: 1px solid #ddd;
+		margin-bottom: 0; 
+		padding: 15px; 
+		padding-top: 14px;
+		*zoom:1;
+
+		// CSS3
+		@radius: 0 0 6px 6px;
+		.border-radius(@radius);
+		.box-shadow(inset 0 1px 0 @white);}
+
+.modal-footer:before, 
+.modal-footer:after {
+		content: "";
+		display: table;}
+
+.modal-footer:after {clear: both;}
+
+.modal-footer .btn {
+		float: right; 
+		margin-bottom: 0; margin-left: 5px;}
+
+// For AccountOverview.aspx page
+
+.info-collector .modal-window {
+        border: 0;
+}
+.info-collector .how-it-works-dialog {
+        width: 800px;
+}
+.collect_needed_info {
+        width: 800px;
+        border-radius: 0 0 4px 4px;
+        background: white;
+}
+.collect_needed_info .modal-green-header {
+        padding: 12px 0 16px;
+        border-bottom: 1px solid #378110;
+        background-color: #44a32e;
+}
+.collect_needed_info .modal-grey-footer {
+        height: 58px;
+        padding: 20px 0 6px;
+        border-radius: 0 0 4px 4px;
+        background: #c8cace url(../images/backgrounds/collect_needed_info_grey_gradient.png) repeat-x;
+        font-size: 14px;
+}
+.collect_needed_info p {
+        margin: 6px 0 6px;
+}
+.collect_needed_info h1 {
+        width: 420px;
+        margin: 0 auto;
+        text-align: center;
+        color: #ffffff;
+        font-size: 25px;
+        font-weight: 300;
+        line-height: 32px;
+}
+.collect_needed_info h4 {
+        margin: 16px 0 0;
+        color: #2b2b2b;
+        font-size: 15px;
+        font-weight: 600;
+}
+.collect_needed_info .section {
+        width: 362px;
+        margin: 0 auto 24px;
+}
+.collect_needed_info .field label {
+        margin: 16px 0 0;
+        color: #2b2b2b;
+        font-size: 15px;
+        font-weight: 600;
+}
+.collect_needed_info fieldset .field-item {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+}
+.collect_needed_info select {
+        float: left;
+        width: 100% !important;
+        margin: 10px 0 4px;
+}
+.collect_needed_info #showLine2 {
+        display: block;
+        margin: 0 0 8px;
+        cursor: pointer;
+        color: #0c64d1;
+        font-size: 1.3em;
+}
+.collect_needed_info input {
+        float: right;
+        width: 97% !important;
+		margin-top: 10px;
+
+}
+.collect_needed_info .month {
+        width: 47% !important;
+        margin-right: 3%;
+}
+.collect_needed_info .day {
+        width: 20% !important;
+}
+.collect_needed_info .year {
+        float: right;
+        width: 27% !important;
+}
+.collect_needed_info .divWorkPhone .area-code {
+        width: 47% !important;
+        margin-right: 8px
+}
+.collect_needed_info .divWorkPhone .phone-number {
+        width: 28% !important;
+}
+.collect_needed_info .divWorkPhone .phone-number input {
+        float: left;
+}
+.collect_needed_info .divWorkPhone .phone-ext {
+        float: right;
+        width: 14% !important;
+}
+.collect_needed_info .divPhoneNo .area-code {
+        width: 47% !important;
+}
+.collect_needed_info .divPhoneNo .phone-number {
+        float: right;
+        width: 48% !important;
+}
+.collect_needed_info .pnlPhysicalAddress .FIELDtxtState {
+		display: inline-block;
+        width: 47% !important;
+}
+.collect_needed_info .pnlPhysicalAddress .lblZipCode {
+        float: right;
+        width: 48% !important;
+}
+.collect_needed_info .pnlPhysicalAddress .lblZipCode .watermarkdark {
+		margin: 10px 0 4px !important;
+}
+.collect_needed_info span.field-error {
+        display: block;
+        color: #B94A48;
+        font-size: 1.1em;
+}
+.collect_needed_info .field-error select,
+.collect_needed_info .field-error input {
+        border-color: #B94A48;
+}
+.collect_needed_info .btn-primary {
+        float: left;
+        width: 50%;
+        margin-right: 10px;
+        margin-bottom: 0;
+        padding: 6px 20px 9px;
+        text-shadow: 0 1px 2px #383838;
+        font-size: 15px;
+}
+.collect_needed_info .section > div {
+        padding-top: 14px;
+}
+.collect_needed_info .modal-grey-footer input {
+        width: 53% !important; 
+        margin-top: 4px; 
+}
+.collect_needed_info span + * {
+        border-color: #f04740;
+}
+.collect_needed_info .modal-grey-footer a {
+        text-decoration: underline;
+}
+.collect_needed_info input[type="checkbox"] {
+		float:left;
+		width:13px !important;
+		margin-right:5px
+}
+.collect_needed_info label {
+		font-weight:400 !important;
+		font-size:13px !important;
+		color: #545454 !important;
+}
+.collect_needed_info #showLine2+.field {
+		height: 34px
+}
+
+
+

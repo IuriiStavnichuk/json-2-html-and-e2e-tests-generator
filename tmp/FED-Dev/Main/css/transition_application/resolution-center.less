@@ -1,0 +1,410 @@
+
+.rc-transaction-details {margin-bottom: 50px;}
+
+.file-upload {padding-bottom: 15px; padding-top: 10px;}
+
+.file-upload div {
+		display: inline-block; 
+		margin-bottom: 9px;}
+
+.file-upload input[type="submit"] {
+		background: #4895dd; 
+		border: 1px solid;
+		border-left-color: #317ed2; 
+		border-bottom-color: #1d6ac8; 
+		border-right-color: #317ed2; 
+		border-top-color: #4894dd; 
+		color: @white; 
+		text-shadow: 0 1px 1px rgba(0,0,0,0.5); 
+		
+		// CSS3
+		.box-shadow (inset 0 1px 0 0 #72aee5);}
+
+.file-upload input[type="submit"]:hover {
+		background-color: #317ed2;
+		color: @white;}
+
+.file-upload .pdf, 
+.file-upload .img-attachment {
+		display: inline-block; 
+		height: 18px; 
+		line-height: 18px; 
+		margin: 0; 
+		overflow: hidden;
+		padding: 0 10px; 
+		width: 350px;}
+
+.dispute, 
+.disabled-dispute {padding-left: 25px;}
+
+.dispute {
+	background: url(../images/icons/folder_page.png) no-repeat left center;
+	cursor: pointer;}
+
+.disabled-dispute {background: url(../images/icons/exclamation-greyedout.png) no-repeat left center;}
+
+.disabled-dispute a, 
+.disabled-dispute a:hover {color: @gray;}
+
+.dispute-status-open {color: #696;}
+.dispute-status-open a:hover {color: #FF9900;}
+
+.dispute-status-closed {color: #666;}
+.dispute-status-closed a:hover {color: #FF9900;}
+
+.dispute-status-escalated {color: #C00;}
+.dispute-status-escalated a:hover {color: #FF9900;}
+
+.expected-action > a {
+		background: url(../images/icons/error.png) no-repeat left center;
+		padding-left: 20px;}
+
+.result-description {
+		background: @white;
+		padding:10px 15px;}
+
+
+
+.dispute-items {
+    border: none;
+    margin-bottom: 30px;
+
+    .dispute-item {
+        border: 1px solid #bbb;
+        margin-bottom: 10px;
+        // CSS3
+        .border-radius();
+
+        h6 {
+            background-color: #e2e2e2;
+            border-bottom: 1px solid #bbb;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin: 0;
+            padding: 9px 15px;
+            text-shadow: 0 1px 0 @white;
+
+            // CSS3
+
+            @startColor: #eee;
+            @endColor: #d0d0d0;
+            #gradient .vertical(@startColor, @endColor);
+
+            .border-radius-top-left();
+            .border-radius-top-right();
+
+            @shadow: 0 -1px 0 @white inset;
+            .box-shadow(@shadow);
+        }
+    }
+}
+
+.dispute-item .datestamp, 
+.dispute-item .price {
+		display: block; 
+		float: right;}
+
+.dispute-item .price {
+		width: 150px; 
+		text-align: right;}
+
+.result-description {
+		color: #666;
+		font-size: 13px;}
+
+.result-description p {
+		clear: both; 
+		margin: 0; 
+		font-size:100%;
+		padding: 0;}
+
+.result-description p span {font-size: 14px;}
+
+.result-status {
+		border-top: 1px solid #e6e6e6; 
+		color: #666;}
+
+.result-status div {
+		display: inline-block; 
+		font-size: 12px; 
+		padding: 10px 15px;
+		width: 20%;}
+
+.result-status span {
+		display: block; 
+		// font-size: 14px; 
+		margin-top: 3px;}
+
+.result-status .status {width: 20%;}
+
+.result-status .status span {font-weight: bold;}
+
+.result-status .warning {background: #fffbe7;}
+
+.result-message-content {
+		background-color: #f8f8f8; 
+		color: #666; 
+		padding: 10px 15px;
+		word-break: break-word;}
+
+.result-message-content p {margin: 0;}
+
+.result-message-content hr {
+		margin: auto;
+		width: 96%;}
+
+.result-message-content .notice {
+		background-color: #fff6ad; 
+		border: 1px solid #bead23; 
+		color: #363636; 
+		margin: 10px 0px; 
+		padding: 10px; 
+		
+		// CSS3
+		.border-radius (6px);}
+
+.result-message-content .notice label {font-weight: bold;}
+
+.result-message-content .notice p {padding: 0;}
+
+.result-attachment {
+		border-top: 1px solid #ddd;
+		padding: 10px; 
+		padding-left: 0; padding-right: 20px;}
+
+.result-attachment a {
+		font-size: 13px; 
+		margin-left: 12px;}
+
+.result-attachment .no-results {display: none;}
+
+.descriptive-results-table {
+		width: 100%;
+
+		// CSS3
+		table-layout: fixed; 
+		word-wrap: break-word;}
+
+.descriptive-results-table div {
+		// CSS3
+		word-wrap: break-word;}
+
+.descriptive-results-table .result-description, 
+.descriptive-results-table .result-status {background: #f8f8f8;}
+
+.descriptive-results-table .box .expected-action {
+		// CSS3
+		@radius: 0px 0px 0px 5px;
+		.border-radius (@radius);}
+
+
+.division-header {
+		background-color: #f9f9f9; 
+		border: 1px solid #cbcbcb; 
+		margin-bottom: 10px;
+		padding: 14px; 
+
+		// CSS3
+		.border-radius (6px);}
+
+.division-header h4 {
+		display: inline; 
+		font-size: 14px;}
+
+.division-header .tier {
+		color: @gray; 
+		font-weight: normal;}
+
+.exchanged-messages {
+    .span4 {
+        margin-right: 5px;
+        width: 46%;
+    }
+}
+
+.dispute-messages-list {
+    margin-bottom: 30px;
+
+    .box {
+        margin: 0;
+        margin-bottom: 5px;
+    }
+}
+
+.header-info {float: right;}
+
+.sent {color: #2D6C00;}
+
+.received {color: #C60;}
+
+.sent-msg .title {border-color: #2d6c00;}
+
+.received-msg .title {border-color: #ef831b;}
+
+.agent-msg .title {border-color: #727273;}
+
+.descriptive-results-table .timestamp {
+		display: block; 
+		font-weight: normal; 
+		float: left; 
+		padding: 0 5px; 
+		width: 175px;}
+
+.descriptive-results-table .msg-type {
+		float: right; 
+		font-weight: normal;}
+
+.dispute-summary {
+		background-color: #F9F9F9;
+		padding: 10px 15px;}
+
+.dispute-summary .info-listing label {margin: 0;}
+
+.dispute-summary .info-listing .text-output {
+		display:block;
+		font-size: 1.3em;
+		line-height: 16px; 
+		margin-bottom: 12px; 
+		padding-top: 2px;}
+
+.message-box {
+		background-color: #f9fff2; 
+		border: 1px solid #dde8d1; 
+		margin-bottom: 15px;
+		padding: 10px 15px; 
+		
+		// CSS3
+		.border-radius (6px);}
+
+
+.message-box h3 {
+		color: #666; 
+		font-size: 16px; 
+		font-weight: bold; 
+		margin: 0;}
+
+.message-box p {
+		margin: 0;
+		margin-bottom: 16px; margin-top: 10px;}
+
+.message-box fieldset p {
+		margin: 0; 
+		padding: 0;
+		padding-bottom: 15px; padding-top: 10px;}
+
+.message-box textarea {
+		height: 200px;
+		width: 100%;}
+
+.message-box .error-msg-box {padding: 0 15px;}
+
+.file-upload .img-attachment {margin: 0 15px;}
+
+
+
+/* UI Refinements */
+
+.resolution-center {margin: 0 10px;}
+
+.resolution-center fieldset {margin: 0 10px;}
+
+/* Limits the number of fields in one row by 3 fields */
+.resolution-center fieldset .field .field-item {
+	margin-right: 1px;
+	width: 33%;}
+
+.resolution-center fieldset .field .field-item input[type="text"],
+.resolution-center fieldset .field .field-item input[type="password"],
+.resolution-center fieldset .field .field-item textarea {width: 96%;}
+
+.resolution-center fieldset .field .field-item select {width: 100%;}
+
+
+.resolution-center fieldset .radio-check-field .radio-check-item {
+	clear: none;
+	display: inline-block;
+	width: 20%;
+	vertical-align: top;}
+
+.resolution-center fieldset .radio-check-field .radio-check-item label {width: 85%}
+
+.resolution-center fieldset .button-field .btn { margin-left: 0 }
+
+.resolution-center .alert {margin:0}
+
+
+// Pagination Fix
+
+.resolution-center .pagination fieldset .field {margin-bottom: 0;}
+
+.resolution-center .pagination .page-counter li {padding-bottom: 8px;}
+
+
+// Create Dispute 
+.create-dispute .dispute-info,
+.create-dispute .dispute-confirm,
+.create-dispute .dispute-terms,
+.create-dispute .dispute-complete {margin: 0 auto;}
+
+.create-dispute .dispute-info,
+.create-dispute .dispute-terms,
+.create-dispute .dispute-complete {width: 80%;}
+
+.create-dispute .dispute-confirm {width: 90%;}
+
+/* Create Dispute Wizard Overwrite */
+.create-dispute .wizard-row,
+.create-dispute .wizard-row .span3 {
+	filter: none;
+	background: none;}
+
+.create-dispute .wizard-row .span3 {display: none; /*this div is empty - hiding temporarily on create dispute wizard*/}
+
+.create-dispute .wizard-row .wizard .step {
+	.clearfix();
+	padding-left: 0;}
+
+.create-dispute .wizard-row .wizard .nav {padding-left: 60px;}
+
+.create-dispute .wizard input[type="text"], 
+.create-dispute .wizard input[type="password"], 
+.create-dispute .wizard textarea {width: 98%;}
+
+.create-dispute .wizard select {width: 100%;}
+
+/* Manage Dispute */
+.manage-dispute label {  
+	display: block;  
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: bold;}
+
+.manage-dispute .box .title {
+    filter: none;
+}
+.manage-dispute .box {
+	border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+	margin-left: 0}
+
+.manage-dispute .box .title {
+    background-color: #E2E2E2;
+	background-image: -moz-linear-gradient(center top , #E2E2E2, #E2E2E2);
+	//border-left: 0px solid #E2E2E2;
+	border: 1px solid #D0D0D0;
+    color: #545454;
+    font-size: 16px;
+    height: 30px;
+    line-height: 18px;
+    margin-left: -1px;
+    margin-top: -1px;
+    padding: 5px 15px;
+	border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+	box-shadow: 0 1px 0 #FAFFFF inset;}
+
+.manage-dispute .box .row {
+    margin-left: 0px;
+    margin-right: 0px;}
+
+

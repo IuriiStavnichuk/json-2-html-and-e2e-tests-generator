@@ -1,0 +1,41 @@
+﻿// Fancy Table
+// --------------
+
+.fancy-table th,
+.fancy-table td {vertical-align: top;}
+
+.fancy-table .line-number {
+	background-color: #efefef;
+	color: #9f9f9f;}
+
+.fancy-table .fancified {display: block;}
+
+.fancy-table .fancified .cell {display: inline-block;} 	
+
+.fancy-table .fancified {position: relative;}
+
+.fancy-table .fancified .cell {
+	overflow: hidden;
+	padding: 10px 8px;
+	text-overflow: ellipsis;
+	white-space: nowrap;}
+	
+.fancy-table .revealed .cell {
+	background-color: #fff;
+	left: 0; 
+	overflow: inherit;
+	position: absolute; 
+	top: 0;
+	white-space: nowrap;
+	z-index: 10;
+	
+	// CSS3 
+	.border-radius(6px);
+	@shadow: 0 0 5px rgba(0,0,0,0.3) inset;
+	.box-shadow(@shadow);
+
+	word-break: break-word;}
+
+.fancy-table .last .cell {
+	left: inherit;
+	right: -17px;}

@@ -1,0 +1,244 @@
+﻿// Base Message Alerts 
+.alert {
+  background-color: @warningBackground;
+  border: 1px solid @warningBorder;
+  font-size: 13px;
+  margin-bottom: @baseLineHeight;
+  padding: 8px;
+  padding-right: 35px; padding-left: 14px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+		
+		// CSS3
+		.border-radius(4px);}
+
+.alert,
+.alert-heading {color: @warningText;}
+
+// Adjust close link position
+.alert .close {
+  line-height: 18px;
+  position: relative;
+  right: -21px;
+  top: -2px;}
+
+// Alert Types
+// ----------------
+.alert-success {
+  background-color: @successBackground;
+  border-color: @successBorder;}
+
+.alert-success,
+.alert-success .alert-heading {color: @successText;}
+
+.alert-danger,
+.alert-error {
+  background-color: @errorBackground;
+  border-color: @errorBorder;}
+
+.alert-danger,
+.alert-error,
+.alert-danger .alert-heading,
+.alert-error .alert-heading {color: @errorText;}
+
+.alert-info {
+  background-color: @infoBackground;
+  border-color: @infoBorder;}
+
+.alert-info,
+.alert-info .alert-heading {color: @infoText;}
+
+.alert p  {margin-bottom: 0;}
+
+// Block alerts
+// ------------------------
+.alert {color:#2b2b2b;}
+
+.alert h4 {padding-bottom:8px;}
+
+.alert-block {
+  padding-bottom: 14px;
+  padding-top: 14px;}
+
+.alert-block > p,
+.alert-block > ul {/*margin-bottom: 0;*/}
+
+.alert-block p + p {/*margin-top: 5px;*/}
+
+.lone-alert {margin-top: 10px;}
+
+
+
+
+
+
+/* Content Messages
+---------------------- */
+
+.content-message {
+	border: 1px solid;
+	border-top-width: 3px;
+	margin-bottom: 10px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	
+	// CSS3
+	.border-radius-top-right(); 
+	.border-radius-bottom-left();
+	@shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15) inset;}
+
+.content-message {
+	h1, h2, h3, h4, h5 {font-weight: 700;} 
+	
+	h5 {font-size: 1.4em;}
+
+	h6 {
+		color: inherit;
+		font-size: 1.3em;
+		font-weight: 600;
+		text-transform: none;}
+}
+
+.content-message hr {
+	@shadow: 0 1px 0 @white;
+	.box-shadow(@shadow);}
+
+.content-message .message-type {
+	color: #444;
+	display: inline-block;
+	margin-bottom: 0;
+	padding: 10px;
+	padding-bottom: 4px; padding-top: 3px;
+	
+	// CSS3 
+	.border-radius-bottom-right();
+	@shadow: -1px 1px 2px 0px rgba(0,0,0,0.15) inset;
+	.box-shadow(@shadow);}
+
+.content-message .message-details {padding: 10px;}
+
+.content-msg-warning {
+	background-color: #fff9d7;
+	border-color: #e2c822;}
+
+.content-msg-warning .message-type {background-color: #e2c822;}
+
+.content-msg-attention {
+	background-color: #f2d6d6;
+	border-color: #e28e8e;}
+	
+.content-msg-attention .message-type {background-color: #e28e8e;}
+	
+.content-msg-information {
+	border-color: #acd0f3;
+	background-color: #e6f2fe;}
+	
+.content-msg-information .message-type {background-color: #acd0f3;}
+
+.content-msg-information hr {border-color: #acd0f3;}
+
+	
+.content-msg-general {
+	border-color: #ddd;
+	background-color: #f6f6f6;}
+	
+.content-msg-general .message-type {background-color: #ddd;}
+
+
+/* Global Messages 
+---------------------*/
+
+.global-message {
+	border: 1px solid;
+	padding: 10px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	
+	/* CSS3 */
+	.border-radius(3px);
+	@shadow: 0 1px 0 rgba(255, 255, 255, 0.75) inset;
+	.box-shadow(@shadow);}
+
+.msg-success {
+	background-color: #dcf9d5;
+	border-color: #82cb73;}
+
+.msg-fail {
+	border-color: #e28e8e;
+	background-color: #f2d6d6;}
+
+.msg-warning {
+	border-color: #e2c822;
+	background-color: #fff9d7;}
+
+.msg-reminder {
+	border-color: #acd0f3;
+	background-color: #e6f2fe;}
+/* --- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Broadcast is content messages -- will remove this block */
+.broadcast {
+	border: 1px solid;
+	border-top-width: 3px;
+	margin-bottom: 10px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	
+	/* CSS3 */
+	.border-radius-top-right();
+	.border-radius-bottom-left();
+	@shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+	.box-shadow(@shadow); }
+
+.broadcast .bc-type {
+	color: #444;
+	display: inline-block;
+	margin-bottom: 0;
+	padding: 10px;
+	padding-bottom: 4px; padding-top: 3px;
+	
+	/* CSS3 */
+	.border-radius-bottom-right();
+	@shadow: -1px 1px 2px 0px rgba(0,0,0,0.15) inset;
+	.box-shadow(@shadow); }
+
+.broadcast .bc-details {padding: 10px;}
+
+.bc-warning {
+	background-color: #fff9d7;
+	border-color: #e2c822;}
+
+.bc-warning .bc-type {background-color: #e2c822;}
+
+.bc-important {
+	background-color: #f2d6d6;
+	border-color: #e28e8e;}
+	
+.bc-important .bc-type {background-color: #e28e8e;}
+	
+.bc-information {
+	border-color: #acd0f3;
+	background-color: #e6f2fe;}
+	
+.bc-information .bc-type {background-color: #acd0f3;}
+	
+.bc-general {
+	border-color: #ddd;
+	background-color: #f6f6f6;}
+	
+.bc-general .bc-type {background-color: #ddd;}
+	
+
+/* --- */	
