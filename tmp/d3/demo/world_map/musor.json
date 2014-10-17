@@ -1,0 +1,119 @@
+{
+    "name": "PAYZA",
+    "children": [
+        {
+            "name": "Management",
+            "children": [
+                {"name": "N1", "size": 3938},
+                {"name": "N2", "size": 3812},
+                {"name": "N3", "size": 6714},
+                {"name": "N4", "size": 743}
+            ]
+        },
+        {
+            "name": "Operations",
+            "children": [
+                {"name": "N1", "size": 3938},
+                {"name": "N2", "size": 3812},
+                {"name": "N3", "size": 6714},
+                {"name": "N4", "size": 743},
+                {"name": "N5", "size": 6714},
+                {"name": "N7", "size": 743},
+                {"name": "N8", "size": 3938},
+                {"name": "N9", "size": 3812},
+                {"name": "N10", "size": 6714},
+                {"name": "N11", "size": 743},
+                {"name": "N12", "size": 6714},
+                {"name": "N13", "size": 6714},
+                {"name": "N14", "size": 743},
+                {"name": "N15", "size": 6714}
+            ]
+        },
+        {
+            "name": "R&D",
+            "children": [
+                {"name": "N1", "size": 3938},
+                {"name": "N2", "size": 3812},
+                {"name": "N3", "size": 6714},
+                {"name": "N4", "size": 743},
+                {"name": "N5", "size": 6714},
+                {"name": "N7", "size": 743},
+                {"name": "N8", "size": 3938}
+            ]
+        },
+        {
+            "name": "PCI-DSS",
+            "children": [
+                {"name": "N1", "size": 3938},
+                {"name": "N2", "size": 3812},
+                {"name": "N3", "size": 6714},
+                {"name": "N4", "size": 743}
+            ]
+        },
+        {
+            "name": "Product Management​",
+            "children": [
+                {"name": "N1", "size": 3938},
+                {"name": "N2", "size": 3812},
+                {"name": "N3", "size": 6714},
+                {"name": "N4", "size": 743},
+                {"name": "N5", "size": 6714},
+                {"name": "N7", "size": 743},
+                {"name": "N8", "size": 3938},
+                {"name": "N9", "size": 3812},
+                {"name": "N10", "size": 6714},
+                {"name": "N11", "size": 743},
+                {"name": "N12", "size": 6714}
+            ]
+        },
+        {
+            "name": "Business Strategy​",
+            "children": [
+                {"name": "N1", "size": 3938},
+                {"name": "N2", "size": 3812},
+                {"name": "N3", "size": 6714},
+                {"name": "N4", "size": 743},
+                {"name": "N5", "size": 6714},
+                {"name": "N7", "size": 743},
+                {"name": "N8", "size": 3938},
+                {"name": "N9", "size": 3812},
+                {"name": "N10", "size": 6714}
+            ]
+        },
+        {
+            "name": "IT",
+            "children": [
+                {"name": "N1", "size": 3938},
+                {"name": "N2", "size": 3812},
+                {"name": "N3", "size": 6714},
+                {"name": "N4", "size": 743},
+                {"name": "N5", "size": 6714},
+                {"name": "N7", "size": 743},
+                {"name": "N8", "size": 3938},
+                {"name": "N9", "size": 3812}
+            ]
+        },
+        {
+            "name": "HR",
+            "children": [
+                {"name": "N1", "size": 3938},
+                {"name": "N2", "size": 3812},
+                {"name": "N3", "size": 6714},
+                {"name": "N4", "size": 743},
+                {"name": "N5", "size": 6714},
+                {"name": "N7", "size": 743}
+            ]
+        },
+        {
+            "name": "Security",
+            "children": [
+                {"name": "N1", "size": 3938},
+                {"name": "N2", "size": 3812},
+                {"name": "N3", "size": 6714},
+                {"name": "N4", "size": 743},
+                {"name": "N5", "size": 6714},
+                {"name": "N7", "size": 743}
+            ]
+        }
+    ]
+}

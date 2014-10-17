@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/d3.v3.min.js"></script>
+<!--    <script src="js/topojson.v0.min.js"></script>
+    <script src="js/d3.geo.projection.v0.min.js"></script>
+    <script src="js/queue.v1.min.js"></script>-->
+    <title></title>
+</head>
+<body>
+<script>
+
+var lineData1 = [{ "x": 0, "y": 0},  { "x": 20,  "y": 0},
+    { "x": 20,  "y": 20}, { "x": 0,  "y": 20},
+    { "x": 0,  "y": 0}];
+var lineData2 = [ { "x": 0, "y": 0},  { "x": 20,  "y": 0},
+    { "x": 20,  "y": 20}, { "x": 0,  "y": 20},
+    { "x": 0,  "y": 0}];
+var lineData3=new Array
+
+
+var lineFunction = d3.svg.line()
+.x(function(d) { return d.x; })
+.y(function(d) { return d.y; })
+.interpolate("linear");
+
+var svgContainer = d3.select("body").append("svg")
+.attr("width", 600)
+.attr("height", 600);
+
+var box1 = svgContainer.append("path")
+.attr("id", "box1")
+     //   .attr("transform", function(d) {var coord_=path.centroid(d); console.log(coord_); return "translate(0,0)"; } )
+.attr("d", lineFunction(lineData1))
+     //  .attr("transform", function(d,i) { console.log(d,i); return "translate(0,0)"; } )
+
+//var g = svgContainer.append("g")
+
+var box2 = svgContainer.append("path")
+        .attr("id", "box2")
+        .attr("d", lineFunction(lineData2))
+        .attr("transform", "translate( 100 ,100)")
+//getCentroid_x(svgContainer.select("#box2"))
+
+create_line_array(svgContainer.select("#box2"))
+
+//console.log(lineData3)
+
+var line = svgContainer.append("path")
+        .attr("id", "line")
+        .attr("d", lineFunction(lineData3))
+        .attr("stroke-width", 2)
+        .attr("stroke", "red")
+
+var totalLength = line.node().getTotalLength();
+console.log(totalLength + " " + totalLength)
+
+line
+        .attr("stroke-dasharray", totalLength + " " + totalLength)
+        .attr("stroke-dashoffset", totalLength/2)
+        .transition()
+          .duration(500)
+          .ease("linear")
+          .attr("stroke-dashoffset", 0);
+
+function create_line_array (selection) {
+    lineData3 = [
+        { "x": 0,  "y": 0},
+        { "x": getCentroid_x(selection), "y": getCentroid_y(selection)}
+    ];
+}
+
+function getCentroid(selection) {
+    var element = selection.node(),
+            bbox = element.getBBox();
+    return [bbox.x + bbox.width/2, bbox.y + bbox.height/2];
+}
+
+function getCentroid_x(selection) {
+    var element = selection.node(),
+            bbox = element.getBBox();
+    var pos_ = d3.transform(selection.attr("transform"));
+    return (pos_.translate[0] + bbox.width/2);
+}
+
+function getCentroid_y(selection) {
+    var element = selection.node(),
+            bbox = element.getBBox();
+    var pos_ = d3.transform(selection.attr("transform"));
+    return (pos_.translate[1] + bbox.height/2);
+}
+
+</script>
+
+</body>
+</html>
+
+
+

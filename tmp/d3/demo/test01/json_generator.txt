@@ -1,0 +1,29 @@
+[
+    '{{repeat(500)}}',
+    {
+        id: '{{index}}',
+        city: '{{city}}',
+
+        age: '{{numeric(20,50)}}',
+        name: '{{firstName}} {{lastName}}',
+        gender: function(idx) {
+            return this.bool() ? 'male' : 'female';
+        },
+        company: '{{company}}',
+        phone: '{{phone}}',
+        email: '{{email}}',
+        address: '{{numeric(10000,40000)}}, {{city}}, {{street}}',
+        registered: '{{date(YYYY-MM-ddThh:mm:ss Z)}}',
+    }
+]
+
+
+[
+    '{{repeat(100)}}',
+    {
+        id: '{{index}}',
+        city: '{{city}}',
+        number_of_partners: '{{numeric(1,200)}}',
+
+    }
+]

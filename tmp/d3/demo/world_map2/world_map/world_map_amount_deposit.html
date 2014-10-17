@@ -1,0 +1,158 @@
+<head>
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+
+
+</style>
+<script src="js/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v0.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+
+<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+<div class="top-section-page">
+    <div id="title" style="background: url('img/title_amount_deposit.png')"></div>
+</div>
+<hr>
+<div id="wrapper">
+    <div id="svgcontainer"></div>
+</div>
+
+<script>
+
+var colorbrewer = {
+    Greens: {
+        10: ["#dddddd","#aef88a","#8af167","#62e644","#53dd37","#42d22b","#37c823","#37bb26","#29a71b","#28941c"]
+    }
+};
+
+
+var width = 1220,
+    height = 800,
+    centered;
+
+var color = d3.scale.category10();
+
+var rateById = d3.map();
+
+var quantize = d3.scale.quantize()
+        .domain([0, .15])
+        .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+
+var projection = d3.geo.kavrayskiy7()
+        .scale(240)
+        .translate([width / 2, height / 2])
+        .precision(1000000000);
+
+var path = d3.geo.path()
+        .projection(projection);
+
+var graticule = d3.geo.graticule();
+
+var svg = d3.select("#svgcontainer").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+queue()
+    .defer(d3.json, "world-50m.json")
+    .defer(d3.tsv, "world-country-names.tsv")  // match id to country name
+    .defer(d3.csv, "country.csv") // info about country
+    .await(ready);
+
+function ready( error, world, match_id_to_name, country_info ) {
+
+    var unsorted_countries = topojson.object(world, world.objects.countries).geometries;
+
+    match_id_to_name_=[]
+    for (var ii = 0; ii < match_id_to_name.length; ii++) {
+        match_id_to_name_[match_id_to_name[ii].id] = {name: match_id_to_name[ii].name}; //make new associated array
+    }
+
+    country_info_=[]
+    for (var ii = 0; ii < country_info.length; ii++) {
+        country_info_[country_info[ii].Country] = {Transactions_Qty: country_info[ii].Transactions_Qty,Amount_Deposit:country_info[ii].Amount_Deposit,Amount_Withdrawal:country_info[ii].Amount_Withdrawal}; //make new associated array
+    }
+
+    sorted_countries=[];
+    for (i=0;i<unsorted_countries.length;i++)
+    {
+       var lookup_=unsorted_countries[i].id;
+
+
+        if (typeof(country_info[ii]) == "undefined") { country_info[ii]={Amount_Deposit:"0",Amount_Withdrawal:"0",Country:"0",Transactions_Qty:"0"} }
+
+        if (typeof(match_id_to_name_[lookup_]) == "undefined") { match_id_to_name_[lookup_]={name:""} }
+        if (typeof(country_info_[match_id_to_name_[lookup_].name]) == "undefined") { country_info_[match_id_to_name_[lookup_].name]={Transactions_Qty:"0",Amount_Deposit:"0",Amount_Withdrawal:"0",Country:"0"} }
+
+        sorted_countries[lookup_] = {   name: match_id_to_name_[lookup_].name, value: country_info_[ match_id_to_name_[lookup_].name ].Amount_Deposit };
+    }
+
+    var color_scale = d3.scale.quantile()
+            .domain([0, 1, 1000, 121939, 903449])
+            .range(colorbrewer.Greens[10]);
+
+   g= svg.selectAll(".country")
+     .data(unsorted_countries)
+     .enter().insert("path", ".graticule")
+     .attr("class", "country")
+     .attr("d", path)
+     .style("fill", function(d) {
+     return d3.rgb(color_scale(sorted_countries[d.id].value)); })
+     .on("mouseover", function(d) {
+               d3.select( this ).style("fill", "orange") ,
+               d3.select( "#subunit-label"+d.id ) .style("display", "block")  })
+     .on("mouseout", function(d) {
+               d3.select( this ).style("fill", function(d) {return d3.rgb(color_scale(sorted_countries[d.id].value)); }) ,
+               d3.select( "#subunit-label"+d.id) .style("display", "none") })
+     .on("click", click)
+     ;
+
+t=svg.selectAll(".subunit-label")
+    .data(topojson.object(world, world.objects.countries).geometries)
+    .enter().append("text")
+    .attr("class", "subunit-label")
+    .attr("id", function(d) { return "subunit-label" + d.id; })
+    .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+    .attr("dy", ".35em")
+    .style("pointer-events", "none")
+    .style("display", "none")
+    .text(function(d,i) { return sorted_countries[d.id].name+"  | "+sorted_countries[d.id].value; })
+    ;
+
+
+    function click(d) {
+        var x, y, k;
+console.log(centered);
+        if (d && centered !== d) {
+            var centroid = path.centroid(d);
+            x = centroid[0];
+            y = centroid[1];
+            k = 4;console.log(1);
+            centered = d;
+            svg.selectAll(".subunit-label") .style("display", "none") .attr("transform", "translate(100,600)");
+        } else {
+            x = width / 2;
+            y = height / 2;
+            k = 1;
+            centered = null;
+
+            d3.selectAll(".subunit-label") .style("display", "none").attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+        }
+        g.selectAll("path")
+                .classed("active", centered && function(d) { return d === centered; });
+
+        g.transition()
+                .duration(1000)
+                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+               // .style("stroke-width", 1.5 / k + "px")
+        ;
+    }
+
+}
+
+</script>
+

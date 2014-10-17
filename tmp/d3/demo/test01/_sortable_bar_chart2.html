@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+    body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 8px;
+        position: relative;
+        width: 900px;
+    }
+    .axis text {
+        color:#566000;
+    }
+    text {
+        text-align:end;
+        text-anchor:end;
+        color:#566;
+    }
+    .textAxis {
+        text-align:end;
+        text-anchor:end;
+        color:#566;
+    }
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #bbb;
+        shape-rendering: crispEdges;
+    }
+    .bar {
+        fill-opacity: .6;
+    }
+    .obj {width:60px;height:60px; background-color:#f00;}
+    .x.axis path {
+        /*display: none;*/
+    }
+    label {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+
+</style>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<!--<script src="../../d3.min.js"></script>-->
+
+<label><input type="checkbox"></label>
+
+<script>
+/*(?(?=\,+[0-9]+\")(\,)|(\^))     if after ? then (\,)   ([a-zA-Z ]+\,+[ a-zA-Z]) correct country*/
+//var formatPercent = d3.format(".0%");
+d3.text("country_min.csv", function(error, data) {
+//<editor-fold defaultstate="collapsed" desc="INIT">
+
+    var margin = {top: 20, right: 20, bottom: 100, left: 40},
+        width = 900 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+
+    var parsedCSV = d3.csv.parseRows(data);
+   // var maxValue=d3.max (parsedCSV, function(d) { return parseInt(d[1],10) });
+    function sortByName(i,ii) {
+        if (i[0]  < ii[0])   return -1;
+        else if (i[0] > ii[0])   return 1;
+        else    return 2;
+    }
+    function sortByValue(i,ii) {
+        i[1]=parseInt(i[1], 10);
+        ii[1]=parseInt(ii[1], 10);
+        if (i[1] < ii[1])   return 1;
+        else if (i[1] > ii[1])   return -1;
+        else    return 2;
+    }
+    parsedCSV.sort(sortByValue);
+
+    var threshold = 2000;
+   // console.log(maxValue);
+   // console.log(parsedCSV.length);
+    var array_length=parsedCSV.length;
+
+    for (i=array_length-1;i>0;i--){
+
+        if (parsedCSV[i][1]<threshold) {
+
+            parsedCSV.splice( i, 1 );
+        }
+
+    }
+
+    var x = d3.scale.ordinal()
+        .rangeBands([0, width], 0.9, 0.5);
+        x.domain(parsedCSV.map(function(d) { return d[0]; }));
+
+    var y = d3.scale.linear()
+        .range([height, 0]);
+        y.domain([0, d3.max(parsedCSV, function(d) { return parseInt((d[1]), 10); })]); //parseInt convert to int
+
+    var svg = d3.select("body").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+//</editor-fold>
+
+//<editor-fold defaultstate="collapsed" desc="AXIS">
+
+/*   var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom");*/
+
+    var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("left")
+            ;
+
+    svg.append("g")
+            .attr("class", "y axis")
+            .attr("transform","translate(0,0)")
+            .call(yAxis)
+/*          .append("text")
+            .attr("background-color", "#f00")
+            .attr("transform","rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("Transactions")*/
+    ;
+//</editor-fold>
+
+//<editor-fold defaultstate="collapsed" desc="BARS">
+    var colorScale = d3.scale.linear()
+            .domain([0, d3.max (parsedCSV, function(d) { return d[1]; })])
+            .range([5, 255]);
+
+   var bar= svg.selectAll(".bar")
+            .data(parsedCSV)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", function(d) {return (x(d[0])); })
+            .attr("width", 4)
+            .attr("fill", function(d) { return (d3.rgb(colorScale(d[1]),0,0))})
+            .attr("y", function(d) { return (y(d[1])); })
+            .attr("height", function(d) { return (height - y(d[1])); })
+    ;
+    svg.selectAll(".x_axis_text")
+            .data(parsedCSV)
+            .enter().append("text")
+            .attr("class", "x_axis_text")
+            //.attr("x", function(d) {return (x(d[0])); })
+            .attr("transform", function(d) { return "translate(" + (x(d[0])+5) + ", " + (height+3) + " ) rotate(-90)" })
+            //.attr("y", height )
+            .attr("color", "blue" )
+            .text(function(d) {return (d[0]); });
+    ;
+
+//</editor-fold>
+
+/*
+    var sortTimeout = setTimeout(function() {
+        d3.select("input").property("checked", true).each(change);
+    }, 2000);
+*/
+
+
+
+d3.select("input").on("change", change);
+
+function change() {
+    // clearTimeout(sortTimeout);
+    // Copy-on-write since tweens are evaluated after a delay.
+
+    var x0 = x.domain(parsedCSV.sort(this.checked
+                            ? function(a, b) { return b[1] - a[1]; }
+                            : function(a, b) { return d3.ascending(a[0], b[0]); })
+                    .map(function(d) { return d[0]; }))
+            .copy();
+
+    var transition = svg.transition().duration(750),
+            delay = function(d, i) { return i * 4; }
+    ;
+    transition.selectAll(".x_axis_text")
+            .delay(delay)
+            .attr("transform", function(d) { return "translate(" + (x0(d[0])+3) + ", " + (height+3) + " ) rotate(-90)" })
+    ;
+    transition.selectAll(".bar")
+            .delay(delay)
+            .attr("x", function(d) { return x0(d[0]); })
+    ;
+
+}
+
+});
+
+</script>

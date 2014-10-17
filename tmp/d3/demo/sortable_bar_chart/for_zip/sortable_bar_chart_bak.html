@@ -1,0 +1,63 @@
+<!--(?(?=\,+[0-9]+\")(\,)|(\^))     if after ? then (\,)   ([a-zA-Z ]+\,+[ a-zA-Z]) correct country
+var formatPercent = d3.format(".0%");-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<meta charset="utf-8">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<!--<script src="../../d3.min.js"></script>-->
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<script src="/js/collapse.js"></script>
+
+
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.2.custom.css" />
+<link rel="stylesheet" href="css/main.css" />
+
+<body>
+
+    <div id="header">
+        <div id="controlbar">
+            <div id="radio_field_choice">
+                <form>
+                    <input type="radio" class="radio_field_choice" id="radio_field_choice_1" name="radio" value="1" checked="checked" />
+                    <label id="label_field_choice_1" for="radio_field_choice_1">Field 1</label>
+                    <input type="radio" class="radio_field_choice" id="radio_field_choice_2"name="radio" value="2" />
+                    <label id="label_field_choice_2" for="radio_field_choice_2">Field 2</label>
+                    <input type="radio" class="radio_field_choice" id="radio_field_choice_3"name="radio" value="3" />
+                    <label id="label_field_choice_3" for="radio_field_choice_3">Field 3</label>
+                    <input type="radio" class="radio_field_choice" id="radio_field_choice_4"name="radio" value="4" />
+                    <label id="label_field_choice_4" for="radio_field_choice_4">Field 4</label>
+                    <input type="radio" class="radio_field_choice" id="radio_field_choice_5" name="radio" value="5"/>
+                    <label id="label_field_choice_5" for="radio_field_choice_5">Field 5</label>
+                    <input type="radio" class="radio_field_choice" id="radio_field_choice_6" name="radio" value="6"/>
+                    <label id="label_field_choice_6" for="radio_field_choice_6">Field 6</label>
+                </form>
+            </div>
+            <div id="radio">
+                <form>
+                    <input type="radio" id="radio1" name="radio" checked="checked" /><label for="radio1">Alphabet</label>
+                    <input type="radio" id="radio2" name="radio" /><label for="radio2">&nbsp;&nbsp;Value&nbsp;&nbsp;</label>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="toggle" ><span id="toggle_icon" class="ui-icon ui-icon-circle-triangle-n" ></span></div>
+
+    <div id="wrapper">
+        <div id="svgcontainer">
+            <div id="slider">
+                <input type="text" id="sliderMaxValue" />
+                <div id="slider-range"></div>
+                <input type="text" id="sliderMinValue"/>
+            </div>
+        </div>
+    </div>
+
+<!--<div id="dot_line"></div>-->
+
+</body>
+
+<script src="js/main.js"></script>
+
+
+
+
