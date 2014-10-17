@@ -1,0 +1,13 @@
+[
+    '{{repeat(5)}}',
+    {
+        id: '{{index}}',
+        menu: 'Menu{{index}}',
+        title: '{{lorem(2,7)}}',
+        picture: 'http://placehold.it/32x32',
+        name: '{{firstName}} {{lastName}}',
+        date: '{{date(YYYY-MM-ddThh:mm:ss Z)}}',
+        address: '{{numeric(10000,40000)}}, {{city}}, {{street}}',
+        content: '{{lorem(50,100)}}',
+    }
+]

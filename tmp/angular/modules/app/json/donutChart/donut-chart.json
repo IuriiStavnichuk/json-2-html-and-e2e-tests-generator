@@ -1,0 +1,28 @@
+{
+    "Results":
+        [
+            {"Title":"Funds Received",
+                "CurrencySymbol":"$",
+                "Amount":106.52,
+                "TotalAmount":400,
+                "CurrencyAbbreviation":"USD",
+                "Unit":null,
+                "TimeInterval":"/month"
+            },
+            {"Title":"Total Received",
+                "CurrencySymbol":"$",
+                "Amount":1726.56,
+                "TotalAmount":2000,
+                "CurrencyAbbreviation":"USD",
+                "Unit":null,
+                "TimeInterval":"/lifetime"},
+            {"Title":"Time Left",
+                "CurrencySymbol":null,
+                "Amount":4,
+                "TotalAmount":26,
+                "CurrencyAbbreviation":null,
+                "Unit":"days",
+                "TimeInterval":"days"
+            }
+        ]
+}

@@ -1,0 +1,144 @@
+.merchant-services { margin: 0 10px;}
+.content {
+    display: table;
+    border-collapse: collapse;
+}
+.merchant-services h2 {
+    font-weight: 400 ;
+    font-size:19px;
+    color:#323232;
+    width:100%;
+}
+.merchant-services h4 {
+    font-weight: bold;
+    font-size:19px;
+    color:#323232;
+}
+.merchant-services .span3 {
+    float:none;
+    width: 242px;
+    display: table-cell;
+    vertical-align:top;
+    background: url(../images/graypixel.png) repeat-y right;
+}
+.merchant-services .span5 {
+    width: 601px;
+    padding: 18px 0 16px 34px;
+    display: table-cell;
+    border-top: #dadcde solid 1px;
+    min-height: 300px;
+}
+.merchant-services h5 {
+    color: #bebebe;
+    font-size: 15px;
+    margin: 12px 0 0 0;
+    padding: 0 0 0 20px;
+    text-align: left;
+    font-weight: 700;
+    background: url(../images/icons/right-grey-arrow.png) no-repeat 0;
+
+}
+.merchant-services h5.active {
+    color: #44a32e;
+    background: url(../images/icons/right-green-arrow.png) no-repeat 0;
+}
+.merchant-services hr { margin-top: 30px; }
+.merchant-services .space {clear:both; margin-top:10px  }
+.merchant-services .field { padding-top: 18px; margin: 0 0 0 22px }
+.merchant-services .radio-check-item.inline { display: inline-block; margin-right: 65px; }
+.merchant-services .radio-check-item.inline label { width: 0; }
+
+.merchant-services fieldset p {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.merchant-services fieldset ul { padding-left: 0; }
+.merchant-services fieldset li {
+    list-style-type: none;
+    margin: 9px 0 0 0;
+    padding: 0 0 0 30px;
+    text-align: left;
+    background: url(../images/icons/checker-icon.png) no-repeat 0 2px;
+}
+.merchant-services input[type=text] { width: 264px; }
+.merchant-services select {width: 275px;}
+
+.merchant-services input[type=text].half-width {
+    width: 116px;
+    margin-right: 11px;
+}
+.merchant-services select.half-width {
+    width: 134px;
+    height: 32px;
+    margin-top: 1px;
+}
+.merchant-services .nav * {
+    margin-right:6px;
+}
+.merchant-services .nav {
+    margin-top:22px;
+    font-size: 13px;
+    font-weight: normal;
+}
+.merchant-services .nav a {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.merchant-services p { padding-bottom: 8px;}
+
+.merchant-services  .merchant-service-menu {
+    background-color: #fff;
+    padding: 18px 18px;
+    border-right: #fff solid 1px;
+    border-bottom: #dadcde solid 1px;
+    width: 242px;
+}
+.merchant-services .merchant-service-menu:first-child { border-top: #dadcde solid 1px; }
+.merchant-services .merchant-service-menu a {
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+}
+.merchant-services .merchant-service-menu div {
+    color: #808080;
+    font-size: 13px;
+    margin-top: 8px;
+}
+.merchant-services .merchant-service-menu.disabled a {
+    color:#4895dd;
+    font-weight: normal;
+}
+.merchant-services .merchant-service-menu.disabled {
+    color:#bdc0c4;
+    background-color:#fafafa;
+    border-right: #dadcde solid 1px;
+}
+
+
+/*fieldset input[type="text"]:invalid, select:invalid{*/
+    /*background-color: #fff !important;*/
+    /*border: 1px solid #c0c0c0 !important;*/
+    /*color: #222 !important;*/
+/*}*/
+.merchant-services input[type="text"].ng-invalid-pattern {
+    background-color: #ffc8d0 !important;
+    border: 1px solid #c05548 !important;
+}
+
+.debugMessage {background-color: #fff6be;}
+.debugMessage span {font-weight: bold;}
+
+.error {
+    background-color: #ff5f3c;
+    padding:0 6px;
+}
+.success {
+    background-color: #51ff60;
+    padding:0 6px;
+}
+
+
+

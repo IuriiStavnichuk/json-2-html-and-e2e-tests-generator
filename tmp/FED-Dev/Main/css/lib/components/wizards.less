@@ -1,0 +1,124 @@
+// Wizard
+// ---------
+
+.wizard-step {min-height: 250px;}
+
+
+
+.wizard-buttons td {
+		padding: 10px;
+		padding-right: 0;}
+
+.wizard-header {margin-bottom: 16px;}
+
+.wizard-index {
+		margin: 0; 
+		margin-left: 1px;
+		position: relative; 
+		vertical-align: top;
+		width: 220px; 
+		z-index: 100;}
+
+.wizard-index td {
+		color: @gray;
+		border: 1px solid #dbdbdb; 
+		font-size: 15px;
+		height: 56px;
+		padding: 0 15px;
+		text-shadow: 0 1px 0 #ccc;
+		width: 220px;}
+
+.wizard-index .active {
+		/*background: #f9fff2 url("../images/wizard-current.png") no-repeat right top;*/
+		border-right: 0;
+		color: #fff; 
+		font-weight: 700;}
+
+.wizard-step {
+		background-color: #f9fff2; 
+		border: 1px solid #dbdbdb;  
+		display: block; 
+		left: -1px; 
+		padding: 20px; 
+		position: relative;}
+
+.wizard {width: 100%;}
+
+.wizard .document-preview img { width: 100%; }
+
+.wizard textarea { resize: vertical; }
+
+// Wizard Row
+.wizard-row .wizard .sidebar {
+  width:884px;
+  margin:4px 0 40px;
+}
+
+
+.wizard-row .wizard .sidebar > div {background: url(../images/backgrounds/wizard-staff.png) repeat-x left 12px;}
+
+.wizard-row .wizard .sidebar .step-container-1 div {
+		text-align: center; 
+		width: 99%;}
+
+.wizard-row .wizard .sidebar .step-container-2 div {
+		text-align: center; 
+		width: 49%;}
+
+.wizard-row .wizard .sidebar .step-container-3 div {
+		text-align: center; 
+		width: 32%;}
+
+.wizard-row .wizard .sidebar .step-container-4 div {
+		text-align: center; 
+		width: 24%;}
+
+.wizard-row .wizard .sidebar .step-container-5 div {
+		text-align: center; 
+		width: 19%;}
+
+.wizard-row .wizard .sidebar div div {
+    font-weight:700;  
+    display:inline-block;
+
+    color:rgb(195,202,206);
+}
+
+.wizard-row .wizard .sidebar span {
+    margin:0 auto 10px;
+    font-size: 1.3em;
+    color:rgb(151, 154,157);
+    display: block;
+    border-radius: 100%;
+    width:30px;
+    height:30px;
+    line-height:29px;
+    background:rgb(223, 226, 229);
+}
+
+.wizard-row .wizard .sidebar div.active {
+  color: @brand-primary;
+  span {
+        background: @brand-primary;
+    }
+}
+.wizard-row .wizard .sidebar .active span {color: #fff;}
+
+.wizard-row .wizard .sidebar div.done {}
+
+.wizard-row .wizard .sidebar .done span {background: @brand-primary url(../images/icons/wizard-check.png) no-repeat 50% 50%; text-indent: 100%;
+white-space: nowrap;
+overflow: hidden;}
+
+
+.wizard-row .col-sm-4 {margin-top:80px;}
+.wizard-row .form-group .col-sm-4 {margin-top:0;}
+
+
+.wizard-row .step {
+  margin-bottom:15px;
+}
+
+.wizard-row .step .alert-success {
+    background-color: rgb(234, 255, 240);
+}

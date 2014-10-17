@@ -1,0 +1,63 @@
+<%@ Page Language="vb" AutoEventWireup="false"
+CodeBehind="FeatureApprovalChecklistCheckout.aspx.vb"
+Inherits="FeatureApproval.FeatureApprovalChecklistCheckout"
+MasterPageFile="~/Secure.Master"
+%>
+
+<%@ MasterType TypeName="AlertPay.UI.Pages.SecureMasterPage" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="MainContent" >
+    <link rel="stylesheet" href="<%=Page.ResolveUrl("~/CSS/merchant-services.css")%>" />
+
+
+    <div class="container" >
+
+        <div class="span2" >
+        </div>
+        <div class="span6">
+            <div class="checklist-checkout" >
+
+                <h1>Sell online checklist</h1>
+                <hr>
+                <h6>Here is a list of things you need to do to sell online with Payza</h6>
+
+                <div class="span4">
+                    <div class="checklist-checkout">
+
+                        <div class="field radio-check-field">
+                            <h5>Get your account verified</h5>
+                            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                            <div class="completed">Completed</div>
+                            <hr>
+                        </div>
+                        <div class="field radio-check-field">
+                            <h5>Get your account verified</h5>
+                            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                            <a class="btn-link">Verify your account</a>
+                            <hr>
+                        </div>
+                        <div class="block-visit-egift-catalog">
+                            <h3>Shop at major brands with eGift cards</h3>
+                            <div class="matte">
+                                <a href="#">Visit our eGift catalog</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span2">
+                <%--<div class="box-container sidebar">--%>
+                <div>
+                    <h6>Need some help?</h6>
+                    <div class="panelcontent">
+                        <p>You can reach us by <a href="#">phone</a> by <a href="#">email</a> or by <a href="#">live chart</a>, Monday to Friday, 8:00am to 11:59pm EST</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+        <%= AntiForgery.GetHtml()%>
+
+</asp:Content>

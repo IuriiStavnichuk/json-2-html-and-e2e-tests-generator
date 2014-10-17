@@ -1,0 +1,32 @@
+<!--<div   ng-repeat='article in items.result'>
+
+    <h2 click='singlePageView(article.id)'>{{article.title}}</h2>
+
+    <p ng-bind-html-unsafe="textWithTags(article.content)"></p>
+
+</div>-->
+
+<!--<div  ng-switch on="chosenLang">
+    <h1 ng-switch-when="FR" >Payza NEWS list  {[chosenLang]}</h1>
+    <h1 ng-switch-default >Payza liste NOUVELLES  {[chosenLang]}</h1>
+<div>-->
+
+<div ng-controller="PaginationCtrl" ng-cloak>
+
+<table ng-table="tableParams" class="table">
+    <tr ng-repeat="article in articles">
+
+        <td>
+            </br>
+
+            <a href="#/{[article.title]}/{[chosenLang]}" ng-click='clickMenu(article.id)' ng-bind-html-unsafe="article.title"></a>
+
+            </br></br>
+
+            <p ng-bind-html-unsafe="article.content"></p>
+        </td>
+
+    </tr>
+</table>
+
+</div>

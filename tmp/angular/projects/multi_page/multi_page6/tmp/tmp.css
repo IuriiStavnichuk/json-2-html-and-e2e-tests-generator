@@ -1,0 +1,148 @@
+.info-collector .modal-window {
+        border: 0;
+}
+.info-collector .how-it-works-dialog {
+        width: 800px;
+}
+.collect_needed_info {
+        width: 800px;
+        border-radius: 0 0 4px 4px;
+        background: white;
+}
+.collect_needed_info .modal-green-header {
+        padding: 12px 0 16px;
+        border-bottom: 1px solid #378110;
+        background-color: #44a32e;
+}
+.collect_needed_info .modal-grey-footer {
+        height: 58px;
+        padding: 20px 0 6px;
+        border-radius: 0 0 4px 4px;
+        background: #c8cace url(../images/backgrounds/collect_needed_info_grey_gradient.png) repeat-x;
+        font-size: 14px;
+}
+.collect_needed_info p {
+        margin: 6px 0 6px;
+}
+.collect_needed_info h1 {
+        width: 420px;
+        margin: 0 auto;
+        text-align: center;
+        color: #ffffff;
+        font-size: 25px;
+        font-weight: 300;
+        line-height: 32px;
+}
+.collect_needed_info h4 {
+        margin: 16px 0 0;
+        color: #2b2b2b;
+        font-size: 15px;
+        font-weight: 600;
+}
+.collect_needed_info .section {
+        width: 362px;
+        margin: 0 auto 24px;
+}
+.collect_needed_info .field label {
+        margin: 16px 0 0;
+        color: #2b2b2b;
+        font-size: 15px;
+        font-weight: 600;
+}
+.collect_needed_info fieldset .field-item {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+}
+.collect_needed_info select {
+        float: left;
+        width: 100% !important;
+        margin: 10px 0 4px;
+}
+.collect_needed_info #showLine2 {
+        display: block;
+        margin: 0 0 8px;
+        cursor: pointer;
+        color: #0c64d1;
+        font-size: 1.3em;
+}
+.collect_needed_info input {
+        float: right;
+        width: 97% !important;
+        margin-top: 10px;
+}
+.collect_needed_info .flag-16 {
+        position: absolute;
+        margin-top: 48px;
+}
+.collect_needed_info .month {
+        width: 47% !important;
+        margin-right: 3%;
+}
+.collect_needed_info .day {
+        width: 20% !important;
+}
+.collect_needed_info .year {
+        float: right;
+        width: 27% !important;
+}
+.collect_needed_info .divWorkPhone .area-code {
+        width: 47% !important;
+        margin-right: 2%;
+}
+.collect_needed_info .divWorkPhone .phone-number {
+        width: 28% !important;
+}
+.collect_needed_info .divWorkPhone .phone-number input {
+        float: left;
+}
+.collect_needed_info .divWorkPhone .phone-ext {
+        float: right;
+        width: 14% !important;
+}
+.collect_needed_info .divPhoneNo .area-code {
+        width: 47% !important;
+}
+.collect_needed_info .divPhoneNo .phone-number {
+        float: right;
+        width: 48% !important;
+}
+.collect_needed_info .pnlPhysicalAddress .FIELDtxtState {
+        width: 47% !important;
+}
+.collect_needed_info .pnlPhysicalAddress .lblZipCode {
+        float: right;
+        width: 48% !important;
+}
+.collect_needed_info span.field-error {
+        display: block;
+        color: #f04747;
+        font-size: 1.1em;
+}
+.collect_needed_info .field-error select,
+.collect_needed_info .field-error input {
+        border-color: #f04747;
+}
+.collect_needed_info .btn-primary {
+        float: left;
+        width: 50%;
+        margin-right: 10px;
+        margin-bottom: 0;
+        padding: 6px 20px 9px;
+        text-shadow: 0 1px 2px #383838;
+        font-size: 15px;
+}
+.collect_needed_info .section > div {
+        padding-top: 14px;
+}
+.collect_needed_info .modal-grey-footer input {
+        width: 48% !important;
+        margin-top: 4px;
+}
+.collect_needed_info span + * {
+        border-color: #f04740;
+}
+.collect_needed_info .modal-grey-footer a {
+        text-decoration: underline;
+}
+

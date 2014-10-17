@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="Demo" ng-controller="DemoController">
+<head>
+    <script src="http://code.angularjs.org/1.0.6/angular.min.js"></script>
+    <script src="components.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<form class="form-horizontal">
+    <div data-ng-repeat="groups in group_array" ></br></br>
+        <div class="control-group" data-ng-repeat="field in groups.group" ng-switch on="field.type">{{field.groupName}}
+            <label class="control-label" for="inputEmail">{{field.title}}</label>
+
+            <div class="controls" ng-switch-when="i">
+                <input type="text" placeholder="{{field.value}}">
+            </div>
+
+            <div class="controls" ng-switch-when="s">
+                <select><option>{{field.value}}</option></select>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+</body>
+</html>

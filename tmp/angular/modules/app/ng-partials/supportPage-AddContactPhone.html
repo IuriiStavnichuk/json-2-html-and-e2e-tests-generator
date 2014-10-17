@@ -1,0 +1,85 @@
+<div class="add-contact-phone">
+<h2>Contact Phone Number Control</h2>
+<div class="div-table show-hide-wrapper">
+    <div class="table-row">
+        <div class="flex-cell vert-align-top ">
+            <fieldset class="table-row">
+                <div class="radio-check-field withfield clearfix">
+                    <input type="text" id="phone-number"  ng-model="phoneNumber">
+                    <input type="submit" class="submit-button status-enabled" ng-click="addPhoneNumber(phoneNumber, arrayPhoneNumbers, arrayCountriesListForPhoneNumber )" value="Add">
+                    <input type="submit" class="reset-button status-enabled" ng-click="removePhoneNumber(arrayPhoneNumbers)" value="Remove selected">
+                    <input type="submit" class="button status-enabled" id="phone-table-wrapper-button" ng-click="showAllContent ( '#phone-table-wrapper', '#phone-table-wrapper-button' )" value="Show all">
+                </div>
+            </fieldset>
+            <div id="phone-table-wrapper">
+                <table cellspacing="0" border="1" style="width:100%;border-collapse:collapse;">
+                    <thead>
+                    <tr>
+                        <th scope="col">Select</th>
+                        <th scope="col">Number</th>
+                        <th scope="col"><a href="" ng-click="predicate = 'countryList'; reverse=!reverse">Country List</a></th>
+                        <th scope="col">Enable</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <tr ng-repeat="PhoneNumber in arrayPhoneNumbers | orderBy:predicate:reverse">
+                        <td><input type="checkbox" ng-model="PhoneNumber.isSelected"></td>
+                        <td class="fixed-width-column90">{{PhoneNumber.Number}}</td>
+                        <td class="fixed-width-column230">{{PhoneNumber.countryList}}</td>
+                        <td><input type="checkbox" ng-model="PhoneNumber.Enable"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="empty-cell ">
+        </div>
+        <div class="fix-cell vert-align-top ">
+            <div class="block-country-list">
+                <div class="add-table">
+                    <table border="0">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <input id="selectallcheckers2" type="checkbox"  ng-click="selectAllCheckersInCountriesList( arrayCountriesListForPhoneNumber, 'selectallcheckers2', 'numberOfSelectedCountries2' )"><span>Select all</span>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr ng-repeat="continent in  arrayCountriesListForPhoneNumber">
+                            <td>
+                                <a id="toggleIconForPhoneNumber{{continent.id}}" ng-click="toggleIcon('toggleIconForPhoneNumber'+continent.id)">[-]</a>
+                                <a   ng-click="toggleIcon('toggleIconForPhoneNumber'+continent.id)"> {{continent.continent}}</a>
+                                <ul id="ultoggleIconForPhoneNumber{{continent.id}}">
+                                    <li ng-repeat='country in continent.country'>
+                                        <input type="checkbox" ng-model="country.isSelected" ng-click="changeIsSelectedStatus( arrayCountriesListForPhoneNumber, 'selectallcheckers2', 'numberOfSelectedCountries2' )"><span>{{country.name}}</span>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="remove-table">
+                    <ul>
+                        <li>
+                            <span>({{variablesNames['numberOfSelectedCountries2']}}) selected countries </span>&nbsp;
+                            <a ng-click="resetArrayCountriesList( arrayCountriesListForPhoneNumber, 'selectallcheckers2', 'numberOfSelectedCountries2' )">Reset</a>
+                        </li>
+                    </ul>
+                    <ul ng-repeat="continent in arrayCountriesListForPhoneNumber">
+                        <li ng-repeat='country in continent.country' ng-show="country.isSelected">
+                            &nbsp;&nbsp;&nbsp;<input type="checkbox" ng-model="country.isSelected" ng-click="changeIsSelectedStatus( arrayCountriesListForPhoneNumber, 'selectallcheckers2', 'numberOfSelectedCountries2' )"><span>{{country.name}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+

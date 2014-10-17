@@ -1,0 +1,33 @@
+<ul class="nav" id="nav" >
+    <!--| filter:{type:'news'}-->
+    <!--ng:class="(link.submenu!="")? 'disabled' : ''"-->
+    <!--<li ng-repeat="link in items_menu.result" ng-class="(link.submenu)? 'disabled' : ''" ><a ng-click="(link.url!='')? clickMenu(link.id ) :''"  href="#/{{link.url}}" >{{link.title}}</a>-->
+
+    <li  ng-switch on="link.url" ng-repeat="link in items_menu.result"  >
+        <a ng-switch-when="" href="" >{{link.title}}<i class="icon-chevron-down"></i></a>
+        <a ng-switch-default ng-click="clickMenu(link.id )"  href="#/{{link.url}}" >{{link.title}}</a>
+
+        <ul >
+
+            <li ng-switch on="sublink.url" ng-repeat='sublink in link.submenu'>
+                <a ng-switch-when="" href="" >{{sublink.title}}<i class="icon-chevron-right"></i></a>
+                <a ng-switch-default ng-click="clickMenu(sublink.id )"  href="#/{{sublink.url}}" >{{sublink.title}}</a>
+
+                <ul>
+
+                    <li ng-repeat='subsublink in sublink.submenu'><a ng-click='clickMenu(subsublink.id)' href="#/{{subsublink.url}}">{{subsublink.title}}</a></li>
+
+                </ul>
+
+            </li>
+
+        </ul>
+
+    </li>
+
+</ul>
+
+
+
+<!--template:"<a href='#/{{menu.title}}'  click='clickMenu(menu)' ng-repeat='menu in items_menu.result'>{{menu.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>"-->
+

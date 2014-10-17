@@ -1,0 +1,94 @@
+﻿#confirm-dialog-overlay,#confirm-businessmodel-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:3000px;
+    background-color: #fff;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: 0.7;
+    display: block;
+    z-index: 1000;
+}
+
+#confirm-dialog, #confirm-businessmodel-dialog {
+    position: fixed;
+    width:100%;
+    top: 0;
+    left: 0;
+    z-index:1000;
+}
+
+#confirm-revenuegenerationmethod-dialog .nav, #confirm-businessmodel-dialog .nav {
+    text-align:right;
+}
+
+.confirm-dialog-box {
+    position: relative;
+    margin:0 auto;
+    background: #fff;
+    padding:25px 55px;
+    width: 340px;
+    border:1px solid #ccc;
+    border-top:4px solid #009639;
+}
+.confirm-dialog-box p {
+    margin: 30px 0;
+}
+
+.merchant-services {
+    .alert-success {
+        background-color: rgb(234, 255, 240);
+    }
+
+    label.disabled {
+        color: #b8b8b8;
+        font-style: italic;
+        cursor: default;
+    }
+
+    #checkout-document-upload-form {
+        display: none;
+    }
+
+    .panel-body h2:not(.expanded) {
+        cursor: pointer;
+    }
+
+    #loading-indicator-lightbox-for-heading {
+        display: block;
+        position: absolute;
+        z-index: 999;
+        left: 0;
+        width: 940px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8) url(../images/icons/load-more.gif) no-repeat center center;
+        margin-left: 10px;
+    }
+
+    #loading-indicator-lightbox {
+        display: block;
+        position: fixed;
+        z-index: 1000;
+        width: 940px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8) url(../images/icons/load-more.gif) no-repeat center center;
+    }
+
+    #checkout-document-upload-form a {
+        cursor: pointer;
+    }
+
+    em {
+        color: #808080;
+    }
+
+    .save-note {
+        display: inline-block;
+        width: 380px;
+        font-size: smaller;
+        color: @gray-light;
+        padding: 10px 12px;
+        vertical-align: middle;
+    }
+}

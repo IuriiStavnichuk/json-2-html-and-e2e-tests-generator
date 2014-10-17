@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="Demo" ng-controller="DemoController">
+<head>
+    <!--<script src="http://code.angularjs.org/1.0.6/angular.min.js"></script>-->
+
+    <script src="angular.js"></script>
+    <script src="components.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<!--<div class="field radio-check-field" ng-repeat="(key,groups) in source" >-->
+    <!--<strong><p ng-bind="key"></p></strong>-->
+
+    <!--<div class="radio-check-item inline" ng-repeat="radio in groups">-->
+
+        <!--<p ng-bind="radio.name"></p>-->
+
+        <!--<input type="radio" ng-model="info.urlFieldSupplierTypeId.value" value="radio.id" name="93">-->
+        <!--&lt;!&ndash;<label ng-bind="radio.name"></label>&ndash;&gt;-->
+    <!--</div>-->
+<!--</div>-->
+  <div><br><br>Version2</div>
+<div class="field radio-check-field" ng-repeat="(key,groups) in value" >
+    <strong><p ng-bind="groups.name"></p></strong>
+
+    <div class="radio-check-item inline" ng-repeat="radio in groups.data">
+        <input type="radio" ng-model="info.urlFieldSupplierTypeId.value" value="radio.id" name="93">
+        <label ng-bind="radio.name"></label>
+    </div>
+
+</div>
+
+</body>
+

@@ -1,0 +1,469 @@
+﻿// Account Security
+
+.photo {
+    height: 110px;
+    overflow: hidden;
+    width: 110px;
+
+    // CSS3
+    .border-radius(3px);
+
+    .body-parts {
+        height: 110px;
+        margin: 0 auto;
+        position: relative;
+        width: 56px;
+
+        img {
+            height: 110px;
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+    }
+}
+
+
+// Advanced Security Page
+
+        .avatar {
+            background: url(../images/backgrounds/avatar-background.png) 0 0 no-repeat;
+            height: 155px;
+            position: relative;
+            width: 155px;
+
+            .photo,
+            .icon-edit-avatar {
+                display: block;
+                position: absolute;
+            }
+
+            .photo {
+                left: 22px;
+                top: 22px;
+            }
+
+            .icon-edit-avatar {
+                bottom: -9px;
+                color: #fff;
+                font-size: 13px;
+                font-weight: bold;
+                left: 22px;
+                padding: 8px 0;
+                text-align: center;
+                text-shadow: 0 1px 0 rgba(0,0,0,0.34);
+                width: 110px;
+                // CSS3
+                @startColor: #5ba0e0;
+                @endColor: #4388c9;
+                #gradient > .vertical(@startColor, @endColor);
+
+                // CSS3
+                /*.border-radius-bottom-left(3px);
+                .border-radius-bottom-right(3px);*/
+            }
+        }
+
+.avatar-message {
+    margin-top: 10px;
+
+    .form-group {
+      .clear-fix();
+    }
+
+    .field-item {
+        margin-left: -4px;
+        margin-right: 0;
+        width: auto;
+        float: left;
+        display: inline-block;
+    }
+
+    .personal-message {
+        padding-left: 10px;
+        width: 443px;
+
+        textarea {
+            height: 95px;
+            margin-top: 22px;
+            padding-left: 12px;
+            width: 95%;
+        }
+
+        .watermark {
+            color: @brand-primary;
+            font-size: 19px;
+        }
+
+        .character-count-msg {
+            text-align: right;
+        }
+    }
+}
+
+        .security-questions {
+            margin-top: 40px;
+
+            .field {
+                margin-bottom: 5px;
+
+                .field-item {
+                    width: 290px;
+
+                    .watermark {
+                        color: rgba(84,84,84,0.48);
+                    }
+                }
+            }
+
+            .radio-check-field {
+                .clear-fix();
+                margin-bottom: 15px; margin-top: 30px;
+            }
+        }
+    
+
+// Edit Avatar
+.avatar-creator-backdrop {
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.edit-avatar-content {
+    background-color: #fff;
+    //left: 50%;
+    //margin-left: -400px;
+    //top: 0;
+    width: 800px;
+    // CSS3
+    /*border-radius-bottom-right(3px);
+    border-radius-bottom-left(3px);*/
+
+    @shadow: 0 1px 15px rgba(0,0,0,0.75);
+    .box-shadow(@shadow);
+
+    h1 {
+        background-color: #44a32e;
+        border-bottom: 1px solid #378110;
+        color: #fff;
+        font-size: 25px;
+        font-weight: 300;
+        margin-bottom: 0;
+        padding: 12px;
+        text-align: center;
+        text-shadow: 0 1px 0 rgba(0,0,0,0.75);
+    }
+    // Edit Avatar Creator
+    .avatar-creator {
+        .clear-fix();
+        padding: 25px;
+        // Avatar Features
+        .avatar-features {
+            float: left;
+            width: 350px;
+
+            h6 {
+                color: #aeb0b4;
+                font-size: 12px;
+                text-transform: uppercase;
+            }
+
+            .features-list,
+            .avatar-feature-selection {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+
+            .features-list {
+                font-size: 15px;
+                line-height: 32px;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    a {
+                        color: #333;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+
+                    .selected {
+                        font-weight: bold;
+                    }
+                }
+            }
+            // Feature Selection
+            .avatar-feature-selection {
+                float: right;
+                height: 340px;
+                overflow: auto;
+                width: 185px;
+                
+                .parts-selection {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+
+
+                    .type {
+                        display: block;
+                        font-size: 10px;
+                        font-weight: bold;
+                        text-align: center;
+                        text-transform: uppercase;
+                    }
+
+                    li {
+                        a {
+                            display: block;
+                            border: 3px solid transparent;
+                            height: 85px;
+                            overflow: hidden;
+                            position: relative;
+                            width: 71px;
+                            // CSS3
+                            .border-radius(3px);
+
+                            &:hover {
+                                border-color: #dde0e4;
+                            }
+
+                            &:focus {
+                                outline: none;
+                            }
+
+                            img {
+                                left: 0;
+                                position: absolute;
+                                top: 0;
+                            }
+                        }
+
+                        .selected {
+                            border-color: #dde0e4;
+
+                            &:hover {
+                                border-color: #dde0e4;
+                            }
+
+                            &:after {
+                                content: url(../images/icons/check.png);
+                                bottom: 5px;
+                                position: absolute;
+                                right: 5px;
+                            }
+                        }
+                    }
+
+
+                    ul {
+                        font-size: 100%;
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+
+                        li {
+                        }
+                    }
+                }
+                // Avatar Gender
+                .avatar-gender {
+                    li {
+
+                        a {
+                            height: 154px;
+                        }
+                    }
+                }
+                // Avatar Color
+                .avatar-color {
+                    li {
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 75px;
+
+                        ul {
+                            li {
+                                display: block;
+                                width: 100%;
+
+                                a {
+                                    height: 45px;
+                                    margin: auto;
+                                    padding: 7px 5px;
+                                    width: 40px;
+
+                                    span {
+                                        display: block;
+                                        height: 27px;
+                                        overflow: hidden;
+                                        text-indent: -9999px;
+                                        width: 27px;
+                                        // CSS3
+                                        .border-radius(100%);
+                                    }
+                                    // Skin Color
+                                    .skin-pale {
+                                        background-color: #fef0e5;
+                                    }
+
+                                    .skin-beige {
+                                        background-color: #fdcea4;
+                                    }
+
+                                    .skin-yellow {
+                                        background-color: #ffeabc;
+                                    }
+
+                                    .skin-brown {
+                                        background-color: #bd7b4d;
+                                    }
+
+                                    .skin-dark-brown {
+                                        background-color: #8f4e2b;
+                                    }
+                                    // Hair Color
+                                    .hair-yellow {
+                                        background-color: #ffcd0b;
+                                    }
+
+                                    .hair-brunette {
+                                        background-color: #8d5933;
+                                    }
+
+                                    .hair-orange {
+                                        background-color: #f26122;
+                                    }
+
+                                    .hair-brown {
+                                        background-color: #713500;
+                                    }
+
+                                    .hair-gray {
+                                        background-color: #646e74;
+                                    }
+
+                                    .hair-black {
+                                        background-color: #000c12;
+                                    }
+
+                                    .hair-green {
+                                        background-color: #00a651;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                // Avatar Head
+                .avatar-head {
+
+                    li {
+
+                        a {
+
+                            img {
+                                top: 7px;
+                            }
+                        }
+                    }
+                }
+                // Avatar Body
+                .avatar-body {
+
+                    li {
+
+                        a {
+                            height: 60px;
+
+                            img {
+                                bottom: -18px;
+                                top: inherit;
+                            }
+                        }
+                    }
+                }
+                // Avatar Legs
+                .avatar-legs {
+
+                    li {
+
+                        a {
+                            height: 40px;
+
+                            img {
+                                bottom: 3px;
+                                top: inherit;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .mCSB_scrollTools {
+                margin-right: 10px;
+            }
+
+            .mCSB_scrollTools,
+            .mCSB_draggerRail {
+                background-color: transparent;
+                width: 6px;
+            }
+
+            .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+                background-color: rgba(0, 0, 0, 0.4);
+                width: 6px;
+            }
+        }
+        // Avatar Preview
+        .avatar-preview,
+        .preview-photo {
+            height: 375px;
+            overflow: hidden;
+            width: 395px;
+            // CSS3
+            .border-radius(3px);
+        }
+
+        .avatar-preview {
+            float: right;
+            // CSS3
+            @shadow: 0 0 29px rgba(0,0,0,0.21);
+            .box-shadow(@shadow);
+
+            .preview-photo {
+                margin: 0 auto;
+                position: relative;
+                width: 191px;
+
+                img {
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                }
+            }
+        }
+    }
+    // Edit Avatar Actions
+    .avatar-creator-actions {
+        font-size: 14px;
+        padding: 20px;
+        text-align: center;
+        // CSS3
+        @startColor: #e8eaee;
+        @endColor: #c8c9ce;
+        #gradient > .vertical(@startColor, @endColor);
+        /*.border-radius-bottom-right(3px);
+        .border-radius-bottom-left(3px);*/
+
+        @shadow: 0 -1px 0 #d9d9d9, 0 1px 0 #fff inset;
+        .box-shadow(@shadow);
+
+        input[type="submit"] {
+            font-size: 15px;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+label.control-label {
+        width:90px !important;
+}
+
+.form-horizontal .controls {
+        margin-left: 110px;
+}
+input {
+        width:180px;
+}
+
+select {
+        width:52px;
+}
+
+.group {
+        border:1px solid #ccc;
+        border-radius:6px;
+        margin: 20px;
+        padding: 20px 0;
+}
+.group_name {
+        /*display: inline-block;*/
+        padding: 0 12px;
+        position: relative ;
+        background-color: white;
+        top:-30px;
+        left:12px;
+        width:26px
+
+}
+
+
+
+

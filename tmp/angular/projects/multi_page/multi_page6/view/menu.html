@@ -1,0 +1,24 @@
+<ul id="nav">
+
+    <li ng-repeat="link in items_menu.result"><a click='clickMenu(link.title)' href="{{link.url}}">{{link.title}}</a>
+
+        <ul >
+
+            <li ng-repeat='sublink in link.submenu'><a click='clickMenu(sublink.title)' href="{{sublink.url}}">{{sublink.title}}</a>
+
+                <ul>
+
+                    <li ng-repeat='subsublink in sublink.submenu'><a click='clickMenu(subsublink.title)' href="{{subsublink.url}}">&nbsp;&nbsp;&nbsp;{{subsublink.title}}</a></li>
+
+                </ul>
+
+            </li>
+
+        </ul>
+
+    </li>
+
+</ul>
+
+
+<!--template:"<a href='#/{{menu.title}}'  click='clickMenu(menu)' ng-repeat='menu in items_menu.result'>{{menu.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>"-->

@@ -1,0 +1,266 @@
+<%@ Page Language="vb" AutoEventWireup="false" 
+        CodeBehind="FeatureApprovalQuestionnaireCheckout.aspx.vb" 
+        Inherits="FeatureApproval.FeatureApprovalQuestionnaireCheckout" 
+        MasterPageFile="~/Secure.Master" 
+        %>
+
+<%@ MasterType TypeName="AlertPay.UI.Pages.SecureMasterPage" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="MainContent" >
+
+<div class="merchant-services">
+    <h2>Merchant services</h2>
+    <div class="content">
+        <div class="span3">
+
+            <div class="progress-indicator-container">
+                <div class="merchant-service-menu">
+                    <a href="http://localhost/businessprofile/verification/Overview.aspx">Checkout</a>
+                    <div>Make money with your website.</div>
+                </div>
+                <div class="merchant-service-menu disabled">
+                    <a href="http://localhost/businessprofile/verification/Overview.aspx">Payouts</a>
+                    <div>Send funds to multiple recipients.</div>
+                </div>
+                <div class="merchant-service-menu disabled">
+                    <a href="http://localhost/businessprofile/verification/Overview.aspx">Credit Card Processing</a>
+                    <div>Process credit cards on checkout.</div>
+                </div>
+                <!--<div class="right-border">-->
+                <!--</div>-->
+            </div>
+        </div>
+        <!--<div class="span5">-->
+        <div class="span5" data-behavior="accordion(header: h5, content: fieldset)">
+            <h4>Check out</h4>
+            <p>
+                Lorem velit ex per, impedit adolescens vel ea. Per ad nullam ornatus gubergren, vim ei dicta aperiam. Pro illum prompta conclusionemque id, at ubique graeco instructior nam.
+            </p>
+            <div class="nav">
+                <a class='btn-link'>Get Started</a>
+            </div>
+            <hr>
+
+            <h5>Introduction</h5>
+            <fieldset>
+                <div class="field radio-check-field">
+                    <p>What sort of online business do you conduct?</p>
+                    <div class="radio-check-item">
+                        <input  id="001" type="radio" name="001" value="true" checked="checked" tabindex="1">
+                        <label for="001">I sell products</label>
+                    </div>
+                    <div class="radio-check-item">
+                        <input  id="002" type="radio" name="001" value="true"  tabindex="2">
+                        <label for="002">I offer services</label>
+                    </div>
+                    <div class="radio-check-item">
+                        <input  id="003" type="radio" name="001" value="true" tabindex="3">
+                        <label for="003">I both sell products and offer services</label>
+                    </div>
+                </div>
+
+                <div class="field radio-check-field">
+                    <p>Do you have a website?</p>
+                    <div class="radio-check-item inline">
+                        <input id="004" type="radio" name="002" value="false" checked="checked" tabindex="4">
+                        <label for="004">Yes</label>
+                    </div>
+                    <div class="radio-check-item inline">
+                        <input id="005" type="radio" name="002" value="false" checked="checked" tabindex="5">
+                        <label for="005">No</label>
+                    </div>
+
+                </div>
+                <div class="nav">
+                    <a class='btn-link'>Next Step</a>
+                    <a class='btn-link'>Save</a>
+                    <span>or</span>
+                    <a id="fhftCard_Ste" name="ain$MainC">Cancel</a>
+                </div>
+                <hr>
+            </fieldset>
+
+            <h5>Product information</h5>
+            <fieldset>
+                <div class="field">
+                    <p>What kind of products do you sell?</p>
+                    <select name="ctl00"  id="ctl00" tabindex="6">
+                        <option selected="selected" value="1">Please select</option>
+                        <option value="2">Personal Savings</option>
+                        <option value="3">Business Checking</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <p>From which country is your product shipped?</p>
+                    <input name="ctl00$" type="text" id="ctl00_" autocomplete="off" promptchar="" selectiononfocus="CaretToBeginning" onkeyup="replaceBrackets(this);" tabindex="5">
+                </div>
+
+                <div class="field radio-check-field">
+                    <p>Do you manufacture the product?</p>
+                    <div class="radio-check-item inline">
+                        <input id="ctl00_ctl0333" type="radio" name="ctl00$ct" value="111" checked="checked" tabindex="1">
+                        <label for="ctl00_ctl00">Yes</label>
+                    </div>
+                    <div class="radio-check-item inline">
+                        <input id="ctl00_ctl033" type="radio" name="ctl00$ct" value="222" tabindex="2">
+                        <label for="ctl00_ctl02">No</label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <p>What is the average product price (USD)?</p>
+                    <input name="ctl00$" type="text" id="ctl055_" autocomplete="off" promptchar="" selectiononfocus="CaretToBeginning" onkeyup="replaceBrackets(this);" tabindex="5">
+                </div>
+                <div class="field">
+                    <p>How do you deliver the product?</p>
+                    <select name="ctl00"  id="ctl044" tabindex="6">
+                        <option selected="selected" value="1">Please select</option>
+                        <option value="2">Personal Savings</option>
+                        <option value="3">Business Checking</option>
+                    </select>
+                </div>
+
+                <div class="field radio-check-field">
+                    <p>Are you an authorized distributor/supplier?</p>
+                    <div class="radio-check-item inline">
+                        <input id="ctl00_ctl00" type="radio" name="ctl00$ct" value="111" checked="checked" tabindex="1">
+                        <label for="ctl00_ctl00">Yes</label>
+                    </div>
+                    <div class="radio-check-item inline">
+                        <input id="ctl00_ctl02" type="radio" name="ctl00$ct" value="222" tabindex="2">
+                        <label for="ctl00_ctl02">No</label>
+                    </div>
+                </div>
+                <div class="nav">
+                    <a class='btn-link'>Next Step</a>
+                    <a class='btn-link'>Save</a>
+                    <span>or</span>
+                    <a id="gjd_Ste" name="ain$MainC">Cancel</a>
+                </div>
+                <hr>
+            </fieldset>
+
+            <h5>Sales information</h5>
+            <fieldset>
+                <div class="field">
+                    <p>What country does most of your business come from?</p>
+                    <select name="ctl00"  id="cjkhgfhl00" tabindex="6">
+                        <option selected="selected" value="1">Please select</option>
+                        <option value="2">Personal Savings</option>
+                        <option value="3">Business Checking</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <p>How long until the shipped item is received?</p>
+                    <input class="half-width" name="ctl00$" type="text" id="ctlhhj00_" autocomplete="off" promptchar="" selectiononfocus="CaretToBeginning" onkeyup="replaceBrackets(this);" tabindex="5">
+                    <select class="half-width" name="ctl00"  id="cjkhrurl00" tabindex="6">
+                        <option selected="selected" value="1">Days</option>
+                        <option value="2">Personal Savings</option>
+                        <option value="3">Business Checking</option>
+                    </select>
+                </div>
+
+                <div class="field radio-check-field">
+                    <p>Do you offer recurring billing?</p>
+                    <div class="radio-check-item inline">
+                        <input id="ctlgjg333" type="radio" name="ctl00$ct" value="111" checked="checked" tabindex="1">
+                        <label for="ctl00_ctl00">Yes</label>
+                    </div>
+                    <div class="radio-check-item inline">
+                        <input id="ctlghj33" type="radio" name="ctl00$ct" value="222" tabindex="2">
+                        <label for="ctl00_ctl02">No</label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <p>Estimated monthly sales</p>
+                    <select name="ctl00"  id="ctl0ghj" tabindex="6">
+                        <option selected="selected" value="1">Please select</option>
+                        <option value="2">Personal Savings</option>
+                        <option value="3">Business Checking</option>
+                    </select>
+                </div>
+                <div class="nav">
+                    <a class='btn-link'>Next Step</a>
+                    <a class='btn-link'>Save</a>
+                    <span>or</span>
+                    <a id="ByeGiftCard_Ste" name="ain$MainC">Cancel</a>
+                </div>
+
+
+                <hr>
+            </fieldset>
+
+            <h5>Customer relations</h5>
+            <fieldset>
+                <div class="field">
+                    <p>How do buyers contact you?</p>
+                    <select name="ctl00"  id="cjk" tabindex="6">
+                        <option selected="selected" value="1">Please select</option>
+                        <option value="2">Personal Savings</option>
+                        <option value="3">Business Checking</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <p>How do you send an invoice?</p>
+                    <select name="ctl00"  id="cjkhsd0" tabindex="6">
+                        <option selected="selected" value="1">Please select</option>
+                        <option value="2">Personal Savings</option>
+                        <option value="3">Business Checking</option>
+                    </select>
+                </div>
+                <div class="field radio-check-field">
+                    <p>Does your company operate a call center?</p>
+                    <div class="radio-check-item inline">
+                        <input id="ctlgjlh3" type="radio" name="ctl00$ct" value="111" checked="checked" tabindex="1">
+                        <label for="ctl00_ctl00">Yes</label>
+                    </div>
+                    <div class="radio-check-item inline">
+                        <input id="ctggij33" type="radio" name="ctl00$ct" value="222" tabindex="2">
+                        <label for="ctl00_ctl02">No</label>
+                    </div>
+                </div>
+                <div class="nav">
+                    <a class='btn-link'>Next Step</a>
+                    <a class='btn-link'>Save</a>
+                    <span>or</span>
+                    <a id="ByeGfghf" name="ain$MainC">Cancel</a>
+                </div>
+
+
+                <hr>
+            </fieldset>
+
+            <h5>Submit documents</h5>
+            <fieldset>
+                <div class="field">
+                    <p>Here’s what we are looking for in your Driver’s license</p>
+                    <ul>
+                        <li>Requirement 1</li>
+                        <li>Requirement 2</li>
+                        <li>Requirement 3</li>
+                    </ul>
+                </div>
+                <div class="field">
+                    <p>Some information we need</p>
+                    <input name="ctl00$" type="text" id="ctljkh00_" autocomplete="off" promptchar="" selectiononfocus="CaretToBeginning" onkeyup="replaceBrackets(this);" tabindex="5">
+                    <div class="space"></div>
+                    <select name="ctl00"  id="ctuikljl00" tabindex="6">
+                        <option selected="selected" value="1">Please select</option>
+                        <option value="2">Personal Savings</option>
+                        <option value="3">Business Checking</option>
+                    </select>
+                </div>
+                <div class="nav">
+                    <a class='btn-link'>Next Step</a>
+                    <a class='btn-link'>Save</a>
+                    <span>or</span>
+                    <a id="ByejklGfghf" name="ain$MainC">Cancel</a>
+                </div>
+            </fieldset>
+
+        </div>
+    </div>
+</div>
+
+</asp:Content>

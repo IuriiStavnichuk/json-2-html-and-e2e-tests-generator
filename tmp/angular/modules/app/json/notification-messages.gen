@@ -1,0 +1,11 @@
+[
+   '{{repeat(4)}}',
+   {
+       id: '{{index}}',
+       isSelected: false,
+       messageTitle: '{{lorem(3)}}',
+       countryList: '{{country}}',
+       isPublish: true,
+       date: '{{date(dd/MM/YYYY)}}'
+   }
+]

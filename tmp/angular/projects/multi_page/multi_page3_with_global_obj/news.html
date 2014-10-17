@@ -1,0 +1,27 @@
+
+
+<!--<div   ng-repeat='article in items.result'>
+
+    <h2 click='singlePageView(article.id)'>{{article.title}}</h2>
+
+    <p ng-bind-html-unsafe="textWithTags(article.content)"></p>
+
+</div>-->
+<h1>Payza NEWS</h1>
+<div ng-controller="PaginationCtrl" ng-init="init('news.json')">
+<table ng-table="tableParams" class="table">
+    <tr ng-repeat="article in articles">
+
+        <td>
+
+            <h2 click='singlePageView(article.id)' ng-bind-html-unsafe="textWithTags(article.title)"></h2>
+
+            </br>
+
+            <p ng-bind-html-unsafe="textWithTags(article.content)"></p>
+        </td>
+
+    </tr>
+</table>
+
+</div>

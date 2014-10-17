@@ -1,0 +1,21 @@
+[
+   '{{repeat(6)}}',
+   {
+              continent: function(idx) {
+           var choices = ['Northern America', 'Asia', 'Europe','Africa', 'Latin America', 'Oceania'];
+           return choices[idx-1];
+       },
+       id: '{{index}}',
+       country: [
+           '{{repeat(5)}}',
+           {
+           id: function(idx) {
+               window.index++;
+           return window.index;
+           },
+               name:'{{country}}',
+                isSelected: false
+           }              
+       ]
+	}
+]

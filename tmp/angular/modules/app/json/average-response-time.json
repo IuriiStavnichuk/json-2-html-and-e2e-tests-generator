@@ -1,0 +1,43 @@
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "total": 3,
+    "result": [
+        {
+            "id": 1,
+            "type": "Email",
+            "is_checked": "true",
+            "response_time": 10,
+            "units": [
+                "seconds",
+                "minutes",
+                "hours",
+                "days"
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Email",
+            "is_checked": "true",
+            "response_time": 4,
+            "units": [
+                "seconds",
+                "minutes",
+                "hours",
+                "days"
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Email",
+            "is_checked": "true",
+            "response_time": 5,
+            "units": [
+                "seconds",
+                "minutes",
+                "hours",
+                "days"
+            ]
+        }
+    ]
+}

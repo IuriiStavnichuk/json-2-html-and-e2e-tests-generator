@@ -1,0 +1,10 @@
+[
+   '{{repeat(4)}}',
+   {
+       id: '{{index}}',
+       isSelected: false,
+       Number: '{{phone}}',
+       countryList: '{{country}}',
+       Enable: true
+   }
+]

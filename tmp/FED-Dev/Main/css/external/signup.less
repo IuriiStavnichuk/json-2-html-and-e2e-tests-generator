@@ -1,0 +1,1071 @@
+﻿// TO BE REVIEWED: The first part were rules from main.less, since checkout has now it's own new separate master.
+
+// Default Elements  
+// -------------------
+
+/*html, 
+body {height: 100%;}*/
+    
+body {color: rgb(101, 101, 101);}    
+
+a,
+a:hover,
+a:visited,
+a:active,
+a:focus, 
+select:focus {text-decoration: none;}
+
+a:focus, select:focus {outline: none;}
+
+// Layout
+// ---------
+
+.wrapper  {
+	min-height: 100%; 
+	height: auto !important; 
+	height: 100%; 
+	margin: 0 auto; 
+		padding-bottom: 30px;
+
+	// CSS3 
+	background: #f0f0f0; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YwZjBmMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradien(top,  #f0f0f0 15%, #ffffff 25%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%,#f0f0f0), color-stop(25%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f0f0f0 15%,#ffffff 25%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f0f0f0 15%,#ffffff 25%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f0f0f0 15%,#ffffff 25%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f0f0f0 15%,#ffffff 25%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */}
+
+
+// Content 
+
+.content {
+	background-color: @white;
+	border: 1px solid #f6f6f6;
+	margin: auto;
+	margin-top: 25px;
+
+	// CSS3
+	.border-radius();
+	@shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+	.box-shadow(@shadow);}
+
+.content .main {
+	background-color: @white;
+	border-right: 1px solid #fff;
+	padding: 25px;
+	padding-top: 30px; padding-bottom: 15px;}
+
+.content .form-box .form-actions {
+	border-top: 1px solid #ccc; 
+	font-size: 1.3em;
+	height: 58px; 
+	margin-top: 50px; 
+	padding: 20px;
+	padding-bottom: 0; padding-top: 16px;
+
+	// CSS3
+	@startColor: rgba(229,229,229,1); @endColor: rgba(206,206,206,1);
+	#gradient > .vertical (@startColor, @endColor);
+
+	.border-radius-bottom-left(); .border-radius-bottom-right();}
+
+.content .form-box .form-actions a {
+	display: inline-block; 
+	line-height: 38px; 
+	margin-right: 5px;}
+    
+.content .form-box .form-actions .btn {
+	font-weight: normal;
+	line-height: 20px;
+	padding: 15px;
+	padding-bottom: 10px; padding-top: 8px;}
+
+
+// Top Bar 
+.topbar {
+	border-bottom: 2px solid #e6e6e6;
+    
+	// CSS3
+	@startColor: #ffffff; @endColor: #f0f0f0;
+	#gradient > .vertical(@startColor, @endColor);
+
+	@shadow: inset 0 -1px 0 #fff;
+	.box-shadow(@shadow);}
+
+.topbar .container {
+	padding: 0;
+	padding-top: 12px; padding-bottom: 12px;
+	position: relative;}
+
+.topbar a.logo,
+.topbar .merchant-info {
+	display: inline-block;
+	margin: 0;
+	vertical-align: top;}
+
+.topbar a.logo,
+.topbar a.logo img { 
+	border: none;
+	height: 52px;
+	width: 182px;}
+
+.topbar a.logo {
+	float: none;
+	text-indent: 0;}
+ 
+.topbar .merchant-info {
+	border-left: 1px solid #e1e1e1;
+	color: #333; 
+	font-family: "Open Sans", Arial, Helvetica, sans-serif; 
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	margin-top: 10px; margin-left: 20px;
+	padding: 10px; 
+	padding-right: 0; padding-left: 20px;
+	text-shadow: 0 1px 0 #fff;
+  
+	// CSS3
+	@shadow: inset 1px 0 0 #fff;
+	.box-shadow(@shadow);}
+    
+.topbar .merchant-info strong {
+	color: #49a547;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 600;}
+    
+.topbar .top-links {
+    list-style-type:none;
+    position: absolute;
+    right: 0;
+    top: 5px;}
+    
+.topbar .top-links li {
+	display:inline-block; 
+	margin-right: 10px;
+	padding: 0;}
+
+.topbar .top-links a {
+	font-size: 12px;
+	text-decoration:none;}
+
+.topbar .top-links .btn {
+	color: #fff;
+	font-size: 14px; 
+	padding: 10px;
+	padding-top: 6px; padding-bottom: 7px;}
+
+.topbar .top-links li:last-child {padding-right:0;}
+
+// Main / Side Bar 
+.main,
+.sidebar {
+	display: inline-block;
+	vertical-align: top;}
+
+.sidebar h3 {border-bottom:1px solid #e6e6e6;}
+
+.sidebar h6 + p {padding-top:0;}
+
+// Footer 
+.footer {
+	background-color: #2d2d2d; 
+	color: #a6a6a6; 
+	height: 125px; 
+	margin-bottom: 0; margin-top: 0;
+	padding-top: 25px;}
+    
+.footer .container {position: relative;}
+
+.footer p {
+	font-size: 100%;
+	margin-bottom: 10px;}
+
+.footer ul {list-style-type:none;}
+
+.footer li {display:inline-block;}
+
+.footer a {color: #fff;}
+
+.footer a:hover {color: #a6a6a6;}
+
+.footer .credentials {
+	position: absolute; 
+	right: 0;
+	top: 0;}
+
+.footer .credentials ul {margin: 0;}
+
+.footer .credentials li {
+	display: inline-block; 
+	margin: 0; 
+	background: #fff; 
+		
+	// CSS3
+	.border-radius();}
+
+.footer .credentials li a {display: block;}
+
+.footer .credentials ul .trustwave {background: none;}
+
+.footer .credentials ul .truste a img {
+	padding: 3px; 
+	border: 0;}
+
+.footer .credentials ul .mcafee a img {
+	display:none;}
+// ---
+
+
+// Form: To be evaluated 
+// ------------------------
+
+fieldset {margin-bottom: 30px;}
+
+fieldset label {
+  color: #666;
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0;
+  padding-top: 12px; padding-bottom: 10px;
+  width: auto;}
+
+fieldset input[type="text"], 
+fieldset input[type="password"] {
+  background-color: #fcfcfc;
+  border: 1px solid #e0e0e0; 
+  color: #787878;
+  display: block; 
+  font-size: 13px; 
+  padding: 8px 5px;
+  width: 97%;
+  /* CSS3 */
+  -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;}
+
+fieldset select {
+  border: 1px solid #ccc; 
+  color: #787878; 
+  font-size: 13px; 
+  padding: 4px; 
+  width: 99%;}
+
+fieldset input:focus, 
+fieldset select:focus {
+  //border: 1px solid rgb(69, 172, 38); 
+  color: rgba(80, 80, 80, 1);
+  outline: none;}
+
+fieldset select[disabled=disabled] {
+  background-color: #efefef!important; 
+  color: #545454;}
+
+fieldset input[disabled=disabled], 
+fieldset select[disabled=disabled] {cursor: not-allowed;}
+
+fieldset input[type="text"].error, 
+fieldset input[type="password"].error, 
+fieldset select.error {border: 1px solid #b94a48;}
+
+fieldset .inline-error,
+fieldset .error {
+  background-color: #f2d6d6;
+  border: 1px solid #e28e8e;
+  color: #c45b5c;
+  font-size: 12px;
+  // margin-top: 5px;
+  padding: 8px 10px;
+  /* CSS3 */
+  -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;}
+
+fieldset select.error {font-size: 13px; padding: 4px;}
+
+fieldset p {
+  padding: 0;
+  padding-top: 8px;}
+
+fieldset .radiostyle {
+  display: block; 
+  margin: 6px 0;}
+
+fieldset .radiostyle input[type="radio"], 
+fieldset .radiostyle input[type="checkbox"] {
+  margin-right: 5px;
+  position: relative; 
+  top: 1px;}
+
+fieldset .radiostyle input, 
+fieldset .radiostyle label {display: inline;}
+
+fieldset .radiostyle label {font-weight: normal;}
+
+fieldset label:empty, 
+fieldset p:empty {display: none;}
+
+fieldset .field-item-output img {padding-right: 8px;}
+    
+fieldset .help-block {
+  font-size: 11px; 
+  margin-top: 0; 
+  padding: 0;
+		padding-bottom: 10px;}
+
+fieldset .radiostyle + p.help-block {
+  font-size: 12px;
+  margin-top: -10px;
+  margin-left: 20px;
+  padding-bottom: 8px; padding-top: 8px;}
+
+fieldset .field-item-auxiliary {
+  float: right; 
+  width: 200px;}
+
+fieldset address.help-block, 
+.well {
+  font-size: 12px;
+  font-style: normal; 
+  padding: 10px; 
+  margin: 0;
+  margin-bottom: 10px; margin-left: 16px;
+  background-color: #f6f6f6; 
+  border: 1px solid #EEE; 
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-shadow: 0 1px 0 #fff; 
+  /* CSS3 */
+  -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; 
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.05) inset; 
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.05) inset; 
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.05) inset;}
+
+fieldset .form-buttons {margin-top: 25px;}
+
+fieldset .form-buttons .btn:first-child {margin-left: 0;}
+
+fieldset .form-buttons .btn {margin: 0 10px;}
+
+fieldset .form-buttons a {
+  font-size: 12px;
+  text-decoration:none;}
+
+
+
+
+
+
+/*--- Misc: To be evaluated ---*/
+.push { height: 180px; }
+
+.alert {padding: 8px 35px 8px 14px; margin-bottom: 18px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); background-color: #FCF8E3; border: 1px solid #FBEED5; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; color: #C09853;}
+.alert-error {background-color: #F2DEDE; border-color: #EED3D7; color: #B94A48; margin-top: 18px;}
+
+.alert > p, .sidebar .alert > p {/*font-weight:bold;*/ padding-top:4px;}
+.alert ul {padding-left: 20px;}
+.alert li {margin-bottom:4px;}
+.main .alert-error {margin: 18px 0 0;}
+
+ol .alert {font-size:14px; margin:8px 0 12px;}
+.alert .close {position: relative; top: -2px; right: -21px; line-height: 18px;}
+.close {float: right; font-size: 20px; font-weight: bold; line-height: 18px; color: black; text-shadow: 0 1px 0 white; opacity: 0.2; filter: alpha(opacity=20); text-decoration:none;}
+
+
+
+.test-tx-label { display: block; text-align: center; width: 1267px; background-color: #EA3C53; color: #fff; font-weight: bold; text-transform: uppercase; margin: 0 auto -5px auto; padding: 5px 0 10px 0; border-radius: 6px 6px 0 0; }
+
+
+
+.referral-warning {padding: 8px 35px 8px 14px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); background-color: #FCF8E3; border: 1px solid #FBEED5;color: #C09853;}
+.referral-info {
+				border-left: 1px solid #bbb;
+				display: inline-block;
+				font-family: "Open Sans", "Helvetica Neue", Helvetica Arial,sans-serif;
+				font-size: 12px;
+				font-weight: 600;
+				margin-left: 10px;
+				margin-top: 18px;
+				padding-left: 10px;
+				vertical-align: top;
+			
+				/* CSS3 */
+				-moz-box-shadow: -1px 0 0 #fff; -webkit-box-shadow: -1px 0 0 #fff; box-shadow: -1px 0 0 #fff;}
+
+
+
+
+
+.card-listing {float:right; list-style-type:none;}
+.card-listing li {display:inline-block; width:50px; height:30px;}
+.payza-card-icon {background:url(../images/cards/bank-card.png) no-repeat top left;}
+.bank-card-icon {background:url(../images/cards/bank-card.png) no-repeat top left;}
+.visa-card-icon {background:url(../images/cards/visa-card.png) no-repeat top left;}
+.amex-card-icon {background:url(../images/cards/amex-card.png) no-repeat top left;}
+.mc-card-icon {background:url(../images/cards/mc-card.png) no-repeat top left;}
+
+
+
+
+
+address.help-block {}
+
+.transaction-pin .help-block a { font-style: normal; text-decoration: none; }
+
+.agreement-checkbox input[type="checkbox"], 
+fieldset .agreement-checkbox label, 
+.agreement-checkbox .ua-link {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+}
+
+fieldset .agreement-checkbox label {
+    padding-top: 0;
+}
+
+fieldset .agreement-checkbox .third-party-ua label {
+    width: 90%;
+}
+
+fieldset .agreement-checkbox .ua-link {
+    font-size: 13px;
+    margin-bottom: 10px; margin-left: 2px; margin-top: 3px;
+}
+
+.agreement-checkbox label {font-weight: normal;}
+
+.agreement-checkbox input[type="checkbox"] {
+		margin-right:6px; 
+		position:relative; 
+		top:1px;}
+
+.sign-up fieldset {
+    input[type="radio"] + label {
+        display: inline-block;
+        font-weight: normal;
+    }
+    input[type="radio"] {
+        margin-right: 3px;
+    }
+    .col-sm-2  {
+        padding-left: 21px;
+        float:left;
+        width:19%;
+    }
+    select {
+        height: 37px;
+    }
+    .button-field {
+        clear: both;
+    }
+}
+
+
+    
+/*----- Icons: To be evaluated -----*/
+.icon {
+    background-repeat:no-repeat;
+    display: block; 
+    float: left; 
+    height: 14px; 
+    margin: 3px 4px 0; 
+    width: 16px; }
+    
+.icStarOn {
+    background-image: url("../images/icons/16/radio-on.png"); 
+    height: 14px; 
+    margin: 2px;
+    width: 14px;}
+
+.icStarOff {
+    background-image: url("../images/icons/16/radio-off.png"); 
+    height: 14px; 
+    margin:2px;
+    width: 14px;}
+
+
+.message-icon {
+    background: url("../Images/icons/16/page_yellow.png") no-repeat left center; 
+    padding-left: 22px;}
+
+/* Validation notes */
+.note { display: block; }
+
+.gradient {filter: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+// Sign-up LESS
+// ------------
+
+/*-- Sign-up --*/
+.sign-up .alert-warning {margin-top: 20px;}
+
+.sign-up .content {background-color: #f4f4f4;}
+
+.sign-up .main {
+    min-height: 630px;
+    width: 65%;
+    /* CSS3 */
+    -moz-box-shadow: -1px 0 0 #e0e0e0 inset; -webkit-box-shadow: -1px 0 0 #e0e0e0 inset; box-shadow: -1px 0 0 #e0e0e0 inset;}
+
+.sign-up .sidebar {
+    padding: 30px 15px;
+    width: 25%;}
+
+.sign-up .sidebar h3 {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+				font-weight: 600;
+    padding-bottom: 10px;
+    /* CSS3 */
+    -moz-box-shadow: inset 0 -1px 0 #fff; -webkit-box-shadow: inset 0 -1px 0 #fff; box-shadow: inset 0 -1px 0 #fff;}
+
+.sign-up .sidebar h6 {
+    color: #333;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+				text-transform: none;}
+    
+.sign-up .sidebar small {
+    font-size: 13px;}
+
+.sign-up .sidebar .check-list {
+    list-style-type: none;
+				margin-left: 0; 
+    padding: 10px;
+				padding-left: 0;}
+
+.sign-up .sidebar .check-list > li {
+    background: url(../images/icons/tick.png) no-repeat left top; 
+    font-weight: bold; 
+    padding-left: 30px;}
+
+.sign-up .sidebar .check-list ol {
+    border-bottom: 1px solid #fff;
+    margin-bottom: 15px;
+    margin-left: -25px;
+    padding: 8px 20px;
+    -moz-box-shadow: 0 1px 0 #e0e0e0; -webkit-box-shadow: 0 1px 0 #e0e0e0; box-shadow: 0 1px 0 #e0e0e0;}
+
+.sign-up .sidebar .check-list ol li {
+    font-weight: normal; 
+    margin-bottom: 5px;
+    padding-left: 5px;}
+    
+.sign-up h3.hero-units {
+    color: #333;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    margin-top: 20px;}
+
+.sign-up ol.hero-steps {margin: 20px;}
+
+
+// Sign-up - Select your country + Account Type
+// -----------------------------------------------
+
+.sign-up h6 {margin: 0;}
+
+.sign-up h6,
+.sign-up .country-select {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;}
+
+.sign-up .country-select {margin-left: 15px;}
+.sign-up .country-select select {padding-left: 25px;}
+
+.sign-up .country-select .flag-16 {
+	left: 7px;
+    margin: 0;
+	position: absolute;
+	top: 7px;
+}
+
+
+    
+/*.sign-up fieldset select.countryCode {width: 100px;}*/
+
+/*.sign-up fieldset input[type=text].phone {
+    display: inline;
+    width: 218px;}*/
+
+/*.sign-up fieldset .month, 
+.sign-up fieldset .day, 
+.sign-up fieldset .year {
+    display: inline; 
+    width: 109px;}*/
+    
+    
+
+// Account Types Table
+.account-select-table {
+    .clearfix();
+    position: relative;
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: block;
+            margin: 0;
+            padding: 12px 8px;
+
+            span {
+                background-position: center;
+                background-repeat: no-repeat;
+                display: block;
+                height: 16px;
+                margin: 2px auto;
+                overflow: hidden;
+                text-indent: -9999px;
+                white-space: nowrap;
+                width: 16px;
+            }
+        }
+
+        .yes {
+            span {
+                background-image: url(../images/icons/tick.png);
+            }
+        }
+    }
+
+    .account-features {
+        left: 0;
+        position: absolute;
+        top: 203px;
+        width: 100%;
+
+        li {
+            &:nth-child(2n) {
+                background-color: #f6f6f6;
+            }
+
+            &:nth-child(2n+1) {
+                background-color: @white;
+            }
+
+            &:hover {
+                background-color: rgba(229,240,251,0.7);
+            }
+        }
+    }
+    // Account Option
+    .account-option {
+        border-style: solid;
+        border-left-width: 1px;
+        border-right-width: 1px;
+        // border-left-width: 1px solid transparent;
+        border-color: #f1f1f1;
+        background-position: center 5px;
+        background-repeat: no-repeat;
+        float: right;
+        //        margin: 3px;
+        margin-bottom: 0;
+        margin-top: 18px;
+        min-height: 575px;
+        padding-top: 130px;
+        position: relative;
+        text-align: center;
+        width: 160px;
+        // CSS3
+        .border-radius();
+
+        .recommended {
+            color: @white;
+            display: block;
+            position: absolute;
+            text-transform: uppercase;
+            top: -17px;
+            width: 100%;
+        }
+
+        .btn-promo {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding: 8px 15px;
+            filter: none;
+        }
+
+        &:hover {
+            border-color: #e0e0e0;
+
+            .recommended {
+                color: #333;
+            }
+        }
+    }
+
+    .personal-starter {
+        background-image: url(../images/icons/Payza-starter-account.png);
+    }
+
+    .personal-pro {
+        background-image: url(../images/icons/Payza-personal-account.png);
+    }
+
+    .business {
+        background-image: url(../images/icons/Payza-business-account.png);
+    }
+}
+
+.sign-up .sidebar h3 {display: block;}
+
+/* Sign-up Steps*/
+.sign-up .form-breadcrumbs ul {
+	font-weight: 600;
+    height: 50px; 
+    list-style-type: none; 
+    margin-bottom: 20px; margin-left: 0;
+	padding: 0;}
+
+.sign-up .form-breadcrumbs li:first-child {margin: 0px 0px 0px 0px;}
+
+.sign-up .form-breadcrumbs li {
+    background-color: #e5e5e5; 
+    border: 1px solid rgba(200,200,200,0.6); 
+    display: block; 
+    float: left; 
+    font-size: 18px; 
+    margin: 0px 0px 0px 10px; 
+    padding: 10px 10px 6px 10px; 
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.5);
+    width: 178px; 
+    /* CSS3 */
+    -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; 
+    background-image: -moz-linear-gradient(#e5e5e5, #cecece); 
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e5e5e5), to(#cecece));}
+
+.sign-up .form-breadcrumbs li.activestep {
+    background-color: #f8a529; 
+    color: #fff; 
+    border: 1px solid rgba(212,103,12,0.4); 
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+    /* CSS3 */
+    background-image: -moz-linear-gradient(#fab947, #f48818); 
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fab947), to(#f48818));}
+
+.sign-up .form-breadcrumbs li span {
+    display: block;
+    font-size: 12px; 
+    margin: 4px 0px 0px 0px;}
+
+.sign-up .form-box {
+    background-color: #f3f3f3;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    
+    /* CSS3 */
+    -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;}
+
+.sign-up .form-box h6 {margin-bottom: 15px;}
+
+/*.sign-up .form-box > div {padding: 0 20px;}*/
+
+.sign-up .form-box div h3 {margin-left: 0}
+
+.sign-up .form-box .third-party-information .radiostyle span {
+		display: block;
+		margin-bottom: 5px; margin-right: 10px;}
+    
+.sign-up .form-box ol.hero-steps {margin: 20px;}    
+
+.sign-up .form-box ol.hero-steps li {margin-bottom: 10px;}
+    
+.sign-up fieldset select {
+    /*padding: 5px;*/
+    /*width: 335px;*/
+    /* CSS3 */
+   /* -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;*/}
+
+.sign-up fieldset input[type="text"], 
+.sign-up fieldset input[type="password"] {/*width: 323px;*/}
+
+/* How it works */
+.sign-up .how-it-works {
+    background: url(../images/icons/icon-laptop.png) no-repeat center 50px;
+    margin-bottom: 40px;
+    position: relative;}
+    
+.sign-up .how-it-works p {
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 60px;}
+
+.sign-up .how-it-works .quick-look-loupe {
+    background: url(../images/icons/icon-zoom.png) no-repeat center top; 
+    color: #666;
+    cursor: pointer;
+    display: block;
+    padding-top: 75px;
+    text-align: center;}
+
+.sign-up .how-it-works .quick-look-loupe:hover {color:#0a69c5;}
+
+.account-option-starter {
+    display: block;
+    margin-top: 32px;
+}
+.account-option-starter label {
+    color: #333;
+    font-size: 16px;
+    float: left;
+    width:300px;
+}
+.account-option-starter a {
+    float: right;
+    background-color: #727478;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #3E3E3E;
+    border-radius: 2px;
+    padding: 10px 17px;
+    color: #fff;
+}
+.account-option-starter a:hover {
+
+    background-color: #86888d;
+}
+
+
+/* How it works - Modal */
+.ui-widget-overlay {
+    background: #000; 
+    filter: Alpha(Opacity=50);
+    height: 100%; 
+    left: 0; 
+    opacity: 0.5;
+    position: absolute; 
+    top: 0; 
+    width: 100%;}
+
+.modal-window {
+    border: 5px solid rgba(0, 0, 0, 0.4); 
+    /* CSS3 */
+    -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;}
+    
+.ui-dialog-titlebar-close {
+    background: url(../images/icons/modal-close.png) no-repeat center center; 
+    float: right; 
+    height: 30px; 
+    margin-top: 10px; 
+    margin-right: -10px;
+    text-indent: -9999px;
+    width: 30px;}
+
+.how-it-works-dialog {
+	display: none;
+	width: 900px;
+	height: 473px; }
+
+.how-it-works-dialog .modal-close {
+	background: url(../images/icons/modal-close.png) no-repeat center center;
+	display: block;
+	height: 30px;
+	position: absolute;
+	right: -17px;
+	top: -16px;
+	width: 30px;}
+
+.how-it-works-dialog-content {
+    background: #2a9300; 
+    padding: 20px;}
+
+.how-it-works-dialog-content .account-icons-set span {
+    background-repeat: no-repeat; 
+    background-position: 0px 0px;
+    display: block; 
+    float: left; 
+    height: 41px;
+    width: 45px;}
+
+.how-it-works-dialog-content .account-icons-set .personal-icon {background-image:url(../images/icons/icon-personalStarter-small.png);}
+
+.how-it-works-dialog-content .account-icons-set .personal-pro-icon {background-image:url(../images/icons/icon-personalPro-small.png);}
+
+.how-it-works-dialog-content .account-icons-set .business-icon {background-image:url(../images/icons/icon-Business-small.png);}
+
+.how-it-works-dialog-content .header {
+    cursor: pointer;
+    text-indent: 15px;}
+
+.how-it-works-dialog-content h1 {
+    color: #fff; 
+    font-size: 24px; 
+    font-weight: normal; 
+    padding-bottom: 8px;}
+
+.how-it-works-dialog-content .section {
+    background: #fff; 
+    border: 1px solid #275006;
+    margin: 10px 0px 0px 0px; 
+    padding: 10px 15px; 
+    position: relative;
+    /* CSS3 */
+    -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px;}
+
+.how-it-works-dialog-content h2 {
+    color: #2a9300; 
+    font-size: 18px; 
+    font-weight: normal;
+				line-height: 18px;
+				margin-bottom: 0;}
+
+.how-it-works-dialog-content h2 span {
+    color: #666; 
+    font-weight: normal; 
+    text-shadow: 0px 1px 0px #fff;}
+
+.how-it-works-dialog-content h2 .subdued {color: #B1D792;}
+
+.how-it-works-dialog-content h4 {
+    color: #828282; 
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 14px; 
+    font-weight: 600;
+				margin-bottom: 0;
+    padding:4px 0;}
+
+#buyers, 
+#sellers {
+    border-top: 1px solid #e1e1e1; 
+    height: 200px; // temporary
+				margin: 10px 0 0;
+    padding: 10px 0;}
+    
+.how-it-works-dialog-content .column {
+    border-left: 1px solid rgba(225, 225, 225, 0.5);
+    float: left; 
+    min-height: 155px; 
+    padding-left: 10px;
+    width: 245px;}
+
+.how-it-works-dialog-content .column:first-child {border: none;}
+
+.how-it-works-dialog-content .column h3 {
+    color: #44AB25; 
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 13px; 
+    font-weight: 600; 
+    padding: 0px 0px 5px;}
+
+.how-it-works-dialog-content .column p {
+    color: #969696; 
+    font-size: 12px;
+    line-height: 18px;
+    width: 120px; }
+	
+.how-it-works-dialog-content .load-e-wallet {background: url(../images/backgrounds/bank-or-cc.png) no-repeat right 0;}
+
+.how-it-works-dialog-content .shop-send-request {background: url(../images/backgrounds/shop-send-request.png) no-repeat right 15px;}
+
+.how-it-works-dialog-content .get-paid {background: url(../images/backgrounds/pay-button.png) no-repeat 135px 25px;}
+
+.how-it-works-dialog-content .widthdraw-your-money {background: url(../images/backgrounds/shop-send-request.png) no-repeat right 15px;}
+
+.how-it-works-dialog-content .payza-takes-care {background: url(../images/backgrounds/security.png) no-repeat 130px 30px;}
+
+/* Which account is right */
+.sign-up .which-payza-account {margin-top: 10px;}
+
+.sign-up .which-payza-account strong {
+    font-weight: normal; 
+    color: #2a9300;}
+
+.sign-up .which-payza-account p {margin-bottom: 25px;}
+
+/* UK & California Marketing */
+.uk-marketing,
+.cali-marketing {
+	color: #fff;
+	display: none;
+	height: 497px;
+	padding: 55px;
+	width: 815px; }
+
+.uk-marketing { background: transparent url(../images/UK-background.png); }
+.cali-marketing { background: transparent url(../images/Cali-background.png); }
+
+.uk-marketing p,
+.cali-marketing p {
+	font-size: 20px;
+	font-weight: 100;
+	line-height: 30px;
+	text-shadow: 0 1px 2px #222; }
+
+.uk-marketing .not-available,
+.cali-marketing .not-available {
+	font-size: 30px;
+	font-weight: 100;
+	line-height: 40px;
+	margin: 30px 0; }
+
+.uk-marketing .not-available strong,
+.cali-marketing .not-available strong { font-size: 36px; }
+
+.uk-marketing fieldset,
+.cali-marketing fieldset { margin: 50px 0 0; }
+
+.uk-marketing fieldset .alert,
+.cali-marketing fieldset .alert { margin: 0; }
+
+.uk-marketing fieldset .with-button,
+.cali-marketing fieldset .with-button {width: 70%;}
+
+.uk-marketing fieldset .with-button input[type="text"],
+.cali-marketing fieldset .with-button input[type="text"] {padding: 8px 5px;}
+
+.uk-marketing fieldset .with-button input[type="submit"],
+.cali-marketing fieldset .with-button input[type="submit"] {
+	font-size: 1.4em;
+	font-weight: 600;
+	margin-left: 10px;
+	padding: 8px 15px;}
+
+.uk-marketing .not-from,
+.cali-marketing .not-from {
+    font-size: 18px;
+    font-weight: 600;
+
+    a {
+        cursor: pointer;
+    }
+}
+
+.cali-marketing .not-from { margin-top: -15px; }
+
+.cali-marketing .not-from a {text-shadow: 0 1px 2px #fff;}
+
+/* Password meter */
+.password-meter {
+    display: none;
+    margin-top: 5px;
+    width: 200px;}
+
+.password-meter .strength.weak,
+.password-meter .strength.good,
+.password-meter .strength.strong {
+    color: Red;
+    font-size: 12px;
+    margin-bottom: 3px;}
+.password-meter .strength.good {color: Orange;}
+.password-meter .strength.strong {color: Green;}
+
+.password-meter .meter {
+    height: 8px;}

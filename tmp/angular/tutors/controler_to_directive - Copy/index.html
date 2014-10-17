@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>controller to directive</title>
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>-->
+    <script src="components.js"></script>
+</head>
+
+
+<body>
+
+<div ng-app="twitterApp">
+
+    <div ng-controller="AppCtrl">
+
+        <div enter="enterTweets()" click="clickTweets()">{{test}}</div>
+        <div click="clickTweets()">CLICK HERE</div>
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

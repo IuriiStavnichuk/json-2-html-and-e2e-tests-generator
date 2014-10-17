@@ -1,0 +1,446 @@
+//
+// Panels
+// --------------------------------------------------
+
+
+// Base class
+.panel {
+  margin-bottom: 10px;
+  background-color: @panel-bg;
+  
+  .box-shadow(0 1px #d6d8da);
+}
+
+// Panel contents
+.panel-body {
+  padding:15px 28px;
+  .clear-fix();
+}
+
+
+// List groups in panels
+//
+// By default, space out list group content from panel headings to account for
+// any kind of custom content between the two.
+
+.panel {
+  > .list-group {
+    margin-bottom: 0;
+
+    .list-group-item {
+      border-width: 1px 0;
+
+      // Remove border radius for top one
+      &:first-child {
+        .border-top-radius(0);
+      }
+      // But keep it for the last one
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+// Collapse space between when there's no additional content.
+.panel-heading + .list-group {
+  .list-group-item:first-child {
+    border-top-width: 0;
+  }
+}
+
+
+// Tables in panels
+//
+// Place a non-bordered `.table` within a panel (not within a `.panel-body`) and
+// watch it go full width.
+
+.panel {
+  > .table {
+    margin-bottom: 0;
+  }
+  > .panel-body + .table {
+    border-top: 1px solid @table-border-color;
+  }
+}
+
+// Transaction Steps and Details in panels
+.panel-body {
+    .transaction-details {
+        background-color: #dbf6e5;
+        .border-radius(2px);
+        padding: 30px;
+    }
+
+    .transaction-steps {
+
+        .step {
+
+            .details {
+                background-color: #eceff1;
+                min-height: 375px;
+                padding: 20px;
+                padding-bottom: 5px;
+
+                h4 {
+                    font-weight: 700;
+                    line-height: 1.5em;
+                    margin-top: 0;
+                }
+
+                fieldset {
+                    label {
+                        font-weight: normal;
+                    }
+
+                    .text-output {
+                        font-weight: 700;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Transaction Update Details
+.panel {
+    .panel-body {
+        .content-message {
+            h2 {
+                font-weight: 700;
+                margin-top: 30px;
+            }
+
+            h3 {
+                font-weight: 300;
+            }
+
+            p {
+                line-height: 1.6em;
+                margin-bottom: 30px;
+            }
+
+            .update-details {
+                padding-bottom: 5px;
+
+                h3, h4 {
+                    color: @text-color;
+                    font-weight: 700;
+                }
+
+                h3 {
+                    margin-top: 0;
+                }
+
+            }
+        }
+
+        /*TODO remove this temporary block, put content into resource file*/
+        /*TODO optimize styles after approvement*/
+        h2.isvalid:after {
+            content: "Completed " url(../images/icons/check.png);
+            float: right;
+            color:@gray-dark;
+            font-weight:800;
+            font-size:14px;            
+        }
+        /*form h2:not(.isvalid):not(.error):after {
+            content: "Uncompleted";
+            float: right;
+            color:@gray-dark;
+            font-weight:800;
+            font-size:14px;  
+            margin-right:23px;          
+        }*/
+         form h2:not(.isvalid):after {
+            content: "Not completed";
+            float: right;
+            color:@gray-dark;
+            font-weight:800;
+            font-size:14px;  
+            margin-right:23px;          
+        }
+        h2#submitDocTitle:after {
+            content: "Optional";
+            color:@gray-dark;
+            font-weight:800;
+            font-size:14px;  
+            margin-right:23px;
+            float: right
+        }
+        /*h2.error:after { 
+            content: "Error " url(../images/icons/escalated.png) ; 
+            float: right;
+            color:@gray-dark;
+            margin-top: 5px;
+            vertical-align: top;
+         }*/
+
+        span.isvalid {
+            font-size:14px;
+            color:@gray-dark;
+            float: right;
+            font-weight:800;
+        }
+        span.isvalid:before {
+            margin-right:4px;
+            content: url(../images/icons/check.png);
+        }
+        span.isnotvalid {
+                font-size: 14px;
+                float: right;
+                font-style: italic;
+                color: @gray;
+        }
+
+        h2.notexpanded {
+            background: url(../images/icons/right-grey-arrow.png) no-repeat 0;
+            padding-left: 14px;
+        }
+        h2.expanded {
+            background: url(../images/icons/down-grey-arrow.png) no-repeat 0;
+            padding-left: 14px;
+        }      
+    }
+}
+
+// Optional heading
+.panel-heading {
+  padding: 20px 28px 0;
+  .border-top-radius(@panel-border-radius - 1);
+}
+
+// Within heading, strip any `h*` tag of it's default margins for spacing.
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: ceil((@font-size-base * 1.125));
+  > a {
+    color: inherit;
+  }
+}
+
+// Optional footer (stays gray in every modifier class)
+.panel-footer {
+  padding: 0 28px 15px;
+}
+
+
+// Collapsable panels (aka, accordion)
+//
+// Wrap a series of panels in `.panel-group` to turn them into an accordion with
+// the help of our collapse JavaScript plugin.
+
+.panel-group {
+  // Tighten up margin so it's only between panels
+  .panel {
+    margin-bottom: 0;
+    border-radius: @panel-border-radius;
+    overflow: hidden; // crop contents when collapsed
+    + .panel {
+      margin-top: 5px;
+    }
+  }
+
+  .panel-heading {
+    border-bottom: 0;
+    + .panel-collapse .panel-body {
+      border-top: 1px solid @panel-inner-border;
+    }
+  }
+  .panel-footer {
+    border-top: 0;
+    + .panel-collapse .panel-body {
+    }
+  }
+
+  // New subcomponent for wrapping collapsable content for proper animations
+  .panel-collapse {
+
+  }
+}
+
+
+// Contextual variations
+.panel-default {
+  .panel-variant(@panel-default-border, @panel-default-text, @panel-default-heading-bg, @panel-default-border);
+}
+.panel-primary {
+  .panel-variant(@panel-primary-border, @panel-primary-text, @panel-primary-heading-bg, @panel-primary-border);
+}
+.panel-success {
+  .panel-variant(@panel-success-border, @panel-success-text, @panel-success-heading-bg, @panel-success-border);
+}
+.panel-warning {
+  .panel-variant(@panel-warning-border, @panel-warning-text, @panel-warning-heading-bg, @panel-warning-border);
+}
+.panel-danger {
+  .panel-variant(@panel-danger-border, @panel-danger-text, @panel-danger-heading-bg, @panel-danger-border);
+}
+.panel-info {
+  .panel-variant(@panel-info-border, @panel-info-text, @panel-info-heading-bg, @panel-info-border);
+}
+
+
+
+
+.panel {
+    .panel-heading {
+        h2 {
+            font-size: 24px;
+            font-weight: 300;
+            border-bottom: 1px solid @gray-lighter;
+            padding-bottom: 12px;
+            margin-top: 8px;
+
+            strong {
+                font-weight: 400;
+            }
+        }
+
+        .header-action {
+            float: right;
+        }
+
+        .header-action + h2 {
+            margin: 0;
+        }
+
+        h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .panel-title {
+        }
+    }
+
+    .panel-heading + .panel-body {
+        padding-top: 10px;
+    }
+
+    .panel-body {
+        h2 {
+            font-weight: 600;
+            font-size: 17px;
+            color: @brand-primary;
+        }
+
+        h3 {
+            font-weight: 400;
+            font-size: 17px;
+            color: @brand-primary;
+        }
+
+        h4 {
+            font-weight: 400;
+            font-size: 15px;
+            color: @brand-primary;
+        }
+    }
+
+    .panel-footer {
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+
+            li {
+                display: inline-block;
+                margin: 0 5px;
+            }
+        }
+    }
+}
+
+// TOS Panel
+.tos-panel {
+    p {
+        font-size: inherit;
+        word-wrap: break-word;
+    }
+}
+
+// Website List Panel
+.website-panel {
+
+    .panel-heading {
+        .header-action {
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        h2 {
+            font-size: 14px;
+
+            a {
+                color: #fff;
+                padding: 3px 8px;
+                text-decoration: none;
+                // CSS3
+                .border-radius(3px);
+            }
+
+            .review-status-not-started {
+                background-color: @link-color;
+
+                &:hover {
+                    background-color: @link-hover-color;
+                }
+            }
+
+            .review-status-open {
+				color: @gray;
+				background-color: @brand-warning;
+			
+			}
+
+            .review-status-awaiting-approval {
+                color: @gray-light;
+                background-color: #f6f6f6;
+                font-style: italic;
+            }
+
+            .review-status-completed {
+                background-color: @brand-success;
+            }
+
+            .review-status-resubmit,
+            .review-status-declined {
+                background-color: @brand-danger;
+            }
+        }
+    }
+
+    .panel-body {
+        p {
+            font-size: inherit;
+        }
+
+        .payment-method {
+            span {
+                display: inline-block;
+                vertical-align: top;
+            }
+        }
+    }
+}
+.info-panel-with-grey-info-icon {
+    margin-bottom: 10px;
+    background-color: @panel-bg;
+    -webkit-box-shadow: 0 1px #d6d8da;
+    box-shadow: 0 1px #d6d8da;
+    background: white url(../images/icons/alert/grey.png) no-repeat 147% 62%;
+    p {
+        font-size: 14px;
+    }
+}

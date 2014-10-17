@@ -1,0 +1,1096 @@
+<payza-form class="merchant-services ng-isolate-scope ng-scope" model-name="'modelForCharity.json'" debug-mode="1"><input type="checkbox" ng-model="debugMode" name="debug" value="0" class="ng-scope ng-pristine ng-valid">&nbsp;<label class="ng-scope">Debug mode</label>&nbsp;&nbsp;
+<input type="radio" ng-model="currentLanguage" value="en-US" ng-init="info.questionnaireModeId.value=en-US" name="currentLanguage" required="required" class="ng-scope ng-pristine ng-invalid ng-invalid-required"><label class="ng-scope">En</label>&nbsp;<input type="radio" ng-model="currentLanguage" value="fr-CA" name="currentLanguage" required="required" class="ng-scope ng-pristine ng-invalid ng-invalid-required">&nbsp;<label class="ng-scope">Fr</label><br class="ng-scope">
+<input type="radio" ng-model="info.urlQuestionnaireTypeId.value" value="2" ng-init="info.urlQuestionnaireTypeId.value=2" name="questionnaireTypeId" class="ng-scope ng-pristine ng-valid"><label class="ng-scope">checkout</label>&nbsp;<input type="radio" ng-model="info.urlQuestionnaireTypeId.value" value="3" name="questionnaireTypeId" class="ng-scope ng-pristine ng-valid">&nbsp;<label class="ng-scope">charity&nbsp;&nbsp;&nbsp;&nbsp; urlQuestionnaireTypeId&nbsp;&nbsp;</label><span ng-bind="info.urlQuestionnaireTypeId.value" class="ng-scope ng-binding">2</span><br class="ng-scope">
+
+<input type="radio" ng-model="info.questionnaireMode.value" value="1" ng-init="info.questionnaireMode.value=1" name="questionnaireMode" class="ng-scope ng-pristine ng-valid"><label class="ng-scope">first time</label>&nbsp;<input type="radio" ng-model="info.questionnaireMode.value" value="2" name="questionnaireMode" class="ng-scope ng-pristine ng-valid">&nbsp;<label class="ng-scope">subsequent time &nbsp;&nbsp;&nbsp;&nbsp; questionnaireMode &nbsp;&nbsp;</label><span ng-bind="+info.questionnaireMode.value" class="ng-scope ng-binding">1</span><br class="ng-scope">
+
+<form name="introductionSection" novalidate="" class="ng-scope ng-dirty ng-invalid ng-invalid-required">
+<h5 id="introductionSectionTitle" ng-class="{active:true}" ng-click="openSection(introductionSection,'introductionSectionTitle')" ng-bind="resource.introductionSection.title" class="ng-binding active"></h5>
+<fieldset>
+<div class="field radio-check-field ng-hide" ng-show="logic.isSite==0">
+    <div class="alert alert-info">
+        You need a website to continue
+    </div>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> undefined- &nbsp;&nbsp;<span ng-bind="undefined" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.3.$valid" ng-class="{ success:introductionSection.3.$valid, error:introductionSection.3.$invalid }" class="ng-binding"></span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>logic.isSite==0</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1">
+    <p ng-bind="resource.revenueGenerationMethod.title" class="ng-binding"></p>
+    <div class="radio-check-item">
+        <input type="radio" ng-model="info.revenueGenerationMethod.value" value="3" name="5" ng-required="info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1" id="5" class="ng-pristine ng-valid ng-valid-required">
+        <label for="5" ng-bind="resource.revenueGenerationMethodCheck1.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.revenueGenerationMethod.errorMessage" ng-bind="info.revenueGenerationMethod.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.revenueGenerationMethod.value- &nbsp;&nbsp;<span ng-bind="info.revenueGenerationMethod.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.5.$valid" ng-class="{ success:introductionSection.5.$valid, error:introductionSection.5.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1</span><br>
+            isVisibleIF- <span>info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="radio" ng-model="info.revenueGenerationMethod.value" value="2" name="6" ng-required="info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1" id="6" class="ng-pristine ng-valid ng-valid-required">
+        <label for="6" ng-bind="resource.revenueGenerationMethodCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.revenueGenerationMethod.errorMessage" ng-bind="info.revenueGenerationMethod.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.revenueGenerationMethod.value- &nbsp;&nbsp;<span ng-bind="info.revenueGenerationMethod.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.6.$valid" ng-class="{ success:introductionSection.6.$valid, error:introductionSection.6.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1</span><br>
+            isVisibleIF- <span>info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="radio" ng-model="info.revenueGenerationMethod.value" value="1" name="7" ng-required="info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1" id="7" class="ng-pristine ng-valid ng-valid-required">
+        <label for="7" ng-bind="resource.revenueGenerationMethodCheck3.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.revenueGenerationMethod.errorMessage" ng-bind="info.revenueGenerationMethod.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.revenueGenerationMethod.value- &nbsp;&nbsp;<span ng-bind="info.revenueGenerationMethod.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.7.$valid" ng-class="{ success:introductionSection.7.$valid, error:introductionSection.7.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1</span><br>
+            isVisibleIF- <span>info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="radio" ng-model="info.revenueGenerationMethod.value" value="4" name="8" ng-required="info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1" id="8" class="ng-pristine ng-valid ng-valid-required">
+        <label for="8" ng-bind="resource.revenueGenerationMethodCheck4.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.revenueGenerationMethod.errorMessage" ng-bind="info.revenueGenerationMethod.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.revenueGenerationMethod.value- &nbsp;&nbsp;<span ng-bind="info.revenueGenerationMethod.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.8.$valid" ng-class="{ success:introductionSection.8.$valid, error:introductionSection.8.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1</span><br>
+            isVisibleIF- <span>info.urlQuestionnaireTypeId.value==3&amp;&amp;info.questionnaireMode.value==1</span></div>
+    </div>
+</div>
+<div class="field radio-check-field" ng-show="info.questionnaireMode.value==1&amp;&amp;info.urlQuestionnaireTypeId.value==2">
+    <p ng-bind="resource.isSite.title" class="ng-binding"></p>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="logic.isSite" value="1" name="10" ng-required="info.questionnaireMode.value==1&amp;&amp;info.urlQuestionnaireTypeId.value==2" id="10" class="ng-dirty ng-valid ng-valid-required" required="required">
+        <label for="10" ng-bind="resource.isSiteCheck1.title" class="ng-binding"></label>
+    </div>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.isSite- &nbsp;&nbsp;<span ng-bind="logic.isSite" class="ng-binding">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.10.$valid" ng-class="{ success:introductionSection.10.$valid, error:introductionSection.10.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.questionnaireMode.value==1&amp;&amp;info.urlQuestionnaireTypeId.value==2</span><br>
+            isVisibleIF- <span>info.questionnaireMode.value==1&amp;&amp;info.urlQuestionnaireTypeId.value==2</span></div>
+    </div>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="logic.isSite" value="0" name="11" ng-required="info.questionnaireMode.value==1&amp;&amp;info.urlQuestionnaireTypeId.value==2" id="11" class="ng-pristine ng-valid ng-valid-required" required="required">
+        <label for="11" ng-bind="resource.isSiteCheck2.title" class="ng-binding"></label>
+    </div>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.isSite- &nbsp;&nbsp;<span ng-bind="logic.isSite" class="ng-binding">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.11.$valid" ng-class="{ success:introductionSection.11.$valid, error:introductionSection.11.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.questionnaireMode.value==1&amp;&amp;info.urlQuestionnaireTypeId.value==2</span><br>
+            isVisibleIF- <span>info.questionnaireMode.value==1&amp;&amp;info.urlQuestionnaireTypeId.value==2</span></div>
+    </div>
+</div>
+<div class="field radio-check-field" ng-show="debugMode==1?'1':'0'">
+    <textarea style="width:0;height:0" rows="2" cols="20" ng-model="logic.Helper" name="13" ng-required="logic.isSite==0" class="ng-pristine ng-valid ng-valid-required"></textarea>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.Helper- &nbsp;&nbsp;<span ng-bind="logic.Helper" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.13.$valid" ng-class="{ success:introductionSection.13.$valid, error:introductionSection.13.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>logic.isSite==0</span><br>
+            isVisibleIF- <span>debugMode==1?'1':'0'</span></div>
+    </div>
+</div>
+<div class="field radio-check-field" ng-show="logic.isSite">
+    <p ng-bind="resource.url.title" class="ng-binding"></p>
+    <input type="text" ng-model="info.url.value" name="urlField" id="15" ng-required="1" class="ng-dirty ng-valid ng-valid-required" required="required">
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.url.errorMessage" ng-bind="info.url.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.url.value- &nbsp;&nbsp;<span ng-bind="info.url.value" class="ng-binding">hgjk</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.15.$valid" ng-class="{ success:introductionSection.15.$valid, error:introductionSection.15.$invalid }" class="ng-binding"></span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>logic.isSite</span></div>
+    </div>
+</div>
+<div class="field radio-check-field" ng-show="logic.isSite==1&amp;&amp;introductionSection.urlField.$valid">
+    <p ng-bind="resource.noBusinessModel.title" class="ng-binding"></p>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="logic.noBusinessModel" value="0" name="17" ng-click="getPreviouslySubmittedWebsites()" ng-required="1" id="17" class="ng-dirty ng-valid ng-valid-required" required="required">
+        <label for="17" ng-bind="resource.noBusinessModelCheck1.title" class="ng-binding"></label>
+    </div>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.noBusinessModel- &nbsp;&nbsp;<span ng-bind="logic.noBusinessModel" class="ng-binding">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.17.$valid" ng-class="{ success:introductionSection.17.$valid, error:introductionSection.17.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>logic.isSite==1&amp;&amp;introductionSection.urlField.$valid</span></div>
+    </div>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="logic.noBusinessModel" value="1" name="18" ng-required="1" id="18" class="ng-pristine ng-valid ng-valid-required" required="required">
+        <label for="18" ng-bind="resource.noBusinessModelCheck2.title" class="ng-binding"></label>
+    </div>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.noBusinessModel- &nbsp;&nbsp;<span ng-bind="logic.noBusinessModel" class="ng-binding">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.18.$valid" ng-class="{ success:introductionSection.18.$valid, error:introductionSection.18.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>logic.isSite==1&amp;&amp;introductionSection.urlField.$valid</span></div>
+    </div>
+</div>
+<div class="field radio-check-field" ng-show="logic.noBusinessModel==0">
+    <p ng-bind="resource.businessModel.title" class="ng-binding"></p>
+    <div>TEST</div><div class="radio-group" lg-repeat="groups" in="" info.businessmodel.source="">
+    <strong><p ng-bind="groups.name" class="ng-binding"></p></strong><div class="radio-check-item" lg-repeat="radio in groups.data">
+    <input type="radio" value="radio.id" ng-model="info.businessModel.value" name="20" ng-required="logic.noBusinessModel==0" id="20" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+    <label ng-bind="radio.name" for="20" class="ng-binding"></label>
+</div>
+</div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.businessModel.errorMessage" ng-bind="info.businessModel.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.businessModel.value- &nbsp;&nbsp;<span ng-bind="info.businessModel.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.20.$valid" ng-class="{ success:introductionSection.20.$valid, error:introductionSection.20.$invalid }" class="ng-binding error">false</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>logic.noBusinessModel==0</span><br>
+            isVisibleIF- <span>logic.noBusinessModel==0</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="logic.isSite==1&amp;&amp;logic.noBusinessModel==1&amp;&amp;info.questionnaireMode.value==1">
+    <p ng-bind="resource.revenueGenerationMethod.title" class="ng-binding"></p>
+    <div class="radio-check-item">
+        <input type="radio" ng-model="info.revenueGenerationMethod.value" value="2" name="22" ng-required="logic.noBusinessModel==1" id="22" class="ng-pristine ng-valid ng-valid-required">
+        <label for="22" ng-bind="resource.revenueGenerationMethodCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.revenueGenerationMethod.errorMessage" ng-bind="info.revenueGenerationMethod.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.revenueGenerationMethod.value- &nbsp;&nbsp;<span ng-bind="info.revenueGenerationMethod.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.22.$valid" ng-class="{ success:introductionSection.22.$valid, error:introductionSection.22.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>logic.noBusinessModel==1</span><br>
+            isVisibleIF- <span>logic.isSite==1&amp;&amp;logic.noBusinessModel==1&amp;&amp;info.questionnaireMode.value==1</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="radio" ng-model="info.revenueGenerationMethod.value" value="1" name="23" ng-required="logic.noBusinessModel==1" id="23" class="ng-pristine ng-valid ng-valid-required">
+        <label for="23" ng-bind="resource.revenueGenerationMethodCheck3.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.revenueGenerationMethod.errorMessage" ng-bind="info.revenueGenerationMethod.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.revenueGenerationMethod.value- &nbsp;&nbsp;<span ng-bind="info.revenueGenerationMethod.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.23.$valid" ng-class="{ success:introductionSection.23.$valid, error:introductionSection.23.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>logic.noBusinessModel==1</span><br>
+            isVisibleIF- <span>logic.isSite==1&amp;&amp;logic.noBusinessModel==1&amp;&amp;info.questionnaireMode.value==1</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="radio" ng-model="info.revenueGenerationMethod.value" value="4" name="24" ng-required="logic.noBusinessModel==1" id="24" class="ng-pristine ng-valid ng-valid-required">
+        <label for="24" ng-bind="resource.revenueGenerationMethodCheck4.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.revenueGenerationMethod.errorMessage" ng-bind="info.revenueGenerationMethod.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.revenueGenerationMethod.value- &nbsp;&nbsp;<span ng-bind="info.revenueGenerationMethod.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.24.$valid" ng-class="{ success:introductionSection.24.$valid, error:introductionSection.24.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>logic.noBusinessModel==1</span><br>
+            isVisibleIF- <span>logic.isSite==1&amp;&amp;logic.noBusinessModel==1&amp;&amp;info.questionnaireMode.value==1</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="logic.isSite==1&amp;&amp;logic.noBusinessModel==1">
+    <p ng-bind="resource.urlType.title" class="ng-binding"></p>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="info.urlType.value" value="1" name="26" ng-required="logic.noBusinessModel==1" id="26" class="ng-pristine ng-valid ng-valid-required">
+        <label for="26" ng-bind="resource.urlTypeCheck1.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlType.errorMessage" ng-bind="info.urlType.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlType.value- &nbsp;&nbsp;<span ng-bind="info.urlType.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.26.$valid" ng-class="{ success:introductionSection.26.$valid, error:introductionSection.26.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>logic.noBusinessModel==1</span><br>
+            isVisibleIF- <span>logic.isSite==1&amp;&amp;logic.noBusinessModel==1</span></div>
+    </div>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="info.urlType.value" value="2" name="27" ng-required="logic.noBusinessModel==1" id="27" class="ng-pristine ng-valid ng-valid-required">
+        <label for="27" ng-bind="resource.urlTypeCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlType.errorMessage" ng-bind="info.urlType.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlType.value- &nbsp;&nbsp;<span ng-bind="info.urlType.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.27.$valid" ng-class="{ success:introductionSection.27.$valid, error:introductionSection.27.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>logic.noBusinessModel==1</span><br>
+            isVisibleIF- <span>logic.isSite==1&amp;&amp;logic.noBusinessModel==1</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="logic.isSite==1&amp;&amp;logic.noBusinessModel==1">
+    <p ng-bind="resource.urlFieldMembersAreaTypeId.title" class="ng-binding"></p>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="info.urlFieldMembersAreaTypeId.value" value="1" name="29" ng-required="logic.noBusinessModel==1" id="29" class="ng-pristine ng-valid ng-valid-required">
+        <label for="29" ng-bind="resource.urlFieldMembersAreaTypeIdCheck1.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldMembersAreaTypeId.errorMessage" ng-bind="info.urlFieldMembersAreaTypeId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldMembersAreaTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldMembersAreaTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.29.$valid" ng-class="{ success:introductionSection.29.$valid, error:introductionSection.29.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>logic.noBusinessModel==1</span><br>
+            isVisibleIF- <span>logic.isSite==1&amp;&amp;logic.noBusinessModel==1</span></div>
+    </div>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="info.urlFieldMembersAreaTypeId.value" value="2" name="30" ng-required="logic.noBusinessModel==1" id="30" class="ng-pristine ng-valid ng-valid-required">
+        <label for="30" ng-bind="resource.urlFieldMembersAreaTypeIdCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldMembersAreaTypeId.errorMessage" ng-bind="info.urlFieldMembersAreaTypeId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldMembersAreaTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldMembersAreaTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.30.$valid" ng-class="{ success:introductionSection.30.$valid, error:introductionSection.30.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>logic.noBusinessModel==1</span><br>
+            isVisibleIF- <span>logic.isSite==1&amp;&amp;logic.noBusinessModel==1</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="logic.isSite==1&amp;&amp;info.urlFieldMembersAreaTypeId.value==1&amp;&amp;logic.noBusinessModel==1">
+    <p ng-bind="resource.membersAreaDetails.title" class="ng-binding"></p>
+    <textarea rows="2" cols="20" ng-model="info.membersAreaDetails.value" name="32" id="32" ng-required="logic.isSite==1&amp;&amp;info.urlFieldMembersAreaTypeId.value==1&amp;&amp;logic.noBusinessModel==1" class="ng-pristine ng-valid ng-valid-required"></textarea>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.membersAreaDetails.errorMessage" ng-bind="info.membersAreaDetails.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.membersAreaDetails.value- &nbsp;&nbsp;<span ng-bind="info.membersAreaDetails.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.32.$valid" ng-class="{ success:introductionSection.32.$valid, error:introductionSection.32.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>logic.isSite==1&amp;&amp;info.urlFieldMembersAreaTypeId.value==1&amp;&amp;logic.noBusinessModel==1</span><br>
+            isVisibleIF- <span>logic.isSite==1&amp;&amp;info.urlFieldMembersAreaTypeId.value==1&amp;&amp;logic.noBusinessModel==1</span></div>
+    </div>
+</div>
+<div class="field radio-check-field">
+    <div class="nav">
+        <a class="btn-link" ng-click="introductionSection.$invalid||submitForValidation(introductionSection,'donationRevenueDetailsTitle')" ng-disabled="introductionSection.$invalid" disabled="disabled">Next Step</a>
+    </div>
+    <hr>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> undefined- &nbsp;&nbsp;<span ng-bind="undefined" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="introductionSection.34.$valid" ng-class="{ success:introductionSection.34.$valid, error:introductionSection.34.$invalid }" class="ng-binding"></span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+</div>
+</fieldset>
+</form>
+<form name="donationRevenueDetails" ng-show="info.urlsQuestionnaireTypeId.value==3" novalidate="" class="ng-scope ng-pristine ng-invalid ng-invalid-required ng-hide">
+    <h5 id="donationRevenueDetailsTitle" ng-class="{active:introductionSection.$serverValid}" ng-click="introductionSection.$serverValid&amp;&amp;openSection(introductionSection,'donationRevenueDetailsTitle')" ng-bind="resource.donationSection.title" class="ng-binding"></h5>
+    <fieldset>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.urlFieldDonorContactTypeId.title" class="ng-binding"></p>
+            <div class="radio-check-item inline">
+                <input type="radio" ng-model="info.urlFieldDonorContactTypeId.value" value="1" name="37" ng-required="1" id="37" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+                <label for="37" ng-bind="resource.urlFieldDonorContactTypeIdCheck1.title" class="ng-binding"></label>
+            </div>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldDonorContactTypeId.errorMessage" ng-bind="info.urlFieldDonorContactTypeId.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldDonorContactTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldDonorContactTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.37.$valid" ng-class="{ success:donationRevenueDetails.37.$valid, error:donationRevenueDetails.37.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+            <div class="radio-check-item inline">
+                <input type="radio" ng-model="info.urlFieldDonorContactTypeId.value" value="2" name="38" ng-required="1" id="38" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+                <label for="38" ng-bind="resource.urlFieldDonorContactTypeIdCheck2.title" class="ng-binding"></label>
+            </div>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldDonorContactTypeId.errorMessage" ng-bind="info.urlFieldDonorContactTypeId.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldDonorContactTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldDonorContactTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.38.$valid" ng-class="{ success:donationRevenueDetails.38.$valid, error:donationRevenueDetails.38.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field ng-hide" ng-show="info.urlFieldDonorContactTypeId.value==1">
+            <p ng-bind="resource.donorContactInfo.title" class="ng-binding"></p>
+            <textarea rows="2" cols="20" ng-model="info.donorContactInfo.value" name="40" id="40" ng-required="info.urlFieldDonorContactTypeId.value==1" class="ng-pristine ng-valid ng-valid-required"></textarea>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.donorContactInfo.errorMessage" ng-bind="info.donorContactInfo.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.donorContactInfo.value- &nbsp;&nbsp;<span ng-bind="info.donorContactInfo.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.40.$valid" ng-class="{ success:donationRevenueDetails.40.$valid, error:donationRevenueDetails.40.$invalid }" class="ng-binding success">true</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.urlFieldDonorContactTypeId.value==1</span><br>
+                    isVisibleIF- <span>info.urlFieldDonorContactTypeId.value==1</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.averageDonationAmount.title" class="ng-binding"></p>
+            <input type="text" ng-model="info.averageDonationAmount.value" name="42" id="42" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.averageDonationAmount.errorMessage" ng-bind="info.averageDonationAmount.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.averageDonationAmount.value- &nbsp;&nbsp;<span ng-bind="info.averageDonationAmount.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.42.$valid" ng-class="{ success:donationRevenueDetails.42.$valid, error:donationRevenueDetails.42.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.urlFieldRecurringDonationTypeId.title" class="ng-binding"></p>
+            <div class="radio-check-item inline">
+                <input type="radio" ng-model="info.urlFieldRecurringDonationTypeId.value" value="1" name="44" ng-required="1" id="44" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+                <label for="44" ng-bind="resource.urlFieldRecurringDonationTypeIdCheck1.title" class="ng-binding"></label>
+            </div>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldRecurringDonationTypeId.errorMessage" ng-bind="info.urlFieldRecurringDonationTypeId.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldRecurringDonationTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldRecurringDonationTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.44.$valid" ng-class="{ success:donationRevenueDetails.44.$valid, error:donationRevenueDetails.44.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+            <div class="radio-check-item inline">
+                <input type="radio" ng-model="info.urlFieldRecurringDonationTypeId.value" value="2" name="45" ng-required="1" id="45" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+                <label for="45" ng-bind="resource.urlFieldRecurringDonationTypeIdCheck2.title" class="ng-binding"></label>
+            </div>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldRecurringDonationTypeId.errorMessage" ng-bind="info.urlFieldRecurringDonationTypeId.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldRecurringDonationTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldRecurringDonationTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.45.$valid" ng-class="{ success:donationRevenueDetails.45.$valid, error:donationRevenueDetails.45.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.monthlyDonationAmount.title" class="ng-binding"></p>
+            <input type="text" ng-model="info.monthlyDonationAmount.value" name="47" id="47" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.monthlyDonationAmount.errorMessage" ng-bind="info.monthlyDonationAmount.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.monthlyDonationAmount.value- &nbsp;&nbsp;<span ng-bind="info.monthlyDonationAmount.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.47.$valid" ng-class="{ success:donationRevenueDetails.47.$valid, error:donationRevenueDetails.47.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.urlFieldDonationOriginTypeIdList.title" class="ng-binding"></p>
+            <div class="radio-check-item">
+                <input type="checkbox" ng-model="info.urlFieldDonationOriginTypeIdList.northAmerica.value" ng-true-value="1" name="49" ng-checked="info.urlFieldDonationOriginTypeIdList.northAmerica.checked" id="49" class="ng-pristine ng-valid">
+                <label for="49" ng-bind="resource.urlFieldDonationOriginTypeIdListCheck1.title" class="ng-binding"></label>
+            </div>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldDonationOriginTypeIdList.northAmerica.errorMessage" ng-bind="info.urlFieldDonationOriginTypeIdList.northAmerica.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldDonationOriginTypeIdList.northAmerica.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldDonationOriginTypeIdList.northAmerica.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.49.$valid" ng-class="{ success:donationRevenueDetails.49.$valid, error:donationRevenueDetails.49.$invalid }" class="ng-binding success">true</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+            <div class="radio-check-item">
+                <input type="checkbox" ng-model="info.urlFieldDonationOriginTypeIdList.southAmerica.value" ng-true-value="2" name="50" ng-checked="info.urlFieldDonationOriginTypeIdList.southAmerica.checked" id="50" class="ng-pristine ng-valid">
+                <label for="50" ng-bind="resource.urlFieldDonationOriginTypeIdListCheck2.title" class="ng-binding"></label>
+            </div>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldDonationOriginTypeIdList.southAmerica.errorMessage" ng-bind="info.urlFieldDonationOriginTypeIdList.southAmerica.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldDonationOriginTypeIdList.southAmerica.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldDonationOriginTypeIdList.southAmerica.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.50.$valid" ng-class="{ success:donationRevenueDetails.50.$valid, error:donationRevenueDetails.50.$invalid }" class="ng-binding success">true</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+            <div class="radio-check-item">
+                <input type="checkbox" ng-model="info.urlFieldDonationOriginTypeIdList.westernEurope.value" ng-true-value="3" name="51" ng-checked="info.urlFieldDonationOriginTypeIdList.westernEurope.checked" id="51" class="ng-pristine ng-valid">
+                <label for="51" ng-bind="resource.urlFieldDonationOriginTypeIdListCheck3.title" class="ng-binding"></label>
+            </div>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldDonationOriginTypeIdList.westernEurope.errorMessage" ng-bind="info.urlFieldDonationOriginTypeIdList.westernEurope.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldDonationOriginTypeIdList.westernEurope.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldDonationOriginTypeIdList.westernEurope.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.51.$valid" ng-class="{ success:donationRevenueDetails.51.$valid, error:donationRevenueDetails.51.$invalid }" class="ng-binding success">true</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+            <div class="radio-check-item">
+                <input type="checkbox" ng-model="info.urlFieldDonationOriginTypeIdList.easternEurope.value" ng-true-value="4" name="52" ng-checked="info.urlFieldDonationOriginTypeIdList.easternEurope.checked" id="52" class="ng-pristine ng-valid">
+                <label for="52" ng-bind="resource.urlFieldDonationOriginTypeIdListCheck4.title" class="ng-binding"></label>
+            </div>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldDonationOriginTypeIdList.easternEurope.errorMessage" ng-bind="info.urlFieldDonationOriginTypeIdList.easternEurope.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldDonationOriginTypeIdList.easternEurope.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldDonationOriginTypeIdList.easternEurope.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.52.$valid" ng-class="{ success:donationRevenueDetails.52.$valid, error:donationRevenueDetails.52.$invalid }" class="ng-binding success">true</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+            <div class="radio-check-item">
+                <input type="checkbox" ng-model="info.urlFieldDonationOriginTypeIdList.africa.value" ng-true-value="5" name="53" ng-checked="info.urlFieldDonationOriginTypeIdList.africa.checked" id="53" class="ng-pristine ng-valid">
+                <label for="53" ng-bind="resource.urlFieldDonationOriginTypeIdListCheck5.title" class="ng-binding"></label>
+            </div>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldDonationOriginTypeIdList.africa.errorMessage" ng-bind="info.urlFieldDonationOriginTypeIdList.africa.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldDonationOriginTypeIdList.africa.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldDonationOriginTypeIdList.africa.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.53.$valid" ng-class="{ success:donationRevenueDetails.53.$valid, error:donationRevenueDetails.53.$invalid }" class="ng-binding success">true</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+            <div class="radio-check-item">
+                <input type="checkbox" ng-model="info.urlFieldDonationOriginTypeIdList.asia.value" ng-true-value="6" name="54" ng-checked="info.urlFieldDonationOriginTypeIdList.asia.checked" id="54" class="ng-pristine ng-valid">
+                <label for="54" ng-bind="resource.urlFieldDonationOriginTypeIdListCheck6.title" class="ng-binding"></label>
+            </div>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldDonationOriginTypeIdList.asia.errorMessage" ng-bind="info.urlFieldDonationOriginTypeIdList.asia.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldDonationOriginTypeIdList.asia.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldDonationOriginTypeIdList.asia.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.54.$valid" ng-class="{ success:donationRevenueDetails.54.$valid, error:donationRevenueDetails.54.$invalid }" class="ng-binding success">true</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+            <div class="radio-check-item">
+                <input type="checkbox" ng-model="info.urlFieldDonationOriginTypeIdList.middleEast.value" ng-true-value="7" name="55" ng-checked="info.urlFieldDonationOriginTypeIdList.middleEast.checked" id="55" class="ng-pristine ng-valid">
+                <label for="55" ng-bind="resource.urlFieldDonationOriginTypeIdListCheck7.title" class="ng-binding"></label>
+            </div>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldDonationOriginTypeIdList.middleEast.errorMessage" ng-bind="info.urlFieldDonationOriginTypeIdList.middleEast.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldDonationOriginTypeIdList.middleEast.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldDonationOriginTypeIdList.middleEast.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.55.$valid" ng-class="{ success:donationRevenueDetails.55.$valid, error:donationRevenueDetails.55.$invalid }" class="ng-binding success">true</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+            <div class="radio-check-item">
+                <input type="checkbox" ng-model="info.urlFieldDonationOriginTypeIdList.oceania.value" ng-true-value="8" name="56" ng-checked="info.urlFieldDonationOriginTypeIdList.oceania.checked" id="56" class="ng-pristine ng-valid">
+                <label for="56" ng-bind="resource.urlFieldDonationOriginTypeIdListCheck8.title" class="ng-binding"></label>
+            </div>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldDonationOriginTypeIdList.oceania.errorMessage" ng-bind="info.urlFieldDonationOriginTypeIdList.oceania.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldDonationOriginTypeIdList.oceania.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldDonationOriginTypeIdList.oceania.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.56.$valid" ng-class="{ success:donationRevenueDetails.56.$valid, error:donationRevenueDetails.56.$invalid }" class="ng-binding success">true</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field ng-hide" ng-show="0">
+            <textarea rows="2" cols="20" ng-model="logic.Helper" name="58" id="58" ng-required="!info.urlFieldDonationOriginTypeIdList.northAmerica.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.southAmerica.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.westernEurope.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.easternEurope.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.africa.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.asia.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.middleEast.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.oceania.value" class="ng-pristine ng-invalid ng-invalid-required" required="required"></textarea>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.Helper- &nbsp;&nbsp;<span ng-bind="logic.Helper" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.58.$valid" ng-class="{ success:donationRevenueDetails.58.$valid, error:donationRevenueDetails.58.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>!info.urlFieldDonationOriginTypeIdList.northAmerica.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.southAmerica.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.westernEurope.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.easternEurope.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.africa.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.asia.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.middleEast.value&amp;&amp;!info.urlFieldDonationOriginTypeIdList.oceania.value</span><br>
+                    isVisibleIF- <span>0</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <div class="nav">
+                <a class="btn-link" ng-click="donationRevenueDetails.$invalid||submitForValidation(donationRevenueDetails,'productInformationTitle')" ng-disabled="donationRevenueDetails.$invalid" disabled="disabled">Next Step</a>
+            </div>
+            <hr>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> undefined- &nbsp;&nbsp;<span ng-bind="undefined" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="donationRevenueDetails.60.$valid" ng-class="{ success:donationRevenueDetails.60.$valid, error:donationRevenueDetails.60.$invalid }" class="ng-binding"></span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form name="productInformation" novalidate="" class="ng-scope ng-pristine ng-invalid ng-invalid-required">
+<h5 id="productInformationTitle" ng-class="{active:donationRevenueDetails.$serverValid}" ng-click="introductionSection.$serverValid&amp;&amp;openSection(introductionSection,'productInformationTitle')" ng-bind="resource.productInfoSection.title" class="ng-binding"></h5>
+<fieldset>
+<div class="field radio-check-field">
+    <p ng-bind="resource.averagePrice.title" class="ng-binding"></p>
+    <input type="text" ng-model="info.averagePrice.value" name="63" id="63" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.averagePrice.errorMessage" ng-bind="info.averagePrice.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.averagePrice.value- &nbsp;&nbsp;<span ng-bind="info.averagePrice.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.63.$valid" ng-class="{ success:productInformation.63.$valid, error:productInformation.63.$invalid }" class="ng-binding error">false</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4">
+    <p ng-bind="resource.shippingCountryId.title" class="ng-binding"></p>
+    <select ng-model="info.shippingCountryId.value" id="65" ng-options="v as o for (o,v) in { USA:1, CANADA:2, Brazil:3}" name="65" ng-required="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4" class="ng-pristine ng-valid ng-valid-required"><option value="" class="">Select</option><option value="Brazil">Brazil</option><option value="CANADA">CANADA</option><option value="USA">USA</option></select>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.shippingCountryId.errorMessage" ng-bind="info.shippingCountryId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.shippingCountryId.value- &nbsp;&nbsp;<span ng-bind="info.shippingCountryId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.65.$valid" ng-class="{ success:productInformation.65.$valid, error:productInformation.65.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4">
+    <p ng-bind="resource.urlFieldProductDeliveryMethodTypeIdList.title" class="ng-binding"></p>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldProductDeliveryMethodTypeIdList.online.value" ng-true-value="3" name="67" ng-checked="info.urlFieldProductDeliveryMethodTypeIdList.online.checked" id="67" class="ng-pristine ng-valid">
+        <label for="67" ng-bind="resource.urlFieldProductDeliveryMethodTypeIdListCheck1.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldProductDeliveryMethodTypeIdList.online.errorMessage" ng-bind="info.urlFieldProductDeliveryMethodTypeIdList.online.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldProductDeliveryMethodTypeIdList.online.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldProductDeliveryMethodTypeIdList.online.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.67.$valid" ng-class="{ success:productInformation.67.$valid, error:productInformation.67.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldProductDeliveryMethodTypeIdList.regularPost.value" ng-true-value="2" name="68" ng-checked="info.urlFieldProductDeliveryMethodTypeIdList.regularPost.checked" id="68" class="ng-pristine ng-valid">
+        <label for="68" ng-bind="resource.urlFieldProductDeliveryMethodTypeIdListCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldProductDeliveryMethodTypeIdList.regularPost.errorMessage" ng-bind="info.urlFieldProductDeliveryMethodTypeIdList.regularPost.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldProductDeliveryMethodTypeIdList.regularPost.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldProductDeliveryMethodTypeIdList.regularPost.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.68.$valid" ng-class="{ success:productInformation.68.$valid, error:productInformation.68.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.value" ng-true-value="1" name="69" ng-checked="info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.checked" id="69" class="ng-pristine ng-valid">
+        <label for="69" ng-bind="resource.urlFieldProductDeliveryMethodTypeIdListCheck3.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.errorMessage" ng-bind="info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.69.$valid" ng-class="{ success:productInformation.69.$valid, error:productInformation.69.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldProductDeliveryMethodTypeIdList.inPerson.value" ng-true-value="4" name="70" ng-checked="info.urlFieldProductDeliveryMethodTypeIdList.inPerson.checked" id="70" class="ng-pristine ng-valid">
+        <label for="70" ng-bind="resource.urlFieldProductDeliveryMethodTypeIdListCheck4.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldProductDeliveryMethodTypeIdList.inPerson.errorMessage" ng-bind="info.urlFieldProductDeliveryMethodTypeIdList.inPerson.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldProductDeliveryMethodTypeIdList.inPerson.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldProductDeliveryMethodTypeIdList.inPerson.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.70.$valid" ng-class="{ success:productInformation.70.$valid, error:productInformation.70.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+</div>
+<div class="field radio-check-field" ng-show="debugMode==1?'1':'0'">
+    <textarea style="width:0;height:0" rows="2" cols="20" ng-model="logic.Helper" name="72" ng-required="(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4)&amp;&amp;!info.urlFieldProductDeliveryMethodTypeIdList.online.value&amp;&amp;!info.urlFieldProductDeliveryMethodTypeIdList.regularPost.value&amp;&amp;!info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.value&amp;&amp;!info.urlFieldProductDeliveryMethodTypeIdList.inPerson.value" class="ng-pristine ng-valid ng-valid-required"></textarea>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.Helper- &nbsp;&nbsp;<span ng-bind="logic.Helper" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.72.$valid" ng-class="{ success:productInformation.72.$valid, error:productInformation.72.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4)&amp;&amp;!info.urlFieldProductDeliveryMethodTypeIdList.online.value&amp;&amp;!info.urlFieldProductDeliveryMethodTypeIdList.regularPost.value&amp;&amp;!info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.value&amp;&amp;!info.urlFieldProductDeliveryMethodTypeIdList.inPerson.value</span><br>
+            isVisibleIF- <span>debugMode==1?'1':'0'</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4">
+    <p ng-bind="resource.urlFieldServiceProvisionMethodTypeIdList.title" class="ng-binding"></p>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldServiceProvisionMethodTypeIdList.inPerson.value" ng-true-value="1" name="74" ng-checked="info.urlFieldServiceProvisionMethodTypeIdList.inPerson.checked" id="74" class="ng-pristine ng-valid">
+        <label for="74" ng-bind="resource.urlFieldServiceProvisionMethodTypeIdListCheck1.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldServiceProvisionMethodTypeIdList.inPerson.errorMessage" ng-bind="info.urlFieldServiceProvisionMethodTypeIdList.inPerson.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldServiceProvisionMethodTypeIdList.inPerson.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldServiceProvisionMethodTypeIdList.inPerson.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.74.$valid" ng-class="{ success:productInformation.74.$valid, error:productInformation.74.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldServiceProvisionMethodTypeIdList.remotely.value" ng-true-value="0" name="75" ng-checked="info.urlFieldServiceProvisionMethodTypeIdList.remotely.checked" id="75" class="ng-pristine ng-valid">
+        <label for="75" ng-bind="resource.urlFieldServiceProvisionMethodTypeIdListCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldServiceProvisionMethodTypeIdList.remotely.errorMessage" ng-bind="info.urlFieldServiceProvisionMethodTypeIdList.remotely.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldServiceProvisionMethodTypeIdList.remotely.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldServiceProvisionMethodTypeIdList.remotely.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.75.$valid" ng-class="{ success:productInformation.75.$valid, error:productInformation.75.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+</div>
+<div class="field radio-check-field" ng-show="debugMode==1?'1':'0'">
+    <textarea style="width:0;height:0" rows="2" cols="20" ng-model="logic.Helper" name="77" ng-required="(info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)&amp;&amp;!info.urlFieldServiceProvisionMethodTypeIdList.inPerson.value&amp;&amp;!info.urlFieldServiceProvisionMethodTypeIdList.remotely.value" class="ng-pristine ng-valid ng-valid-required"></textarea>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.Helper- &nbsp;&nbsp;<span ng-bind="logic.Helper" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.77.$valid" ng-class="{ success:productInformation.77.$valid, error:productInformation.77.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>(info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)&amp;&amp;!info.urlFieldServiceProvisionMethodTypeIdList.inPerson.value&amp;&amp;!info.urlFieldServiceProvisionMethodTypeIdList.remotely.value</span><br>
+            isVisibleIF- <span>debugMode==1?'1':'0'</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4">
+    <p ng-bind="resource.productDeliveryDelayTime.title" class="ng-binding"></p>
+    <input type="text" ng-model="info.productDeliveryDelayTime.value" name="79" id="79" ng-required="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4" class="ng-pristine ng-valid ng-valid-required">
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.productDeliveryDelayTime.errorMessage" ng-bind="info.productDeliveryDelayTime.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.productDeliveryDelayTime.value- &nbsp;&nbsp;<span ng-bind="info.productDeliveryDelayTime.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.79.$valid" ng-class="{ success:productInformation.79.$valid, error:productInformation.79.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4">
+    <p ng-bind="resource.serviceProvisionDelayTime.title" class="ng-binding"></p>
+    <input type="text" ng-model="info.serviceProvisionDelayTime.value" name="81" id="81" ng-required="info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4" class="ng-pristine ng-valid ng-valid-required">
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.serviceProvisionDelayTime.errorMessage" ng-bind="info.serviceProvisionDelayTime.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.serviceProvisionDelayTime.value- &nbsp;&nbsp;<span ng-bind="info.serviceProvisionDelayTime.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.81.$valid" ng-class="{ success:productInformation.81.$valid, error:productInformation.81.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4">
+    <p ng-bind="resource.urlFieldProductSourceTypeId.title" class="ng-binding"></p>
+    <div class="radio-check-item">
+        <input type="radio" ng-model="info.urlFieldProductSourceTypeId.value" value="1" name="83" ng-required="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4" id="83" class="ng-pristine ng-valid ng-valid-required">
+        <label for="83" ng-bind="resource.urlFieldProductSourceTypeIdCheck1.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldProductSourceTypeId.errorMessage" ng-bind="info.urlFieldProductSourceTypeId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldProductSourceTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldProductSourceTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.83.$valid" ng-class="{ success:productInformation.83.$valid, error:productInformation.83.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="radio" ng-model="info.urlFieldProductSourceTypeId.value" value="2" name="84" ng-required="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4" id="84" class="ng-pristine ng-valid ng-valid-required">
+        <label for="84" ng-bind="resource.urlFieldProductSourceTypeIdCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldProductSourceTypeId.errorMessage" ng-bind="info.urlFieldProductSourceTypeId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldProductSourceTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldProductSourceTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.84.$valid" ng-class="{ success:productInformation.84.$valid, error:productInformation.84.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4">
+    <p ng-bind="resource.urlFieldServiceSourceTypeId.title" class="ng-binding"></p>
+    <div class="radio-check-item">
+        <input type="radio" ng-model="info.urlFieldServiceSourceTypeId.value" value="1" name="86" ng-required="info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4" id="86" class="ng-pristine ng-valid ng-valid-required">
+        <label for="86" ng-bind="resource.urlFieldServiceSourceTypeIdCheck1.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldServiceSourceTypeId.errorMessage" ng-bind="info.urlFieldServiceSourceTypeId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldServiceSourceTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldServiceSourceTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.86.$valid" ng-class="{ success:productInformation.86.$valid, error:productInformation.86.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="radio" ng-model="info.urlFieldServiceSourceTypeId.value" value="2" name="87" ng-required="info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4" id="87" class="ng-pristine ng-valid ng-valid-required">
+        <label for="87" ng-bind="resource.urlFieldServiceSourceTypeIdCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldServiceSourceTypeId.errorMessage" ng-bind="info.urlFieldServiceSourceTypeId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldServiceSourceTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldServiceSourceTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.87.$valid" ng-class="{ success:productInformation.87.$valid, error:productInformation.87.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4</span><br>
+            isVisibleIF- <span>info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="(info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)&amp;&amp;info.urlFieldServiceSourceTypeId.value==2">
+    <p ng-bind="resource.serviceSourceThirdPartyInfo.title" class="ng-binding"></p>
+    <textarea rows="2" cols="20" ng-model="info.serviceSourceThirdPartyInfo.value" name="89" id="89" ng-required="(info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)&amp;&amp;info.urlFieldServiceSourceTypeId.value==2" class="ng-pristine ng-valid ng-valid-required"></textarea>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.serviceSourceThirdPartyInfo.errorMessage" ng-bind="info.serviceSourceThirdPartyInfo.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.serviceSourceThirdPartyInfo.value- &nbsp;&nbsp;<span ng-bind="info.serviceSourceThirdPartyInfo.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.89.$valid" ng-class="{ success:productInformation.89.$valid, error:productInformation.89.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>(info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)&amp;&amp;info.urlFieldServiceSourceTypeId.value==2</span><br>
+            isVisibleIF- <span>(info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)&amp;&amp;info.urlFieldServiceSourceTypeId.value==2</span></div>
+    </div>
+</div>
+<div class="field radio-check-field">
+    <p ng-bind="resource.urlFieldSupplierTypeId.title" class="ng-binding"></p>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="info.urlFieldSupplierTypeId.value" value="1" name="91" ng-required="1" id="91" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+        <label for="91" ng-bind="resource.urlFieldSupplierTypeIdCheck1.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldSupplierTypeId.errorMessage" ng-bind="info.urlFieldSupplierTypeId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldSupplierTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldSupplierTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.91.$valid" ng-class="{ success:productInformation.91.$valid, error:productInformation.91.$invalid }" class="ng-binding error">false</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="info.urlFieldSupplierTypeId.value" value="2" name="92" ng-required="1" id="92" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+        <label for="92" ng-bind="resource.urlFieldSupplierTypeIdCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldSupplierTypeId.errorMessage" ng-bind="info.urlFieldSupplierTypeId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldSupplierTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldSupplierTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.92.$valid" ng-class="{ success:productInformation.92.$valid, error:productInformation.92.$invalid }" class="ng-binding error">false</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+</div>
+<div class="field radio-check-field">
+    <div class="nav">
+        <a class="btn-link" ng-click="productInformation.$invalid||submitForValidation(productInformation,'salesInformationTitle')" ng-disabled="productInformation.$invalid" disabled="disabled">Next Step</a>
+    </div>
+    <hr>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> undefined- &nbsp;&nbsp;<span ng-bind="undefined" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="productInformation.94.$valid" ng-class="{ success:productInformation.94.$valid, error:productInformation.94.$invalid }" class="ng-binding"></span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+</div>
+</fieldset>
+</form>
+<form name="salesInformation" novalidate="" class="ng-scope ng-pristine ng-invalid ng-invalid-required">
+<h5 id="salesInformationTitle" ng-class="{active:introductionSection.$serverValid&amp;&amp;productInformation.$serverValid}" ng-click="productInformation.$serverValid&amp;&amp;openSection(productInformation,'salesInformationTitle')" ng-bind="resource.salesInfoSection.title" class="ng-binding"></h5>
+<fieldset>
+<div class="field radio-check-field">
+    <p ng-bind="resource.customerSupportInfo.title" class="ng-binding"></p>
+    <textarea rows="2" cols="20" ng-model="info.customerSupportInfo.value" name="97" id="97" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required"></textarea>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.customerSupportInfo.errorMessage" ng-bind="info.customerSupportInfo.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.customerSupportInfo.value- &nbsp;&nbsp;<span ng-bind="info.customerSupportInfo.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.97.$valid" ng-class="{ success:salesInformation.97.$valid, error:salesInformation.97.$invalid }" class="ng-binding error">false</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+</div>
+<div class="field radio-check-field">
+    <p ng-bind="resource.urlFieldSaleOriginTypeIdList.title" class="ng-binding"></p>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldSaleOriginTypeIdList.northAmerica.value" ng-true-value="1" name="99" ng-checked="info.urlFieldSaleOriginTypeIdList.northAmerica.checked" id="99" class="ng-pristine ng-valid">
+        <label for="99" ng-bind="resource.urlFieldSaleOriginTypeIdListCheck1.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldSaleOriginTypeIdList.northAmerica.errorMessage" ng-bind="info.urlFieldSaleOriginTypeIdList.northAmerica.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldSaleOriginTypeIdList.northAmerica.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldSaleOriginTypeIdList.northAmerica.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.99.$valid" ng-class="{ success:salesInformation.99.$valid, error:salesInformation.99.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldSaleOriginTypeIdList.southAmerica.value" ng-true-value="2" name="100" ng-checked="info.urlFieldSaleOriginTypeIdList.southAmerica.checked" id="100" class="ng-pristine ng-valid">
+        <label for="100" ng-bind="resource.urlFieldSaleOriginTypeIdListCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldSaleOriginTypeIdList.southAmerica.errorMessage" ng-bind="info.urlFieldSaleOriginTypeIdList.southAmerica.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldSaleOriginTypeIdList.southAmerica.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldSaleOriginTypeIdList.southAmerica.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.100.$valid" ng-class="{ success:salesInformation.100.$valid, error:salesInformation.100.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldSaleOriginTypeIdList.westernEurope.value" ng-true-value="3" name="101" ng-checked="info.urlFieldSaleOriginTypeIdList.westernEurope.checked" id="101" class="ng-pristine ng-valid">
+        <label for="101" ng-bind="resource.urlFieldSaleOriginTypeIdListCheck3.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldSaleOriginTypeIdList.westernEurope.errorMessage" ng-bind="info.urlFieldSaleOriginTypeIdList.westernEurope.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldSaleOriginTypeIdList.westernEurope.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldSaleOriginTypeIdList.westernEurope.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.101.$valid" ng-class="{ success:salesInformation.101.$valid, error:salesInformation.101.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldSaleOriginTypeIdList.easternEurope.value" ng-true-value="4" name="102" ng-checked="info.urlFieldSaleOriginTypeIdList.easternEurope.checked" id="102" class="ng-pristine ng-valid">
+        <label for="102" ng-bind="resource.urlFieldSaleOriginTypeIdListCheck4.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldSaleOriginTypeIdList.easternEurope.errorMessage" ng-bind="info.urlFieldSaleOriginTypeIdList.easternEurope.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldSaleOriginTypeIdList.easternEurope.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldSaleOriginTypeIdList.easternEurope.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.102.$valid" ng-class="{ success:salesInformation.102.$valid, error:salesInformation.102.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldSaleOriginTypeIdList.africa.value" ng-true-value="5" name="103" ng-checked="info.urlFieldSaleOriginTypeIdList.africa.checked" id="103" class="ng-pristine ng-valid">
+        <label for="103" ng-bind="resource.urlFieldSaleOriginTypeIdListCheck5.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldSaleOriginTypeIdList.africa.errorMessage" ng-bind="info.urlFieldSaleOriginTypeIdList.africa.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldSaleOriginTypeIdList.africa.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldSaleOriginTypeIdList.africa.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.103.$valid" ng-class="{ success:salesInformation.103.$valid, error:salesInformation.103.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldSaleOriginTypeIdList.asia.value" ng-true-value="6" name="104" ng-checked="info.urlFieldSaleOriginTypeIdList.asia.checked" id="104" class="ng-pristine ng-valid">
+        <label for="104" ng-bind="resource.urlFieldSaleOriginTypeIdListCheck6.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldSaleOriginTypeIdList.asia.errorMessage" ng-bind="info.urlFieldSaleOriginTypeIdList.asia.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldSaleOriginTypeIdList.asia.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldSaleOriginTypeIdList.asia.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.104.$valid" ng-class="{ success:salesInformation.104.$valid, error:salesInformation.104.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldSaleOriginTypeIdList.middleEast.value" ng-true-value="7" name="105" ng-checked="info.urlFieldSaleOriginTypeIdList.middleEast.checked" id="105" class="ng-pristine ng-valid">
+        <label for="105" ng-bind="resource.urlFieldSaleOriginTypeIdListCheck7.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldSaleOriginTypeIdList.middleEast.errorMessage" ng-bind="info.urlFieldSaleOriginTypeIdList.middleEast.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldSaleOriginTypeIdList.middleEast.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldSaleOriginTypeIdList.middleEast.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.105.$valid" ng-class="{ success:salesInformation.105.$valid, error:salesInformation.105.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldSaleOriginTypeIdList.oceania.value" ng-true-value="8" name="106" ng-checked="info.urlFieldSaleOriginTypeIdList.oceania.checked" id="106" class="ng-pristine ng-valid">
+        <label for="106" ng-bind="resource.urlFieldSaleOriginTypeIdListCheck8.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldSaleOriginTypeIdList.oceania.errorMessage" ng-bind="info.urlFieldSaleOriginTypeIdList.oceania.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldSaleOriginTypeIdList.oceania.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldSaleOriginTypeIdList.oceania.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.106.$valid" ng-class="{ success:salesInformation.106.$valid, error:salesInformation.106.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+</div>
+<div class="field radio-check-field" ng-show="debugMode==1?'1':'0'">
+    <textarea style="width:0;height:0" rows="2" cols="20" ng-model="logic.Helper" name="108" ng-required="!info.urlFieldSaleOriginTypeIdList.northAmerica.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.southAmerica.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.westernEurope.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.easternEurope.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.africa.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.asia.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.middleEast.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.oceania.value" class="ng-pristine ng-invalid ng-invalid-required" required="required"></textarea>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.Helper- &nbsp;&nbsp;<span ng-bind="logic.Helper" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.108.$valid" ng-class="{ success:salesInformation.108.$valid, error:salesInformation.108.$invalid }" class="ng-binding error">false</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>!info.urlFieldSaleOriginTypeIdList.northAmerica.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.southAmerica.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.westernEurope.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.easternEurope.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.africa.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.asia.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.middleEast.value&amp;&amp;!info.urlFieldSaleOriginTypeIdList.oceania.value</span><br>
+            isVisibleIF- <span>debugMode==1?'1':'0'</span></div>
+    </div>
+</div>
+<div class="field radio-check-field">
+    <p ng-bind="resource.urlFieldInvoiceTypeId.title" class="ng-binding"></p>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="info.urlFieldInvoiceTypeId.value" value="1" name="110" ng-required="1" id="110" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+        <label for="110" ng-bind="resource.urlFieldInvoiceTypeIdCheck1.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldInvoiceTypeId.errorMessage" ng-bind="info.urlFieldInvoiceTypeId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldInvoiceTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldInvoiceTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.110.$valid" ng-class="{ success:salesInformation.110.$valid, error:salesInformation.110.$invalid }" class="ng-binding error">false</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="info.urlFieldInvoiceTypeId.value" value="2" name="111" ng-required="1" id="111" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+        <label for="111" ng-bind="resource.urlFieldInvoiceTypeIdCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldInvoiceTypeId.errorMessage" ng-bind="info.urlFieldInvoiceTypeId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldInvoiceTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldInvoiceTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.111.$valid" ng-class="{ success:salesInformation.111.$valid, error:salesInformation.111.$invalid }" class="ng-binding error">false</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+</div>
+<div class="field radio-check-field ng-hide" ng-show="info.urlFieldInvoiceTypeId.value==1">
+    <p ng-bind="resource.urlFieldInvoiceSendingTypeIdList.title" class="ng-binding"></p>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.value" ng-true-value="1" name="113" ng-checked="info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.checked" id="113" class="ng-pristine ng-valid">
+        <label for="113" ng-bind="resource.urlFieldInvoiceSendingTypeIdListCheck1.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.errorMessage" ng-bind="info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.113.$valid" ng-class="{ success:salesInformation.113.$valid, error:salesInformation.113.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>info.urlFieldInvoiceTypeId.value==1</span></div>
+    </div>
+    <div class="radio-check-item">
+        <input type="checkbox" ng-model="info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.value" ng-true-value="2" name="114" ng-checked="info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.checked" id="114" class="ng-pristine ng-valid">
+        <label for="114" ng-bind="resource.urlFieldInvoiceSendingTypeIdListCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.errorMessage" ng-bind="info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.114.$valid" ng-class="{ success:salesInformation.114.$valid, error:salesInformation.114.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>info.urlFieldInvoiceTypeId.value==1</span></div>
+    </div>
+</div>
+<div class="field radio-check-field" ng-show="debugMode==1?'1':'0'">
+    <textarea style="width:0;height:0" rows="2" cols="20" ng-model="logic.Helper" name="116" ng-required="info.urlFieldInvoiceTypeId.value==1&amp;&amp;!info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.value&amp;&amp;!info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.value" class="ng-pristine ng-valid ng-valid-required"></textarea>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.Helper- &nbsp;&nbsp;<span ng-bind="logic.Helper" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.116.$valid" ng-class="{ success:salesInformation.116.$valid, error:salesInformation.116.$invalid }" class="ng-binding success">true</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>info.urlFieldInvoiceTypeId.value==1&amp;&amp;!info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.value&amp;&amp;!info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.value</span><br>
+            isVisibleIF- <span>debugMode==1?'1':'0'</span></div>
+    </div>
+</div>
+<div class="field radio-check-field">
+    <p ng-bind="resource.proofOfPaymentInfo.title" class="ng-binding"></p>
+    <textarea rows="2" cols="20" ng-model="info.proofOfPaymentInfo.value" name="118" id="118" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required"></textarea>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.proofOfPaymentInfo.errorMessage" ng-bind="info.proofOfPaymentInfo.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.proofOfPaymentInfo.value- &nbsp;&nbsp;<span ng-bind="info.proofOfPaymentInfo.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.118.$valid" ng-class="{ success:salesInformation.118.$valid, error:salesInformation.118.$invalid }" class="ng-binding error">false</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+</div>
+<div class="field radio-check-field">
+    <p ng-bind="resource.monthlySaleAmount.title" class="ng-binding"></p>
+    <input type="text" ng-model="info.monthlySaleAmount.value" name="120" id="120" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.monthlySaleAmount.errorMessage" ng-bind="info.monthlySaleAmount.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.monthlySaleAmount.value- &nbsp;&nbsp;<span ng-bind="info.monthlySaleAmount.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.120.$valid" ng-class="{ success:salesInformation.120.$valid, error:salesInformation.120.$invalid }" class="ng-binding error">false</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+</div>
+<div class="field radio-check-field">
+    <p ng-bind="resource.urlFieldRecurringBillingTypeId.title" class="ng-binding"></p>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="info.urlFieldRecurringBillingTypeId.value" value="1" name="122" ng-required="1" id="122" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+        <label for="122" ng-bind="resource.urlFieldRecurringBillingTypeIdCheck1.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldRecurringBillingTypeId.errorMessage" ng-bind="info.urlFieldRecurringBillingTypeId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldRecurringBillingTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldRecurringBillingTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.122.$valid" ng-class="{ success:salesInformation.122.$valid, error:salesInformation.122.$invalid }" class="ng-binding error">false</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+    <div class="radio-check-item inline">
+        <input type="radio" ng-model="info.urlFieldRecurringBillingTypeId.value" value="2" name="123" ng-required="1" id="123" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+        <label for="123" ng-bind="resource.urlFieldRecurringBillingTypeIdCheck2.title" class="ng-binding"></label>
+    </div>
+    <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.urlFieldRecurringBillingTypeId.errorMessage" ng-bind="info.urlFieldRecurringBillingTypeId.errorMessage"></p>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.urlFieldRecurringBillingTypeId.value- &nbsp;&nbsp;<span ng-bind="info.urlFieldRecurringBillingTypeId.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.123.$valid" ng-class="{ success:salesInformation.123.$valid, error:salesInformation.123.$invalid }" class="ng-binding error">false</span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+</div>
+<div class="field radio-check-field">
+    <div class="nav">
+        <a class="btn-link" ng-click="salesInformation.$invalid||submitForValidation(salesInformation,'customerRelationsTitle')" ng-disabled="salesInformation.$invalid" disabled="disabled">Next Step</a>
+    </div>
+    <hr>
+    <hr style="margin:0; border-top: 0 solid #fff;">
+    <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> undefined- &nbsp;&nbsp;<span ng-bind="undefined" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+        <span ng-bind="salesInformation.125.$valid" ng-class="{ success:salesInformation.125.$valid, error:salesInformation.125.$invalid }" class="ng-binding"></span>
+        <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+            isVisibleIF- <span>undefined</span></div>
+    </div>
+</div>
+</fieldset>
+</form>
+<form name="customerRelations" novalidate="" class="ng-scope ng-pristine ng-invalid ng-invalid-required">
+    <h5 id="customerRelationsTitle" ng-class="{active:introductionSection.$serverValid&amp;&amp;productInformation.$serverValid&amp;&amp;salesInformation.$serverValid}" ng-click="salesInformation.$serverValid&amp;&amp;openSection(salesInformation,'customerRelationsTitle')" ng-bind="resource.customerRelationsSection.title" class="ng-binding"></h5>
+    <fieldset>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.customerSupportPhoneNumber.title" class="ng-binding"></p>
+            <textarea rows="2" cols="20" ng-model="info.customerSupportPhoneNumber.value" name="128" id="128" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required"></textarea>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.customerSupportPhoneNumber.errorMessage" ng-bind="info.customerSupportPhoneNumber.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.customerSupportPhoneNumber.value- &nbsp;&nbsp;<span ng-bind="info.customerSupportPhoneNumber.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="customerRelations.128.$valid" ng-class="{ success:customerRelations.128.$valid, error:customerRelations.128.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.customerSupportEmailAddress.title" class="ng-binding"></p>
+            <input type="text" ng-model="info.customerSupportEmailAddress.value" name="130" id="130" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.customerSupportEmailAddress.errorMessage" ng-bind="info.customerSupportEmailAddress.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.customerSupportEmailAddress.value- &nbsp;&nbsp;<span ng-bind="info.customerSupportEmailAddress.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="customerRelations.130.$valid" ng-class="{ success:customerRelations.130.$valid, error:customerRelations.130.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.returnRefundInfo.title" class="ng-binding"></p>
+            <input type="text" ng-model="info.returnRefundInfo.value" name="132" id="132" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.returnRefundInfo.errorMessage" ng-bind="info.returnRefundInfo.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.returnRefundInfo.value- &nbsp;&nbsp;<span ng-bind="info.returnRefundInfo.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="customerRelations.132.$valid" ng-class="{ success:customerRelations.132.$valid, error:customerRelations.132.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.termsOfService.title" class="ng-binding"></p>
+            <textarea rows="2" cols="20" ng-model="info.termsOfService.value" name="134" id="134" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required"></textarea>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.termsOfService.errorMessage" ng-bind="info.termsOfService.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.termsOfService.value- &nbsp;&nbsp;<span ng-bind="info.termsOfService.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="customerRelations.134.$valid" ng-class="{ success:customerRelations.134.$valid, error:customerRelations.134.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.termsOfServiceLocation.title" class="ng-binding"></p>
+            <input type="text" ng-model="info.termsOfServiceLocation.value" name="136" id="136" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.termsOfServiceLocation.errorMessage" ng-bind="info.termsOfServiceLocation.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.termsOfServiceLocation.value- &nbsp;&nbsp;<span ng-bind="info.termsOfServiceLocation.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="customerRelations.136.$valid" ng-class="{ success:customerRelations.136.$valid, error:customerRelations.136.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.refundPolicy.title" class="ng-binding"></p>
+            <textarea rows="2" cols="20" ng-model="info.refundPolicy.value" name="138" id="138" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required"></textarea>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.refundPolicy.errorMessage" ng-bind="info.refundPolicy.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.refundPolicy.value- &nbsp;&nbsp;<span ng-bind="info.refundPolicy.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="customerRelations.138.$valid" ng-class="{ success:customerRelations.138.$valid, error:customerRelations.138.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.refundPolicyLocation.title" class="ng-binding"></p>
+            <input type="text" ng-model="info.refundPolicyLocation.value" name="140" id="140" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required">
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.refundPolicyLocation.errorMessage" ng-bind="info.refundPolicyLocation.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.refundPolicyLocation.value- &nbsp;&nbsp;<span ng-bind="info.refundPolicyLocation.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="customerRelations.140.$valid" ng-class="{ success:customerRelations.140.$valid, error:customerRelations.140.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <p ng-bind="resource.fraudPrevention.title" class="ng-binding"></p>
+            <textarea rows="2" cols="20" ng-model="info.fraudPrevention.value" name="142" id="142" ng-required="1" class="ng-pristine ng-invalid ng-invalid-required" required="required"></textarea>
+            <p class="global-message msg-fail ng-binding ng-hide" ng-show="info.fraudPrevention.errorMessage" ng-bind="info.fraudPrevention.errorMessage"></p>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> info.fraudPrevention.value- &nbsp;&nbsp;<span ng-bind="info.fraudPrevention.value" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="customerRelations.142.$valid" ng-class="{ success:customerRelations.142.$valid, error:customerRelations.142.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>1</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field ng-hide" ng-show="0">
+            <textarea rows="2" cols="20" ng-model="logic.Helper" name="144" id="144" ng-required="salesInformation.$invalid" class="ng-pristine ng-invalid ng-invalid-required" required="required"></textarea>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.Helper- &nbsp;&nbsp;<span ng-bind="logic.Helper" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="customerRelations.144.$valid" ng-class="{ success:customerRelations.144.$valid, error:customerRelations.144.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>salesInformation.$invalid</span><br>
+                    isVisibleIF- <span>0</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <div class="nav">
+                <a class="btn-link" ng-click="customerRelations.$invalid||submitForValidation(customerRelations,'customerRelationsTitle')" ng-disabled="customerRelations.$invalid" disabled="disabled">Next Step</a>
+            </div>
+            <hr>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> undefined- &nbsp;&nbsp;<span ng-bind="undefined" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="customerRelations.146.$valid" ng-class="{ success:customerRelations.146.$valid, error:customerRelations.146.$invalid }" class="ng-binding"></span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form name="submitDoc" novalidate="" class="ng-scope ng-pristine ng-valid">
+    <h5 id="submitDocTitle" ng-class="{active:info.urlFieldSupplierTypeId.value==1}" ng-click="info.urlFieldSupplierTypeId.value==1&amp;&amp;openSection(submitDoc,'submitDocTitle')" ng-bind="resource.submitDocumentsSection.title" class="ng-binding"></h5>
+    <fieldset>
+        <div class="field radio-check-field ng-hide" ng-show="0">
+            <textarea rows="2" cols="20" ng-model="logic.Helper" name="149" id="149" class="ng-pristine ng-valid"></textarea>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.Helper- &nbsp;&nbsp;<span ng-bind="logic.Helper" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="submitDoc.149.$valid" ng-class="{ success:submitDoc.149.$valid, error:submitDoc.149.$invalid }" class="ng-binding success">true</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>0</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <div>
+                <p></p>
+            </div>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> undefined- &nbsp;&nbsp;<span ng-bind="undefined" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="submitDoc.151.$valid" ng-class="{ success:submitDoc.151.$valid, error:submitDoc.151.$invalid }" class="ng-binding"></span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form name="submitButton" novalidate="" class="ng-scope ng-pristine ng-invalid ng-invalid-required">
+    <h5 id="submitButton" ng-class="{active:true}" ng-bind="" class="ng-binding active"></h5>
+    <fieldset>
+        <div class="field radio-check-field" ng-show="debugMode==1?'1':'0'">
+            <textarea style="width:0;height:0" rows="2" cols="20" ng-model="logic.Helper" name="154" ng-required="!introductionSection.$serverValid||!salesInformation.$serverValid||!productInformation.$serverValid||!customerRelations.$serverValid" class="ng-pristine ng-invalid ng-invalid-required" required="required"></textarea>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> logic.Helper- &nbsp;&nbsp;<span ng-bind="logic.Helper" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="submitButton.154.$valid" ng-class="{ success:submitButton.154.$valid, error:submitButton.154.$invalid }" class="ng-binding error">false</span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>!introductionSection.$serverValid||!salesInformation.$serverValid||!productInformation.$serverValid||!customerRelations.$serverValid</span><br>
+                    isVisibleIF- <span>debugMode==1?'1':'0'</span></div>
+            </div>
+        </div>
+        <div class="field radio-check-field">
+            <p ng-bind="" class="ng-binding"></p>
+            <div class="nav">
+                <a class="btn-link" ng-click="submitForm()" ng-disabled="submitButton.$invalid" disabled="disabled">Submit</a>
+            </div>
+            <hr style="margin:0; border-top: 0 solid #fff;">
+            <div class="debugMessage" ng-show="debugMode"><span ng-click="showDiv=!showDiv" ng-bind="showDiv?'[ + ] ':'[ - ] '" class="ng-binding">[ - ] </span> undefined- &nbsp;&nbsp;<span ng-bind="undefined" class="ng-binding"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isValid-
+                <span ng-bind="submitButton.156.$valid" ng-class="{ success:submitButton.156.$valid, error:submitButton.156.$invalid }" class="ng-binding"></span>
+                <div ng-show="showDiv" class="ng-hide">isRequiredIF- <span>undefined</span><br>
+                    isVisibleIF- <span>undefined</span></div>
+            </div>
+        </div>
+    </fieldset>
+</form></payza-form>

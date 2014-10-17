@@ -1,0 +1,97 @@
+//
+// Alerts
+// --------------------------------------------------
+
+
+// Base styles
+// -------------------------
+
+.alert {
+  padding: 28px 24px;
+  margin: 10px 0;
+  color: @gray;
+  font-size:0.9em;
+  word-wrap: break-word;
+
+  // Headings for larger alerts
+  h4 {
+    margin-top: 0;
+    // Specified for the h4 to prevent conflicts of changing @headingsColor
+    color: inherit;
+  }
+  // Provide class for links that match alerts
+  .alert-link {
+    font-weight: @alert-link-font-weight;
+  }
+
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
+  > p + p {
+    margin-top: 5px;
+  }
+
+  .close {
+    position: relative;
+    top: -27px;
+    right: -18px;
+    color: inherit;
+  }
+}
+
+
+
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.alert-success {
+  .alert-variant(@alert-success-text, @alert-success-shade);
+  background:url(../images/icons/alert/green.png) @alert-success-bg no-repeat -50px -25px;
+}
+.alert-info {
+  .alert-variant(@alert-info-text, @alert-info-shade);
+  background:url(../images/icons/alert/blue.png) @alert-info-bg no-repeat -50px -25px;
+}
+.alert-warning {
+  .alert-variant(@alert-warning-text, @alert-warning-shade);
+  background:url(../images/icons/alert/yellow.png) @alert-warning-bg no-repeat -50px -25px;
+}
+.alert-error {
+  /*.alert-variant(@alert-error-text, @alert-error-shade);*/
+  background:url(../images/icons/alert/red.png) @alert-error-bg no-repeat -50px -25px;
+}
+
+.alert-did-you-know {
+    .block-title {
+        display: inline-block;
+        position: relative;
+        top: 13px;
+        left: 36px;
+        background-color: #fff;
+        padding: 4px;
+        color: @brand-primary;
+        font-weight: 800;
+        font-size: @font-size-base;
+    }
+    .block-content {
+        padding: @alert-padding;
+        border: 1px solid @input-border;
+        border-radius: @pager-border-radius;
+    }
+}
+
+
+
+
+
+/* Hacks to fix some displaying issues with the app */  
+.col-sm-12 > span.alert {
+  display:block;
+}
+.alert:empty {
+  display:none !important;
+}

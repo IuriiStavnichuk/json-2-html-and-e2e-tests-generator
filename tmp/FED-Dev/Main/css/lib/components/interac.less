@@ -1,0 +1,59 @@
+﻿// Interac
+
+// Interac Modal
+.interac-modal-overlay {
+	background: #000; 
+	opacity: 0.5;}
+
+.interac-modal-window {
+    background: #fff url(../images/interac-banner.jpg) no-repeat 20px 20px;
+    height: 600px;
+    position: relative;
+    width: 640px;
+    // CSS3
+    .border-radius(10px);
+    // Details
+    .details {
+        color: #000;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: 350px;
+        width: 100%;
+
+        p {
+            font-size: 28px;
+            margin: 0 40px;
+            margin-bottom: 30px;
+        }
+
+        .try-it-now {
+            font-size: 21px;
+            font-weight: 700;
+            padding: 13px 25px;
+        }
+    }
+    // Close Button
+    .close-btn,
+    .close-btn:hover {
+        background: url(../images/icons/modal-close.png) no-repeat;
+        border: 0;
+        filter: none;
+        height: 30px;
+        position: absolute;
+        right: -15px;
+        top: -12px;
+        width: 30px;
+        // CSS3
+        .border-radius(0);
+        @shadow: none;
+        .box-shadow(@shadow);
+    }
+    // Opt out link
+    .opt-out-link {
+        bottom: 22px;
+        font-size: 13px;
+        position: absolute;
+        right: 25px;
+    }
+}

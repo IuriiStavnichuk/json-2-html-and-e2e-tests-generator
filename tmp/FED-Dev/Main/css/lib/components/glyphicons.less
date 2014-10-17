@@ -1,0 +1,977 @@
+//
+// Glyphicons for Bootstrap
+//
+// Since icons are fonts, they can be placed anywhere text is placed and are
+// thus automatically sized to match the surrounding child. To use, create an
+// inline element with the appropriate classes, like so:
+//
+// <a href="#"><span class="glyphicon glyphicon-star"></span> Star</a>
+
+// Import the fonts
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('@{icon-font-path}@{icon-font-name}.eot');
+  src: url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
+       url('@{icon-font-path}@{icon-font-name}.woff') format('woff'),
+       url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype'),
+       url('@{icon-font-path}@{icon-font-name}.svg#glyphicons-halflingsregular') format('svg');
+}
+
+// Catchall baseclass
+/*.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}*/
+
+// Individual icons
+/*.glyphicon-asterisk               { &:before { content: "\2a"; } }
+.glyphicon-plus                   { &:before { content: "\2b"; } }
+.glyphicon-euro                   { &:before { content: "\20ac"; } }
+.glyphicon-minus                  { &:before { content: "\2212"; } }
+.glyphicon-cloud                  { &:before { content: "\2601"; } }
+.glyphicon-envelope               { &:before { content: "\2709"; } }
+.glyphicon-pencil                 { &:before { content: "\270f"; } }
+.glyphicon-glass                  { &:before { content: "\e001"; } }
+.glyphicon-music                  { &:before { content: "\e002"; } }
+.glyphicon-search                 { &:before { content: "\e003"; } }
+.glyphicon-heart                  { &:before { content: "\e005"; } }
+.glyphicon-star                   { &:before { content: "\e006"; } }
+.glyphicon-star-empty             { &:before { content: "\e007"; } }
+.glyphicon-user                   { &:before { content: "\e008"; } }
+.glyphicon-film                   { &:before { content: "\e009"; } }
+.glyphicon-th-large               { &:before { content: "\e010"; } }
+.glyphicon-th                     { &:before { content: "\e011"; } }
+.glyphicon-th-list                { &:before { content: "\e012"; } }
+.glyphicon-ok                     { &:before { content: "\e013"; } }
+.glyphicon-remove                 { &:before { content: "\e014"; } }
+.glyphicon-zoom-in                { &:before { content: "\e015"; } }
+.glyphicon-zoom-out               { &:before { content: "\e016"; } }
+.glyphicon-off                    { &:before { content: "\e017"; } }
+.glyphicon-signal                 { &:before { content: "\e018"; } }
+.glyphicon-cog                    { &:before { content: "\e019"; } }
+.glyphicon-trash                  { &:before { content: "\e020"; } }
+.glyphicon-home                   { &:before { content: "\e021"; } }
+.glyphicon-file                   { &:before { content: "\e022"; } }
+.glyphicon-time                   { &:before { content: "\e023"; } }
+.glyphicon-road                   { &:before { content: "\e024"; } }
+.glyphicon-download-alt           { &:before { content: "\e025"; } }
+.glyphicon-download               { &:before { content: "\e026"; } }
+.glyphicon-upload                 { &:before { content: "\e027"; } }
+.glyphicon-inbox                  { &:before { content: "\e028"; } }
+.glyphicon-play-circle            { &:before { content: "\e029"; } }
+.glyphicon-repeat                 { &:before { content: "\e030"; } }
+.glyphicon-refresh                { &:before { content: "\e031"; } }
+.glyphicon-list-alt               { &:before { content: "\e032"; } }
+.glyphicon-flag                   { &:before { content: "\e034"; } }
+.glyphicon-headphones             { &:before { content: "\e035"; } }
+.glyphicon-volume-off             { &:before { content: "\e036"; } }
+.glyphicon-volume-down            { &:before { content: "\e037"; } }
+.glyphicon-volume-up              { &:before { content: "\e038"; } }
+.glyphicon-qrcode                 { &:before { content: "\e039"; } }
+.glyphicon-barcode                { &:before { content: "\e040"; } }
+.glyphicon-tag                    { &:before { content: "\e041"; } }
+.glyphicon-tags                   { &:before { content: "\e042"; } }
+.glyphicon-book                   { &:before { content: "\e043"; } }
+.glyphicon-print                  { &:before { content: "\e045"; } }
+.glyphicon-font                   { &:before { content: "\e047"; } }
+.glyphicon-bold                   { &:before { content: "\e048"; } }
+.glyphicon-italic                 { &:before { content: "\e049"; } }
+.glyphicon-text-height            { &:before { content: "\e050"; } }
+.glyphicon-text-width             { &:before { content: "\e051"; } }
+.glyphicon-align-left             { &:before { content: "\e052"; } }
+.glyphicon-align-center           { &:before { content: "\e053"; } }
+.glyphicon-align-right            { &:before { content: "\e054"; } }
+.glyphicon-align-justify          { &:before { content: "\e055"; } }
+.glyphicon-list                   { &:before { content: "\e056"; } }
+.glyphicon-indent-left            { &:before { content: "\e057"; } }
+.glyphicon-indent-right           { &:before { content: "\e058"; } }
+.glyphicon-facetime-video         { &:before { content: "\e059"; } }
+.glyphicon-picture                { &:before { content: "\e060"; } }
+.glyphicon-map-marker             { &:before { content: "\e062"; } }
+.glyphicon-adjust                 { &:before { content: "\e063"; } }
+.glyphicon-tint                   { &:before { content: "\e064"; } }
+.glyphicon-edit                   { &:before { content: "\e065"; } }
+.glyphicon-share                  { &:before { content: "\e066"; } }
+.glyphicon-check                  { &:before { content: "\e067"; } }
+.glyphicon-move                   { &:before { content: "\e068"; } }
+.glyphicon-step-backward          { &:before { content: "\e069"; } }
+.glyphicon-fast-backward          { &:before { content: "\e070"; } }
+.glyphicon-backward               { &:before { content: "\e071"; } }
+.glyphicon-play                   { &:before { content: "\e072"; } }
+.glyphicon-pause                  { &:before { content: "\e073"; } }
+.glyphicon-stop                   { &:before { content: "\e074"; } }
+.glyphicon-forward                { &:before { content: "\e075"; } }
+.glyphicon-fast-forward           { &:before { content: "\e076"; } }
+.glyphicon-step-forward           { &:before { content: "\e077"; } }
+.glyphicon-eject                  { &:before { content: "\e078"; } }
+.glyphicon-chevron-left           { &:before { content: "\e079"; } }
+.glyphicon-chevron-right          { &:before { content: "\e080"; } }
+.glyphicon-plus-sign              { &:before { content: "\e081"; } }
+.glyphicon-minus-sign             { &:before { content: "\e082"; } }
+.glyphicon-remove-sign            { &:before { content: "\e083"; } }
+.glyphicon-ok-sign                { &:before { content: "\e084"; } }
+.glyphicon-question-sign          { &:before { content: "\e085"; } }
+.glyphicon-info-sign              { &:before { content: "\e086"; } }
+.glyphicon-screenshot             { &:before { content: "\e087"; } }
+.glyphicon-remove-circle          { &:before { content: "\e088"; } }
+.glyphicon-ok-circle              { &:before { content: "\e089"; } }
+.glyphicon-ban-circle             { &:before { content: "\e090"; } }
+.glyphicon-arrow-left             { &:before { content: "\e091"; } }
+.glyphicon-arrow-right            { &:before { content: "\e092"; } }
+.glyphicon-arrow-up               { &:before { content: "\e093"; } }
+.glyphicon-arrow-down             { &:before { content: "\e094"; } }
+.glyphicon-share-alt              { &:before { content: "\e095"; } }
+.glyphicon-resize-full            { &:before { content: "\e096"; } }
+.glyphicon-resize-small           { &:before { content: "\e097"; } }
+.glyphicon-exclamation-sign       { &:before { content: "\e101"; } }
+.glyphicon-gift                   { &:before { content: "\e102"; } }
+.glyphicon-leaf                   { &:before { content: "\e103"; } }
+.glyphicon-eye-open               { &:before { content: "\e105"; } }
+.glyphicon-eye-close              { &:before { content: "\e106"; } }
+.glyphicon-warning-sign           { &:before { content: "\e107"; } }
+.glyphicon-plane                  { &:before { content: "\e108"; } }
+.glyphicon-random                 { &:before { content: "\e110"; } }
+.glyphicon-comment                { &:before { content: "\e111"; } }
+.glyphicon-magnet                 { &:before { content: "\e112"; } }
+.glyphicon-chevron-up             { &:before { content: "\e113"; } }
+.glyphicon-chevron-down           { &:before { content: "\e114"; } }
+.glyphicon-retweet                { &:before { content: "\e115"; } }
+.glyphicon-shopping-cart          { &:before { content: "\e116"; } }
+.glyphicon-folder-close           { &:before { content: "\e117"; } }
+.glyphicon-folder-open            { &:before { content: "\e118"; } }
+.glyphicon-resize-vertical        { &:before { content: "\e119"; } }
+.glyphicon-resize-horizontal      { &:before { content: "\e120"; } }
+.glyphicon-hdd                    { &:before { content: "\e121"; } }
+.glyphicon-bullhorn               { &:before { content: "\e122"; } }
+.glyphicon-certificate            { &:before { content: "\e124"; } }
+.glyphicon-thumbs-up              { &:before { content: "\e125"; } }
+.glyphicon-thumbs-down            { &:before { content: "\e126"; } }
+.glyphicon-hand-right             { &:before { content: "\e127"; } }
+.glyphicon-hand-left              { &:before { content: "\e128"; } }
+.glyphicon-hand-up                { &:before { content: "\e129"; } }
+.glyphicon-hand-down              { &:before { content: "\e130"; } }
+.glyphicon-circle-arrow-right     { &:before { content: "\e131"; } }
+.glyphicon-circle-arrow-left      { &:before { content: "\e132"; } }
+.glyphicon-circle-arrow-up        { &:before { content: "\e133"; } }
+.glyphicon-circle-arrow-down      { &:before { content: "\e134"; } }
+.glyphicon-globe                  { &:before { content: "\e135"; } }
+.glyphicon-tasks                  { &:before { content: "\e137"; } }
+.glyphicon-filter                 { &:before { content: "\e138"; } }
+.glyphicon-fullscreen             { &:before { content: "\e140"; } }
+.glyphicon-dashboard              { &:before { content: "\e141"; } }
+.glyphicon-heart-empty            { &:before { content: "\e143"; } }
+.glyphicon-link                   { &:before { content: "\e144"; } }
+.glyphicon-phone                  { &:before { content: "\e145"; } }
+.glyphicon-usd                    { &:before { content: "\e148"; } }
+.glyphicon-gbp                    { &:before { content: "\e149"; } }
+.glyphicon-sort                   { &:before { content: "\e150"; } }
+.glyphicon-sort-by-alphabet       { &:before { content: "\e151"; } }
+.glyphicon-sort-by-alphabet-alt   { &:before { content: "\e152"; } }
+.glyphicon-sort-by-order          { &:before { content: "\e153"; } }
+.glyphicon-sort-by-order-alt      { &:before { content: "\e154"; } }
+.glyphicon-sort-by-attributes     { &:before { content: "\e155"; } }
+.glyphicon-sort-by-attributes-alt { &:before { content: "\e156"; } }
+.glyphicon-unchecked              { &:before { content: "\e157"; } }
+.glyphicon-expand                 { &:before { content: "\e158"; } }
+.glyphicon-collapse-down          { &:before { content: "\e159"; } }
+.glyphicon-collapse-up            { &:before { content: "\e160"; } }
+.glyphicon-log-in                 { &:before { content: "\e161"; } }
+.glyphicon-flash                  { &:before { content: "\e162"; } }
+.glyphicon-log-out                { &:before { content: "\e163"; } }
+.glyphicon-new-window             { &:before { content: "\e164"; } }
+.glyphicon-record                 { &:before { content: "\e165"; } }
+.glyphicon-save                   { &:before { content: "\e166"; } }
+.glyphicon-open                   { &:before { content: "\e167"; } }
+.glyphicon-saved                  { &:before { content: "\e168"; } }
+.glyphicon-import                 { &:before { content: "\e169"; } }
+.glyphicon-export                 { &:before { content: "\e170"; } }
+.glyphicon-send                   { &:before { content: "\e171"; } }
+.glyphicon-floppy-disk            { &:before { content: "\e172"; } }
+.glyphicon-floppy-saved           { &:before { content: "\e173"; } }
+.glyphicon-floppy-remove          { &:before { content: "\e174"; } }
+.glyphicon-floppy-save            { &:before { content: "\e175"; } }
+.glyphicon-floppy-open            { &:before { content: "\e176"; } }
+.glyphicon-credit-card            { &:before { content: "\e177"; } }
+.glyphicon-transfer               { &:before { content: "\e178"; } }
+.glyphicon-cutlery                { &:before { content: "\e179"; } }
+.glyphicon-header                 { &:before { content: "\e180"; } }
+.glyphicon-compressed             { &:before { content: "\e181"; } }
+.glyphicon-earphone               { &:before { content: "\e182"; } }
+.glyphicon-phone-alt              { &:before { content: "\e183"; } }
+.glyphicon-tower                  { &:before { content: "\e184"; } }
+.glyphicon-stats                  { &:before { content: "\e185"; } }
+.glyphicon-sd-video               { &:before { content: "\e186"; } }
+.glyphicon-hd-video               { &:before { content: "\e187"; } }
+.glyphicon-subtitles              { &:before { content: "\e188"; } }
+.glyphicon-sound-stereo           { &:before { content: "\e189"; } }
+.glyphicon-sound-dolby            { &:before { content: "\e190"; } }
+.glyphicon-sound-5-1              { &:before { content: "\e191"; } }
+.glyphicon-sound-6-1              { &:before { content: "\e192"; } }
+.glyphicon-sound-7-1              { &:before { content: "\e193"; } }
+.glyphicon-copyright-mark         { &:before { content: "\e194"; } }
+.glyphicon-registration-mark      { &:before { content: "\e195"; } }
+.glyphicon-cloud-download         { &:before { content: "\e197"; } }
+.glyphicon-cloud-upload           { &:before { content: "\e198"; } }
+.glyphicon-tree-conifer           { &:before { content: "\e199"; } }
+.glyphicon-tree-deciduous         { &:before { content: "\e200"; } }
+.glyphicon-briefcase              { &:before { content: "\1f4bc"; } }
+.glyphicon-calendar               { &:before { content: "\1f4c5"; } }
+.glyphicon-pushpin                { &:before { content: "\1f4cc"; } }
+.glyphicon-paperclip              { &:before { content: "\1f4ce"; } }
+.glyphicon-camera                 { &:before { content: "\1f4f7"; } }
+.glyphicon-lock                   { &:before { content: "\1f512"; } }
+.glyphicon-bell                   { &:before { content: "\1f514"; } }
+.glyphicon-bookmark               { &:before { content: "\1f516"; } }
+.glyphicon-fire                   { &:before { content: "\1f525"; } }
+.glyphicon-wrench                 { &:before { content: "\1f527"; } }*/
+
+
+
+
+
+
+.icon {   
+    display: inline-block;
+    text-indent: 200%;
+    white-space: nowrap;
+    overflow: hidden;
+        
+    height:19px;
+    width:20px;
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+
+    vertical-align:text-bottom;
+}
+
+.icon-delete {
+  display:block;
+  margin:auto;
+  height:20px;
+  width:20px;
+  background-image:url(../images/icons/delete.png);
+}
+
+.icon-trash {
+  display:block;
+  margin:auto;
+  height:16px;
+  width:16px;
+  background-image:url(../images/icons/trash.png);
+}
+
+
+.icon-code {
+  display:block;
+  margin:auto;
+  height:20px;
+  width:20px;
+  background-image:url(../images/icons/code.png);
+}
+
+.icon-edit {
+  display:block;
+  margin:auto;
+  height:20px;
+  width:20px;
+  background-image:url(../images/icons/edit.png);
+}
+
+
+.icon-help {
+  height:20px;
+  width:20px;
+  background-image:url(../images/icons/help.png);
+  margin-left:5px;
+  position:absolute;
+}
+
+.icon-csv-dropdown {
+  background-image:url(../images/icons/csv-dropdown.png);
+  height:10px;
+}
+
+.icon-Transaction {
+  position:absolute;
+  top:17px;
+  left:12px;
+  height:20px;
+  width:20px;
+  background:url(../images/icons/transaction.png) no-repeat left top;
+}
+
+.icon-Profile {
+  position:absolute;
+  top:17px;
+  left:12px;
+  height:20px;
+  width:20px;
+  background:url(../images/icons/profile.png) no-repeat left top;
+}
+
+.icon-Business {
+  position:absolute;
+  top:17px;
+  left:12px;
+  height:20px;
+  width:20px;
+  background:url(../images/icons/business.png) no-repeat left top;
+}
+
+.icon-sidebar-arrow {
+  width:28px;
+  background:url(../images/icons/sidebar-arrow.png) no-repeat left center;
+}
+
+
+.icon-prefix {
+  display:inline-block;
+  margin-left:3px;
+}
+
+
+.select-country {
+    select {
+      padding-left:30px;
+    }
+
+    .icon {
+        margin: -26px 10px 26px;
+        display: block;
+    }
+}
+
+.add-action {
+    .icon-edit, .icon-help, .icon-delete {
+      display:inline-block;
+      margin:0 5px;
+    }
+}
+
+.icon-pdf {
+  background-image:url(../images/icons/pdf.png);
+}
+
+
+.icon-in {
+  background: transparent url(../images/icons/in-out.png) no-repeat 0 3px;
+}
+
+.icon-out {
+  background: transparent url(../images/icons/in-out.png) no-repeat 0 -14px;
+}
+
+
+.ui-icon-closethick {
+  display: block;
+  text-indent: 200%;
+  background: url(../images/icons/modal-close.png) no-repeat 0 0;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: -16px;
+  top: 8px;
+  z-index: 1050;
+}
+
+
+
+.share-icons {
+  margin-top:10px;
+  margin-bottom:-12px;
+    a {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        .transition(all .2s ease-in-out);
+    }
+}
+
+.share-facebook {
+    background: url(../images/icons/social/facebook-inactive.png) no-repeat 50% 50%;
+}
+
+.share-twitter {
+    background: url(../images/icons/social/twitter-inactive.png) no-repeat 50% 50%;
+}
+
+.share-icons:hover {
+    .share-facebook {
+      background: url(../images/icons/social/facebook-active.png) no-repeat 50% 50%;
+    }
+    .share-twitter {
+      background:url(../images/icons/social/twitter-active.png) no-repeat 50% 50%;
+    }
+}
+
+
+
+/*Flags - 16x16*/
+.fl_ad{background-image:url(../images/flags/ad.gif);}
+.fl_ae{background-image:url(../images/flags/ae.gif);}
+.fl_af{background-image:url(../images/flags/af.gif);}
+.fl_ag{background-image:url(../images/flags/ag.gif);}
+.fl_ai{background-image:url(../images/flags/ai.gif);}
+.fl_al{background-image:url(../images/flags/al.gif);}
+.fl_am{background-image:url(../images/flags/am.gif);}
+.fl_an{background-image:url(../images/flags/an.gif);}
+.fl_ao{background-image:url(../images/flags/ao.gif);}
+.fl_ar{background-image:url(../images/flags/ar.gif);}
+.fl_as{background-image:url(../images/flags/as.gif);}
+.fl_at{background-image:url(../images/flags/at.gif);}
+.fl_au{background-image:url(../images/flags/au.gif);}
+.fl_aw{background-image:url(../images/flags/aw.gif);}
+.fl_ax{background-image:url(../images/flags/ax.gif);}
+.fl_az{background-image:url(../images/flags/az.gif);}
+.fl_ba{background-image:url(../images/flags/ba.gif);}
+.fl_bb{background-image:url(../images/flags/bb.gif);}
+.fl_bd{background-image:url(../images/flags/bd.gif);}
+.fl_be{background-image:url(../images/flags/be.gif);}
+.fl_bf{background-image:url(../images/flags/bf.gif);}
+.fl_bg{background-image:url(../images/flags/bg.gif);}
+.fl_bh{background-image:url(../images/flags/bh.gif);}
+.fl_bi{background-image:url(../images/flags/bi.gif);}
+.fl_bj{background-image:url(../images/flags/bj.gif);}
+.fl_bm{background-image:url(../images/flags/bm.gif);}
+.fl_bn{background-image:url(../images/flags/bn.gif);}
+.fl_bo{background-image:url(../images/flags/bo.gif);}
+.fl_br{background-image:url(../images/flags/br.gif);}
+.fl_bs{background-image:url(../images/flags/bs.gif);}
+.fl_bt{background-image:url(../images/flags/bt.gif);}
+.fl_bv{background-image:url(../images/flags/bv.gif);}
+.fl_bw{background-image:url(../images/flags/bw.gif);}
+.fl_by{background-image:url(../images/flags/by.gif);}
+.fl_bz{background-image:url(../images/flags/bz.gif);}
+.fl_ca{background-image:url(../images/flags/ca.gif);}
+.fl_cc{background-image:url(../images/flags/cc.gif);}
+.fl_cd{background-image:url(../images/flags/cd.gif);}
+.fl_cf{background-image:url(../images/flags/cf.gif);}
+.fl_cg{background-image:url(../images/flags/cg.gif);}
+.fl_ch{background-image:url(../images/flags/ch.gif);}
+.fl_ci{background-image:url(../images/flags/ci.gif);}
+.fl_ck{background-image:url(../images/flags/ck.gif);}
+.fl_cl{background-image:url(../images/flags/cl.gif);}
+.fl_cm{background-image:url(../images/flags/cm.gif);}
+.fl_cn{background-image:url(../images/flags/cn.gif);}
+.fl_co{background-image:url(../images/flags/co.gif);}
+.fl_cr{background-image:url(../images/flags/cr.gif);}
+.fl_cs{background-image:url(../images/flags/cs.gif);}
+.fl_cu{background-image:url(../images/flags/cu.gif);}
+.fl_cv{background-image:url(../images/flags/cv.gif);}
+.fl_cx{background-image:url(../images/flags/cx.gif);}
+.fl_cy{background-image:url(../images/flags/cy.gif);}
+.fl_cz{background-image:url(../images/flags/cz.gif);}
+.fl_de{background-image:url(../images/flags/de.gif);}
+.fl_dj{background-image:url(../images/flags/dj.gif);}
+.fl_dk{background-image:url(../images/flags/dk.gif);}
+.fl_dm{background-image:url(../images/flags/dm.gif);}
+.fl_do{background-image:url(../images/flags/do.gif);}
+.fl_dz{background-image:url(../images/flags/dz.gif);}
+.fl_ec{background-image:url(../images/flags/ec.gif);}
+.fl_ee{background-image:url(../images/flags/ee.gif);}
+.fl_eg{background-image:url(../images/flags/eg.gif);}
+.fl_eh{background-image:url(../images/flags/eh.gif);}
+.fl_england{background-image:url(../images/flags/england.gif);}
+.fl_er{background-image:url(../images/flags/er.gif);}
+.fl_es{background-image:url(../images/flags/es.gif);}
+.fl_et{background-image:url(../images/flags/et.gif);}
+.fl_eu{background-image:url(../images/flags/eu.gif);}
+.fl_fam{background-image:url(../images/flags/fam.gif);}
+.fl_fi{background-image:url(../images/flags/fi.gif);}
+.fl_fj{background-image:url(../images/flags/fj.gif);}
+.fl_fk{background-image:url(../images/flags/fk.gif);}
+.fl_fm{background-image:url(../images/flags/fm.gif);}
+.fl_fo{background-image:url(../images/flags/fo.gif);}
+.fl_fr{background-image:url(../images/flags/fr.gif);}
+.fl_ga{background-image:url(../images/flags/ga.gif);}
+.fl_gb{background-image:url(../images/flags/gb.gif);}
+.fl_gd{background-image:url(../images/flags/gd.gif);}
+.fl_ge{background-image:url(../images/flags/ge.gif);}
+.fl_gf{background-image:url(../images/flags/gf.gif);}
+.fl_gg{background-image:url(../images/flags/gg.gif);}
+.fl_gh{background-image:url(../images/flags/gh.gif);}
+.fl_gi{background-image:url(../images/flags/gi.gif);}
+.fl_gl{background-image:url(../images/flags/gl.gif);}
+.fl_gm{background-image:url(../images/flags/gm.gif);}
+.fl_gn{background-image:url(../images/flags/gn.gif);}
+.fl_gp{background-image:url(../images/flags/gp.gif);}
+.fl_gq{background-image:url(../images/flags/gq.gif);}
+.fl_gr{background-image:url(../images/flags/gr.gif);}
+.fl_gs{background-image:url(../images/flags/gs.gif);}
+.fl_gt{background-image:url(../images/flags/gt.gif);}
+.fl_gu{background-image:url(../images/flags/gu.gif);}
+.fl_gw{background-image:url(../images/flags/gw.gif);}
+.fl_gy{background-image:url(../images/flags/gy.gif);}
+.fl_hk{background-image:url(../images/flags/hk.gif);}
+.fl_hm{background-image:url(../images/flags/hm.gif);}
+.fl_hn{background-image:url(../images/flags/hn.gif);}
+.fl_hr{background-image:url(../images/flags/hr.gif);}
+.fl_ht{background-image:url(../images/flags/ht.gif);}
+.fl_hu{background-image:url(../images/flags/hu.gif);}
+.fl_id{background-image:url(../images/flags/id.gif);}
+.fl_ie{background-image:url(../images/flags/ie.gif);}
+.fl_il{background-image:url(../images/flags/il.gif);}
+.fl_in{background-image:url(../images/flags/in.gif);}
+.fl_io{background-image:url(../images/flags/io.gif);}
+.fl_iq{background-image:url(../images/flags/iq.gif);}
+.fl_ir{background-image:url(../images/flags/ir.gif);}
+.fl_is{background-image:url(../images/flags/is.gif);}
+.fl_it{background-image:url(../images/flags/it.gif);}
+.fl_jm{background-image:url(../images/flags/jm.gif);}
+.fl_jo{background-image:url(../images/flags/jo.gif);}
+.fl_jp{background-image:url(../images/flags/jp.gif);}
+.fl_ke{background-image:url(../images/flags/ke.gif);}
+.fl_kg{background-image:url(../images/flags/kg.gif);}
+.fl_kh{background-image:url(../images/flags/kh.gif);}
+.fl_ki{background-image:url(../images/flags/ki.gif);}
+.fl_km{background-image:url(../images/flags/km.gif);}
+.fl_kn{background-image:url(../images/flags/kn.gif);}
+.fl_kp{background-image:url(../images/flags/kp.gif);}
+.fl_kr{background-image:url(../images/flags/kr.gif);}
+.fl_kw{background-image:url(../images/flags/kw.gif);}
+.fl_ky{background-image:url(../images/flags/ky.gif);}
+.fl_kz{background-image:url(../images/flags/kz.gif);}
+.fl_la{background-image:url(../images/flags/la.gif);}
+.fl_lb{background-image:url(../images/flags/lb.gif);}
+.fl_lc{background-image:url(../images/flags/lc.gif);}
+.fl_li{background-image:url(../images/flags/li.gif);}
+.fl_lk{background-image:url(../images/flags/lk.gif);}
+.fl_lr{background-image:url(../images/flags/lr.gif);}
+.fl_ls{background-image:url(../images/flags/ls.gif);}
+.fl_lt{background-image:url(../images/flags/lt.gif);}
+.fl_lu{background-image:url(../images/flags/lu.gif);}
+.fl_lv{background-image:url(../images/flags/lv.gif);}
+.fl_ly{background-image:url(../images/flags/ly.gif);}
+.fl_ma{background-image:url(../images/flags/ma.gif);}
+.fl_mc{background-image:url(../images/flags/mc.gif);}
+.fl_md{background-image:url(../images/flags/md.gif);}
+.fl_mg{background-image:url(../images/flags/mg.gif);}
+.fl_mh{background-image:url(../images/flags/mh.gif);}
+.fl_mk{background-image:url(../images/flags/mk.gif);}
+.fl_ml{background-image:url(../images/flags/ml.gif);}
+.fl_mm{background-image:url(../images/flags/mm.gif);}
+.fl_mn{background-image:url(../images/flags/mn.gif);}
+.fl_mo{background-image:url(../images/flags/mo.gif);}
+.fl_mp{background-image:url(../images/flags/mp.gif);}
+.fl_mq{background-image:url(../images/flags/mq.gif);}
+.fl_mr{background-image:url(../images/flags/mr.gif);}
+.fl_ms{background-image:url(../images/flags/ms.gif);}
+.fl_mt{background-image:url(../images/flags/mt.gif);}
+.fl_mu{background-image:url(../images/flags/mu.gif);}
+.fl_mv{background-image:url(../images/flags/mv.gif);}
+.fl_mw{background-image:url(../images/flags/mw.gif);}
+.fl_mx{background-image:url(../images/flags/mx.gif);}
+.fl_my{background-image:url(../images/flags/my.gif);}
+.fl_mz{background-image:url(../images/flags/mz.gif);}
+.fl_na{background-image:url(../images/flags/na.gif);}
+.fl_nc{background-image:url(../images/flags/nc.gif);}
+.fl_ne{background-image:url(../images/flags/ne.gif);}
+.fl_nf{background-image:url(../images/flags/nf.gif);}
+.fl_ng{background-image:url(../images/flags/ng.gif);}
+.fl_ni{background-image:url(../images/flags/ni.gif);}
+.fl_nl{background-image:url(../images/flags/nl.gif);}
+.fl_no{background-image:url(../images/flags/no.gif);}
+.fl_np{background-image:url(../images/flags/np.gif);}
+.fl_nr{background-image:url(../images/flags/nr.gif);}
+.fl_nu{background-image:url(../images/flags/nu.gif);}
+.fl_nz{background-image:url(../images/flags/nz.gif);}
+.fl_om{background-image:url(../images/flags/om.gif);}
+.fl_pa{background-image:url(../images/flags/pa.gif);}
+.fl_pe{background-image:url(../images/flags/pe.gif);}
+.fl_pf{background-image:url(../images/flags/pf.gif);}
+.fl_pg{background-image:url(../images/flags/pg.gif);}
+.fl_ph{background-image:url(../images/flags/ph.gif);}
+.fl_pk{background-image:url(../images/flags/pk.gif);}
+.fl_pl{background-image:url(../images/flags/pl.gif);}
+.fl_pm{background-image:url(../images/flags/pm.gif);}
+.fl_pn{background-image:url(../images/flags/pn.gif);}
+.fl_pr{background-image:url(../images/flags/pr.gif);}
+.fl_ps{background-image:url(../images/flags/ps.gif);}
+.fl_pt{background-image:url(../images/flags/pt.gif);}
+.fl_pw{background-image:url(../images/flags/pw.gif);}
+.fl_py{background-image:url(../images/flags/py.gif);}
+.fl_qa{background-image:url(../images/flags/qa.gif);}
+.fl_re{background-image:url(../images/flags/re.gif);}
+.fl_ro{background-image:url(../images/flags/ro.gif);}
+.fl_rs{background-image:url(../images/flags/rs.gif);}
+.fl_ru{background-image:url(../images/flags/ru.gif);}
+.fl_rw{background-image:url(../images/flags/rw.gif);}
+.fl_sa{background-image:url(../images/flags/sa.gif);}
+.fl_sb{background-image:url(../images/flags/sb.gif);}
+.fl_sc{background-image:url(../images/flags/sc.gif);}
+.fl_scotland{background-image:url(../images/flags/scotland.gif);}
+.fl_sd{background-image:url(../images/flags/sd.gif);}
+.fl_se{background-image:url(../images/flags/se.gif);}
+.fl_sg{background-image:url(../images/flags/sg.gif);}
+.fl_sh{background-image:url(../images/flags/sh.gif);}
+.fl_si{background-image:url(../images/flags/si.gif);}
+.fl_sj{background-image:url(../images/flags/sj.gif);}
+.fl_sk{background-image:url(../images/flags/sk.gif);}
+.fl_sl{background-image:url(../images/flags/sl.gif);}
+.fl_sm{background-image:url(../images/flags/sm.gif);}
+.fl_sn{background-image:url(../images/flags/sn.gif);}
+.fl_so{background-image:url(../images/flags/so.gif);}
+.fl_sr{background-image:url(../images/flags/sr.gif);}
+.fl_st{background-image:url(../images/flags/st.gif);}
+.fl_sv{background-image:url(../images/flags/sv.gif);}
+.fl_sy{background-image:url(../images/flags/sy.gif);}
+.fl_sz{background-image:url(../images/flags/sz.gif);}
+.fl_tc{background-image:url(../images/flags/tc.gif);}
+.fl_td{background-image:url(../images/flags/td.gif);}
+.fl_tf{background-image:url(../images/flags/tf.gif);}
+.fl_tg{background-image:url(../images/flags/tg.gif);}
+.fl_th{background-image:url(../images/flags/th.gif);}
+.fl_tj{background-image:url(../images/flags/tj.gif);}
+.fl_tk{background-image:url(../images/flags/tk.gif);}
+.fl_tl{background-image:url(../images/flags/tl.gif);}
+.fl_tm{background-image:url(../images/flags/tm.gif);}
+.fl_tn{background-image:url(../images/flags/tn.gif);}
+.fl_to{background-image:url(../images/flags/to.gif);}
+.fl_tr{background-image:url(../images/flags/tr.gif);}
+.fl_tt{background-image:url(../images/flags/tt.gif);}
+.fl_tv{background-image:url(../images/flags/tv.gif);}
+.fl_tw{background-image:url(../images/flags/tw.gif);}
+.fl_tz{background-image:url(../images/flags/tz.gif);}
+.fl_ua{background-image:url(../images/flags/ua.gif);}
+.fl_ug{background-image:url(../images/flags/ug.gif);}
+.fl_um{background-image:url(../images/flags/um.gif);}
+.fl_us{background-image:url(../images/flags/us.gif);}
+.fl_uy{background-image:url(../images/flags/uy.gif);}
+.fl_uz{background-image:url(../images/flags/uz.gif);}
+.fl_va{background-image:url(../images/flags/va.gif);}
+.fl_vc{background-image:url(../images/flags/vc.gif);}
+.fl_ve{background-image:url(../images/flags/ve.gif);}
+.fl_vg{background-image:url(../images/flags/vg.gif);}
+.fl_vi{background-image:url(../images/flags/vi.gif);}
+.fl_vn{background-image:url(../images/flags/vn.gif);}
+.fl_vu{background-image:url(../images/flags/vu.gif);}
+.fl_wales{background-image:url(../images/flags/wales.gif);}
+.fl_wf{background-image:url(../images/flags/wf.gif);}
+.fl_ws{background-image:url(../images/flags/ws.gif);}
+.fl_ye{background-image:url(../images/flags/ye.gif);}
+.fl_yt{background-image:url(../images/flags/yt.gif);}
+.fl_za{background-image:url(../images/flags/za.gif);}
+.fl_zm{background-image:url(../images/flags/zm.gif);}
+.fl_zw{background-image:url(../images/flags/zw.gif);}
+
+/*Flags - 30x20*/
+.big_ad{background-image:url(../images/flags/big/ad.png);}
+.big_ae{background-image:url(../images/flags/big/ae.png);}
+.big_af{background-image:url(../images/flags/big/af.png);}
+.big_ag{background-image:url(../images/flags/big/ag.png);}
+.big_ai{background-image:url(../images/flags/big/ai.png);}
+.big_al{background-image:url(../images/flags/big/al.png);}
+.big_am{background-image:url(../images/flags/big/am.png);}
+.big_an{background-image:url(../images/flags/big/an.png);}
+.big_ao{background-image:url(../images/flags/big/ao.png);}
+.big_ar{background-image:url(../images/flags/big/ar.png);}
+.big_as{background-image:url(../images/flags/big/as.png);}
+.big_at{background-image:url(../images/flags/big/at.png);}
+.big_au{background-image:url(../images/flags/big/au.png);}
+.big_aw{background-image:url(../images/flags/big/aw.png);}
+.big_ax{background-image:url(../images/flags/big/ax.png);}
+.big_az{background-image:url(../images/flags/big/az.png);}
+.big_ba{background-image:url(../images/flags/big/ba.png);}
+.big_bb{background-image:url(../images/flags/big/bb.png);}
+.big_bd{background-image:url(../images/flags/big/bd.png);}
+.big_be{background-image:url(../images/flags/big/be.png);}
+.big_bf{background-image:url(../images/flags/big/bf.png);}
+.big_bg{background-image:url(../images/flags/big/bg.png);}
+.big_bh{background-image:url(../images/flags/big/bh.png);}
+.big_bi{background-image:url(../images/flags/big/bi.png);}
+.big_bj{background-image:url(../images/flags/big/bj.png);}
+.big_bm{background-image:url(../images/flags/big/bm.png);}
+.big_bn{background-image:url(../images/flags/big/bn.png);}
+.big_bo{background-image:url(../images/flags/big/bo.png);}
+.big_br{background-image:url(../images/flags/big/br.png);}
+.big_bs{background-image:url(../images/flags/big/bs.png);}
+.big_bt{background-image:url(../images/flags/big/bt.png);}
+.big_bv{background-image:url(../images/flags/big/bv.png);}
+.big_bw{background-image:url(../images/flags/big/bw.png);}
+.big_by{background-image:url(../images/flags/big/by.png);}
+.big_bz{background-image:url(../images/flags/big/bz.png);}
+.big_ca{background-image:url(../images/flags/big/ca.png);}
+.big_cc{background-image:url(../images/flags/big/cc.png);}
+.big_cd{background-image:url(../images/flags/big/cd.png);}
+.big_cf{background-image:url(../images/flags/big/cf.png);}
+.big_cg{background-image:url(../images/flags/big/cg.png);}
+.big_ch{background-image:url(../images/flags/big/ch.png);}
+.big_ci{background-image:url(../images/flags/big/ci.png);}
+.big_ck{background-image:url(../images/flags/big/ck.png);}
+.big_cl{background-image:url(../images/flags/big/cl.png);}
+.big_cm{background-image:url(../images/flags/big/cm.png);}
+.big_cn{background-image:url(../images/flags/big/cn.png);}
+.big_co{background-image:url(../images/flags/big/co.png);}
+.big_cr{background-image:url(../images/flags/big/cr.png);}
+.big_cs{background-image:url(../images/flags/big/cs.png);}
+.big_cu{background-image:url(../images/flags/big/cu.png);}
+.big_cv{background-image:url(../images/flags/big/cv.png);}
+.big_cx{background-image:url(../images/flags/big/cx.png);}
+.big_cy{background-image:url(../images/flags/big/cy.png);}
+.big_cz{background-image:url(../images/flags/big/cz.png);}
+.big_de{background-image:url(../images/flags/big/de.png);}
+.big_dj{background-image:url(../images/flags/big/dj.png);}
+.big_dk{background-image:url(../images/flags/big/dk.png);}
+.big_dm{background-image:url(../images/flags/big/dm.png);}
+.big_do{background-image:url(../images/flags/big/do.png);}
+.big_dz{background-image:url(../images/flags/big/dz.png);}
+.big_ec{background-image:url(../images/flags/big/ec.png);}
+.big_ee{background-image:url(../images/flags/big/ee.png);}
+.big_eg{background-image:url(../images/flags/big/eg.png);}
+.big_eh{background-image:url(../images/flags/big/eh.png);}
+.big_england{background-image:url(../images/flags/big/england.png);}
+.big_er{background-image:url(../images/flags/big/er.png);}
+.big_es{background-image:url(../images/flags/big/es.png);}
+.big_et{background-image:url(../images/flags/big/et.png);}
+.big_eu{background-image:url(../images/flags/big/eu.png);}
+.big_fam{background-image:url(../images/flags/big/fam.png);}
+.big_fi{background-image:url(../images/flags/big/fi.png);}
+.big_fj{background-image:url(../images/flags/big/fj.png);}
+.big_fk{background-image:url(../images/flags/big/fk.png);}
+.big_fm{background-image:url(../images/flags/big/fm.png);}
+.big_fo{background-image:url(../images/flags/big/fo.png);}
+.big_fr{background-image:url(../images/flags/big/fr.png);}
+.big_ga{background-image:url(../images/flags/big/ga.png);}
+.big_gb{background-image:url(../images/flags/big/gb.png);}
+.big_gd{background-image:url(../images/flags/big/gd.png);}
+.big_ge{background-image:url(../images/flags/big/ge.png);}
+.big_gf{background-image:url(../images/flags/big/gf.png);}
+.big_gg{background-image:url(../images/flags/big/gg.png);}
+.big_gh{background-image:url(../images/flags/big/gh.png);}
+.big_gi{background-image:url(../images/flags/big/gi.png);}
+.big_gl{background-image:url(../images/flags/big/gl.png);}
+.big_gm{background-image:url(../images/flags/big/gm.png);}
+.big_gn{background-image:url(../images/flags/big/gn.png);}
+.big_gp{background-image:url(../images/flags/big/gp.png);}
+.big_gq{background-image:url(../images/flags/big/gq.png);}
+.big_gr{background-image:url(../images/flags/big/gr.png);}
+.big_gs{background-image:url(../images/flags/big/gs.png);}
+.big_gt{background-image:url(../images/flags/big/gt.png);}
+.big_gu{background-image:url(../images/flags/big/gu.png);}
+.big_gw{background-image:url(../images/flags/big/gw.png);}
+.big_gy{background-image:url(../images/flags/big/gy.png);}
+.big_hk{background-image:url(../images/flags/big/hk.png);}
+.big_hm{background-image:url(../images/flags/big/hm.png);}
+.big_hn{background-image:url(../images/flags/big/hn.png);}
+.big_hr{background-image:url(../images/flags/big/hr.png);}
+.big_ht{background-image:url(../images/flags/big/ht.png);}
+.big_hu{background-image:url(../images/flags/big/hu.png);}
+.big_id{background-image:url(../images/flags/big/id.png);}
+.big_ie{background-image:url(../images/flags/big/ie.png);}
+.big_il{background-image:url(../images/flags/big/il.png);}
+.big_in{background-image:url(../images/flags/big/in.png);}
+.big_io{background-image:url(../images/flags/big/io.png);}
+.big_iq{background-image:url(../images/flags/big/iq.png);}
+.big_ir{background-image:url(../images/flags/big/ir.png);}
+.big_is{background-image:url(../images/flags/big/is.png);}
+.big_it{background-image:url(../images/flags/big/it.png);}
+.big_jm{background-image:url(../images/flags/big/jm.png);}
+.big_jo{background-image:url(../images/flags/big/jo.png);}
+.big_jp{background-image:url(../images/flags/big/jp.png);}
+.big_ke{background-image:url(../images/flags/big/ke.png);}
+.big_kg{background-image:url(../images/flags/big/kg.png);}
+.big_kh{background-image:url(../images/flags/big/kh.png);}
+.big_ki{background-image:url(../images/flags/big/ki.png);}
+.big_km{background-image:url(../images/flags/big/km.png);}
+.big_kn{background-image:url(../images/flags/big/kn.png);}
+.big_kp{background-image:url(../images/flags/big/kp.png);}
+.big_kr{background-image:url(../images/flags/big/kr.png);}
+.big_kw{background-image:url(../images/flags/big/kw.png);}
+.big_ky{background-image:url(../images/flags/big/ky.png);}
+.big_kz{background-image:url(../images/flags/big/kz.png);}
+.big_la{background-image:url(../images/flags/big/la.png);}
+.big_lb{background-image:url(../images/flags/big/lb.png);}
+.big_lc{background-image:url(../images/flags/big/lc.png);}
+.big_li{background-image:url(../images/flags/big/li.png);}
+.big_lk{background-image:url(../images/flags/big/lk.png);}
+.big_lr{background-image:url(../images/flags/big/lr.png);}
+.big_ls{background-image:url(../images/flags/big/ls.png);}
+.big_lt{background-image:url(../images/flags/big/lt.png);}
+.big_lu{background-image:url(../images/flags/big/lu.png);}
+.big_lv{background-image:url(../images/flags/big/lv.png);}
+.big_ly{background-image:url(../images/flags/big/ly.png);}
+.big_ma{background-image:url(../images/flags/big/ma.png);}
+.big_mc{background-image:url(../images/flags/big/mc.png);}
+.big_md{background-image:url(../images/flags/big/md.png);}
+.big_mg{background-image:url(../images/flags/big/mg.png);}
+.big_mh{background-image:url(../images/flags/big/mh.png);}
+.big_mk{background-image:url(../images/flags/big/mk.png);}
+.big_ml{background-image:url(../images/flags/big/ml.png);}
+.big_mm{background-image:url(../images/flags/big/mm.png);}
+.big_mn{background-image:url(../images/flags/big/mn.png);}
+.big_mo{background-image:url(../images/flags/big/mo.png);}
+.big_mp{background-image:url(../images/flags/big/mp.png);}
+.big_mq{background-image:url(../images/flags/big/mq.png);}
+.big_mr{background-image:url(../images/flags/big/mr.png);}
+.big_ms{background-image:url(../images/flags/big/ms.png);}
+.big_mt{background-image:url(../images/flags/big/mt.png);}
+.big_mu{background-image:url(../images/flags/big/mu.png);}
+.big_mv{background-image:url(../images/flags/big/mv.png);}
+.big_mw{background-image:url(../images/flags/big/mw.png);}
+.big_mx{background-image:url(../images/flags/big/mx.png);}
+.big_my{background-image:url(../images/flags/big/my.png);}
+.big_mz{background-image:url(../images/flags/big/mz.png);}
+.big_na{background-image:url(../images/flags/big/na.png);}
+.big_nc{background-image:url(../images/flags/big/nc.png);}
+.big_ne{background-image:url(../images/flags/big/ne.png);}
+.big_nf{background-image:url(../images/flags/big/nf.png);}
+.big_ng{background-image:url(../images/flags/big/ng.png);}
+.big_ni{background-image:url(../images/flags/big/ni.png);}
+.big_nl{background-image:url(../images/flags/big/nl.png);}
+.big_no{background-image:url(../images/flags/big/no.png);}
+.big_np{background-image:url(../images/flags/big/np.png);}
+.big_nr{background-image:url(../images/flags/big/nr.png);}
+.big_nu{background-image:url(../images/flags/big/nu.png);}
+.big_nz{background-image:url(../images/flags/big/nz.png);}
+.big_om{background-image:url(../images/flags/big/om.png);}
+.big_pa{background-image:url(../images/flags/big/pa.png);}
+.big_pe{background-image:url(../images/flags/big/pe.png);}
+.big_pf{background-image:url(../images/flags/big/pf.png);}
+.big_pg{background-image:url(../images/flags/big/pg.png);}
+.big_ph{background-image:url(../images/flags/big/ph.png);}
+.big_pk{background-image:url(../images/flags/big/pk.png);}
+.big_pl{background-image:url(../images/flags/big/pl.png);}
+.big_pm{background-image:url(../images/flags/big/pm.png);}
+.big_pn{background-image:url(../images/flags/big/pn.png);}
+.big_pr{background-image:url(../images/flags/big/pr.png);}
+.big_ps{background-image:url(../images/flags/big/ps.png);}
+.big_pt{background-image:url(../images/flags/big/pt.png);}
+.big_pw{background-image:url(../images/flags/big/pw.png);}
+.big_py{background-image:url(../images/flags/big/py.png);}
+.big_qa{background-image:url(../images/flags/big/qa.png);}
+.big_re{background-image:url(../images/flags/big/re.png);}
+.big_ro{background-image:url(../images/flags/big/ro.png);}
+.big_ru{background-image:url(../images/flags/big/ru.png);}
+.big_rw{background-image:url(../images/flags/big/rw.png);}
+.big_sa{background-image:url(../images/flags/big/sa.png);}
+.big_sb{background-image:url(../images/flags/big/sb.png);}
+.big_sc{background-image:url(../images/flags/big/sc.png);}
+.big_scotland{background-image:url(../images/flags/big/scotland.png);}
+.big_sd{background-image:url(../images/flags/big/sd.png);}
+.big_se{background-image:url(../images/flags/big/se.png);}
+.big_sg{background-image:url(../images/flags/big/sg.png);}
+.big_sh{background-image:url(../images/flags/big/sh.png);}
+.big_si{background-image:url(../images/flags/big/si.png);}
+.big_sj{background-image:url(../images/flags/big/sj.png);}
+.big_sk{background-image:url(../images/flags/big/sk.png);}
+.big_sl{background-image:url(../images/flags/big/sl.png);}
+.big_sm{background-image:url(../images/flags/big/sm.png);}
+.big_sn{background-image:url(../images/flags/big/sn.png);}
+.big_so{background-image:url(../images/flags/big/so.png);}
+.big_sr{background-image:url(../images/flags/big/sr.png);}
+.big_st{background-image:url(../images/flags/big/st.png);}
+.big_sv{background-image:url(../images/flags/big/sv.png);}
+.big_sy{background-image:url(../images/flags/big/sy.png);}
+.big_sz{background-image:url(../images/flags/big/sz.png);}
+.big_tc{background-image:url(../images/flags/big/tc.png);}
+.big_td{background-image:url(../images/flags/big/td.png);}
+.big_tf{background-image:url(../images/flags/big/tf.png);}
+.big_tg{background-image:url(../images/flags/big/tg.png);}
+.big_th{background-image:url(../images/flags/big/th.png);}
+.big_tj{background-image:url(../images/flags/big/tj.png);}
+.big_tk{background-image:url(../images/flags/big/tk.png);}
+.big_tl{background-image:url(../images/flags/big/tl.png);}
+.big_tm{background-image:url(../images/flags/big/tm.png);}
+.big_tn{background-image:url(../images/flags/big/tn.png);}
+.big_to{background-image:url(../images/flags/big/to.png);}
+.big_tr{background-image:url(../images/flags/big/tr.png);}
+.big_tt{background-image:url(../images/flags/big/tt.png);}
+.big_tv{background-image:url(../images/flags/big/tv.png);}
+.big_tw{background-image:url(../images/flags/big/tw.png);}
+.big_tz{background-image:url(../images/flags/big/tz.png);}
+.big_ua{background-image:url(../images/flags/big/ua.png);}
+.big_ug{background-image:url(../images/flags/big/ug.png);}
+.big_um{background-image:url(../images/flags/big/um.png);}
+.big_us{background-image:url(../images/flags/big/us.png);}
+.big_uy{background-image:url(../images/flags/big/uy.png);}
+.big_uz{background-image:url(../images/flags/big/uz.png);}
+.big_va{background-image:url(../images/flags/big/va.png);}
+.big_vc{background-image:url(../images/flags/big/vc.png);}
+.big_ve{background-image:url(../images/flags/big/ve.png);}
+.big_vg{background-image:url(../images/flags/big/vg.png);}
+.big_vi{background-image:url(../images/flags/big/vi.png);}
+.big_vn{background-image:url(../images/flags/big/vn.png);}
+.big_vu{background-image:url(../images/flags/big/vu.png);}
+.big_wales{background-image:url(../images/flags/big/wales.png);}
+.big_wf{background-image:url(../images/flags/big/wf.png);}
+.big_ws{background-image:url(../images/flags/big/ws.png);}
+.big_ye{background-image:url(../images/flags/big/ye.png);}
+.big_yt{background-image:url(../images/flags/big/yt.png);}
+.big_za{background-image:url(../images/flags/big/za.png);}
+.big_zm{background-image:url(../images/flags/big/zm.png);}
+.big_zw{background-image:url(../images/flags/big/zw.png);}
+/*Flags End*/
+
+
+/* Hack to undo the code issue in CountryLabel.ascx */
+.flag-icon {
+    background-repeat:no-repeat;
+    background-position: left 50%;
+    padding-left: 20px;
+}
+
+// Interac
+.interac {
+    background: url("../images/icons/InteracOnline-vertical-med.png") no-repeat left top; 
+    height: 62px;
+    margin-top: 15px; 
+    padding-left: 60px;
+}
+
+.interac-small {
+    background: url("../images/icons/InteracOnline-horizontal-small.png") no-repeat left top;
+    margin: 11px 0 0;
+	padding-left: 59px;
+
+    a {
+		line-height: 24px; 
+      }
+}
+
+.interac-bg {
+    background:url("../images/icons/InteracOnline-vertical-large.png") no-repeat left top;
+    padding-left: 90px; 
+    margin-bottom: 50px;
+}
+
+// Print
+.print-action a {
+    .border-radius(2px);
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    float: right; 
+    padding: 3px 10px 3px 24px; 
+    background: url("../images/icons/print.png") no-repeat 5px center #1EB056;
+    vertical-align: top;
+
+    &:hover {text-decoration: none;}
+}
+
+// Payment Method
+.payment-method {
+    .icon-payza,
+    .icon-amex,
+    .icon-mc,
+    .icon-visa {
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        display: block;
+        height: 22px;
+        width: 32px;
+    }
+
+    .icon-payza {background-image: url(../images/cards/payza-card-small.png);}
+
+    .icon-amex {background-image: url(../images/cards/amex-card-small.png);}
+
+    .icon-mc {background-image: url(../images/cards/mc-card-small.png);}
+
+    .icon-visa {background-image: url(../images/cards/visa-card-small.png);}
+}

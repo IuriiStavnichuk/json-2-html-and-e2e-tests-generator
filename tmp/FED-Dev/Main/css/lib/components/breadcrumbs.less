@@ -1,0 +1,40 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+
+.breadcrumb {
+    display: inline-block;
+    font-size: 0.85em;
+    padding: 0;
+    list-style: none;
+    border-radius: 3px;
+    border: 1px solid rgb(225, 228,231);
+    border-right: none;
+
+    > li {
+        display: inline-block;
+        margin-right: -6px;
+        color: #abacae;
+        padding: 4px 18px 4px 12px;
+        background: url(../images/backgrounds/breadcumblies.png) no-repeat right 50%;
+        /*& + li:before {
+            content: "/\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+            padding: 0 5px;
+            color: @breadcrumb-color;
+        }*/
+    }
+
+    > .active {
+        color: @breadcrumb-active-color;
+    }
+
+    a {
+        color: #abacae;
+        &:hover {
+          text-decoration:none;
+        }
+    }
+}
+
+

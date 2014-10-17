@@ -1,0 +1,118 @@
+﻿/*Fees Table*/
+.fees{
+    background-color:#f7f7f7;
+
+	/*CSS3*/
+	-moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px;
+	-moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; box-shadow:0 0 5px #999;
+}
+
+.fees fieldset{
+    background-color:#fff; border-bottom:1px solid #ececec;
+    margin-bottom: 0;
+
+	/*CSS3*/
+	-moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; border-top-left-radius:6px;
+	-moz-border-radius-topright:6px; -webkit-border-top-right-radius:6px; border-top-right-radius:6px;	
+}
+.fees fieldset .field-row{margin:0; padding:30px; text-align:center;}
+
+.fees fieldset .field-row .field label{display:none;}
+.fees fieldset .field-row .field select{font-size:1.4em; width:400px; padding:5px; padding-left: 25px;}
+
+.fees h2{border-top:1px solid #fff; border-bottom:1px solid #ececec; font-size:1.4em; font-weight:600; font-family:'Open Sans', Arial, Helvetica, sans-serif; color:#444; padding:10px 25px; margin:0;}
+.i18n-fr .fees h2{font-family:Arial, Helvetica, sans-serif; font-weight:bold;}
+
+.fees h2 .fl_16{margin-left:3px;}
+.fees h2 .fl_16 .fl-icn{margin-top:0;}
+.fees .fees-table{border-top:1px solid #fff; padding:10px 25px; margin:0;}
+.fees .fees-table table{width:100%; border-collapse:separate;}
+
+.fees .fees-table table th,
+.fees .fees-table table td{text-shadow:0 1px 0 #fff; border-left:1px solid #fff; border-right:1px solid #ececec;}
+
+.fees .fees-table table thead th{background:none; color:#42a12d; text-align:center; filter:none; border-bottom:1px solid #ececec; background-color:#f0f0f0;}
+.fees .fees-table table thead th:nth-child(1){background-color:transparent;}
+.fees .fees-table table thead th.personal span,
+.fees .fees-table table thead th.personal-pro span,
+.fees .fees-table table thead th.business span{display:block; background-image:url(../images/sprites/sprite.png); background-repeat:no-repeat; overflow:hidden; text-indent:-9999px; height:105px; margin:auto;}
+
+.fees .fees-table table thead th.personal span{width:172px; background-position:-680px 0;}
+.fees .fees-table table thead th.personal-pro span{width:120px; background-position:-856px 0;}
+.fees .fees-table table thead th.business span{width:86px; background-position:-981px 0;}
+
+
+.fees .fees-table table tfoot td{border-top:1px solid #fff; font-size:105%; padding:40px 10px 10px; background-color:#f0f0f0;}
+.fees .fees-table table tfoot td ul li{margin-bottom:10px;}
+.fees .fees-table table tfoot td strong{font-weight:bold;}
+.fees .fees-table table tfoot td span{display:block; margin-bottom:10px;}
+
+.fees .fees-table table tbody th,
+.fees .fees-table table tbody td{border-bottom:1px solid #ececec; border-top:1px solid #fff;}
+
+.fees .fees-table table tbody tr.first th{border-top:none;}
+.fees .fees-table table tbody th{color:#42a12d; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:1.4em; padding:35px 0 10px 10px; text-align:left; font-weight:700;}
+.i18n-fr .fees .fees-table table tbody th{font-family:Arial, Helvetica, sans-serif; font-weight:bold;}
+
+.fees .fees-table table tbody td{padding:10px; font-size:1.3em;}
+.fees .fees-table table tbody td strong{color:#42a12d; font-family:'Open Sans', Arial, Helvetica, sans-serif; text-transform:uppercase; font-weight:700;}
+.i18n-fr .fees .fees-table table tbody td strong{font-family: Arial, Helvetica, sans-serif; font-weight:bold;}
+
+.fees .fees-table table tbody tr td:nth-child(2),
+.fees .fees-table table tbody tr td:nth-child(3),
+.fees .fees-table table tbody tr td:nth-child(4){text-align:center; background-color:#f0f0f0;}
+
+
+.fees .fees-table table thead tr th:nth-child(1),
+.fees .fees-table table tbody tr th,
+.fees .fees-table table tbody tr td:nth-child(1),
+.fees .fees-table table tfoot tr td{border-left:none;}
+
+.fees .fees-table table thead tr th:nth-child(4),
+.fees .fees-table table tbody tr th,
+.fees .fees-table table tbody tr td:nth-child(4),
+.fees .fees-table table tfoot tr td{border-right:none;}
+
+.fees .fees-table table tr td a {color: #0A69C5; cursor: pointer;}
+
+/*Table varies*/
+
+.fees .fees-table table.varies,
+.fees .fees-table table.varies tbody th,
+.fees .fees-table table.varies tbody  td {
+    font-size: inherit;
+    padding: 10px;
+}
+
+table.varies {background-color: white; margin: 0; border: 2px solid #42960b; border-radius: 5px; border-collapse: separate; color: #545454; text-align: left;}
+table.varies th {font-weight: bold; padding: 5px; width: 200px;}
+table.varies td {border: 0; border-top: 1px dashed #efefef; padding: 5px;}
+
+.fees .fees-table .fees-pop-box {
+    height: 140px;
+    left: 50%;
+    margin-left: -250px; margin-top: -70px;
+    position: absolute;
+    top: 50%;
+    width: 500px;
+    z-index: 100;
+
+    table tbody th {
+        padding: 10px;
+    }
+
+    .close {
+        background: url(../images/icons/help-close.png) center no-repeat;
+        display: block;
+        height: 13px;
+        overflow: hidden;
+        position: absolute;
+        right: 10px;
+        text-indent: -999px;
+        top: 10px;
+        width: 13px;
+        z-index: 100;
+    }
+}
+
+sup {font-size:8px; vertical-align:super;}

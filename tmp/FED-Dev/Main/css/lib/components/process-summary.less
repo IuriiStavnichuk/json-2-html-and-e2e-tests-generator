@@ -1,0 +1,73 @@
+﻿// Process Summary: Summary of a process, such as wizards
+// ---------------------------------------------------------
+
+// TODO_UI: Refactor this.
+
+
+
+.process-summary h3 {margin-bottom: 15px;}
+
+.process-summary h4 {margin-bottom: 10px;}
+
+.process-summary dl,
+.process-summary .summary-list {
+	background-color: #f6f6f6;
+	border: 1px solid #ddd;
+	.clear-fix();
+	font-size: 0.8em;
+	position: relative;
+	overflow: hidden;
+	text-shadow: 0 1px 0 #fff;
+
+	// CSS3
+	.border-radius();}
+
+
+.process-summary dl dt,
+.process-summary dl dd,
+.process-summary .summary-item {
+	border-bottom: 1px solid #ddd;
+	display: block;
+	margin: 0;
+	padding: 8px 10px;
+
+	// CSS3
+	.box-shadow(0 1px 0 #fff);}
+
+.process-summary dl dt,
+.process-summary dl dd {float: left;}
+.process-summary dl dt {clear: left;}
+
+.process-summary .summary-list .item-label,
+.process-summary .summary-list .item-value {
+	display: inline-block;
+	vertical-align: top;}
+
+
+.process-summary dl dt,
+.process-summary .summary-list .item-label {
+    //line-height:23px;
+	color: #999;
+	font-size: 105%;
+	font-weight: normal;
+	text-align: left;
+	width: 30%;}
+
+//.process-summary dl dt {height: 51px;}
+.process-summary dl dd {clear: right;}
+
+.process-summary dl dd,
+.process-summary .summary-list .item-value {
+	width: 69%;
+	font-size: 105%;
+				
+	// CSS3
+	word-wrap: break-word;}
+.process-summary .summary-list .item-value {line-height: 23px;}
+
+.process-summary .summary-list .item-value address {font-size: 100%;}
+
+.process-summary dl dt:last-of-type {border-bottom: none;}
+
+.process-summary .summary-item:last-child,
+.process-summary dl dd:last-child {border-bottom: none;}

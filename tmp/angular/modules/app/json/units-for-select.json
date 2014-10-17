@@ -1,0 +1,23 @@
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "total": 4,
+    "result": [
+        {
+            "id": 1,
+            "Value": "seconds"
+        },
+        {
+            "id": 2,
+            "Value": "minutes"
+        },
+        {
+            "id": 3,
+            "Value": "hours"
+        },
+		{
+            "id": 4,
+            "Value": "days"
+        }
+    ]
+}

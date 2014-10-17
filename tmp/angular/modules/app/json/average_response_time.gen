@@ -1,0 +1,12 @@
+[
+    '{{repeat(3)}}',
+    {
+        id: function(idx) {
+		return window.id=idx;
+		},
+    type: "Email",
+	is_checked: 'true',
+    response_time: '{{numeric(2,16)}}',	
+	units: ['seconds', 'minutes','hours','days']  
+    }
+]

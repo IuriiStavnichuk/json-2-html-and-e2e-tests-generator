@@ -1,0 +1,323 @@
+﻿/*Complete Profile*/
+
+#confirm-dialog-overlay,#confirm-businessmodel-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:3000px;
+    background-color: #000;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: 0.85;
+    display: block;
+    z-index: 1000;
+}
+.complet-profile {
+    position: absolute;
+    width:100%;
+    top: 0;
+    left: 0;
+    z-index:1000;
+}
+.complet-profile-box {
+    position: relative;
+    margin: 0 auto;
+    background: #fff;
+    width: 620px;
+    padding: 0;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+
+    .header {
+        background-color: #1aaf57;
+        text-align: center;
+        min-height: 6px;
+        padding: 0 40px;
+    }
+
+    .body {
+        margin: 30px auto;
+        width: 360px;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 300;
+        padding: 32px 0;
+        color: #fff;
+    }
+
+    h3 {
+        font-weight: 300;
+        font-size: 17px;
+        color: @brand-primary;
+    }
+
+    .center {
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+
+    .email-block {
+        display: inline-block;
+        margin: -6px 0 16px;
+        padding: 1px 8px 12px 78px;
+        background: #eceff1 url(../images/icons/email.png) no-repeat 20px 15px;
+    }
+
+        .email-block h4 {
+            margin: 15px 0 5px;
+            font-size: 17px;
+        }
+
+        .email-block a {
+            float: left;
+        }
+
+
+    p {
+        font-size: 14px;
+        line-height: 23px;
+    }
+
+    .footer {
+        background-color: #eceff1;
+        padding: 30px 0 30px 130px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    #ext1, #ext2, #ext3 {
+        padding: 6px 0 6px 6px;
+    }
+}
+
+.checkbox-ios {
+    background: url(../images/checkbox-ios.png);
+    width: 109px;
+    height: 36px;
+}
+.checkbox-ios.active { background-position: -109px 0px; }
+
+.checkbox-ordinary {
+    display:inline-block;
+    vertical-align:top;
+    background: url(../images/checkbox.png);
+    width: 24px;
+    height: 29px;
+    margin:-3px 5px 0 -7px;
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+.checkbox-ordinary.active { background-position: -29px 0px; }
+
+
+.complet-profile-box {
+
+    .form-control {
+        padding: @padding-base-vertical 0 @padding-base-vertical @padding-base-horizontal;
+    }
+
+    .body-complete-profile {
+        margin: 30px auto;
+        width: 544px;
+    }
+
+        .body-complete-profile + .footer {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+    .speech-bubble {
+        background: url(../images/sign_up/speach-bubble-right.png) no-repeat;
+        width: 453px;
+        height: 92px;
+        padding: 31px 0 0 30px;
+        font-size: 19px;
+        font-weight: bold;
+        margin-right: 6px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+        .speech-bubble.answer {
+            background: url(../images/sign_up/speach-bubble-left.png) no-repeat;
+            display: inline-block;
+            vertical-align: middle;
+            font-weight: normal;
+            color: #1aaf57;
+            padding: 19px 20px 0 50px;
+        }
+
+    .row {
+        margin: 12px 0;
+    }
+
+    .default-avatar {
+        background: #fff url(../images/noAvatar.png);
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 100%;
+    }
+
+    .payza-avatar {
+        background: url(../images/avatar.png);
+        width: 52px;
+        height: 125px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 24px;
+    }
+
+    .last-step {
+        background: url(../images/sign_up/last-step.jpg) no-repeat;
+        margin: 0;
+        width: 620px;
+        height: 281px;
+        text-align: center;
+    }
+    .vert-gradient {
+        height: 34px;
+        padding: 7px 17px;
+        background: #f7f7f7;
+        background: -moz-linear-gradient(top, #f7f7f7 0%, #e2e2e2 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#e2e2e2));
+        background: -webkit-linear-gradient(top, #f7f7f7 0%,#e2e2e2 100%);
+        background: -o-linear-gradient(top, #f7f7f7 0%,#e2e2e2 100%);
+        background: -ms-linear-gradient(top, #f7f7f7 0%,#e2e2e2 100%);
+        background: linear-gradient(to bottom, #f7f7f7 0%,#e2e2e2 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e2e2e2',GradientType=0 );
+        border-radius: 4px;
+    }
+
+    #loading-indicator-lightbox {
+        display: block;
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8) url(../images/icons/load-more.gif) no-repeat center center;
+    }
+}
+
+.complete-profile-setup {
+    position: absolute;
+    top: 36px;
+    left: 620px;
+    width: 274px;
+    z-index:102;
+
+    .header {
+        background-color:#3d454d;
+        height:40px;
+        font-weight: bold;
+        color:#fff;
+        display: table-cell;
+        vertical-align: middle;
+        width: 274px;
+    }
+    li {
+        color:#8e979d;
+        height:39px;
+        background:#fff url('../images/sign_up/light-grey-green-gradient.png') 0 0  no-repeat;
+        list-style-type: none;
+        padding: 11px 0 0 52px;
+        border-bottom:1px solid #eeeeee;
+        transition:padding-left 0.3s ease-in-out;
+        -webkit-transition:padding-left 0.3s ease-in-out;
+        -ms-transition:padding-left 0.3s ease-in-out;
+    }
+    li.active, li:hover {
+        color:#222629;
+        padding-left: 64px;
+        cursor: pointer;
+        background:#fff url('../images/sign_up/light-grey-green-gradient.png') -600px 0 no-repeat;
+    }
+    li .grey-box {
+        float:left;
+        margin:-11px 0 0 -24px;
+        width:12px;
+        height:38px;
+        background-color:#eceff1
+    }
+    li.completed {
+        color:#ccc;
+        background:#fff url('../images/sign_up/light-grey-green-gradient.png') -300px 0 no-repeat;
+    }
+    li.completed .grey-box { background-color:#1aaf57;}
+    li.not-allowed { cursor:url(../images/sign_up/cursor-no-drop.cur), no-drop;}
+
+}
+
+.btn-info.disabled {
+    background: #E8E8E8 none repeat scroll 0 0;
+    color: #9F9F9F;
+    text-shadow: 0 1px 0 #FFFFFF;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #CFCFCF !important;
+    cursor: default;
+}
+
+.suggestion-popup-absolute-container {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 900;
+}
+.suggestion-popup-relative-container {
+    position: relative;
+    margin: 0 auto;
+    width:576px;
+}
+.suggestion-popup {
+    position: absolute;
+    top: 68px;
+    right: 0;
+    width: 356px;
+    background:#2d3237;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    color:#fff;
+    box-shadow: 0px 0px 10px 6px rgba(119, 119, 119, 0.3);
+    -moz-box-shadow: 0px 0px 10px 6px rgba(119, 119, 119, 0.3);
+    -webkit-box-shadow: 0px 0px 10px 6px rgba(119, 119, 119, 0.3);
+    .close-icon {
+        position:absolute;
+        width: 10px;
+        height: 10px;
+        top:12px;
+        right:12px;
+        background:#2d3237 url(../images/icons/cross-dark.png) 0px 0px no-repeat;
+        cursor:pointer;
+    }
+    .close-icon:hover {cursor:pointer;}
+    .header {
+        color:#1eb056;
+        text-align:center;
+    }
+    .body { margin: 26px 26px;}
+}
+.suggestion-popup:after {
+    content:"";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 26px solid #2d3237;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    margin-left: 352px;
+    top: 69px;
+    border-radius: 2px;
+}
+
+.next-step a {
+    color: @brand-link;
+}

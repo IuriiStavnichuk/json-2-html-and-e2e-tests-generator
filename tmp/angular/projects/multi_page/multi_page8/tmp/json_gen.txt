@@ -1,0 +1,32 @@
+[
+    '{{repeat(5)}}',
+    {
+        id: '{{index}}',
+        menu: 'Menu{{index}}',
+        title: '{{lorem(2,7)}}',
+        picture: 'http://placehold.it/32x32',
+        name: '{{firstName}} {{lastName}}',
+        date: '{{date(YYYY-MM-ddThh:mm:ss Z)}}',
+        address: '{{numeric(10000,40000)}}, {{city}}, {{street}}',
+        content: '{{lorem(50,100)}}'
+    }
+]
+
+
+
+[
+    '{{repeat(100)}}',
+    {
+        id: function(idx) {return idx+9;},
+	type: 'news',
+        title: function(idx) {
+            window.title= this.lorem(7);
+            return window.title;
+        },
+
+        content: function(idx) {
+            var content= this.lorem(3,"paragraphs");
+            return  "<i>"+window.title+"</i> "+content;
+        }
+    }
+]

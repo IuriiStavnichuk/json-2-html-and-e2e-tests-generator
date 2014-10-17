@@ -1,0 +1,616 @@
+// Login
+// --------
+
+*, *:before, *:after {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+
+    .login-page {
+        margin: 0;
+        margin-bottom: 200px;
+
+
+        .footer {
+            bottom: 0;
+            height: 200px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+    }
+}
+
+body {
+  line-height:1.4em;
+}
+
+span {
+background: transparent;
+border: 0;
+font-size: 100%;
+margin: 0;
+outline: 0;
+padding: 0;
+vertical-align: baseline;
+}
+
+.container {
+    width: 964px;
+    min-height: 1px;
+}
+
+// Generic Hide
+.hide {
+    display: none;
+}
+
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+    .field {
+        margin-bottom: 15px;
+    }
+
+    .field-item {
+        display: inline-block;
+        margin-bottom: 5px;
+        margin-right: 15px;
+        vertical-align: top;
+    }
+
+    .side-note {
+        clear: both;
+        display: block;
+        font-size: 1.2em;
+        line-height: 1.5em;
+        margin-bottom: 5px;
+    }
+
+    .field .field-value {
+        clear: both;
+        display: block;
+        font-size: 1.2em;
+        line-height: 1.5em;
+        margin-bottom: 5px;
+    }
+
+    .button-field a {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .checkbox {
+      margin-top:6px;
+        label {
+          display:inline-block;
+          padding-left:6px;
+        }
+        input[type="checkbox"], input[type="radio"] {
+          vertical-align:middle;
+        }
+    }
+}
+
+
+
+fieldset label, fieldset .field .field-label {
+cursor: default;
+display: block;
+font-size: 13px;
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+fieldset .radio-check-field label, fieldset .radio-check-field input[type=radio], fieldset .radio-check-field input[type=checkbox] {
+float: left;
+}
+fieldset .radio-check-field input[type=radio], fieldset .radio-check-field input[type=checkbox] {
+margin-right: 5px;
+margin-top: 3px;
+}
+
+fieldset .radio-check-field label, fieldset .radio-check-field input[type=radio], fieldset .radio-check-field input[type=checkbox] {
+float: left;
+}
+
+
+
+fieldset input[type="text"], fieldset input[type="password"], fieldset input[type="date"], fieldset input[type="datetime"], fieldset input[type="datetime-local"], fieldset input[type="email"], fieldset input[type="month"], fieldset input[type="number"], fieldset input[type="range"], fieldset textarea, fieldset select {
+    padding: 5px;
+}
+
+
+input[type="submit"], input[type="button"], input[type="reset"], button {
+color: #fff;
+cursor: pointer;
+font-weight: bold;
+text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+box-sizing: border-box;
+}
+
+hr {
+border: 0;
+border-top: 1px solid #e5e5e5;
+clear: both;
+display: block;
+height: 1px;
+padding: 0;
+margin: 1em 0;
+}
+
+.footer ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.credentials ul .trustwave {
+background: none;
+}
+.credentials ul li {
+background-color: #ffffff;
+display: inline-block;
+margin-right: 10px;
+vertical-align: top;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+}
+
+p, dl, ol, ul {
+font-size: 1.3em;
+line-height: 1.5em;
+margin-bottom: 1em;
+}
+
+
+// Account Security
+
+.photo {
+    height: 110px;
+    overflow: hidden;
+    width: 110px;
+
+    // CSS3
+    .border-radius(3px);
+
+    .body-parts {
+        height: 110px;
+        margin: 0 auto;
+        position: relative;
+        width: 56px;
+
+        img {
+            height: 110px;
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+    }
+}
+
+
+
+.login-page {
+    // Language Selector
+    .language-selector {
+        color: #3f3f3f;
+        font-size: 13px;
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 35px;
+        text-align: right;
+        width: 488px;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    // Login Box
+    .login-box {
+        margin: 0 auto;
+        padding-bottom: 35px;
+        width: 488px;
+
+        h4 {
+            color: #3c3e40;
+            font-size: 25px;
+            font-weight: lighter;
+            margin-bottom: 30px;
+            text-align: center;
+
+            em {
+                color: @brand-primary;
+                font-style: normal;
+                font-weight: 600;
+            }
+        }
+        // Avatar
+        .avatar {
+            background: url(../../../images/backgrounds/avatar-background.png) 0 0 no-repeat;
+            height: 155px;
+            margin: auto;
+            margin-bottom: -42px;
+            position: relative;
+            width: 445px;
+
+            .photo,
+            blockquote {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .photo {
+                left: 22px;
+                position: absolute;
+                top: 22px;
+            }
+
+            blockquote {
+                border: none;
+                font-size: 23px;
+                font-weight: lighter;
+                height: 70px;
+                left: 165px;
+                padding-left: 0;
+                position: absolute;
+                top: 22px;
+                width: 275px;
+
+                p {
+                    font-size: inherit;
+                    height: 70px;
+                    line-height: 1.4em;
+                    margin-bottom: 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    width: 265px;
+                    // CSS3
+                    word-wrap: break-word;
+                }
+            }
+        }
+        // Login Process
+        .login-process {
+            border-top: 3px solid @brand-primary;
+            background-color: #fff;
+            padding: 60px 40px 40px 40px;
+            // CSS3
+            .border-radius(3px);
+            .box-shadow(@shadow);
+            // Fieldset
+            fieldset {
+
+                label {
+                    font-weight: normal;
+                }
+
+                .login-email,
+                .login-pass {
+                    // border-bottom: 1px solid rgba(130,135,140,0.3);
+                    .clear-fix();
+
+                    .field-item {
+                        width: 100%;
+
+                        label,
+                        input {
+                            float: left;
+                        }
+
+                        label {
+                            background-position: 0 0;
+                            background-repeat: no-repeat;
+                            overflow: hidden;
+                            text-indent: -9999px;
+                        }
+
+                        input[type="text"] {
+                            background: none;
+                            border: none;
+                            filter: none;
+                            font-size: 21px;
+                            font-weight: lighter;
+                            margin-bottom: 0;
+                            width: 64%;
+                            // CSS3
+                            .border-radius(0);
+                            .box-shadow(none);
+
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+
+                        .watermark {
+                            color: #9ca1a7;
+                        }
+                    }
+                }
+                // Email Field
+                .login-email {
+                    position: relative;
+
+                    label {
+                        background-image: url(../../../images/icons/user.png);
+                        height: 19px;
+                        margin-right: 5px;
+                        margin-top: 10px;
+                        width: 16px;
+                    }
+
+                    hr {
+                        margin-top: 0;
+                    }
+
+                    .next-step {
+                        background-image: url(../../../images/icons/arrow-thick-right.png);
+                        background-position: 90% center;
+                        background-repeat: no-repeat;
+                        border: 1px solid #c1c7cd;
+                        color: #82878c;
+                        display: block;
+                        float: right;
+                        font-size: 13px;
+                        padding: 8px;
+                        padding-left: 12px;
+                        padding-right: 30px;
+                        // CSS3
+                        .border-radius(3px);
+
+                        @shadow: 0 1px 1px rgba(0,0,0,0.14);
+                        .box-shadow(@shadow);
+                    }
+
+                    .clear-field {
+                        background-image: url(../../../images/icons/cross.png);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        display: block;
+                        float: right;
+                        height: 16px;
+                        margin-top: 13px;
+                        overflow: hidden;
+                        text-indent: -9999px;
+                        white-space: nowrap;
+                        width: 16px;
+                    }
+
+                    .email-watermark {
+                        color: #9ca1a7;
+                        font-size: 21px;
+                        font-weight: lighter;
+                        left: 25px;
+                        position: absolute;
+                        top: 10px;
+                    }
+                }
+                // Password Field
+                .login-pass {
+                    position: relative;
+
+                    label,
+                    input {
+                        float: left;
+                    }
+
+                    label {
+                        background-image: url(../../../images/icons/key.png);
+                        height: 20px;
+                        margin-right: 5px;
+                        margin-top: 8px;
+                        overflow: hidden;
+                        text-indent: -9999px;
+                        width: 19px;
+                    }
+
+                    .pass-watermark {
+                        color: #9ca1a7;
+                        font-size: 21px;
+                        font-weight: lighter;
+                        left: 28px;
+                        position: absolute;
+                        top: 10px;
+                    }
+
+                    input[type="password"] {
+                        background: none;
+                        border: none;
+                        filter: none;
+                        font-size: 21px;
+                        font-weight: lighter;
+                        margin-bottom: 0;
+                        width: 90%;
+                        // CSS3
+                        .border-radius(0);
+                        .box-shadow(none);
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+
+                    hr {
+                        margin-top: 0;
+                    }
+                }
+                // Question
+                .field {
+
+                    .field-value {
+                        font-size: 13px;
+                    }
+                }
+                // Field error
+                .field-error {
+                    label,
+                    input[type="text"],
+                    input[type="password"],
+                    .msg-error {
+                        color: #f73e3e;
+                    }
+
+                    hr {
+                        border-color: #f73e3e;
+                    }
+                }
+
+                .login-email.field-error {
+                    label {
+                        background-image: url(../../../images/icons/user-red.png);
+                    }
+                }
+
+                .login-pass.field-error {
+                    label {
+                        background-image: url(../../../images/icons/key-red.png);
+                    }
+                }
+
+
+                .call-to-action {
+                    color: #54575a;
+                    font-size: 14px;
+                }
+
+                .field-message {
+                    color: @gray;
+                    font-size: 21px;
+                }
+
+                .button-field {
+                    clear: both;
+
+                    input[type="submit"] {
+                        background: #328fe6;
+                        border: none;
+                        display: block;
+                        filter: none;
+                        font-size: 15px;
+                        padding: 16px 0;
+                        text-transform: uppercase;
+                        width: 100%;
+                        // CSS3
+                        .box-shadow(none);
+                    }
+
+                    a {
+                        font-size: 13px;
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+
+        .form-control {
+          width:384px;
+          padding:10px;
+          font-size:15px;
+        }
+    }
+    // Footer
+    .footer {
+        .container {
+            padding-top: 29px;
+        }
+
+        margin-top: 35px;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                color: #06427c;
+            }
+        }
+
+
+        .login-logo {
+            border-top: 1px solid rgba(76,78,81,0.17);
+            float: none;
+            position: relative;
+
+            a {
+                background: #eceff1;
+                display: block;
+                height: 46px;
+                margin: -25px auto 5px auto;
+                width: 265px;
+                text-align: center;
+
+                img {display: inline-block;}
+            }
+        }
+
+        p {
+            color: #828286;
+            font-size: 11px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .copyright {
+            color: #27292b;
+        }
+        // Credentials
+        .credentials {
+            margin-top: 35px;
+
+            ul {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+
+                .truste {
+                    margin-top: 2px;
+                }
+
+                .truste a {
+                    padding: 5px;
+                }
+
+                .mcafee {
+                  display:none;
+                }
+            }
+        }
+    }
+    .alert {
+        p, li, span {font-size:14px}
+        color: #3f474f;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+        .close {
+            top: -15px;
+            right: -9px;
+            float: right;
+        }
+    }
+    .alert-warning {
+      background:url(../../../images/icons/alert/yellow.png) @alert-warning-bg no-repeat -50px -25px;
+    }
+    .alert-error {
+      background:url(../../../images/icons/alert/red.png) @alert-error-bg no-repeat -50px -25px;
+    }
+    .help-icon { 
+        background: transparent url(../../../images/icons/help.png) no-repeat center top; 
+        padding: 1px 0 1px;
+        width:16px; 
+        height:16px;
+        float: right;
+        margin-top: -23px;
+     }
+}

@@ -1,0 +1,122 @@
+<div class="notification-messages">
+    <h2>Notification messages:</h2>
+
+    <div class="show-hide-wrapper">
+        <fieldset class="block-set">
+            <legend>Notification messages:</legend>
+
+            <!--<div class="radio-check-field withfield clearfix">-->
+            <div class="div-table">
+                <div class="table-row">
+                    <div class="flex-cell">
+                        <input type="submit" class="submit-button status-enabled" ng-click="displayForm ('.add-and-edit-notification-message')" value="Add">
+                        <input type="submit" class="submit-button status-enabled" ng-click="publishNotificationMessages(arrayNotificationMessage)" value="Publish selected">
+                        <input type="submit" class="reset-button status-enabled" ng-click="removeNotificationMessage(arrayNotificationMessages)" value="Remove selected">
+                        <input type="submit" class="button status-enabled" id="notification-table-wrapper-button" ng-click="showAllContent ( '#notification-table-wrapper', '#notification-table-wrapper-button' )" value="Show all">
+
+                    </div>
+                </div>
+            </div>
+            <div id="notification-table-wrapper">
+                <table cellspacing="0" border="1" style="width:100%;border-collapse:collapse;clear:both">
+                    <thead>
+                    <tr>
+                        <th scope="col">Select</th>
+                        <th scope="col">Message Title</th>
+                        <th scope="col">Message Text</th>
+                        <th scope="col"><a href="" ng-click="predicate = 'countryList'; reverse=!reverse">Country List</a></th>
+                        <th scope="col">Publish</th>
+                        <th scope="col"><a href="" ng-click="predicate = 'date'; reverse=!reverse">Date</a></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <tr ng-repeat="arrayNotificationMessage in arrayNotificationMessages | orderBy:predicate:reverse">
+                        <td><input type="checkbox" ng-model="arrayNotificationMessage.isSelected"></td>
+                        <td class="fixed-width-column90">{{arrayNotificationMessage.messageTitle}}</td>
+                        <td class="fixed-width-column310">{{arrayNotificationMessage.messageText}}</td>
+                        <td class="fixed-width-column170">{{arrayNotificationMessage.countryList}}</td>
+                        <td><input type="checkbox" ng-model="arrayNotificationMessage.isPublish"></td>
+                        <td>{{arrayNotificationMessage.date}}</td>
+                        <td><input type="submit" class="button status-enabled" ng-click="editNotificationMessage(arrayNotificationMessage, arrayCountriesList, $index )" value="Edit"></td>
+                        <td><input type="submit" class="button status-enabled" ng-click="viewNotificationMessage(arrayNotificationMessage, arrayCountriesList, $index)" value="View"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+    </div>
+
+
+    <div class="add-and-edit-notification-message">
+        <h2 id="formTitle">Add new notification</h2>
+
+        <div class="div-table show-hide-wrapper">
+            <div class="table-row">
+                <div class="flex-cell vert-align-top ">
+                    <form>
+                        <input type="text" id="email-input"  ng-model="notificationMessage.messageTitle">
+                        <textarea cols="30" rows="10" ng-model="notificationMessage.messageText" id="limitedtextarea" ng-change="limitText(100)"></textarea>
+                        <div class="max-characters-notification"><font size="1">(Maximum characters: 100).  You have <input readonly type="text" name="countdown" id="countdown" size="3" value="100"> characters left.</font></div>
+                        <div class="inline-block">
+                            <input type="submit" id="addNotificationMessageButtonSave" class="submit-button status-enabled" ng-click="saveAddedNotificationMessage( notificationMessage, arrayNotificationMessages, arrayCountriesList, 'numberOfSelectedCountries' )" value="Save">
+                            <input type="submit" id="editNotificationMessageButtonSave" class="submit-button status-enabled" ng-click="saveEditedNotificationMessage( notificationMessage, arrayNotificationMessages, arrayCountriesList, indexOfCurrentMessage, 'numberOfSelectedCountries' )" value="Save">
+                            <input type="submit" id="notificationMessageButtonCancel" class="reset-button status-enabled" ng-click="cancelEditedNotificationMessage( )" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+                <div class="empty-cell"></div>
+                <div class="fix-cell vert-align-top ">
+                    <div class="block-country-list">
+                        <div class="add-table">
+                            <table border="0">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                <input id="selectallcheckers" type="checkbox"  ng-click="selectAllCheckersInCountriesList( arrayCountriesList, 'selectallcheckers', 'numberOfSelectedCountries' )"><span>Select all</span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr ng-repeat="continent in  arrayCountriesList">
+                                    <td>
+                                        <a id="toggleIcon{{continent.id}}" ng-click="toggleIcon('toggleIcon'+continent.id)">[-]</a>
+                                        <a   ng-click="toggleIcon('toggleIcon'+continent.id)"> {{continent.continent}}</a>
+                                        <ul id="ultoggleIcon{{continent.id}}">
+                                            <li ng-repeat='country in continent.country'>
+                                                <input type="checkbox" ng-model="country.isSelected" ng-click="changeIsSelectedStatus( arrayCountriesList, 'selectallcheckers', 'numberOfSelectedCountries' )"><span>{{country.name}}</span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                        <div class="remove-table">
+                            <ul>
+                                <li>
+                                    <span>({{variablesNames['numberOfSelectedCountries2']}}) selected countries </span>&nbsp;
+                                    <a ng-click="resetArrayCountriesList( arrayCountriesListForPhoneNumber, 'selectallcheckers2', 'numberOfSelectedCountries2' )">Reset</a>
+                                </li>
+                            </ul>
+                            <ul ng-repeat="continent in arrayCountriesList">
+                                <li ng-repeat='country in continent.country' ng-show="country.isSelected">
+                                    <input type="checkbox" ng-model="country.isSelected" ng-click="changeIsSelectedStatus( arrayCountriesList, 'selectallcheckers', 'numberOfSelectedCountries' )"><span>{{country.name}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
