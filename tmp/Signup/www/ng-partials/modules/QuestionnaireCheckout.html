@@ -1,0 +1,641 @@
+﻿<div class='panel-body' data-ng-show='merchantServicesBlockVisible' data-ng-init='merchantServicesBlockVisible=0'>
+<div id='loading-indicator-lightbox' data-ng-show="loadingIndicatorLightboxVisible"></div>
+
+<div class='row wizard-row'>
+<div class='col-sm-8'><p>{{resource.page.text}}</p></div>
+<div class='col-sm-6'>
+<form name=introductionSection novalidate>
+    <h2 id="introductionSectionTitle"  data-ng-class="{isvalid:info.isValidSection1,error:!info.actionWasSuccessful&&info.currentSection==1,expanded:info.currentSection==1,notexpanded:info.currentSection!=1}" data-ng-click="info.currentSection!=1&&saveForm('introductionSectionTitle')" data-ng-bind="resource.introductionSection.title"></h2>
+    <fieldset>
+        <div class="form-group" data-ng-show="debugMode==1?'1':'0'">
+            <textarea rows='2' cols='20' data-ng-model="logic.Helper" name="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="info.revenueGenerationMethod.value==3&&info.urlQuestionnaireTypeId.value==3?resource.urlForDonation.title:resource.url.title"></label>
+            <div class='alert alert-error' data-ng-show='info.url.errorMessage'>
+                <span data-ng-bind='info.url.errorMessage'></span>
+            </div>
+            <input type='text' class='form-control' data-ng-model="info.url.value" name="urlField" id="5" data-ng-required="1">
+            <span class="help-block">{{resource.url.placeholder}}</span>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.revenueGenerationMethod.title"></label>
+            <div class='alert alert-error' data-ng-show='info.revenueGenerationMethod.errorMessage'>
+                <span data-ng-bind='info.revenueGenerationMethod.errorMessage'></span>
+            </div>
+            <div class='radio' data-ng-show="info.urlQuestionnaireTypeId.value==3">
+                <input type='radio'  data-ng-model="info.revenueGenerationMethod.value" value="3" name="7" data-ng-click="(info.idOfRecord.value != 0)&&(info.questionnaireMode.value != 1)&&(confirmRevenueGenerationMethodVisibility=1)" id="7">
+                <label for="7" data-ng-bind="resource.revenueGenerationMethodCheck1.title"></label>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.revenueGenerationMethod.value" value="2" name="8" data-ng-click="(info.idOfRecord.value != 0)&&(info.questionnaireMode.value != 1)&&(confirmRevenueGenerationMethodVisibility=1)" id="8">
+                <label for="8" data-ng-bind="resource.revenueGenerationMethodCheck2.title"></label>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.revenueGenerationMethod.value" value="1" name="9" data-ng-click="(info.idOfRecord.value != 0)&&(info.questionnaireMode.value != 1)&&(confirmRevenueGenerationMethodVisibility=1)" id="9">
+                <label for="9" data-ng-bind="resource.revenueGenerationMethodCheck3.title"></label>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.revenueGenerationMethod.value" value="4" name="10" data-ng-click="(info.idOfRecord.value != 0)&&(info.questionnaireMode.value != 1)&&(confirmRevenueGenerationMethodVisibility=1)" id="10">
+                <label for="10" data-ng-bind="resource.revenueGenerationMethodCheck4.title"></label>
+            </div>
+        </div>
+        <div class='field radio-check-field'>
+            <div class='alert alert-info' data-ng-show='info.urlQuestionnaireTypeId.value==3&&info.questionnaireMode.value==2&&(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)'>
+                <span data-ng-bind='info.revenueGenerationMethod.value==3&&info.urlQuestionnaireTypeId.value==3?resource.urlMessage1.title:resource.urlMessage2.title'></span>
+            </div>
+        </div>
+        <div class="form-group" data-ng-show="info.questionnaireMode.value==2&&(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)">
+            <label  data-ng-show="businessModelTitleIsVisible"   data-ng-init="businessModelTitleIsVisible=1"  data-ng-bind="resource.businessModel.title"></label>
+            <div class='alert alert-error' data-ng-show='info.businessModel.errorMessage'>
+                <span data-ng-bind='info.businessModel.errorMessage'></span>
+            </div>
+            <div class='field' data-ng-repeat="groups in previouslySubmittedWebsites" data-ng-show="groups.isVisible">
+                <h3  data-ng-bind='groups.name'></h3>
+                <div class='radio' data-ng-repeat='radio in groups.data'>
+                    <input type='radio' value='{{radio.id}}' data-ng-disabled='!radio.isEnabled'  data-ng-show='radio.name!="No data"'   data-ng-model="info.businessModel.value" name="12{{radio.id}}" data-ng-click='(info.idOfRecord.value==0||info.idOfRecord.value=="")?getPreviousWebsiteReviewQuestionnaire(radio.id):turnConfirmBusinessmodelVisibility()' id="12{{radio.id}}">
+                    <label data-ng-bind='radio.name' data-ng-class='{disabled:!radio.isEnabled}' for="12{{radio.id}}"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" data-ng-show="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4">
+            <label data-ng-bind="resource.urlType.title"></label>
+            <div class='alert alert-error' data-ng-show='info.urlType.errorMessage'>
+                <span data-ng-bind='info.urlType.errorMessage'></span>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.urlType.value" value="1" name="14" data-ng-required="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4" id="14">
+                <label for="14" data-ng-bind="resource.urlTypeCheck1.title"></label>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.urlType.value" value="2" name="15" data-ng-required="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4" id="15">
+                <label for="15" data-ng-bind="resource.urlTypeCheck2.title"></label>
+            </div>
+        </div>
+        <div class="form-group" data-ng-show="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4">
+            <label data-ng-bind="resource.urlFieldMembersAreaTypeId.title"></label>
+            <div class='alert alert-error' data-ng-show='info.urlFieldMembersAreaTypeId.errorMessage'>
+                <span data-ng-bind='info.urlFieldMembersAreaTypeId.errorMessage'></span>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.urlFieldMembersAreaTypeId.value" value="1" name="17" data-ng-required="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4" id="17">
+                <label for="17" data-ng-bind="resource.urlFieldMembersAreaTypeIdCheck1.title"></label>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.urlFieldMembersAreaTypeId.value" value="2" name="18" data-ng-click="info.membersAreaUrl=null;info.membersAreaDetails=null" data-ng-required="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4" id="18">
+                <label for="18" data-ng-bind="resource.urlFieldMembersAreaTypeIdCheck2.title"></label>
+            </div>
+        </div>
+        <div class="form-group" data-ng-show="info.urlFieldMembersAreaTypeId.value==1&&(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)">
+            <label data-ng-bind="resource.membersAreaUrl.title"></label>
+            <div class='alert alert-error' data-ng-show='info.membersAreaUrl.errorMessage'>
+                <span data-ng-bind='info.membersAreaUrl.errorMessage'></span>
+            </div>
+            <input type='text' class='form-control' data-ng-model="info.membersAreaUrl.value" name="20" id="20" data-ng-required="info.urlFieldMembersAreaTypeId.value==1&&(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)">
+            <span class="help-block">{{resource.membersAreaUrl.placeholder}}</span>
+        </div>
+        <div class="form-group" data-ng-show="info.urlFieldMembersAreaTypeId.value==1&&(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)">
+            <label data-ng-bind="resource.membersAreaDetails.title"></label>
+            <div class='alert alert-error' data-ng-show='info.membersAreaDetails.errorMessage'>
+                <span data-ng-bind='info.membersAreaDetails.errorMessage'></span>
+            </div>
+            <textarea class='form-control' rows="2" cols="20" data-ng-model="info.membersAreaDetails.value" name="22" id="22" data-ng-required="info.urlFieldMembersAreaTypeId.value==1&&(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)"></textarea>
+        </div>
+        <div class="form-group">
+            <div class='nav'>
+                <a class="btn btn-info"  data-ng-click="saveForm()">Save</a>
+            </div>
+            <hr>
+        </div>
+    </fieldset>
+</form>
+<form name=donationRevenueDetails data-ng-show="info.urlQuestionnaireTypeId.value==3" novalidate>
+    <h2 id="donationRevenueDetailsTitle" data-ng-class="{isvalid:info.isValidSectionDonations6,error:!info.actionWasSuccessful&&info.currentSection==6,expanded:info.currentSection==6,notexpanded:info.currentSection!=6}" data-ng-click="info.currentSection!=6&&saveForm('donationRevenueDetailsTitle')" data-ng-bind="resource.donationSection.title"></h2>
+    <fieldset>
+        <div class="form-group">
+            <label data-ng-bind="resource.urlFieldDonorContactTypeId.title"></label>
+            <div class='alert alert-error' data-ng-show='info.urlFieldDonorContactTypeId.errorMessage'>
+                <span data-ng-bind='info.urlFieldDonorContactTypeId.errorMessage'></span>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.urlFieldDonorContactTypeId.value" value="1" name="27" data-ng-required="1" id="27">
+                <label for="27" data-ng-bind="resource.urlFieldDonorContactTypeIdCheck1.title"></label>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.urlFieldDonorContactTypeId.value" value="2" name="28" data-ng-click="info.donorContactInfo=null" data-ng-required="1" id="28">
+                <label for="28" data-ng-bind="resource.urlFieldDonorContactTypeIdCheck2.title"></label>
+            </div>
+        </div>
+        <div class="form-group" data-ng-show="info.urlFieldDonorContactTypeId.value==1">
+            <label data-ng-bind="resource.donorContactInfo.title"></label>
+            <div class='alert alert-error' data-ng-show='info.donorContactInfo.errorMessage'>
+                <span data-ng-bind='info.donorContactInfo.errorMessage'></span>
+            </div>
+            <textarea class='form-control' rows="2" cols="20" data-ng-model="info.donorContactInfo.value" name="30" id="30" data-ng-required="info.urlFieldDonorContactTypeId.value==1"></textarea>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.averageDonationAmount.title"></label>
+            <div class='alert alert-error' data-ng-show='info.averageDonationAmount.errorMessage'>
+                <span data-ng-bind='info.averageDonationAmount.errorMessage'></span>
+            </div>
+            <div class='alert alert-error' data-ng-show='donationRevenueDetails.32.$dirty&&donationRevenueDetails.32.$invalid'>
+                <span data-ng-bind=resource.numberInvalidErrorMessage.title></span>
+            </div>
+            <input type='text' class='form-control' data-ng-model="info.averageDonationAmount.value" name="32" data-ng-pattern="/^[0-9]*[.]?[0-9]+$/" id="32" data-ng-required="1">
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.urlFieldRecurringDonationTypeId.title"></label>
+            <div class='alert alert-error' data-ng-show='info.urlFieldRecurringDonationTypeId.errorMessage'>
+                <span data-ng-bind='info.urlFieldRecurringDonationTypeId.errorMessage'></span>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.urlFieldRecurringDonationTypeId.value" value="1" name="34" data-ng-required="1" id="34">
+                <label for="34" data-ng-bind="resource.urlFieldRecurringDonationTypeIdCheck1.title"></label>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.urlFieldRecurringDonationTypeId.value" value="2" name="35" data-ng-required="1" id="35">
+                <label for="35" data-ng-bind="resource.urlFieldRecurringDonationTypeIdCheck2.title"></label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.monthlyDonationAmount.title"></label>
+            <div class='alert alert-error' data-ng-show='info.monthlyDonationAmount.errorMessage'>
+                <span data-ng-bind='info.monthlyDonationAmount.errorMessage'></span>
+            </div>
+            <div class='alert alert-error' data-ng-show='donationRevenueDetails.37.$dirty&&donationRevenueDetails.37.$invalid'>
+                <span data-ng-bind=resource.numberInvalidErrorMessage.title></span>
+            </div>
+            <input type='text' class='form-control' data-ng-model="info.monthlyDonationAmount.value" name="37" data-ng-pattern="/^[0-9]*[.]?[0-9]+$/" id="37" data-ng-required="1">
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.urlFieldDonationOriginTypeIdList.title"></label>
+            <div class='alert alert-error' data-ng-show='info.urlFieldDonationOriginTypeIdList.northAmerica.errorMessage'>
+                <span data-ng-bind='info.urlFieldDonationOriginTypeIdList.northAmerica.errorMessage'></span>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldDonationOriginTypeIdList.northAmerica.value" data-ng-true-value="1" name="39" data-ng-checked="info.urlFieldDonationOriginTypeIdList.northAmerica.checked" id="39">
+                <label for="39" data-ng-bind="resource.urlFieldDonationOriginTypeIdListCheck1.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldDonationOriginTypeIdList.southAmerica.value" data-ng-true-value="2" name="40" data-ng-checked="info.urlFieldDonationOriginTypeIdList.southAmerica.checked" id="40">
+                <label for="40" data-ng-bind="resource.urlFieldDonationOriginTypeIdListCheck2.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldDonationOriginTypeIdList.westernEurope.value" data-ng-true-value="3" name="41" data-ng-checked="info.urlFieldDonationOriginTypeIdList.westernEurope.checked" id="41">
+                <label for="41" data-ng-bind="resource.urlFieldDonationOriginTypeIdListCheck3.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldDonationOriginTypeIdList.africa.value" data-ng-true-value="5" name="42" data-ng-checked="info.urlFieldDonationOriginTypeIdList.africa.checked" id="42">
+                <label for="42" data-ng-bind="resource.urlFieldDonationOriginTypeIdListCheck5.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldDonationOriginTypeIdList.asia.value" data-ng-true-value="6" name="43" data-ng-checked="info.urlFieldDonationOriginTypeIdList.asia.checked" id="43">
+                <label for="43" data-ng-bind="resource.urlFieldDonationOriginTypeIdListCheck6.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldDonationOriginTypeIdList.middleEast.value" data-ng-true-value="7" name="44" data-ng-checked="info.urlFieldDonationOriginTypeIdList.middleEast.checked" id="44">
+                <label for="44" data-ng-bind="resource.urlFieldDonationOriginTypeIdListCheck7.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldDonationOriginTypeIdList.oceania.value" data-ng-true-value="8" name="45" data-ng-checked="info.urlFieldDonationOriginTypeIdList.oceania.checked" id="45">
+                <label for="45" data-ng-bind="resource.urlFieldDonationOriginTypeIdListCheck8.title"></label>
+            </div>
+        </div>
+        <div class="form-group" data-ng-show="debugMode==1?'1':'0'">
+            <textarea class='form-control' rows="2" cols="20" data-ng-model="logic.Helper" name="47" id="47" data-ng-required="!info.urlFieldDonationOriginTypeIdList.northAmerica.value&&!info.urlFieldDonationOriginTypeIdList.southAmerica.value&&!info.urlFieldDonationOriginTypeIdList.westernEurope.value&&!info.urlFieldDonationOriginTypeIdList.africa.value&&!info.urlFieldDonationOriginTypeIdList.asia.value&&!info.urlFieldDonationOriginTypeIdList.middleEast.value&&!info.urlFieldDonationOriginTypeIdList.oceania.value"></textarea>
+        </div>
+        <div class="form-group">
+            <div class='nav'>
+                <a class="btn btn-info"  data-ng-click="saveForm()">Save</a>
+            </div>
+            <hr>
+        </div>
+    </fieldset>
+</form>
+<form name=productInformation data-ng-show="info.revenueGenerationMethod.value!=3" novalidate>
+<h2 id="productInformationTitle" data-ng-class="{isvalid:info.isValidSection2,error:!info.actionWasSuccessful&&info.currentSection==2,expanded:info.currentSection==2,notexpanded:info.currentSection!=2}" data-ng-click="info.currentSection!=2&&saveForm('productInformationTitle')" data-ng-bind="resource.productInfoSection.title"></h2>
+<fieldset>
+    <div class="form-group">
+        <label data-ng-bind="resource.averagePrice.title"></label>
+        <div class='alert alert-error' data-ng-show='info.averagePrice.errorMessage'>
+            <span data-ng-bind='info.averagePrice.errorMessage'></span>
+        </div>
+        <div class='alert alert-error' data-ng-show='productInformation.52.$dirty&&productInformation.52.$invalid'>
+            <span data-ng-bind=resource.numberInvalidErrorMessage.title></span>
+        </div>
+        <input type='text' class='form-control' data-ng-model="info.averagePrice.value" name="52" data-ng-pattern="/^[0-9]*[.]?[0-9]+$/" id="52" data-ng-required="1">
+    </div>
+    <div class="form-group" data-ng-show="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4">
+        <label data-ng-bind="resource.shippingCountryId.title"></label>
+        <div class='alert alert-error' data-ng-show='info.shippingCountryId.errorMessage'>
+            <span data-ng-bind='info.shippingCountryId.errorMessage'></span>
+        </div>
+        <select class='form-control' data-ng-model="info.shippingCountryId.value" id="54" data-ng-options="v as o.substring(3) for (o,v) in shippingCountryId.source"  name="54" data-ng-required="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4">
+            <option value=''>Select</option>
+        </select>
+    </div>
+    <div class="form-group" data-ng-show="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4">
+        <label data-ng-bind="resource.urlFieldProductDeliveryMethodTypeIdList.title"></label>
+        <div class='alert alert-error' data-ng-show='info.urlFieldProductDeliveryMethodTypeIdList.online.errorMessage'>
+            <span data-ng-bind='info.urlFieldProductDeliveryMethodTypeIdList.online.errorMessage'></span>
+        </div>
+        <div class='checkbox'>
+            <input type='checkbox'  data-ng-model="info.urlFieldProductDeliveryMethodTypeIdList.online.value" data-ng-true-value="3" name="56" data-ng-checked="info.urlFieldProductDeliveryMethodTypeIdList.online.checked" id="56">
+            <label for="56" data-ng-bind="resource.urlFieldProductDeliveryMethodTypeIdListCheck1.title"></label>
+        </div>
+        <div class='checkbox'>
+            <input type='checkbox'  data-ng-model="info.urlFieldProductDeliveryMethodTypeIdList.regularPost.value" data-ng-true-value="2" name="57" data-ng-checked="info.urlFieldProductDeliveryMethodTypeIdList.regularPost.checked" id="57">
+            <label for="57" data-ng-bind="resource.urlFieldProductDeliveryMethodTypeIdListCheck2.title"></label>
+        </div>
+        <div class='checkbox'>
+            <input type='checkbox'  data-ng-model="info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.value" data-ng-true-value="1" name="58" data-ng-checked="info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.checked" id="58">
+            <label for="58" data-ng-bind="resource.urlFieldProductDeliveryMethodTypeIdListCheck3.title"></label>
+        </div>
+        <div class='checkbox'>
+            <input type='checkbox'  data-ng-model="info.urlFieldProductDeliveryMethodTypeIdList.inPerson.value" data-ng-true-value="4" name="59" data-ng-checked="info.urlFieldProductDeliveryMethodTypeIdList.inPerson.checked" id="59">
+            <label for="59" data-ng-bind="resource.urlFieldProductDeliveryMethodTypeIdListCheck4.title"></label>
+        </div>
+    </div>
+    <div class="form-group" data-ng-show="debugMode==1?'1':'0'">
+        <textarea rows='2' cols='20' data-ng-model="logic.Helper" name="61" data-ng-required="(info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4)&&!info.urlFieldProductDeliveryMethodTypeIdList.online.value&&!info.urlFieldProductDeliveryMethodTypeIdList.regularPost.value&&!info.urlFieldProductDeliveryMethodTypeIdList.registeredMail.value&&!info.urlFieldProductDeliveryMethodTypeIdList.inPerson.value"></textarea>
+    </div>
+    <div class="form-group" data-ng-show="info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4">
+        <label data-ng-bind="resource.urlFieldServiceProvisionMethodTypeIdList.title"></label>
+        <div class='alert alert-error' data-ng-show='info.urlFieldServiceProvisionMethodTypeIdList.inPerson.errorMessage'>
+            <span data-ng-bind='info.urlFieldServiceProvisionMethodTypeIdList.inPerson.errorMessage'></span>
+        </div>
+        <div class='checkbox'>
+            <input type='checkbox'  data-ng-model="info.urlFieldServiceProvisionMethodTypeIdList.inPerson.value" data-ng-true-value="1" name="63" data-ng-checked="info.urlFieldServiceProvisionMethodTypeIdList.inPerson.checked" id="63">
+            <label for="63" data-ng-bind="resource.urlFieldServiceProvisionMethodTypeIdListCheck1.title"></label>
+        </div>
+        <div class='checkbox'>
+            <input type='checkbox'  data-ng-model="info.urlFieldServiceProvisionMethodTypeIdList.remotely.value" data-ng-true-value="2" name="64" data-ng-checked="info.urlFieldServiceProvisionMethodTypeIdList.remotely.checked" id="64">
+            <label for="64" data-ng-bind="resource.urlFieldServiceProvisionMethodTypeIdListCheck2.title"></label>
+        </div>
+    </div>
+    <div class="form-group" data-ng-show="debugMode==1?'1':'0'">
+        <textarea rows='2' cols='20' data-ng-model="logic.Helper" name="66" data-ng-required="(info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)&&!info.urlFieldServiceProvisionMethodTypeIdList.inPerson.value&&!info.urlFieldServiceProvisionMethodTypeIdList.remotely.value"></textarea>
+    </div>
+    <div class="form-group" data-ng-show="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4">
+        <label data-ng-bind="resource.productDeliveryDelayTime.title"></label>
+        <div class='alert alert-error' data-ng-show='info.productDeliveryDelayTime.errorMessage'>
+            <span data-ng-bind='info.productDeliveryDelayTime.errorMessage'></span>
+        </div>
+        <div class='alert alert-error' data-ng-show='productInformation.68.$dirty&&productInformation.68.$invalid'>
+            <span data-ng-bind=resource.numberInvalidErrorMessage.title></span>
+        </div>
+        <input type='text' class='form-control' data-ng-model="info.productDeliveryDelayTime.value" name="68" data-ng-pattern="/^[0-9]*$/" id="68" data-ng-required="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4">
+    </div>
+    <div class="form-group" data-ng-show="info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4">
+        <label data-ng-bind="resource.serviceProvisionDelayTime.title"></label>
+        <div class='alert alert-error' data-ng-show='info.serviceProvisionDelayTime.errorMessage'>
+            <span data-ng-bind='info.serviceProvisionDelayTime.errorMessage'></span>
+        </div>
+        <div class='alert alert-error' data-ng-show='productInformation.70.$dirty&&productInformation.70.$invalid'>
+            <span data-ng-bind=resource.numberInvalidErrorMessage.title></span>
+        </div>
+        <input type='text' class='form-control' data-ng-model="info.serviceProvisionDelayTime.value" name="70" data-ng-pattern="/^[0-9]*$/" id="70" data-ng-required="info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4">
+    </div>
+    <div class="form-group" data-ng-show="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4">
+        <label data-ng-bind="resource.urlFieldProductSourceTypeId.title"></label>
+        <div class='alert alert-error' data-ng-show='info.urlFieldProductSourceTypeId.errorMessage'>
+            <span data-ng-bind='info.urlFieldProductSourceTypeId.errorMessage'></span>
+        </div>
+        <div class='radio'>
+            <input type='radio'  data-ng-model="info.urlFieldProductSourceTypeId.value" value="1" name="72" data-ng-required="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4" id="72">
+            <label for="72" data-ng-bind="resource.urlFieldProductSourceTypeIdCheck1.title"></label>
+        </div>
+        <div class='radio'>
+            <input type='radio'  data-ng-model="info.urlFieldProductSourceTypeId.value" value="2" name="73" data-ng-required="info.revenueGenerationMethod.value==2||info.revenueGenerationMethod.value==4" id="73">
+            <label for="73" data-ng-bind="resource.urlFieldProductSourceTypeIdCheck2.title"></label>
+        </div>
+    </div>
+    <div class="form-group" data-ng-show="info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4">
+        <label data-ng-bind="resource.urlFieldServiceSourceTypeId.title"></label>
+        <div class='alert alert-error' data-ng-show='info.urlFieldServiceSourceTypeId.errorMessage'>
+            <span data-ng-bind='info.urlFieldServiceSourceTypeId.errorMessage'></span>
+        </div>
+        <div class='radio'>
+            <input type='radio'  data-ng-model="info.urlFieldServiceSourceTypeId.value" value="1" name="75" data-ng-click="info.serviceSourceThirdPartyInfo.value=''" data-ng-required="info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4" id="75">
+            <label for="75" data-ng-bind="resource.urlFieldServiceSourceTypeIdCheck1.title"></label>
+        </div>
+        <div class='radio'>
+            <input type='radio'  data-ng-model="info.urlFieldServiceSourceTypeId.value" value="2" name="76" data-ng-required="info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4" id="76">
+            <label for="76" data-ng-bind="resource.urlFieldServiceSourceTypeIdCheck2.title"></label>
+        </div>
+    </div>
+    <div class="form-group" data-ng-show="(info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)&&info.urlFieldServiceSourceTypeId.value==2">
+        <label data-ng-bind="resource.serviceSourceThirdPartyInfo.title"></label>
+        <div class='alert alert-error' data-ng-show='info.serviceSourceThirdPartyInfo.errorMessage'>
+            <span data-ng-bind='info.serviceSourceThirdPartyInfo.errorMessage'></span>
+        </div>
+        <textarea class='form-control' rows="2" cols="20" data-ng-model="info.serviceSourceThirdPartyInfo.value" name="78" id="78" data-ng-required="(info.revenueGenerationMethod.value==1||info.revenueGenerationMethod.value==4)&&info.urlFieldServiceSourceTypeId.value==2"></textarea>
+    </div>
+    <div class="form-group">
+        <label data-ng-bind="resource.urlFieldPromotionMethodTypeIdList.title"></label>
+        <div class='alert alert-error' data-ng-show='info.urlFieldPromotionMethodTypeIdList.email.errorMessage'>
+            <span data-ng-bind='info.urlFieldPromotionMethodTypeIdList.email.errorMessage'></span>
+        </div>
+        <div class='checkbox two-column'>
+            <input type='checkbox'  data-ng-model="info.urlFieldPromotionMethodTypeIdList.email.value" data-ng-true-value="1" name="80" data-ng-checked="info.urlFieldPromotionMethodTypeIdList.email.checked" id="80">
+            <label for="80" data-ng-bind="resource.urlFieldPromotionMethodTypeIdListEmail.title"></label>
+        </div>
+        <div class='checkbox two-column'>
+            <input type='checkbox'  data-ng-model="info.urlFieldPromotionMethodTypeIdList.referral.value" data-ng-true-value="6" name="81" data-ng-checked="info.urlFieldPromotionMethodTypeIdList.referral.checked" id="81">
+            <label for="81" data-ng-bind="resource.urlFieldPromotionMethodTypeIdListReferral.title"></label>
+        </div>
+        <div class='checkbox two-column'>
+            <input type='checkbox'  data-ng-model="info.urlFieldPromotionMethodTypeIdList.searchEngine.value" data-ng-true-value="2" name="82" data-ng-checked="info.urlFieldPromotionMethodTypeIdList.searchEngine.checked" id="82">
+            <label for="82" data-ng-bind="resource.urlFieldPromotionMethodTypeIdListSearchEngine.title"></label>
+        </div>
+        <div class='checkbox two-column'>
+            <input type='checkbox'  data-ng-model="info.urlFieldPromotionMethodTypeIdList.regularMail.value" data-ng-true-value="7" name="83" data-ng-checked="info.urlFieldPromotionMethodTypeIdList.regularMail.checked" id="83">
+            <label for="83" data-ng-bind="resource.urlFieldPromotionMethodTypeIdListRegularMail.title"></label>
+        </div>
+        <div class='checkbox two-column'>
+            <input type='checkbox'  data-ng-model="info.urlFieldPromotionMethodTypeIdList.social.value" data-ng-true-value="3" name="84" data-ng-checked="info.urlFieldPromotionMethodTypeIdList.social.checked" id="84">
+            <label for="84" data-ng-bind="resource.urlFieldPromotionMethodTypeIdListSocial.title"></label>
+        </div>
+        <div class='checkbox two-column'>
+            <input type='checkbox'  data-ng-model="info.urlFieldPromotionMethodTypeIdList.print.value" data-ng-true-value="8" name="85" data-ng-checked="info.urlFieldPromotionMethodTypeIdList.print.checked" id="85">
+            <label for="85" data-ng-bind="resource.urlFieldPromotionMethodTypeIdListPrint.title"></label>
+        </div>
+        <div class='checkbox two-column'>
+            <input type='checkbox'  data-ng-model="info.urlFieldPromotionMethodTypeIdList.affiliate.value" data-ng-true-value="4" name="86" data-ng-checked="info.urlFieldPromotionMethodTypeIdList.affiliate.checked" id="86">
+            <label for="86" data-ng-bind="resource.urlFieldPromotionMethodTypeIdListAffiliate.title"></label>
+        </div>
+        <div class='checkbox two-column'>
+            <input type='checkbox'  data-ng-model="info.urlFieldPromotionMethodTypeIdList.televisionAndRadio.value" data-ng-true-value="9" name="87" data-ng-checked="info.urlFieldPromotionMethodTypeIdList.televisionAndRadio.checked" id="87">
+            <label for="87" data-ng-bind="resource.urlFieldPromotionMethodTypeIdListTelevisionAndRadio.title"></label>
+        </div>
+        <div class='checkbox two-column'>
+            <input type='checkbox'  data-ng-model="info.urlFieldPromotionMethodTypeIdList.webBanner.value" data-ng-true-value="5" name="88" data-ng-checked="info.urlFieldPromotionMethodTypeIdList.webBanner.checked" id="88">
+            <label for="88" data-ng-bind="resource.urlFieldPromotionMethodTypeIdListWebBanner.title"></label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label data-ng-bind="resource.urlFieldDiscountTypeId.title"></label>
+        <div class='alert alert-error' data-ng-show='info.urlFieldDiscountTypeId.errorMessage'>
+            <span data-ng-bind='info.urlFieldDiscountTypeId.errorMessage'></span>
+        </div>
+        <div class='radio'>
+            <input type='radio'  data-ng-model="info.urlFieldDiscountTypeId.value" value="1" name="90" data-ng-required="1" id="90">
+            <label for="90" data-ng-bind="resource.urlFieldDiscountTypeIdCheck1.title"></label>
+        </div>
+        <div class='radio'>
+            <input type='radio'  data-ng-model="info.urlFieldDiscountTypeId.value" value="2" name="91" data-ng-required="1" id="91">
+            <label for="91" data-ng-bind="resource.urlFieldDiscountTypeIdCheck2.title"></label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label data-ng-bind="resource.urlFieldSupplierTypeId.title"></label>
+        <div class='alert alert-error' data-ng-show='info.urlFieldSupplierTypeId.errorMessage'>
+            <span data-ng-bind='info.urlFieldSupplierTypeId.errorMessage'></span>
+        </div>
+        <div class='radio'>
+            <input type='radio'  data-ng-model="info.urlFieldSupplierTypeId.value" value="1" name="93" data-ng-required="1" id="93">
+            <label for="93" data-ng-bind="resource.urlFieldSupplierTypeIdCheck1.title"></label>
+        </div>
+        <div class='radio'>
+            <input type='radio'  data-ng-model="info.urlFieldSupplierTypeId.value" value="2" name="94" data-ng-required="1" id="94">
+            <label for="94" data-ng-bind="resource.urlFieldSupplierTypeIdCheck2.title"></label>
+        </div>
+    </div>
+    <div class='field radio-check-field'>
+        <div class='alert alert-info' data-ng-show='info.urlFieldSupplierTypeId.value==1'>
+            <span data-ng-bind='resource.urlFieldSupplierTypeIdMessage.title'></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class='nav'>
+            <a class="btn btn-info"  data-ng-click="saveForm()">Save</a>
+        </div>
+        <hr>
+    </div>
+</fieldset>
+</form>
+<form name=salesInformation data-ng-show="info.revenueGenerationMethod.value!=3" novalidate>
+    <h2 id="salesInformationTitle" data-ng-class="{isvalid:info.isValidSection3,error:!info.actionWasSuccessful&&info.currentSection==3,expanded:info.currentSection==3,notexpanded:info.currentSection!=3}" data-ng-click="info.currentSection!=3&&saveForm('salesInformationTitle')" data-ng-bind="resource.salesInfoSection.title"></h2>
+    <fieldset>
+        <div class="form-group">
+            <label data-ng-bind="resource.urlFieldCustomerContactMethodTypeIdList.title"></label>
+            <div class='alert alert-error' data-ng-show='info.urlFieldCustomerContactMethodTypeIdList.email.errorMessage'>
+                <span data-ng-bind='info.urlFieldCustomerContactMethodTypeIdList.email.errorMessage'></span>
+            </div>
+            <div class='checkbox two-column'>
+                <input type='checkbox'  data-ng-model="info.urlFieldCustomerContactMethodTypeIdList.email.value" data-ng-true-value="1" name="99" data-ng-checked="info.urlFieldCustomerContactMethodTypeIdList.email.checked" id="99">
+                <label for="99" data-ng-bind="resource.urlFieldCustomerContactMethodTypeIdListEmail.title"></label>
+            </div>
+            <div class='checkbox two-column'>
+                <input type='checkbox'  data-ng-model="info.urlFieldCustomerContactMethodTypeIdList.phoneAndTelecomm.value" data-ng-true-value="5" name="100" data-ng-checked="info.urlFieldCustomerContactMethodTypeIdList.phoneAndTelecomm.checked" id="100">
+                <label for="100" data-ng-bind="resource.urlFieldCustomerContactMethodTypeIdListPhoneAndTelecomm.title"></label>
+            </div>
+            <div class='checkbox two-column'>
+                <input type='checkbox'  data-ng-model="info.urlFieldCustomerContactMethodTypeIdList.social.value" data-ng-true-value="2" name="101" data-ng-checked="info.urlFieldCustomerContactMethodTypeIdList.social.checked" id="101">
+                <label for="101" data-ng-bind="resource.urlFieldCustomerContactMethodTypeIdListSocial.title"></label>
+            </div>
+            <div class='checkbox two-column'>
+                <input type='checkbox'  data-ng-model="info.urlFieldCustomerContactMethodTypeIdList.regularMail.value" data-ng-true-value="6" name="102" data-ng-checked="info.urlFieldCustomerContactMethodTypeIdList.regularMail.checked" id="102">
+                <label for="102" data-ng-bind="resource.urlFieldCustomerContactMethodTypeIdListRegularMail.title"></label>
+            </div>
+            <div class='checkbox two-column'>
+                <input type='checkbox'  data-ng-model="info.urlFieldCustomerContactMethodTypeIdList.inPerson.value" data-ng-true-value="3" name="103" data-ng-checked="info.urlFieldCustomerContactMethodTypeIdList.inPerson.checked" id="103">
+                <label for="103" data-ng-bind="resource.urlFieldCustomerContactMethodTypeIdListInPerson.title"></label>
+            </div>
+            <div class='checkbox two-column'>
+                <input type='checkbox'  data-ng-model="info.urlFieldCustomerContactMethodTypeIdList.forumAndCommunity.value" data-ng-true-value="7" name="104" data-ng-checked="info.urlFieldCustomerContactMethodTypeIdList.forumAndCommunity.checked" id="104">
+                <label for="104" data-ng-bind="resource.urlFieldCustomerContactMethodTypeIdListForumAndCommunity.title"></label>
+            </div>
+            <div class='checkbox two-column'>
+                <input type='checkbox'  data-ng-model="info.urlFieldCustomerContactMethodTypeIdList.chatService.value" data-ng-true-value="4" name="105" data-ng-checked="info.urlFieldCustomerContactMethodTypeIdList.chatService.checked" id="105">
+                <label for="105" data-ng-bind="resource.urlFieldCustomerContactMethodTypeIdListChatService.title"></label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.urlFieldSaleOriginTypeIdList.title"></label>
+            <div class='alert alert-error' data-ng-show='info.urlFieldSaleOriginTypeIdList.northAmerica.errorMessage'>
+                <span data-ng-bind='info.urlFieldSaleOriginTypeIdList.northAmerica.errorMessage'></span>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldSaleOriginTypeIdList.northAmerica.value" data-ng-true-value="1" name="107" data-ng-checked="info.urlFieldSaleOriginTypeIdList.northAmerica.checked" id="107">
+                <label for="107" data-ng-bind="resource.urlFieldSaleOriginTypeIdListCheck1.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldSaleOriginTypeIdList.southAmerica.value" data-ng-true-value="2" name="108" data-ng-checked="info.urlFieldSaleOriginTypeIdList.southAmerica.checked" id="108">
+                <label for="108" data-ng-bind="resource.urlFieldSaleOriginTypeIdListCheck2.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldSaleOriginTypeIdList.westernEurope.value" data-ng-true-value="3" name="109" data-ng-checked="info.urlFieldSaleOriginTypeIdList.westernEurope.checked" id="109">
+                <label for="109" data-ng-bind="resource.urlFieldSaleOriginTypeIdListCheck3.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldSaleOriginTypeIdList.africa.value" data-ng-true-value="5" name="110" data-ng-checked="info.urlFieldSaleOriginTypeIdList.africa.checked" id="110">
+                <label for="110" data-ng-bind="resource.urlFieldSaleOriginTypeIdListCheck5.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldSaleOriginTypeIdList.asia.value" data-ng-true-value="6" name="111" data-ng-checked="info.urlFieldSaleOriginTypeIdList.asia.checked" id="111">
+                <label for="111" data-ng-bind="resource.urlFieldSaleOriginTypeIdListCheck6.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldSaleOriginTypeIdList.middleEast.value" data-ng-true-value="7" name="112" data-ng-checked="info.urlFieldSaleOriginTypeIdList.middleEast.checked" id="112">
+                <label for="112" data-ng-bind="resource.urlFieldSaleOriginTypeIdListCheck7.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldSaleOriginTypeIdList.oceania.value" data-ng-true-value="8" name="113" data-ng-checked="info.urlFieldSaleOriginTypeIdList.oceania.checked" id="113">
+                <label for="113" data-ng-bind="resource.urlFieldSaleOriginTypeIdListCheck8.title"></label>
+            </div>
+        </div>
+        <div class="form-group" data-ng-show="debugMode==1?'1':'0'">
+            <textarea rows='2' cols='20' data-ng-model="logic.Helper" name="115" data-ng-required="!info.urlFieldSaleOriginTypeIdList.northAmerica.value&&!info.urlFieldSaleOriginTypeIdList.southAmerica.value&&!info.urlFieldSaleOriginTypeIdList.westernEurope.value&&!info.urlFieldSaleOriginTypeIdList.africa.value&&!info.urlFieldSaleOriginTypeIdList.asia.value&&!info.urlFieldSaleOriginTypeIdList.middleEast.value&&!info.urlFieldSaleOriginTypeIdList.oceania.value"></textarea>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.urlFieldInvoiceTypeId.title"></label>
+            <div class='alert alert-error' data-ng-show='info.urlFieldInvoiceTypeId.errorMessage'>
+                <span data-ng-bind='info.urlFieldInvoiceTypeId.errorMessage'></span>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.urlFieldInvoiceTypeId.value" value="1" name="117" data-ng-required="1" id="117">
+                <label for="117" data-ng-bind="resource.urlFieldInvoiceTypeIdCheck1.title"></label>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.urlFieldInvoiceTypeId.value" value="2" name="118" data-ng-click="info.urlFieldInvoiceSendingTypeIdList=null" data-ng-required="1" id="118">
+                <label for="118" data-ng-bind="resource.urlFieldInvoiceTypeIdCheck2.title"></label>
+            </div>
+        </div>
+        <div class="form-group" data-ng-show="info.urlFieldInvoiceTypeId.value==1">
+            <label data-ng-bind="resource.urlFieldInvoiceSendingTypeIdList.title"></label>
+            <div class='alert alert-error' data-ng-show='info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.errorMessage'>
+                <span data-ng-bind='info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.errorMessage'></span>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.value" data-ng-true-value="1" name="120" data-ng-checked="info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.checked" id="120">
+                <label for="120" data-ng-bind="resource.urlFieldInvoiceSendingTypeIdListCheck1.title"></label>
+            </div>
+            <div class='checkbox'>
+                <input type='checkbox'  data-ng-model="info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.value" data-ng-true-value="2" name="121" data-ng-checked="info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.checked" id="121">
+                <label for="121" data-ng-bind="resource.urlFieldInvoiceSendingTypeIdListCheck2.title"></label>
+            </div>
+        </div>
+        <div class="form-group" data-ng-show="debugMode==1?'1':'0'">
+            <textarea rows='2' cols='20' data-ng-model="logic.Helper" name="123" data-ng-required="info.urlFieldInvoiceTypeId.value==1&&!info.urlFieldInvoiceSendingTypeIdList.payzaEmailInvoice.value&&!info.urlFieldInvoiceSendingTypeIdList.mailPersonalizedInvoice.value"></textarea>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.monthlySaleAmount.title"></label>
+            <div class='alert alert-error' data-ng-show='info.monthlySaleAmount.errorMessage'>
+                <span data-ng-bind='info.monthlySaleAmount.errorMessage'></span>
+            </div>
+            <input type='text' class='form-control' data-ng-model="info.monthlySaleAmount.value" name="125" id="125" data-ng-required="1">
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.urlFieldRecurringBillingTypeId.title"></label>
+            <div class='alert alert-error' data-ng-show='info.urlFieldRecurringBillingTypeId.errorMessage'>
+                <span data-ng-bind='info.urlFieldRecurringBillingTypeId.errorMessage'></span>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.urlFieldRecurringBillingTypeId.value" value="1" name="127" data-ng-required="1" id="127">
+                <label for="127" data-ng-bind="resource.urlFieldRecurringBillingTypeIdCheck1.title"></label>
+            </div>
+            <div class='radio'>
+                <input type='radio'  data-ng-model="info.urlFieldRecurringBillingTypeId.value" value="2" name="128" data-ng-required="1" id="128">
+                <label for="128" data-ng-bind="resource.urlFieldRecurringBillingTypeIdCheck2.title"></label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class='nav'>
+                <a class="btn btn-info"  data-ng-click="saveForm()">Save</a>
+            </div>
+            <hr>
+        </div>
+    </fieldset>
+</form>
+<form name=customerRelations data-ng-show="info.revenueGenerationMethod.value!=3" novalidate>
+    <h2 id="customerRelationsTitle" data-ng-class="{isvalid:info.isValidSection4,error:!info.actionWasSuccessful&&info.currentSection==4,expanded:info.currentSection==4,notexpanded:info.currentSection!=4}" data-ng-click="info.currentSection!=4&&saveForm('customerRelationsTitle')" data-ng-bind="resource.customerRelationsSection.title"></h2>
+    <fieldset>
+        <div class="form-group">
+            <label data-ng-bind="resource.customerSupportPhoneNumber.title"></label>
+            <div class='alert alert-error' data-ng-show='info.customerSupportPhoneNumber.errorMessage'>
+                <span data-ng-bind='info.customerSupportPhoneNumber.errorMessage'></span>
+            </div>
+            <div class='alert alert-error' data-ng-show='customerRelations.133.$dirty&&customerRelations.133.$invalid'>
+                <span data-ng-bind=resource.numberInvalidErrorMessage.title></span>
+            </div>
+            <input type='text' class='form-control' data-ng-model="info.customerSupportPhoneNumber.value" name="133" data-ng-pattern="/^[0-9]*[.]?[0-9]+$/" id="133" data-ng-required="1">
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.customerSupportEmailAddress.title"></label>
+            <div class='alert alert-error' data-ng-show='info.customerSupportEmailAddress.errorMessage'>
+                <span data-ng-bind='info.customerSupportEmailAddress.errorMessage'></span>
+            </div>
+            <input type='text' class='form-control' data-ng-model="info.customerSupportEmailAddress.value" name="135" id="135" data-ng-required="1">
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.returnRefundInfo.title"></label>
+            <div class='alert alert-error' data-ng-show='info.returnRefundInfo.errorMessage'>
+                <span data-ng-bind='info.returnRefundInfo.errorMessage'></span>
+            </div>
+            <textarea class='form-control' rows="2" cols="20" data-ng-model="info.returnRefundInfo.value" name="137" id="137" data-ng-required="1"></textarea>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.termsOfService.title"></label>
+            <div class='alert alert-error' data-ng-show='info.termsOfService.errorMessage'>
+                <span data-ng-bind='info.termsOfService.errorMessage'></span>
+            </div>
+            <textarea class='form-control' rows="2" cols="20" data-ng-model="info.termsOfService.value" name="139" id="139" data-ng-required="1"></textarea>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.termsOfServiceLocation.title"></label>
+            <div class='alert alert-error' data-ng-show='info.termsOfServiceLocation.errorMessage'>
+                <span data-ng-bind='info.termsOfServiceLocation.errorMessage'></span>
+            </div>
+            <input type='text' class='form-control' data-ng-model="info.termsOfServiceLocation.value" name="141" id="141" data-ng-required="1">
+            <span class="help-block">{{resource.termsOfServiceLocation.placeholder}}</span>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.refundPolicy.title"></label>
+            <div class='alert alert-error' data-ng-show='info.refundPolicy.errorMessage'>
+                <span data-ng-bind='info.refundPolicy.errorMessage'></span>
+            </div>
+            <textarea class='form-control' rows="2" cols="20" data-ng-model="info.refundPolicy.value" name="143" id="143" data-ng-required="1"></textarea>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.refundPolicyLocation.title"></label>
+            <div class='alert alert-error' data-ng-show='info.refundPolicyLocation.errorMessage'>
+                <span data-ng-bind='info.refundPolicyLocation.errorMessage'></span>
+            </div>
+            <input type='text' class='form-control' data-ng-model="info.refundPolicyLocation.value" name="145" id="145" data-ng-required="1">
+            <span class="help-block">{{resource.refundPolicyLocation.placeholder}}</span>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind="resource.fraudPrevention.title"></label>
+            <div class='alert alert-error' data-ng-show='info.fraudPrevention.errorMessage'>
+                <span data-ng-bind='info.fraudPrevention.errorMessage'></span>
+            </div>
+            <textarea class='form-control' rows="2" cols="20" data-ng-model="info.fraudPrevention.value" name="147" id="147" data-ng-required="1"></textarea>
+        </div>
+        <div class="form-group">
+            <div class='nav'>
+                <a class="btn btn-info"  data-ng-click="saveForm()">Save</a>
+            </div>
+            <hr>
+        </div>
+    </fieldset>
+</form>
+<h2 id="submitDocTitle" data-ng-class="{expanded:info.currentSection==5,notexpanded:info.currentSection!=5}" data-ng-click="info.currentSection!=5&&saveForm('submitDocTitle')" data-ng-bind="resource.submitDocumentsSection.title"></h2>
+<fieldset>
+</fieldset>
+<form name=submitButton novalidate>
+    <fieldset>
+        <div class="form-group" data-ng-show="debugMode==1?'1':'0'">
+            <textarea rows='2' cols='20' data-ng-model="logic.Helper" name="153"></textarea>
+        </div>
+        <div class="form-group">
+            <label data-ng-bind=""></label>
+            <div class='nav'>
+                <a class="btn btn-info"  data-ng-click="submitButton.$valid&&submitForm(customerRelations,'5')" data-ng-disabled=submitButton.$invalid>Submit</a>
+            </div>
+        </div>
+    </fieldset>
+</form>
+</div>
+</div>
+</div>

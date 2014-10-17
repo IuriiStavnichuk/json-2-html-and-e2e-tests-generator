@@ -1,0 +1,19 @@
+﻿<div class="complet-profile-box">
+    <step0-tour></step0-tour>
+    <step1-work-details></step1-work-details>
+    <step2-address></step2-address>
+    <step3-phone></step3-phone>
+    <step4-security-details></step4-security-details>
+    <step5-last-step></step5-last-step>
+
+    <div class="complete-profile-setup" data-ng-show="currentStepVisibility">
+        <div class="header">{{resource.completeProfileSetup.title}}</div>
+        <ul style="padding-left: 0;">
+            <li data-ng-click="changeCurrentStep(1)" data-ng-class="{'active':currentStep=='1','completed':step1Completed}"><div class="grey-box"></div>{{resource.workDetailsMenu.title}}</li>
+            <li data-ng-click="changeCurrentStep(2)" data-ng-class="{'active':currentStep=='2','completed':step2Completed}"><div class="grey-box"></div>{{resource.addressMenu.title}}</li>
+            <li data-ng-click="changeCurrentStep(3)" data-ng-class="{'active':currentStep=='3','completed':step3Completed}"><div class="grey-box"></div>{{resource.phoneNumbersMenu.title}}</li>
+            <li data-ng-click="changeCurrentStep(4)" data-ng-class="{'active':currentStep=='4','completed':step4Completed}"><div class="grey-box"></div>{{resource.accountSecurityDetailsMenu.title}}</li>
+        </ul>
+    </div>
+
+</div>

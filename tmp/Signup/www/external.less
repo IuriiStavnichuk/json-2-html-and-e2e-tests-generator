@@ -1,0 +1,201 @@
+﻿// Global
+// --------
+@import "transition_lib/global/variables";
+@import "transition_lib/global/mixins";
+@import "transition_lib/global/reset";
+
+
+// Base 
+// --------
+@import "transition_lib/base/base";
+@import "transition_lib/base/grid-layout"; // This will soon be replaced by responsive grid
+@import "transition_lib/base/responsive-grid";
+
+// Components
+// -------------
+
+@import "transition_lib/components/forms";
+@import "transition_lib/components/tables";
+
+// Buttons & Alerts
+@import "transition_lib/components/buttons";
+// @import "lib/components/alerts";  Note: alerts share common CSS with buttons and thus have styles in buttons.less
+@import "transition_lib/components/messages";
+
+// Popovers
+@import "transition_lib/components/modals";
+
+// Misc
+@import "transition_lib/components/labels";
+@import "transition_lib/components/icons";
+@import "transition_lib/components/flags";
+
+// jQuery UI
+@import "transition_lib/jquery";
+
+// Experian QAS
+@import "transition_lib/qas";
+
+
+// Page level
+// -------------
+
+// Page Error: includes general page error, 404, 502, etc.
+@import "external/page-error";
+
+// Signup
+@import "external/signup";
+
+// Checkout - Temporarily putting checkout at the end
+@import "external/checkout";
+
+// Fees
+@import "external/fees";
+
+// Promo Pages
+// --------------
+
+// Prepaid Card Promo
+@import "external/promo-ppc";
+
+
+
+@import "external-core.less";
+
+.create-account-popup {
+
+  .complet-profile {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .complet-profile-box {
+    position: relative;
+    margin: 0 auto;
+    background: #fff;
+    width: 620px;
+    padding: 0;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  .complet-profile-box .body {
+    margin: 30px auto;
+    width: 360px;
+  }
+
+  .complet-profile-box h3 {
+    font-weight: 300;
+    font-size: 17px;
+    color: @brand-primary;
+  }
+
+  .complet-profile-box .center {
+    float: left;
+    width: 100%;
+    text-align: center;
+  }
+
+  .complet-profile-box .email-block {
+    display: inline-block;
+    margin: -6px 0 16px;
+    padding: 1px 20px 12px 78px;
+    background: #eceff1 url(../images/icons/email.png) no-repeat 20px 15px;
+  }
+
+  .complet-profile-box .email-block h4 {
+    margin: 15px 0 5px;
+    font-size: 17px;
+  }
+
+  .complet-profile-box .email-block a {
+    float: left;
+  }
+
+  .complet-profile-box p {
+    font-size: 14px;
+    line-height: 23px;
+  }
+
+  .complet-profile-box .footer {
+    background-color: #eceff1;
+    padding: 30px 0 30px 130px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+
+
+  #confirm-dialog-overlay, #confirm-businessmodel-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3000px;
+    background-color: #000;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: 0.85;
+    display: block;
+    z-index: 100;
+  }
+
+  .header {
+    background-color: #1aaf57;
+    text-align: center;
+    min-height: 6px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 300;
+    padding: 32px 0;
+    color: #fff;
+  }
+
+  .checkbox-ios {
+    background: url(../images/checkbox-ios.png);
+    width: 109px;
+    height: 36px;
+  }
+
+  .checkbox-ios.active {
+    background-position: -109px 0px;
+  }
+
+  .checkbox-ordinary {
+    display: inline-block;
+    vertical-align: top;
+    background: url(../images/checkbox.png);
+    width: 24px;
+    height: 29px;
+    margin: -3px 5px 0 -7px;
+    outline: -webkit-focus-ring-color auto 0px;
+  }
+
+  .checkbox-ordinary.active {
+    background-position: -29px 0px;
+  }
+  .btn-info.disabled {
+    background: #E8E8E8 none repeat scroll 0 0;
+    color: #9F9F9F;
+    text-shadow: 0 1px 0 #FFFFFF;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #CFCFCF !important;
+    cursor: default;
+  }
+  .footer {
+    font-size:14px;
+    height: 104px;
+  }
+}
+
+.icn { margin-top: 4px; }
+
+
+

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://localhost/SignupRedesign/AdvancedSecurity.aspx -->
+<html data-ng-app="MainWebApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-start{border-spacing:1px 1px;-ms-zoom:1.0001;}.ng-animate-active{border-spacing:0px 0px;-ms-zoom:1;}</style><title>
+	Payza.com - My Account | Secure Online Payments
+</title><meta content="money transfer, send money, send money online, money transfer services, send, money, payments, credit, credit card, instant, money, financial services,send cash online, online payments, online transfers,  online wire transfer, merchant account, free merchant,receive money, receive cash, receive payments, money send, credit card, instant payment, credit card, ACH, EFT, internet payments, internet transfers, send money instantly, international payments, money transfers, transfer money online, instant money transfer, online money transfer, internet payment, low cost money transfer, internet money transfers, receive payments online, receive money online, send payments online, receive money instantly, send money now, receive money now accept credit cards." name="Keywords"><meta content="Send money by email for free with Payza.  Payza provides a safe and secure method for consumers and businesses with email to send and receive internet payments quickly and at a low cost.  Buy online, sell online, escrow services, request money, and transfer funds You can settle debts, borrow cash, divide bills or split expenses with friends all without going to an ATM or looking for your checkbook." name="Description"><link href="./Payza.com - My Account   Secure Online Payments_files/css" rel="stylesheet" type="text/css"><link href="http://localhost/SignupRedesign/css/application.less" rel="stylesheet">
+<link rel="shortcut icon" href="http://localhost/SignupRedesign/favicon.ico">
+    
+
+        <!-- THE FOLLOWING IS CODE NEEDED FOR GOOGLE ANALYTICS FUNCTIONALITY -->
+
+        <script type="text/javascript" async="" src="./Payza.com - My Account   Secure Online Payments_files/inpage_linkid.js" id="undefined"></script><script type="text/javascript" async="" src="./Payza.com - My Account   Secure Online Payments_files/ga.js"></script><script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            var pluginUrl =
+       '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+            _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+            _gaq.push(['_setAccount', 'UA-36587799-6']);
+            _gaq.push(['_setDomainName', 'payza.com']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+
+    <!-- END GOOGLE ANALYTICS CODE -->
+
+
+        <!-- Google Analytics PreProduction Code -->
+        
+
+
+        <!-- End Google Analytics PreProduction Code -->
+
+
+    
+<script src="./Payza.com - My Account   Secure Online Payments_files/jquery-1.8.2.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/jquery-ui-1.8.24.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/jquery.counter.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/jquery.dateentry.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/jquery.daterangepicker.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/jquery.inputfit.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/jquery.mCustomScrollbar.js"></script><script src="./Payza.com - My Account   Secure Online Payments_files/jquery.mousewheel.min.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/jquery.mousewheel.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/d3.v3.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/angular.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/angular-cookies.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/angular-route.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/angular-resource.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/angular-sanitize.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/auxiliaryFunction.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ui.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/cedric.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/accountActivities.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/donutChart.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/questionnaireCheckout.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/accountOverview.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/app.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/alias.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/debounce.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/optionsToJSON.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/browser.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/onlyDigits.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/accordion.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/behaviorTrigger.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/bootstrap.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/fancyTable.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/highlight.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/modal.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/moreLess.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/notably.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/passwordMeter.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/placement.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/subNav.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/tooltip.js"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/main.js"></script>
+</head>
+
+<body class="js chrome">
+  <div class="wrapper">    
+    
+    
+    
+    
+
+    <noscript>
+      &lt;p&gt;NOTE: Many features on Payza.com requires Javascript and cookies. You can enable both through your browser's settings.&lt;/p&gt;
+    </noscript>
+    
+    <form method="post" action="./Payza.com - My Account   Secure Online Payments_files/Payza.com - My Account   Secure Online Payments.htm" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm" class="ng-pristine ng-valid">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJOTUzMTc3OTA4EGRkFgJmD2QWAmYPZBYEZg9kFgYCBQ8VAUY8bGluayBocmVmPSIvU2lnbnVwUmVkZXNpZ24vY3NzL2FwcGxpY2F0aW9uLmxlc3MiIHJlbD0ic3R5bGVzaGVldCIvPg0KZAIGD2QWAmYPFQE9PGxpbmsgaHJlZj0iL1NpZ251cFJlZGVzaWduL2Nzcy9mci5sZXNzIiByZWw9InN0eWxlc2hlZXQiLz4NCmQCCQ8VAvcIPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy92ZW5kb3IvanF1ZXJ5LTEuOC4yLmpzIj48L3NjcmlwdD4NCjxzY3JpcHQgc3JjPSIvU2lnbnVwUmVkZXNpZ24vanMvdmVuZG9yL2pxdWVyeS11aS0xLjguMjQuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy92ZW5kb3IvanF1ZXJ5LXBsdWdpbnMvanF1ZXJ5LmNvdW50ZXIuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy92ZW5kb3IvanF1ZXJ5LXBsdWdpbnMvanF1ZXJ5LmRhdGVlbnRyeS5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL3ZlbmRvci9qcXVlcnktcGx1Z2lucy9qcXVlcnkuZGF0ZXJhbmdlcGlja2VyLmpzIj48L3NjcmlwdD4NCjxzY3JpcHQgc3JjPSIvU2lnbnVwUmVkZXNpZ24vanMvdmVuZG9yL2pxdWVyeS1wbHVnaW5zL2pxdWVyeS5pbnB1dGZpdC5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL3ZlbmRvci9qcXVlcnktcGx1Z2lucy9qcXVlcnkubUN1c3RvbVNjcm9sbGJhci5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL3ZlbmRvci9qcXVlcnktcGx1Z2lucy9qcXVlcnkubW91c2V3aGVlbC5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL3ZlbmRvci9kMy52My9kMy52My5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL3ZlbmRvci9hbmd1bGFyLTEuMi4yL2FuZ3VsYXIuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy92ZW5kb3IvYW5ndWxhci0xLjIuMi9hbmd1bGFyLWNvb2tpZXMuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy92ZW5kb3IvYW5ndWxhci0xLjIuMi9hbmd1bGFyLXJvdXRlLmpzIj48L3NjcmlwdD4NCjxzY3JpcHQgc3JjPSIvU2lnbnVwUmVkZXNpZ24vanMvdmVuZG9yL2FuZ3VsYXItMS4yLjIvYW5ndWxhci1yZXNvdXJjZS5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL3ZlbmRvci9hbmd1bGFyLTEuMi4yL2FuZ3VsYXItc2FuaXRpemUuanMiPjwvc2NyaXB0Pg0KwA48c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL2FwcC9hdXhpbGlhcnlGdW5jdGlvbi5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL2FwcC91aS5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL2FwcC9jZWRyaWMuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy9hcHAvbW9kdWxlcy9hY2NvdW50QWN0aXZpdGllcy5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL2FwcC9tb2R1bGVzL2RvbnV0Q2hhcnQuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy9hcHAvbW9kdWxlcy9xdWVzdGlvbm5haXJlQ2hlY2tvdXQuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy9hcHAvcGFnZXMvYWNjb3VudE92ZXJ2aWV3LmpzIj48L3NjcmlwdD4NCjxzY3JpcHQgc3JjPSIvU2lnbnVwUmVkZXNpZ24vanMvYXBwL2FwcC5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL2xpYi9wYXl6YS91dGlsL2FsaWFzLmpzIj48L3NjcmlwdD4NCjxzY3JpcHQgc3JjPSIvU2lnbnVwUmVkZXNpZ24vanMvbGliL3BheXphL3V0aWwvZGVib3VuY2UuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy9saWIvcGF5emEvdXRpbC9vcHRpb25zVG9KU09OLmpzIj48L3NjcmlwdD4NCjxzY3JpcHQgc3JjPSIvU2lnbnVwUmVkZXNpZ24vanMvbGliL3BheXphL2Vudi9icm93c2VyLmpzIj48L3NjcmlwdD4NCjxzY3JpcHQgc3JjPSIvU2lnbnVwUmVkZXNpZ24vanMvbGliL3BheXphL2Zvcm1zL29ubHlEaWdpdHMuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy9saWIvcGF5emEvcGx1Z2lucy9hY2NvcmRpb24uanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy9saWIvcGF5emEvcGx1Z2lucy9iZWhhdmlvclRyaWdnZXIuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy9saWIvcGF5emEvcGx1Z2lucy9ib290c3RyYXAuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy9saWIvcGF5emEvcGx1Z2lucy9mYW5jeVRhYmxlLmpzIj48L3NjcmlwdD4NCjxzY3JpcHQgc3JjPSIvU2lnbnVwUmVkZXNpZ24vanMvbGliL3BheXphL3BsdWdpbnMvaGlnaGxpZ2h0LmpzIj48L3NjcmlwdD4NCjxzY3JpcHQgc3JjPSIvU2lnbnVwUmVkZXNpZ24vanMvbGliL3BheXphL3BsdWdpbnMvbW9kYWwuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy9saWIvcGF5emEvcGx1Z2lucy9tb3JlTGVzcy5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL2xpYi9wYXl6YS9wbHVnaW5zL25vdGFibHkuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TaWdudXBSZWRlc2lnbi9qcy9saWIvcGF5emEvcGx1Z2lucy9wYXNzd29yZE1ldGVyLmpzIj48L3NjcmlwdD4NCjxzY3JpcHQgc3JjPSIvU2lnbnVwUmVkZXNpZ24vanMvbGliL3BheXphL3BsdWdpbnMvcGxhY2VtZW50LmpzIj48L3NjcmlwdD4NCjxzY3JpcHQgc3JjPSIvU2lnbnVwUmVkZXNpZ24vanMvbGliL3BheXphL3BsdWdpbnMvc3ViTmF2LmpzIj48L3NjcmlwdD4NCjxzY3JpcHQgc3JjPSIvU2lnbnVwUmVkZXNpZ24vanMvbGliL3BheXphL3BsdWdpbnMvdG9vbHRpcC5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL1NpZ251cFJlZGVzaWduL2pzL2xpYi9wYXl6YS9tYWluLmpzIj48L3NjcmlwdD4NCmQCAQ9kFgICAw9kFgoCBg9kFgICAg8WAh4HVmlzaWJsZWhkAgwPDxYCHghJc0xvYWRlZGdkFgJmD2QWAgIBD2QWAgIHD2QWBGYPDxYCHgRUZXh0BQdQcm9jZWVkZGQCAQ8PFgIfAgURRG8gbm90IHNob3cgYWdhaW5kZAIND2QWAgIBDxYCHgVjbGFzcwUdcGFuZWwgYWR2YW5jZWQtc2VjdXJpdHktcGFuZWwWEGYPDxYCHwFnZBYCZg9kFgICAQ9kFgICBw9kFgRmDw8WAh8CBQdQcm9jZWVkZGQCAQ8PFgIfAgURRG8gbm90IHNob3cgYWdhaW5kZAIDDxYCHwBoZAIED2QWAmYPZBYIAgEPDxYCHghJbWFnZVVybAUbfi9hdmF0YXIuYXNweD9pZD04OTImc2l6ZT0yFgIeAmlkBQM4OTJkAgMPDxYCHwQFG34vYXZhdGFyLmFzcHg/aWQ9NDcyJnNpemU9MhYCHwUFAzQ3MmQCBQ8PFgIfBAUafi9hdmF0YXIuYXNweD9pZD01MiZzaXplPTIWAh8FBQI1MmQCBw8PFgIfBAUcfi9hdmF0YXIuYXNweD9pZD0xMzExJnNpemU9MhYCHwUFBDEzMTFkAgUPDxYCHwJkZGQCBw8PFgIeEkVuYWJsZUNsaWVudFNjcmlwdGhkZAIID2QWCGYPDxYEHgRIaW50BR9MYXB0b3BzLCBNb2JpbGUsIFRhYmxldHMgZWN0Li4uHwFnZGQCAg9kFgJmD2QWAgIBDxYCHgtfIUl0ZW1Db3VudAIGFgxmD2QWBAIBDxAPFgIeC18hRGF0YUJvdW5kZ2QQFQcPU2VsZWN0IHF1ZXN0aW9uI1doYXQgaXMgeW91ciBmYXRoZXLigJlzIGZpcnN0IG5hbWU/HFdoaWNoIGNpdHkgd2VyZSB5b3UgYm9ybiBpbj8sV2hhdCB3YXMgdGhlIG5hbWUgb2YgeW91ciBlbGVtZW50YXJ5IHNjaG9vbD8YV2hhdCB3YXMgeW91ciBmaXJzdCBqb2I/JFdoaWNoIG1vbnRoIHdhcyB5b3VyIG1vdGhlciBib3JuIGluPyhXaGljaCBoaWdoIHNjaG9vbCBkaWQgeW91IGdyYWR1YXRlIGZyb20/FQcCLTEBMQEyATMBNAE1ATYUKwMHZ2dnZ2dnZxYBZmQCAw8PFgQfAmUeB0VuYWJsZWRoZGQCAQ9kFgQCAQ8QDxYCHwlnZBAVBw9TZWxlY3QgcXVlc3Rpb24jV2hhdCBpcyB5b3VyIGZhdGhlcuKAmXMgZmlyc3QgbmFtZT8cV2hpY2ggY2l0eSB3ZXJlIHlvdSBib3JuIGluPyxXaGF0IHdhcyB0aGUgbmFtZSBvZiB5b3VyIGVsZW1lbnRhcnkgc2Nob29sPxhXaGF0IHdhcyB5b3VyIGZpcnN0IGpvYj8kV2hpY2ggbW9udGggd2FzIHlvdXIgbW90aGVyIGJvcm4gaW4/KFdoaWNoIGhpZ2ggc2Nob29sIGRpZCB5b3UgZ3JhZHVhdGUgZnJvbT8VBwItMQExATIBMwE0ATUBNhQrAwdnZ2dnZ2dnFgFmZAIDDw8WBB8CZR8KaGRkAgIPZBYEAgEPEA8WAh8JZ2QQFQcPU2VsZWN0IHF1ZXN0aW9uI1doYXQgaXMgeW91ciBmYXRoZXLigJlzIGZpcnN0IG5hbWU/HFdoaWNoIGNpdHkgd2VyZSB5b3UgYm9ybiBpbj8sV2hhdCB3YXMgdGhlIG5hbWUgb2YgeW91ciBlbGVtZW50YXJ5IHNjaG9vbD8YV2hhdCB3YXMgeW91ciBmaXJzdCBqb2I/JFdoaWNoIG1vbnRoIHdhcyB5b3VyIG1vdGhlciBib3JuIGluPyhXaGljaCBoaWdoIHNjaG9vbCBkaWQgeW91IGdyYWR1YXRlIGZyb20/FQcCLTEBMQEyATMBNAE1ATYUKwMHZ2dnZ2dnZxYBZmQCAw8PFgQfAmUfCmhkZAIDD2QWBAIBDxAPFgIfCWdkEBUHD1NlbGVjdCBxdWVzdGlvbiNXaGF0IGlzIHlvdXIgZmF0aGVy4oCZcyBmaXJzdCBuYW1lPxxXaGljaCBjaXR5IHdlcmUgeW91IGJvcm4gaW4/LFdoYXQgd2FzIHRoZSBuYW1lIG9mIHlvdXIgZWxlbWVudGFyeSBzY2hvb2w/GFdoYXQgd2FzIHlvdXIgZmlyc3Qgam9iPyRXaGljaCBtb250aCB3YXMgeW91ciBtb3RoZXIgYm9ybiBpbj8oV2hpY2ggaGlnaCBzY2hvb2wgZGlkIHlvdSBncmFkdWF0ZSBmcm9tPxUHAi0xATEBMgEzATQBNQE2FCsDB2dnZ2dnZ2cWAWZkAgMPDxYEHwJlHwpoZGQCBA9kFgQCAQ8QDxYCHwlnZBAVBw9TZWxlY3QgcXVlc3Rpb24jV2hhdCBpcyB5b3VyIGZhdGhlcuKAmXMgZmlyc3QgbmFtZT8cV2hpY2ggY2l0eSB3ZXJlIHlvdSBib3JuIGluPyxXaGF0IHdhcyB0aGUgbmFtZSBvZiB5b3VyIGVsZW1lbnRhcnkgc2Nob29sPxhXaGF0IHdhcyB5b3VyIGZpcnN0IGpvYj8kV2hpY2ggbW9udGggd2FzIHlvdXIgbW90aGVyIGJvcm4gaW4/KFdoaWNoIGhpZ2ggc2Nob29sIGRpZCB5b3UgZ3JhZHVhdGUgZnJvbT8VBwItMQExATIBMwE0ATUBNhQrAwdnZ2dnZ2dnFgFmZAIDDw8WBB8CZR8KaGRkAgUPZBYEAgEPEA8WAh8JZ2QQFQcPU2VsZWN0IHF1ZXN0aW9uI1doYXQgaXMgeW91ciBmYXRoZXLigJlzIGZpcnN0IG5hbWU/HFdoaWNoIGNpdHkgd2VyZSB5b3UgYm9ybiBpbj8sV2hhdCB3YXMgdGhlIG5hbWUgb2YgeW91ciBlbGVtZW50YXJ5IHNjaG9vbD8YV2hhdCB3YXMgeW91ciBmaXJzdCBqb2I/JFdoaWNoIG1vbnRoIHdhcyB5b3VyIG1vdGhlciBib3JuIGluPyhXaGljaCBoaWdoIHNjaG9vbCBkaWQgeW91IGdyYWR1YXRlIGZyb20/FQcCLTEBMQEyATMBNAE1ATYUKwMHZ2dnZ2dnZxYBZmQCAw8PFgQfAmUfCmhkZAIDDw8WAh8GaGRkAgQPDxYCHwZoZGQCCQ8PFgQeDElzUGluQ2hlY2tlZGgfAWdkFgICCQ8PFgIfBmhkZAIMD2QWAgIBD2QWAmYPZBYIAgcPDxYCHwQFG34vYXZhdGFyLmFzcHg/aWQ9ODkyJnNpemU9MxYCHwUFAzg5MmQCCA8PFgIfBAUbfi9hdmF0YXIuYXNweD9pZD00NzImc2l6ZT0zFgIfBQUDNDcyZAIJDw8WAh8EBRp+L2F2YXRhci5hc3B4P2lkPTUyJnNpemU9MxYCHwUFAjUyZAIKDw8WAh8EBRx+L2F2YXRhci5hc3B4P2lkPTEzMTEmc2l6ZT0zFgIfBQUEMTMxMWQCDw8PFgIfAGhkFgICAQ8UKwACDxYEHwlnHwgCFGRkFgJmD2QWKAIBD2QWAmYPFQEHQXJ0LmNvbWQCAg9kFgJmDxUBEEJhbmFuYcKgUmVwdWJsaWNkAgMPZBYCZg8VARBCYXJuZXMgJiBOb2JsZcKgZAIED2QWAmYPFQERQ2VsZWJyaXR5IENydWlzZXNkAgUPZBYCZg8VAQdDaGlsaSdzZAIGD2QWAmYPFQEDQ1ZTZAIHD2QWAmYPFQEIRG9taW5vJ3NkAggPZBYCZg8VARBGYWNlYm9vayBDcmVkaXRzZAIJD2QWAmYPFQELRm9vdCBMb2NrZXJkAgoPZBYCZg8VAQhHYW1lU3RvcGQCCw9kFgJmDxUBA0dBUGQCDA9kFgJmDxUBB0dyb3Vwb25kAg0PZBYCZg8VAQlKQyBQZW5uZXlkAg4PZBYCZg8VAQhNYXJyaW90dGQCDw9kFgJmDxUBCU9sZMKgTmF2eWQCEA9kFgJmDxUBBVBldGNvZAIRD2QWAmYPFQEKVC5KLsKgTWF4eGQCEg9kFgJmDxUBDVRHScKgRnJpZGF5J3NkAhMPZBYCZg8VARZUaGUgQ2hlZXNlY2FrZSBGYWN0b3J5ZAIUD2QWAmYPFQEQVGhlIEhvbWUgRGVwb3TCrmQCEA8PFgIfAWdkZBgKBRZjdGwwMCRjdGwwMCRtYWluJGN0bDE5Dw9kZmQFFmN0bDAwJGN0bDAwJG1haW4kY3RsMTMPD2RmZAUpY3RsMDAkY3RsMDAkbWFpbiRNYWluQ29udGVudCRtdndTZWxlY3Rpb24PD2RmZAUWY3RsMDAkY3RsMDAkbWFpbiRjdGwxMA8PZGZkBSxjdGwwMCRjdGwwMCRtYWluJHVjUHJvbW90aW9uQm94JGx2UHJvbW90aW9ucw8UKwAOZGRkZGRkZDwrABQAAhRkZGRmAv////8PZAUWY3RsMDAkY3RsMDAkbWFpbiRjdGwwMQ8PZGZkBRZjdGwwMCRjdGwwMCRtYWluJGN0bDE2Dw9kZmQFGmN0bDAwJGN0bDAwJG1haW4kbXZ3QXZhdGFyDw9kZmQFFmN0bDAwJGN0bDAwJG1haW4kY3RsMDQPD2RmZAUWY3RsMDAkY3RsMDAkbWFpbiRjdGwwNw8PZGZk184KB4M+RsztpINXxNZaueYJPigjDrSilQ48V3YzYCQ=">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./Payza.com - My Account   Secure Online Payments_files/WebResource.axd" type="text/javascript"></script>
+
+<script type="text/javascript"> if (parent.frames.length > 0) {top.location.replace(document.location);}</script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ScriptResource(1).axd" type="text/javascript"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ScriptResource(2).axd" type="text/javascript"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ScriptResource(3).axd" type="text/javascript"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ScriptResource(4).axd" type="text/javascript"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ScriptResource(5).axd" type="text/javascript"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ScriptResource(6).axd" type="text/javascript"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ScriptResource(7).axd" type="text/javascript"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ScriptResource(8).axd" type="text/javascript"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ScriptResource(9).axd" type="text/javascript"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ScriptResource(10).axd" type="text/javascript"></script>
+<script src="./Payza.com - My Account   Secure Online Payments_files/ScriptResource(11).axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+null;
+return true;
+}
+//]]>
+</script>
+
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$sm', 'aspnetForm', ['tctl00$ctl00$main$MainContent$upEditAvatar','','tctl00$ctl00$main$MainContent$ctl02','','tctl00$ctl00$main$MainContent$ctl04',''], [], [], 90, 'ctl00$ctl00');
+//]]>
+</script>
+
+        
+        
+
+    
+
+    <div class="navbar navbar-static-top navbar-inverse top-navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://localhost/SignupRedesign/AccountOverview.aspx">Payza</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://www.payza.com/support" target="_blank">	
+      Support
+    </a></li>
+                    <li>
+                        <a id="ctl00_ctl00_main_lnkToggleLanguage" href="javascript:__doPostBack('ctl00$ctl00$main$lnkToggleLanguage','')">Français</a></li>
+                    <li class="active"><a href="http://localhost/SignupRedesign/Logout.aspx">Log Out</a></li>
+                </ul>
+            </div>
+            <!-- /.nav-collapse -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3" id="sidebar-left" role="navigation">
+                <div class="sidebar-nav">
+                    <div class="profile">
+                        <div class="profile-picture">
+                          <a href="./Payza.com - My Account   Secure Online Payments_files/Payza.com - My Account   Secure Online Payments.htm">
+                            
+                                    <img src="./Payza.com - My Account   Secure Online Payments_files/noAvatar.png" alt="" class="no-avatar">
+                                
+                            </a>
+                        </div>
+                        <div class="dropdown">
+                            <a data-toggle="dropdown" href="http://localhost/SignupRedesign/AdvancedSecurity.aspx#" class="profile-username dropdown-icon" title="World Cup Madness">
+                                World Cup Madness
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <li class="arrow-container">
+                                    <div class="arrow"></div>
+                                </li>
+                                <li class="profile-dropdown-header">
+                                    <strong>monzira+50@gmail.com</strong><br>
+                                    Business
+                                    Verified
+                                    
+                                </li>
+
+                                
+
+                                <li><a href="http://localhost/SignupRedesign/UpdatePersonalInfo.aspx" class="personal-information">
+                                    Personal Information</a></li>
+                                <li><a href="http://localhost/SignupRedesign/UpdatePassword.aspx" class="update-password">
+                                    Password</a></li>
+                                <li><a href="http://localhost/SignupRedesign/UpdatePassword.aspx?CTZCaU4E" class="update-pin">
+                                    Transaction PIN</a></li>
+                                <li><a href="./Payza.com - My Account   Secure Online Payments_files/Payza.com - My Account   Secure Online Payments.htm" class="advanced-security">
+                                    Advanced Security Setup</a></li>
+                                <li><a href="http://localhost/SignupRedesign/EmailList.aspx" class="email-list">
+                                    Email Addresses</a></li>
+                                <li><a href="http://localhost/SignupRedesign/verification/Overview.aspx" class="verification">
+                                    Verification</a></li>
+                                
+
+                                
+
+                                
+                                    <li><a href="http://localhost/SignupRedesign/CloseAccount.aspx" class="close-account">
+                                        Close Account</a></li>
+                                
+                            </ul>
+                        </div>
+                        <div class="account-status">
+                            <p>
+                                Business
+                                Verified
+                                
+                            </p>
+                            
+                        </div>
+                    </div>
+
+
+                    
+                    <style type="text/css">
+                        .sidebar-nav .panel ul .disabled-link {
+                            font-size: 0.9em;
+                            padding: 8px 15px 8px 0;
+                            /*font-weight: 600;*/
+                            display: block;
+                        }
+                    </style>
+
+                    
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" href="http://localhost/SignupRedesign/AdvancedSecurity.aspx#collapseYourEWallet">
+                                    Wallet</a>
+                            </h4>
+                            <h6 class="panel-sub-title">One click access to your money.</h6>
+                        </div>
+                        <div id="collapseYourEWallet" class="panel-collapse collapse">
+                            <ul>
+                                <li><a href="http://localhost/SignupRedesign/CurrencyBalance.aspx">
+                                        Balances
+                                    </a></li>
+                                
+                                <li>
+                                    
+                                    <span id="ctl00_ctl00_main_spanAddCC"><a href="http://localhost/SignupRedesign/ViewCreditCards.aspx">
+                                        Credit Cards
+                                    </a></span>
+                                </li>
+                                <li>
+                                    
+                                    <span id="ctl00_ctl00_main_spanAddBankAccount"><a href="http://localhost/SignupRedesign/BankAccountSetup.aspx">
+                                        Bank Accounts
+                                    </a></span>
+                                </li>
+
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" href="http://localhost/SignupRedesign/AdvancedSecurity.aspx#collapseYourAccount">
+                                    Account
+                                </a>
+                            </h4>
+                            <h6 class="panel-sub-title">View your activity and settings.</h6>
+                        </div>
+                        <div id="collapseYourAccount" class="panel-collapse collapse">
+                            <ul>
+                                <li><a href="http://localhost/SignupRedesign/TransactionHistory.aspx">
+                                        Detailed Transaction History
+                                    </a></li>
+                                <li><a href="http://localhost/SignupRedesign/EarnMoney.aspx">
+                                        Referral Program
+                                    </a></li>
+                                <li><a href="http://localhost/SignupRedesign/SubscriptionsPurchased.aspx">
+                                    Purchased Subscriptions</a></li>
+                                <li><a href="http://localhost/SignupRedesign/ThirdParty/ThirdPartyAccessInfo.aspx">
+                                    Authorized Users Access</a></li>
+
+                                <li>
+                                    <a href="http://localhost/SignupRedesign/PaymentPreferences.aspx">
+                                        Payment Preferences
+                                    </a>
+                                </li>
+
+                                <li><a href="http://localhost/SignupRedesign/EmailNotification.aspx">
+                                    Email Notifications
+                                </a></li>
+
+                                <li id="ctl00_ctl00_main_liMainNavIntegrationApi">
+                                    
+                                    
+                                            <a href="http://localhost/SignupRedesign/IntegrationAPI.aspx">
+                                                API Integration
+                                            </a>
+                                        
+                                </li>
+                                    <li><a href="http://localhost/SignupRedesign/resolution/ResolutionCenter.aspx">
+                                        Resolution Center</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+
+                    
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" href="http://localhost/SignupRedesign/AdvancedSecurity.aspx#collapseYourBusiness">
+                                        Business
+                                    </a>
+                                </h4>
+                                <h6 class="panel-sub-title">Tools for your online business.</h6>
+                            </div>
+                            <div id="collapseYourBusiness" class="panel-collapse collapse">
+                                <ul>
+
+                                    <li id="ctl00_ctl00_main_liMainNavWebsites">
+                                        
+                                        
+                                                
+                                                <span id="ctl00_ctl00_main_spanAddURL">
+                                                    <a href="http://localhost/SignupRedesign/Website/WebsiteManage.aspx?BWh4dXdAZ2hvaHFxeEl2TAI=">
+                                                        Websites
+                                                    </a>
+                                                </span>
+                                            
+                                    </li><li id="ctl00_ctl00_main_liMainNavButtonManage">
+                                        
+                                        
+                                                <a href="http://localhost/SignupRedesign/ViewProducts.aspx?BGd3dHY/ZmduZ3Bwd0h1SwI=">
+                                                    Payment Buttons
+                                                </a>
+                                            
+                                    </li><li id="ctl00_ctl00_main_liMainNavSubscriptionsSold">
+                                        
+                                        
+                                                <a href="http://localhost/SignupRedesign/SubscriptionsSold.aspx">
+                                                    Sold Subscriptions
+                                                </a>
+                                            
+                                    </li><li id="ctl00_ctl00_main_liMainNavTermsOfService">
+                                        
+                                        
+                                                <a href="http://localhost/SignupRedesign/ViewTOS.aspx">
+                                                    Terms of Service
+                                                </a>
+                                            
+                                    </li><li id="ctl00_ctl00_main_liMainNavBusinessProfile">
+                                        
+                                        
+                                                <a href="http://localhost/SignupRedesign/MerchantProfile.aspx">
+                                                    Business Information
+                                                </a>
+                                            
+                                    </li><li id="ctl00_ctl00_main_liMainNavIntegrationIpn">
+                                        
+                                        
+                                                <a href="http://localhost/SignupRedesign/IntegrationIPN.aspx">
+                                                    IPN Integration
+                                                </a>
+                                            
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    
+
+                    
+
+
+
+                    <div class="hide">
+
+                        
+                        
+                        
+                        <ul>
+                          <li><a href="http://localhost/SignupRedesign/AccountOverview.aspx">Dashboard</a></li>
+                            <li><a href="./Payza.com - My Account   Secure Online Payments_files/Payza.com - My Account   Secure Online Payments.htm">
+                                Advanced Security Setup</a></li>
+                            
+                            <li><a href="http://localhost/SignupRedesign/verification/Overview.aspx">
+                                Account Verification</a></li>
+                            <li>Manage My Money</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="col-xs-12  col-sm-9" id="main-container-without-sidebar">
+                
+                    <div class="quick-wizards">
+                        <ul id="ctl00_ctl00_main_ulTopMenu">
+                            
+                            <li id="ctl00_ctl00_main_SendFunds"><a href="http://localhost/SignupRedesign/SendFunds.aspx"><span class="send-money-icon">Send Funds</span></a></li><li id="ctl00_ctl00_main_RequestFunds"><a href="http://localhost/SignupRedesign/RequestFunds.aspx"><span class="request-money-icon">Request Funds</span></a></li><li id="ctl00_ctl00_main_Deposit"><a href="http://localhost/SignupRedesign/AddFunds.aspx"><span class="load-account-icon">Add Funds</span></a></li><li id="ctl00_ctl00_main_Withdraw"><a href="http://localhost/SignupRedesign/WithdrawFunds.aspx"><span class="withdraw-funds-icon">Withdraw Funds </span></a></li>
+                            
+                        </ul>
+                    </div>
+                
+
+                
+                
+                
+
+
+
+                
+<script type="text/javascript">
+
+	$(document).ready(function () {
+		Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function (sender, e) {
+			if (!e.get_error()) {
+				$('.avatar-feature-selection').mCustomScrollbar();
+			}
+		});
+	});
+
+</script>
+
+  <div id="ctl00_ctl00_main_MainContent_advancedSecurityPanel" class="panel advanced-security-panel">
+    <div class="panel-heading">
+        <h2>Advanced Security Setup</h2>
+    </div>
+    <div class="panel-body">
+      <div class="advanced-security">
+        
+        <div id="ctl00_ctl00_main_MainContent_reason">
+            <h2>Why am I seeing this page?</h2>
+            <p>
+               Payza is committed to your security. You can now add an extra layer of protection to your login process with an avatar, message, and challenge questions. You need to finish steps one and two to complete the advanced security layer.
+               <a href="https://blog.payza.com/payza-updates/announcements/mini-me-big-security-introducing-profile-avatars-2/" target="_blank">
+                 Read more about it here</a>.
+            </p>
+        </div>
+        <fieldset>
+            <div class="avatar-message">
+                <h2 id="ctl00_ctl00_main_MainContent_createAvatar">Step 1 – Create your avatar and message</h2>
+                
+                <p>Your custom avatar and welcome message allow you to quickly confirm the validity of the Payza website. This also protects your personal information from potential phishers.</p>
+                <div class="form-group">
+                    <div class="field-item">
+                        <div class="avatar">
+							<div id="ctl00_ctl00_main_MainContent_upEditAvatar">
+	
+								<div class="photo">
+									<div class="body-parts">
+										<img id="ctl00_ctl00_main_MainContent_imgAvatarLegs" src="./Payza.com - My Account   Secure Online Payments_files/avatar.aspx">
+										<img id="ctl00_ctl00_main_MainContent_imgAvatarBody" src="./Payza.com - My Account   Secure Online Payments_files/avatar(1).aspx">
+										<img id="ctl00_ctl00_main_MainContent_imgAvatarHead" src="./Payza.com - My Account   Secure Online Payments_files/avatar(2).aspx">
+										<img id="ctl00_ctl00_main_MainContent_imgAvatarFace" src="./Payza.com - My Account   Secure Online Payments_files/avatar(3).aspx">
+									</div>
+									<input name="ctl00$ctl00$main$MainContent$selectedHead" type="hidden" id="ctl00_ctl00_main_MainContent_selectedHead">
+									<input name="ctl00$ctl00$main$MainContent$selectedFace" type="hidden" id="ctl00_ctl00_main_MainContent_selectedFace">
+									<input name="ctl00$ctl00$main$MainContent$selectedBody" type="hidden" id="ctl00_ctl00_main_MainContent_selectedBody">
+									<input name="ctl00$ctl00$main$MainContent$selectedLegs" type="hidden" id="ctl00_ctl00_main_MainContent_selectedLegs">
+								</div>
+								<a id="ctl00_ctl00_main_MainContent_btnEditAvatar" class="icon-edit-avatar" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ctl00$main$MainContent$btnEditAvatar", "", true, "", "", false, true))">Edit Avatar</a>
+							
+</div> 
+                        </div>
+                    </div>
+                    <div class="field-item personal-message">
+                        <textarea onkeydown="countOnfocusOnpasteOncuttxtSecurityMessage();(this);" onkeyup="countOnfocusOnpasteOncuttxtSecurityMessage();(this);" onkeypress="countOnfocusOnpasteOncuttxtSecurityMessage();(this);" onclick="countOnfocusOnpasteOncuttxtSecurityMessage();(this);" onfocus="countOnfocusOnpasteOncuttxtSecurityMessage();(this);" onpaste="countOnfocusOnpasteOncuttxtSecurityMessage();(this);" oncut="countOnfocusOnpasteOncuttxtSecurityMessage();(this);" onblur="countOnblurtxtSecurityMessage();" name="ctl00$ctl00$main$MainContent$txtSecurityMessage" rows="2" cols="20" id="ctl00_ctl00_main_MainContent_txtSecurityMessage" onchange="replaceBrackets(this);" class="watermark"></textarea><div id="ctl00_ctl00_main_MainContent_txtSecurityMessage_CharacterCounterDiv" class="character-count-msg" style="opacity: 0;">&nbsp;</div>
+                            <input type="hidden" name="ctl00$ctl00$main$MainContent$TextBoxWatermarkExtender2_ClientState" id="ctl00_ctl00_main_MainContent_TextBoxWatermarkExtender2_ClientState">
+							&nbsp;
+                    </div>
+                </div>
+            </div>
+			
+            <div id="ctl00_ctl00_main_MainContent_divQuestions" class="security-questions">
+                <h2>Step 2 - Set Up Challenge Questions</h2>
+                <p>You will be asked to answer these questions when you log in from an unfamiliar device.
+
+<span class="icon icon-help" title="Laptops, Mobile, Tablets ect..."><span class="icon icn-txt">Laptops, Mobile, Tablets ect...</span></span></p>
+                <p>Please set up at least 3 question-and-answer pairings. Answers are not case-sensitive.</p>
+                <p id="ctl00_ctl00_main_MainContent_pWarning"><strong>Make sure you remember your challenge questions and answers. For security reasons, once you have set them up you cannot access them again.</strong></p>
+				<div id="ctl00_ctl00_main_MainContent_ctl02">
+	
+					
+							<div class="row form-group">
+								<div class="col-sm-6">
+									<select name="ctl00$ctl00$main$MainContent$rptQuestions$ctl00$ddlQuestion" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ctl00$main$MainContent$rptQuestions$ctl00$ddlQuestion\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl00_ddlQuestion" class="form-control" tabindex="1">
+		<option selected="selected" value="-1">Select question</option>
+		<option value="1">What is your father’s first name?</option>
+		<option value="2">Which city were you born in?</option>
+		<option value="3">What was the name of your elementary school?</option>
+		<option value="4">What was your first job?</option>
+		<option value="5">Which month was your mother born in?</option>
+		<option value="6">Which high school did you graduate from?</option>
+
+	</select>
+								</div>
+								<div class="col-sm-6">
+									<input name="ctl00$ctl00$main$MainContent$rptQuestions$ctl00$txtAnswer" type="text" autocomplete="off" maxlength="20" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl00_txtAnswer" disabled="disabled" class="watermark form-control" onkeyup="replaceBrackets(this);" onchange="replaceBrackets(this);" tabindex="2">
+									<input type="hidden" name="ctl00$ctl00$main$MainContent$rptQuestions$ctl00$TextBoxWatermarkExtender2_ClientState" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl00_TextBoxWatermarkExtender2_ClientState">
+								</div>
+							</div>
+						
+							<div class="row form-group">
+								<div class="col-sm-6">
+									<select name="ctl00$ctl00$main$MainContent$rptQuestions$ctl01$ddlQuestion" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ctl00$main$MainContent$rptQuestions$ctl01$ddlQuestion\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl01_ddlQuestion" class="form-control" tabindex="3">
+		<option selected="selected" value="-1">Select question</option>
+		<option value="1">What is your father’s first name?</option>
+		<option value="2">Which city were you born in?</option>
+		<option value="3">What was the name of your elementary school?</option>
+		<option value="4">What was your first job?</option>
+		<option value="5">Which month was your mother born in?</option>
+		<option value="6">Which high school did you graduate from?</option>
+
+	</select>
+								</div>
+								<div class="col-sm-6">
+									<input name="ctl00$ctl00$main$MainContent$rptQuestions$ctl01$txtAnswer" type="text" autocomplete="off" maxlength="20" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl01_txtAnswer" disabled="disabled" class="watermark form-control" onkeyup="replaceBrackets(this);" onchange="replaceBrackets(this);" tabindex="4">
+									<input type="hidden" name="ctl00$ctl00$main$MainContent$rptQuestions$ctl01$TextBoxWatermarkExtender2_ClientState" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl01_TextBoxWatermarkExtender2_ClientState">
+								</div>
+							</div>
+						
+							<div class="row form-group">
+								<div class="col-sm-6">
+									<select name="ctl00$ctl00$main$MainContent$rptQuestions$ctl02$ddlQuestion" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ctl00$main$MainContent$rptQuestions$ctl02$ddlQuestion\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl02_ddlQuestion" class="form-control" tabindex="5">
+		<option selected="selected" value="-1">Select question</option>
+		<option value="1">What is your father’s first name?</option>
+		<option value="2">Which city were you born in?</option>
+		<option value="3">What was the name of your elementary school?</option>
+		<option value="4">What was your first job?</option>
+		<option value="5">Which month was your mother born in?</option>
+		<option value="6">Which high school did you graduate from?</option>
+
+	</select>
+								</div>
+								<div class="col-sm-6">
+									<input name="ctl00$ctl00$main$MainContent$rptQuestions$ctl02$txtAnswer" type="text" autocomplete="off" maxlength="20" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl02_txtAnswer" disabled="disabled" class="watermark form-control" onkeyup="replaceBrackets(this);" onchange="replaceBrackets(this);" tabindex="6">
+									<input type="hidden" name="ctl00$ctl00$main$MainContent$rptQuestions$ctl02$TextBoxWatermarkExtender2_ClientState" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl02_TextBoxWatermarkExtender2_ClientState">
+								</div>
+							</div>
+						
+							<div class="row form-group" style="display: none;">
+								<div class="col-sm-6">
+									<select name="ctl00$ctl00$main$MainContent$rptQuestions$ctl03$ddlQuestion" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ctl00$main$MainContent$rptQuestions$ctl03$ddlQuestion\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl03_ddlQuestion" class="form-control" tabindex="7">
+		<option selected="selected" value="-1">Select question</option>
+		<option value="1">What is your father’s first name?</option>
+		<option value="2">Which city were you born in?</option>
+		<option value="3">What was the name of your elementary school?</option>
+		<option value="4">What was your first job?</option>
+		<option value="5">Which month was your mother born in?</option>
+		<option value="6">Which high school did you graduate from?</option>
+
+	</select>
+								</div>
+								<div class="col-sm-6">
+									<input name="ctl00$ctl00$main$MainContent$rptQuestions$ctl03$txtAnswer" type="text" autocomplete="off" maxlength="20" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl03_txtAnswer" disabled="disabled" class="watermark form-control" onkeyup="replaceBrackets(this);" onchange="replaceBrackets(this);" tabindex="8">
+									<input type="hidden" name="ctl00$ctl00$main$MainContent$rptQuestions$ctl03$TextBoxWatermarkExtender2_ClientState" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl03_TextBoxWatermarkExtender2_ClientState">
+								</div>
+							</div>
+						
+							<div class="row form-group" style="display: none;">
+								<div class="col-sm-6">
+									<select name="ctl00$ctl00$main$MainContent$rptQuestions$ctl04$ddlQuestion" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ctl00$main$MainContent$rptQuestions$ctl04$ddlQuestion\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl04_ddlQuestion" class="form-control" tabindex="9">
+		<option selected="selected" value="-1">Select question</option>
+		<option value="1">What is your father’s first name?</option>
+		<option value="2">Which city were you born in?</option>
+		<option value="3">What was the name of your elementary school?</option>
+		<option value="4">What was your first job?</option>
+		<option value="5">Which month was your mother born in?</option>
+		<option value="6">Which high school did you graduate from?</option>
+
+	</select>
+								</div>
+								<div class="col-sm-6">
+									<input name="ctl00$ctl00$main$MainContent$rptQuestions$ctl04$txtAnswer" type="text" autocomplete="off" maxlength="20" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl04_txtAnswer" disabled="disabled" class="watermark form-control" onkeyup="replaceBrackets(this);" onchange="replaceBrackets(this);" tabindex="10">
+									<input type="hidden" name="ctl00$ctl00$main$MainContent$rptQuestions$ctl04$TextBoxWatermarkExtender2_ClientState" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl04_TextBoxWatermarkExtender2_ClientState">
+								</div>
+							</div>
+						
+							<div class="row form-group" style="display: none;">
+								<div class="col-sm-6">
+									<select name="ctl00$ctl00$main$MainContent$rptQuestions$ctl05$ddlQuestion" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ctl00$main$MainContent$rptQuestions$ctl05$ddlQuestion\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl05_ddlQuestion" class="form-control" tabindex="11">
+		<option selected="selected" value="-1">Select question</option>
+		<option value="1">What is your father’s first name?</option>
+		<option value="2">Which city were you born in?</option>
+		<option value="3">What was the name of your elementary school?</option>
+		<option value="4">What was your first job?</option>
+		<option value="5">Which month was your mother born in?</option>
+		<option value="6">Which high school did you graduate from?</option>
+
+	</select>
+								</div>
+								<div class="col-sm-6">
+									<input name="ctl00$ctl00$main$MainContent$rptQuestions$ctl05$txtAnswer" type="text" autocomplete="off" maxlength="20" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl05_txtAnswer" disabled="disabled" class="watermark form-control" onkeyup="replaceBrackets(this);" onchange="replaceBrackets(this);" tabindex="12">
+									<input type="hidden" name="ctl00$ctl00$main$MainContent$rptQuestions$ctl05$TextBoxWatermarkExtender2_ClientState" id="ctl00_ctl00_main_MainContent_rptQuestions_ctl05_TextBoxWatermarkExtender2_ClientState">
+								</div>
+							</div>
+						
+				
+</div>
+                <a href="javascript: void(0)" class="add-question">+ Add Question</a>
+                <p></p>
+				&nbsp;
+				&nbsp;
+                <script type="text/javascript">
+                    var visibleQuestions = 3;
+
+                    function showHideQuestions() {
+                        $questions = $(".security-questions .row.form-group");
+                        for (i = 0; i < $questions.length; i++) {
+                            i < visibleQuestions ? $questions.eq(i).show() : $questions.eq(i).hide();
+                        }
+                    }
+
+                    $(document).ready(function () {
+                        showHideQuestions();
+
+                        $(".security-questions .add-question").on("click", function () {
+                            visibleQuestions++;
+                            showHideQuestions();
+                            if (visibleQuestions === 6) { $(this).hide(); }
+                        });
+                    });
+                </script>
+            </div>
+
+            <div class="col-sm-6">
+                
+
+<div class="form-group">
+    <label for="ctl00_ctl00_main_MainContent_ctlTransactionPin_TxtPIN" id="ctl00_ctl00_main_MainContent_ctlTransactionPin_lblTransactionPin">Transaction PIN</label>
+    <input name="ctl00$ctl00$main$MainContent$ctlTransactionPin$TxtPIN" type="password" id="ctl00_ctl00_main_MainContent_ctlTransactionPin_TxtPIN" class="form-control" autocomplete="off" tabindex="13">
+    <p class="help-block"><a id="ctl00_ctl00_main_MainContent_ctlTransactionPin_hypForgotPIN" href="http://localhost/SignupRedesign/resetPassword.aspx?CTZCaU4E">Forgot your PIN?</a></p>
+
+
+
+
+    
+
+
+
+    
+</div>
+
+
+
+
+			    <div class="form-group">
+					    <input type="submit" name="ctl00$ctl00$main$MainContent$btnSave" value="Set Up Security" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$main$MainContent$btnSave&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_ctl00_main_MainContent_btnSave" class="btn btn-primary" tabindex="14">
+					    <a id="ctl00_ctl00_main_MainContent_btnCancel" class="btn btn-link" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ctl00$main$MainContent$btnCancel", "", true, "", "", false, true))">Cancel and do this later</a>
+			    </div> 
+            </div>
+
+        </fieldset>
+    
+</div>
+
+      
+    </div>
+  </div>
+
+
+
+
+                
+                
+
+
+
+                <footer>
+                  <ul class="support-links">
+                    <li><a href="https://www.payza.com/support/payza-transaction-fees" target="_blank">	
+    Fees
+    </a></li>
+                    <li><a href="https://www.payza.com/support" target="_blank">	
+      Support
+    </a></li>
+                    <li><a href="https://www.payza.com/legal-agreements/terms-and-conditions-international" target="_blank">Terms &amp; Conditions</a></li>
+                    <li><a href="https://www.payza.com/legal-agreements/online-privacy" target="_blank">	
+  Privacy Policy
+    </a></li>
+                    <li><a href="https://www.payza.com/security" target="_blank">Security Center</a></li>
+                  </ul>
+                  <p class="copyright">Copyright © 2014 Payza. All Rights Reserved</p>
+                </footer>
+            </div>
+
+            
+        </div>
+    </div>
+            
+
+
+
+
+
+    <div class="hide">
+      
+        Language
+
+        <a href="http://localhost/SignupRedesign/UserLocalization.aspx">
+            Language Preferences</a>--%&gt;
+
+    
+
+      </div>
+
+
+
+        
+
+
+
+        <script type="text/javascript">
+          var prm = Sys.WebForms.PageRequestManager.getInstance();
+        prm.add_endRequest(bindEvents);
+        </script>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+ function countOnfocusOnpasteOncuttxtSecurityMessage(obj)  {  var theText = $('#ctl00_ctl00_main_MainContent_txtSecurityMessage').val();  if ( (theText.indexOf('<') != -1) || (theText.indexOf('>') != -1) )  {      theText = theText.replace(/[\<\>]/ig, '');      $('#ctl00_ctl00_main_MainContent_txtSecurityMessage').val(theText);  }      countOnfocusOnpasteOncutInternal(          '#ctl00_ctl00_main_MainContent_txtSecurityMessage',          '#ctl00_ctl00_main_MainContent_txtSecurityMessage_CharacterCounterDiv',          {              counterText: ' characters left',              maxCharactersLimit: 50          }      );  }  function countOnblurtxtSecurityMessage()  {      countOnblurInternal('#ctl00_ctl00_main_MainContent_txtSecurityMessage_CharacterCounterDiv');  }  $('#ctl00_ctl00_main_MainContent_txtSecurityMessage_CharacterCounterDiv').css( { opacity: 0 }  ); function replaceBrackets(obj) {
+var theText = obj.value;
+   if ( (theText.indexOf('<') != -1) || (theText.indexOf('>') != -1) ) { 
+	    theText = theText.replace(/[\<\>]/ig, '');
+	    obj.value = theText;
+	}
+}Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_ctl00_main_MainContent_TextBoxWatermarkExtender2_ClientState","WatermarkCssClass":"watermark","WatermarkText":"Enter your custom message","id":"ctl00_ctl00_main_MainContent_TextBoxWatermarkExtender2"}, null, null, $get("ctl00_ctl00_main_MainContent_txtSecurityMessage"));
+});
+function replaceBrackets(obj) {
+var theText = obj.value;
+   if ( (theText.indexOf('<') != -1) || (theText.indexOf('>') != -1) ) { 
+	    theText = theText.replace(/[\<\>]/ig, '');
+	    obj.value = theText;
+	}
+}Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_ctl00_main_MainContent_rptQuestions_ctl00_TextBoxWatermarkExtender2_ClientState","WatermarkCssClass":"watermark form-control","WatermarkText":"Answer","id":"ctl00_ctl00_main_MainContent_rptQuestions_ctl00_TextBoxWatermarkExtender2"}, null, null, $get("ctl00_ctl00_main_MainContent_rptQuestions_ctl00_txtAnswer"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_ctl00_main_MainContent_rptQuestions_ctl01_TextBoxWatermarkExtender2_ClientState","WatermarkCssClass":"watermark form-control","WatermarkText":"Answer","id":"ctl00_ctl00_main_MainContent_rptQuestions_ctl01_TextBoxWatermarkExtender2"}, null, null, $get("ctl00_ctl00_main_MainContent_rptQuestions_ctl01_txtAnswer"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_ctl00_main_MainContent_rptQuestions_ctl02_TextBoxWatermarkExtender2_ClientState","WatermarkCssClass":"watermark form-control","WatermarkText":"Answer","id":"ctl00_ctl00_main_MainContent_rptQuestions_ctl02_TextBoxWatermarkExtender2"}, null, null, $get("ctl00_ctl00_main_MainContent_rptQuestions_ctl02_txtAnswer"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_ctl00_main_MainContent_rptQuestions_ctl03_TextBoxWatermarkExtender2_ClientState","WatermarkCssClass":"watermark form-control","WatermarkText":"Answer","id":"ctl00_ctl00_main_MainContent_rptQuestions_ctl03_TextBoxWatermarkExtender2"}, null, null, $get("ctl00_ctl00_main_MainContent_rptQuestions_ctl03_txtAnswer"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_ctl00_main_MainContent_rptQuestions_ctl04_TextBoxWatermarkExtender2_ClientState","WatermarkCssClass":"watermark form-control","WatermarkText":"Answer","id":"ctl00_ctl00_main_MainContent_rptQuestions_ctl04_TextBoxWatermarkExtender2"}, null, null, $get("ctl00_ctl00_main_MainContent_rptQuestions_ctl04_txtAnswer"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_ctl00_main_MainContent_rptQuestions_ctl05_TextBoxWatermarkExtender2_ClientState","WatermarkCssClass":"watermark form-control","WatermarkText":"Answer","id":"ctl00_ctl00_main_MainContent_rptQuestions_ctl05_TextBoxWatermarkExtender2"}, null, null, $get("ctl00_ctl00_main_MainContent_rptQuestions_ctl05_txtAnswer"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"avatar-creator-backdrop","PopupControlID":"ctl00_ctl00_main_MainContent_divPopup","Y":0,"dynamicServicePath":"/SignupRedesign/AdvancedSecurity.aspx","id":"ctl00_ctl00_main_MainContent_popupEditAvatar"}, null, null, $get("ctl00_ctl00_main_MainContent_btnNull"));
+});
+//]]>
+</script>
+<div id="ctl00_ctl00_main_MainContent_divPopup" class="edit-avatar-content" style="display: none; position: fixed; z-index: 100001;">
+		<input type="submit" name="ctl00$ctl00$main$MainContent$btnNull" value="" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$main$MainContent$btnNull&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_ctl00_main_MainContent_btnNull" style="display:none;">    
+        <h1>Create your avatar</h1>
+
+	<div id="ctl00_ctl00_main_MainContent_ctl04">
+	
+        <div class="avatar-creator">
+            
+            <div class="avatar-features">
+                <h6>CUSTOMIZE FEATURES</h6>
+                <ul class="features-list">
+					<li><a id="ctl00_ctl00_main_MainContent_btnGender" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ctl00$main$MainContent$btnGender", "", true, "", "", false, true))">Gender</a></li>
+					<li><a id="ctl00_ctl00_main_MainContent_btnColor" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ctl00$main$MainContent$btnColor", "", true, "", "", false, true))">Shades</a></li>
+					<li><a id="ctl00_ctl00_main_MainContent_btnHead" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ctl00$main$MainContent$btnHead", "", true, "", "", false, true))">Head</a></li>
+					<li><a id="ctl00_ctl00_main_MainContent_btnFace" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ctl00$main$MainContent$btnFace", "", true, "", "", false, true))">Face</a></li>
+					<li><a id="ctl00_ctl00_main_MainContent_btnBody" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ctl00$main$MainContent$btnBody", "", true, "", "", false, true))">Body</a></li>
+					<li><a id="ctl00_ctl00_main_MainContent_btnLegs" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ctl00$main$MainContent$btnLegs", "", true, "", "", false, true))">Legs</a></li>
+                </ul>
+
+                <div class="avatar-feature-selection">
+					
+				</div>
+			</div>
+            
+
+            <div class="avatar-preview">
+                <div class="preview-photo">
+				<img id="ctl00_ctl00_main_MainContent_imgPreviewLegs" src="./Payza.com - My Account   Secure Online Payments_files/avatar(4).aspx">
+				<img id="ctl00_ctl00_main_MainContent_imgPreviewBody" src="./Payza.com - My Account   Secure Online Payments_files/avatar(5).aspx">
+				<img id="ctl00_ctl00_main_MainContent_imgPreviewHead" src="./Payza.com - My Account   Secure Online Payments_files/avatar(6).aspx">
+				<img id="ctl00_ctl00_main_MainContent_imgPreviewFace" src="./Payza.com - My Account   Secure Online Payments_files/avatar(7).aspx">
+                </div>
+            </div>
+
+        </div>
+
+		<div class="avatar-creator-actions">
+      <input type="submit" name="ctl00$ctl00$main$MainContent$btnSaveAvatar" value="Save and Close" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$main$MainContent$btnSaveAvatar&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_ctl00_main_MainContent_btnSaveAvatar" class="btn btn-primary" tabindex="15"> 
+      or 
+      <a id="ctl00_ctl00_main_MainContent_btnClosePopup" class="avatar-creator-cancel" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ctl00$main$MainContent$btnClosePopup", "", true, "", "", false, true))">Cancel</a>
+    </div>
+	
+</div>
+
+	
+
+</div><div id="ctl00_ctl00_main_MainContent_popupEditAvatar_backgroundElement" class="avatar-creator-backdrop" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000;"></div></form>
+  </div>
+  
+      
+  <div class="hide">
+    
+    
+        <footer>
+            <ul class="support-links">
+              <li><a href="https://www.payza.com/support/payza-transaction-fees" target="_blank">	
+    Fees
+    </a></li>
+              <li><a href="https://www.payza.com/support" target="_blank">	
+      Support
+    </a></li>
+              <li><a href="https://www.payza.com/legal-agreements/terms-and-conditions-international" target="_blank">Terms &amp; Conditions</a></li>
+              <li><a href="https://www.payza.com/legal-agreements/online-privacy" target="_blank">	
+  Privacy Policy
+    </a></li>
+              <li><a href="https://www.payza.com/security" target="_blank">Security Center</a></li>
+            </ul>
+            <p class="copyright">Copyright © 2014&nbsp;Payza. All Rights Reserved</p>
+        </footer>
+    
+   
+    </div>
+    
+    
+    
+    
+    
+    
+
+  
+  <script>
+    function popupwindow(url, title, w, h) {
+      wLeft = window.screenLeft ? window.screenLeft : window.screenX;
+      wTop = window.screenTop ? window.screenTop : window.screenY;
+
+      var left = wLeft + (window.innerWidth / 2) - (w / 2);
+      var top = wTop + (window.innerHeight / 2) - (h / 2);
+      return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+    }
+</script>
+  
+    
+
+
+
+</body></html>

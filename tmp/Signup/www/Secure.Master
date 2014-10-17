@@ -1,0 +1,832 @@
+<%@ Master Language="VB" AutoEventWireup="false" 
+    EnableViewState="true" 
+    CodeBehind="Secure.Master.vb" 
+    Inherits="AlertPay.UI.Pages.SecureMasterPage"
+    MasterPageFile="~/Root.master" %>
+
+<%@ Register TagPrefix="AlertPay" TagName="Message"                         Src="~/UserControls/UCMessage.ascx" %>
+<%@ Register TagPrefix="AlertPay" TagName="PromotionBox"                    Src="~/MasterPageUserControls/UCEGiftCardPromotionBox.ascx" %>
+<%@ Register TagPrefix="AlertPay" TagName="FeatureApprovalBannerCheckout"   Src="~/MasterPageUserControls/FeatureApprovalBannerCheckout.ascx" %>
+<%@ Register TagPrefix="AlertPay" TagName="SignupBox"                       Src="~/signup/SignupBox.ascx" %>
+
+
+<%@ Import Namespace="AlertPay.UI.Helpers" %>
+
+<asp:Content runat="server" ID="contentHead" ContentPlaceHolderID="head">
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent">
+
+        <!-- THE FOLLOWING IS CODE NEEDED FOR GOOGLE ANALYTICS FUNCTIONALITY -->
+
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            var pluginUrl =
+       '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+            _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+            _gaq.push(['_setAccount', 'UA-36587799-6']);
+            _gaq.push(['_setDomainName', 'payza.com']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+
+    <!-- END GOOGLE ANALYTICS CODE -->
+
+
+        <!-- Google Analytics PreProduction Code -->
+        
+<%--        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-35773262-1']);
+            _gaq.push(['_setDomainName', 'preproduction.payza.com']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>--%>
+
+        <!-- End Google Analytics PreProduction Code -->
+
+
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content runat="server" ID="contentMain" ContentPlaceHolderID="main">
+
+    <% If Not IsDeviceIdSaved Then%>
+<AlertPay:AlertPayPersistJs runat="server" ID="AlertPayPersistJsId">
+</AlertPay:AlertPayPersistJs>
+<%--
+<body onload="PersistJsLoad();">
+--%>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            PersistJsLoad();
+        });
+    </script>
+    <% End If%>
+
+    <div class="navbar navbar-static-top navbar-inverse top-navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.ACCOUNTOVERVIEW)) %>">Payza</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="<%=Resources.Application.key_footer_support_link%>" target="_blank"><%=Resources.Application.key_footer_support%></a></li>
+                    <li>
+                        <asp:LinkButton ID="lnkToggleLanguage" CausesValidation="false" Text='<%$ Resources: Application, key_toggle_language %>' runat="server" /></li>
+                    <li class="active"><a href="<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.LOGOUT))%>"><%=Resources.Application.key_logout %></a></li>
+                </ul>
+            </div>
+            <!-- /.nav-collapse -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3" id="sidebar-left" role="navigation">
+                <div class="sidebar-nav">
+                    <div class="profile">
+                        <div class="profile-picture">
+                          <a href="<%=Page.ResolveUrl("~/AdvancedSecurity.aspx")%>">
+                            <asp:MultiView runat="server" ID="mvwAvatar" ActiveViewIndex="0">
+                                <asp:View runat="server" ID="vwNoAvatar">
+                                    <img src="<%= Page.ResolveUrl("~/images/noAvatar.png") %>" alt="" class="no-avatar" />
+                                </asp:View>
+                                <asp:View runat="server" ID="vwAvatar">
+                                    <asp:Image ID="imgLegs" runat="server" CssClass="profile-legs" />
+                                    <asp:Image ID="imgBody" runat="server" CssClass="profile-body" />
+                                    <asp:Image ID="imgHead" runat="server" CssClass="profile-head" />
+                                    <asp:Image ID="imgFace" runat="server" CssClass="profile-face" />
+                                </asp:View>
+                            </asp:MultiView>
+                            </a>
+                        </div>
+                        <div class="dropdown">
+                            <a data-toggle="dropdown" href="#" class="profile-username dropdown-icon" title='<%:Me.UserName%>'>
+                                <%:Me.UserName%>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <li class="arrow-container">
+                                    <div class="arrow"></div>
+                                </li>
+                                <li class="profile-dropdown-header">
+                                    <strong><%:Me.UserEmail%></strong><br />
+                                    <%:Me.AccountTypeForDisplay%>
+                                    <%If Me.AccountIsVerified Then%>
+                                        <%=Resources.Application.key_verified%>
+                                    <%Else%>
+                                        <%=Resources.Application.key_unverified%>
+                                    <%End If%>
+                                </li>
+
+                                <%--
+                                <asp:PlaceHolder ID="phBusinessProfileUpdate" runat="server" >
+                                    <li>
+                                        <a href='<%=Page.ResolveUrl(NavigationHelper.AlertPayPages.BusinessProfileUpdate)%>' >
+                                            <%:GetLocalResourceObject("key_business_information").ToString()%>
+                                        </a>
+                                    </li>
+                                </asp:PlaceHolder>
+                                --%>
+
+                                <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.UPDATEPERSONALINFO))%>' class="personal-information">
+                                    <%=Resources.Application.key_personal_information%></a></li>
+                                <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.UPDATEPASSWORD))%>' class="update-password">
+                                    <%=Resources.Application.key_password%></a></li>
+                                <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.UPDATETRANSACTIONPIN))%>' class="update-pin">
+                                    <%=Resources.Application.key_transaction_pin%></a></li>
+                                <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.ADVANCEDSECURITY))%>' class="advanced-security">
+                                    <%=Resources.Application.key_cap_advanced_security%></a></li>
+                                <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.EMAILLIST))%>' class="email-list">
+                                    <%=Resources.Application.key_email_addresses%></a></li>
+                                <li><a href="<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.ACCOUNTVERIFICATION))%>" class="verification">
+                                    <%=GetLocalResourceObject("key_verification").ToString()%></a></li>
+                                <li id="liSubmittedDocuments" runat="server" visible="false"><a href="<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.SUBMITTEDDOCUMENTS))%>" class="verification">
+                                    <%=GetLocalResourceObject("key_submitted_documents").ToString()%></a></li>
+
+                                <asp:PlaceHolder ID="phUpgradeDowngradeAccountLink" runat="server" >
+                                    <li>
+                                        <%--
+                                        <asp:HyperLink ID="hypUpgradeDowngradeAccount" runat="server" CssClass="upgrade-downgrade-account" />
+                                        --%>
+                                        <a href='<%=Page.ResolveUrl(NavigationHelper.AlertPayPages.ChangeAccountType)%>' class="upgrade-downgrade-account" >
+                                            <%=GetLocalResourceObject("key_upgrade_account").ToString()%>
+                                        </a>
+                                    </li>
+                                </asp:PlaceHolder>
+
+                                <asp:PlaceHolder ID="phCloseAccountLink" runat="server">
+                                    <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.CLOSEACCOUNT))%>' class="close-account">
+                                        <%=Resources.Application.key_close_account %></a></li>
+                                </asp:PlaceHolder>
+                            </ul>
+                        </div>
+                        <div class="account-status">
+                            <p>
+                                <%:Me.AccountTypeForDisplay%>
+                                <%If Me.AccountIsVerified Then%>
+                                    <%=Resources.Application.key_verified%>
+                                <%Else%>
+                                    <%=Resources.Application.key_unverified%>
+                                <%End If%>
+                            </p>
+                            <%--<p><a href="<%=Page.ResolveUrl("~/AdvancedSecurity.aspx")%>">Advanced Security</a></p>--%>
+                        </div>
+                    </div>
+
+
+                    <%-- TODO TODO_UI - this is so that 'disabled' links in the main nav (left sidebar) take the same 'amount of space' as regular links --%>
+                    <style type="text/css" >
+                        .sidebar-nav .panel ul .disabled-link {
+                            font-size: 0.9em;
+                            padding: 8px 15px 8px 0;
+                            /*font-weight: 600;*/
+                            display: block;
+                        }
+                    </style>
+
+                    <asp:PlaceHolder ID="phMainNavSectionWallet" runat="server">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" href="#collapseYourEWallet">
+                                    <%=GetLocalResourceObject("key_wallet").ToString()%></a>
+                            </h4>
+                            <h6 class="panel-sub-title"><%=GetLocalResourceObject("key_access_and_control_your_finances_with_ease_").ToString()%></h6>
+                        </div>
+                        <div id="collapseYourEWallet" class="panel-collapse collapse">
+                            <ul>
+                                <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.CURRENCYBALANCE))%>' 
+                                    <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.CURRENCYBALANCE)%>>
+                                        <%=GetLocalResourceObject("key_balances").ToString()%>
+                                    </a></li>
+                                <%--<li><a href="<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.TRANSFERBALANCES))%>"><%=Resources.Application.key_exchange %> Balances</a></li>--%>
+                                <li>
+                                    <%-- CSS class of spanAddCC set in the Sub DoMegaMenuDisplayLogic() --%>
+                                    <span id='spanAddCC' runat="server"><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.VIEWCREDITCARDS))%>' 
+                                      <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.VIEWCREDITCARDS)%>>
+                                        <%=GetLocalResourceObject("key_credit_cards").ToString()%>
+                                    </a></span>
+                                </li>
+                                <li>
+                                    <%-- CSS class of spanAddCC set in the Sub DoMegaMenuDisplayLogic() --%>
+                                    <span id="spanAddBankAccount" runat="server"><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.BANKACCOUNTSETUP))%>' 
+                                      <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.BANKACCOUNTSETUP)%>>
+                                        <%=GetLocalResourceObject("key_bank_accounts").ToString()%>
+                                    </a></span>
+                                </li>
+
+                                <% If Me.displayeGiftCardWithdrawFunds Then%>
+                                    <li><a href='<%=Page.ResolveUrl(String.Format("~/eGiftCard/WithdrawFunds.aspx"))%>' <%=Me.ActivateMenuLink("~/eGiftCard/WithdrawFunds.aspx") %>>
+                                        <%=GetLocalResourceObject("key_egift_cards").ToString()%>
+                                    </a></li>
+                                <% End If%>
+
+                                <li id="liMainNavPrepaidCard" runat="server">
+                                <%-- CSS class of spanAddCC set in the Sub DoMegaMenuDisplayLogic() --%>
+                                    <span id="spanAddDebitCard" runat="server">
+                                        <a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.DEBITCARDSELECT))%>' <%=Me.ActivateMenuLink(New String() { NavigationHelper.AlertPayPages.DEBITCARDSELECT, NavigationHelper.AlertPayPages.PREPAIDCARDABOUT }) %>>
+                                            <%=GetLocalResourceObject("key_prepaid_cards").ToString()%></a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phMainNavSectionAccount" runat="server">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" href="#collapseYourAccount">
+                                    <%=GetLocalResourceObject("key_account").ToString()%>
+                                </a>
+                            </h4>
+                            <h6 class="panel-sub-title"><%=GetLocalResourceObject("key_profit_from_exclusive_tools_and_features_").ToString()%></h6>
+                        </div>
+                        <div id="collapseYourAccount" class="panel-collapse collapse">
+                            <ul>
+                                <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.TRANSACTIONHISTORY))%>' 
+                                      <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.TRANSACTIONHISTORY)%>>
+                                        <%=GetLocalResourceObject("key_detailed_transaction_history").ToString()%>
+                                    </a></li>
+                                <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.EARNMONEY))%>' 
+                                    <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.EARNMONEY) %>>
+                                        <%=GetLocalResourceObject("key_referral_program").ToString()%>
+                                    </a></li>
+                                <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.SUBSCRIPTIONSPURCHASED))%>' 
+                                    <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.SUBSCRIPTIONSPURCHASED)%>>
+                                    <%=GetLocalResourceObject("key_purchased_subscriptions").ToString()%></a></li>
+                                <li><a href='<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.THIRDPARTYACCESSINFO))%>'
+									<%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.THIRDPARTYACCESSINFO)%>>
+                                    <%=Resources.Application.key_third_party_access%></a></li>
+
+                                <li>
+                                    <a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.PAYMENTPREFERENCES))%>' <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.PAYMENTPREFERENCES)%> >
+                                        <%=GetLocalResourceObject("key_payment_preferences").ToString()%>
+                                    </a>
+                                </li>
+
+                                <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.EMAILNOTIFICATION))%>'
+									<%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.EMAILNOTIFICATION)%>>
+                                    <%=GetLocalResourceObject("key_email_notifications").ToString()%>
+                                </a></li>
+
+                                <li id="liMainNavIntegrationApi" runat="server" >
+                                    <%-- IMPORTANT: This MultiView must contain 2 View controls: the 1st one with a link, the 2nd one with a 'disabled link'. See code-behind. --%>
+                                    <asp:MultiView runat="server" >
+                                        <asp:View runat="server" >
+                                            <a href='<%=Page.ResolveUrl(NavigationHelper.AlertPayPages.IntegrationAPI)%>' <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.IntegrationAPI)%> >
+                                                <%=GetLocalResourceObject("key_api_advanced_integration").ToString()%>
+                                            </a>
+                                        </asp:View>
+                                        <asp:View runat="server" >
+                                            <span class="disabled-link" title="<%=GetLocalResourceObject("key_disabled_link_tooltip").ToString()%>" >
+                                                <%=GetLocalResourceObject("key_api_advanced_integration").ToString()%>
+                                            </span>
+                                        </asp:View>
+                                    </asp:MultiView>
+                                </li>
+
+                                <%--TODO: Will be turn on the release of CEDRIC 1.2 --%>
+                                <%--<li><a href='<%=Page.ResolveUrl("~/MyDocuments.aspx")%>'><%=Resources.Cedric.Key_Page_My_Documents%></a></li>--%>
+                                <asp:PlaceHolder ID="phResolutionCenterLink" runat="server">
+                                    <li><a href='<%=Page.ResolveURL(NavigationHelper.AlertPayPages.RESOLUTION_CENTER_HOME)%>' <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.RESOLUTION_CENTER_HOME) %>>
+                                        <%=GetLocalResourceObject("key_resolution_center").ToString()%></a></li>
+                                </asp:PlaceHolder>
+                            </ul>
+                        </div>
+                    </div>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phMainNavSectionBusiness" runat="server">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" href="#collapseYourBusiness">
+                                        <%=GetLocalResourceObject("key_business").ToString()%>
+                                    </a>
+                                </h4>
+                                <h6 class="panel-sub-title"><%=GetLocalResourceObject("key_enrich_your_online_business_and_prosper_").ToString()%></h6>
+                            </div>
+                            <div id="collapseYourBusiness" class="panel-collapse collapse">
+                                <ul>
+
+                                    <li id="liMainNavWebsites" runat="server" >
+                                        <%-- IMPORTANT: This MultiView must contain 2 View controls: the 1st one with a link, the 2nd one with a 'disabled link'. See code-behind. --%>
+                                        <asp:MultiView runat="server" >
+                                            <asp:View runat="server" >
+                                                <%-- CSS class of spanAddCC set in the Sub DoMegaMenuDisplayLogic() --%>
+                                                <span id="spanAddURL" runat="server">
+                                                    <a href='<%=Me.GetUrlForWebsiteManageWithFunneling()%>' <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.WebsiteManage)%> >
+                                                        <%=GetLocalResourceObject("key_websites").ToString()%>
+                                                    </a>
+                                                </span>
+                                            </asp:View>
+                                            <asp:View runat="server" >
+                                                <span class="disabled-link" title="<%=GetLocalResourceObject("key_disabled_link_tooltip").ToString()%>" >
+                                                    <%=GetLocalResourceObject("key_websites").ToString()%>
+                                                </span>
+                                            </asp:View>
+                                        </asp:MultiView>
+                                    </li>
+
+                                    <li id="liMainNavButtonManage" runat="server" >
+                                        <%-- IMPORTANT: This MultiView must contain 2 View controls: the 1st one with a link, the 2nd one with a 'disabled link'. See code-behind. --%>
+                                        <asp:MultiView runat="server" >
+                                            <asp:View runat="server" >
+                                                <a href='<%=Me.GetUrlForButtonManageWithFunneling()%>' <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.ButtonManage)%> >
+                                                    <%=GetLocalResourceObject("key_manage_buttons").ToString()%>
+                                                </a>
+                                            </asp:View>
+                                            <asp:View runat="server" >
+                                                <span class="disabled-link" title="<%=GetLocalResourceObject("key_disabled_link_tooltip").ToString()%>" >
+                                                    <%=GetLocalResourceObject("key_manage_buttons").ToString()%>
+                                                </span>
+                                            </asp:View>
+                                        </asp:MultiView>
+                                    </li>
+
+                                    <li id="liMainNavSubscriptionsSold" runat="server" >
+                                        <%-- IMPORTANT: This MultiView must contain 2 View controls: the 1st one with a link, the 2nd one with a 'disabled link'. See code-behind. --%>
+                                        <asp:MultiView runat="server" >
+                                            <asp:View runat="server" >
+                                                <a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.SUBSCRIPTIONSSOLD))%>' <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.SUBSCRIPTIONSSOLD)%> >
+                                                    <%=GetLocalResourceObject("key_sold_subscriptions").ToString()%>
+                                                </a>
+                                            </asp:View>
+                                            <asp:View runat="server" >
+                                                <span class="disabled-link" title="<%=GetLocalResourceObject("key_disabled_link_tooltip").ToString()%>" >
+                                                    <%=GetLocalResourceObject("key_sold_subscriptions").ToString()%>
+                                                </span>
+                                            </asp:View>
+                                        </asp:MultiView>
+                                    </li>
+
+                                    <li id="liMainNavTermsOfService" runat="server" >
+                                        <%-- IMPORTANT: This MultiView must contain 2 View controls: the 1st one with a link, the 2nd one with a 'disabled link'. See code-behind. --%>
+                                        <asp:MultiView runat="server" >
+                                            <asp:View runat="server" >
+                                                <a href='<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.VIEWTOS))%>' <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.VIEWTOS)%> >
+                                                    <%=GetLocalResourceObject("key_terms_of_service").ToString()%>
+                                                </a>
+                                            </asp:View>
+                                            <asp:View runat="server" >
+                                                <span class="disabled-link" title="<%=GetLocalResourceObject("key_disabled_link_tooltip").ToString()%>" >
+                                                    <%=GetLocalResourceObject("key_terms_of_service").ToString()%>
+                                                </span>
+                                            </asp:View>
+                                        </asp:MultiView>
+                                    </li>
+
+                                    <li id="liMainNavBusinessProfile" runat="server" >
+                                        <%-- IMPORTANT: This MultiView must contain 2 View controls: the 1st one with a link, the 2nd one with a 'disabled link'. See code-behind. --%>
+                                        <asp:MultiView runat="server" >
+                                            <asp:View runat="server" >
+                                                <a href='<%=Page.ResolveUrl(NavigationHelper.AlertPayPages.BusinessProfileManageLegacyPage)%>' <%=Me.ActivateMenuLink(New String() {NavigationHelper.AlertPayPages.BusinessProfileUpdate, NavigationHelper.AlertPayPages.BusinessProfileManageLegacyPage, NavigationHelper.AlertPayPages.BusinessProfilePersonalAccountLegacyPage})%> >
+                                                    <%=GetLocalResourceObject("key_business_information").ToString()%>
+                                                </a>
+                                            </asp:View>
+                                            <asp:View runat="server" >
+                                                <span class="disabled-link" title="<%=GetLocalResourceObject("key_disabled_link_tooltip").ToString()%>" >
+                                                    <%=GetLocalResourceObject("key_business_information").ToString()%>
+                                                </span>
+                                            </asp:View>
+                                        </asp:MultiView>
+                                    </li>
+
+                                    <%--
+                                  <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.PAYMENTPREFERENCES))%>'
+									  <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.PAYMENTPREFERENCES)%>><%=GetLocalResourceObject("key_payment_preferences").ToString()%></a></li>
+                                    --%>
+
+                                    <li id="liMainNavIntegrationIpn" runat="server" >
+                                        <%-- IMPORTANT: This MultiView must contain 2 View controls: the 1st one with a link, the 2nd one with a 'disabled link'. See code-behind. --%>
+                                        <asp:MultiView runat="server" >
+                                            <asp:View runat="server" >
+                                                <a href='<%=Page.ResolveUrl(NavigationHelper.AlertPayPages.IntegrationIPN)%>' <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.IntegrationIPN)%> >
+                                                    <%=GetLocalResourceObject("key_ipn_advanced_integration").ToString()%>
+                                                </a>
+                                            </asp:View>
+                                            <asp:View runat="server" >
+                                                <span class="disabled-link" title="<%=GetLocalResourceObject("key_disabled_link_tooltip").ToString()%>" >
+                                                    <%=GetLocalResourceObject("key_ipn_advanced_integration").ToString()%>
+                                                </span>
+                                            </asp:View>
+                                        </asp:MultiView>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phMegaMenuUpgradePrompt" runat="server" >
+                        <div class="info-panel-with-grey-info-icon">
+                             <div class="panel-body">
+                                 <p>
+                                     <%=GetLocalResourceObject("key_want_more_features_").ToString()%>
+                                     <a href="<%=Page.ResolveUrl(NavigationHelper.AlertPayPages.ChangeAccountType)%>" >
+                                          <%=GetLocalResourceObject("key_upgrade_your_account_").ToString()%>
+                                     </a>
+                                 </p>
+                             </div>
+                        </div>
+                    </asp:PlaceHolder>
+
+
+
+                    <div class="hide">
+
+                        <%--Land of misfit links--%>
+                        <%--TO BE REMOVED--%>
+                        <%--<a href="<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.ACCOUNTVERIFICATION)) %>"
+                             title="<%=Me.AccountVerificationLinkText%>"></a>--%>
+                        <ul>
+                          <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.ACCOUNTOVERVIEW))%>' 
+                              <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.ACCOUNTOVERVIEW) %>>Dashboard</a></li>
+                            <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.ADVANCEDSECURITY))%>'>
+                                <%=Resources.Application.key_cap_advanced_security%></a></li>
+                            <li runat="server" id="liTaxForm" visible="false"><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.TAXFORM))%>'>
+                                <%=Resources.Application.key_tax_form%></a></li>
+                            <li><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.ACCOUNTVERIFICATION))%>'>
+                                <%=Resources.Application.key_account_verification%></a></li>
+                            <li><%=GetLocalResourceObject("key_manage_my_money").ToString()%></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="col-xs-12  <%=If(Me.SidebarIsDisplayed, "col-sm-6", "col-sm-9")%>" id="<%=If(Me.SidebarIsDisplayed, "main-container-with-sidebar", "main-container-without-sidebar")%>">
+                <asp:PlaceHolder ID="phMenuActions" runat="server">
+                    <div class="quick-wizards">
+                        <ul id="ulTopMenu" runat="server">
+                            <%--
+                    IMPORTANT: 
+                    do not modify the IDs of the following <li> elements; the highlighting of the menu item is based on the IDs 
+                        --%>
+                            <li id="SendFunds" runat="server"><a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.SENDFUNDS))%>' <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.SENDMONEY) %>><span class="send-money-icon"><%=Resources.Application.key_send_funds%></span></a></li><%-- 
+                            --%><li id="RequestFunds" runat="server"><a href='<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.REQUESTFUNDS))%>' <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.REQUESTMONEY) %>><span class="request-money-icon"><%=Resources.Application.key_request_funds%></span></a></li><%-- 
+                            --%><li id="Deposit" runat="server"><a href='<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.ADDFUNDS))%>' <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.ADDFUNDS) %>><span class="load-account-icon"><%=Resources.Application.key_add_funds%></span></a></li><%-- 
+                            --%><li id="Withdraw" runat="server"><a href='<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.WITHDRAWFUNDS))%>' <%=Me.ActivateMenuLink(NavigationHelper.AlertPayPages.WITHDRAWFUNDS) %>><span class="withdraw-funds-icon"><%=Resources.Application.key_withdraw_funds%></span></a></li>
+                            <%-- comments are added between the <li> elements because when the <ul> element is runat="server" there is a space between each <li>, which causes layout breakage --%>
+                        </ul>
+                    </div>
+                </asp:PlaceHolder>
+
+                <%--General Error Messages--%>
+                <AlertPay:Message runat="server" ID="ctlMessage" />
+                <%--End General Error Messages--%>
+
+
+
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+
+
+                <%-- only needed for the "Error.aspx" page, where the MasterPageFile is set programmatically --%>
+                <asp:ContentPlaceHolder ID="main" runat="server"></asp:ContentPlaceHolder>
+
+
+
+                <footer>
+                  <ul class="support-links">
+                    <li><a href="<%=Resources.Application.key_footer_fee_link %>" target="_blank"><%=Resources.Application.key_footer_fee%></a></li>
+                    <li><a href="<%=Resources.Application.key_footer_support_link%>" target="_blank"><%=Resources.Application.key_footer_support%></a></li>
+                    <li><a href="<%=Resources.Application.key_footer_term_and_condition_link%>" target="_blank"><%=Resources.Application.footer_Terms_and_Conditions%></a></li>
+                    <li><a href="<%=Resources.Application.key_footer_privacy_link%>" target="_blank"><%=Resources.Application.key_footer_privacy%></a></li>
+                    <li><a href="<%=Resources.Application.key_footer_security_link%>" target="_blank"><%=Resources.Application.footer_Security_Center%></a></li>
+                  </ul>
+                  <p class="copyright">Copyright &copy; <%=DateTime.Today.Year%> Payza. All Rights Reserved</p>
+                </footer>
+            </div>
+
+            <%If Me.SidebarIsDisplayed Then%>
+            <div class="col-xs-12 col-sm-3" id="sidebar-right">
+
+				<div class="panel next-step" visible="true" id="divProfile" runat="server">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">YOUR NEXT STEPS</h4>
+                    </div>
+                    <div class="panel-body">
+                        <AlertPay:SignupBox ID="SignupBox1" runat="server"></AlertPay:SignupBox>
+                    </div>
+                    <div class="panel-footer"></div>
+                </div>
+
+                <div class="panel new-and-improved">
+                  <div class="panel-heading">
+                    <h1 class="panel-title">Welcome to the new <strong>Payza</strong></h1>
+                  </div>
+                  <div class="panel-body">
+                    <p>New look. New features. New user-friendly design.</p>
+                    <p><a href="https://blog.payza.com/payza-updates/announcements/mini-me-big-security-introducing-profile-avatars-2/" title="Come see what's new!" target="_blank">Come see what's new!</a></p>
+                  </div>
+                </div>
+
+                <AlertPay:PromotionBox runat="server" ID="ucPromotionBox" />
+
+                <%-- TODO TODO_UI todo_review - location is likely not final  --%>
+                <AlertPay:FeatureApprovalBannerCheckout runat="server" />
+
+                <div class="panel protect-ya-neck" visible="false" id="divAccountSecurity" runat="server">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><%= GetGlobalResourceObject("Application", "key_cap_account_overview_setup_title").ToString() %></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p><%= GetGlobalResourceObject("Application", "key_cap_account_overview_setup_content").ToString() %></p>
+                    </div>
+                    <div class="panel-footer">
+                        <p><a href="AdvancedSecurity.aspx" class="btn btn-info"><%= GetGlobalResourceObject("Application", "key_cap_account_overview_setup_link").ToString() %></a></p>
+                    </div>
+                </div>
+
+            </div>
+            <%End If%>
+        </div>
+    </div>
+            
+
+
+
+
+
+    <div class="hide">
+      
+        <%=GetLocalResourceObject("key_language").ToString()%>
+
+        <a href='<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.USER_TIMEZONE_LOCALIZATION))%>'>
+            <%=GetLocalResourceObject("key_language_preferences").ToString()%></a>--%>
+
+    <%--<Payza:AccountsTypesNamesChangedSplash ID="ucAccountsTypesNamesChangedSplash" runat="server" />--%>
+
+      </div>
+
+
+
+        <asp:PlaceHolder ID="phSubMenuBar" runat="server" Visible="false" EnableViewState="false">
+
+            <%--
+                IMPORTANT: 
+                do not modify the IDs of the <li> elements within the following MultiView; the highlighting of the sub-menu item is based on the IDs 
+                    --%>
+            <asp:MultiView ID="mltvSecureMaster" runat="server">
+                <asp:View ID="viewSendMoney" runat="server">
+                    <ul>
+                        <li id="SubMenuSendMoney" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.SENDMONEY))%>">
+                            <%=Resources.Application.key_single_transfer_send_money%></a> </li>
+                        <li id="SubMenuMassPay" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.MASSPAY))%>">
+                            <%=Resources.Application.key_mass_pay %></a> </li>
+                    </ul>
+                </asp:View>
+                <asp:View ID="viewRequestMoney" runat="server">
+                    <ul>
+                        <li id="SubMenuRequestMoney" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.REQUESTMONEY))%>">
+                            <%=Resources.Application.key_single_transfer_request_money%></a> </li>
+                        <li id="SubMenuEmailInvoice" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.EMAIL_INVOICE))%>">
+                            <%=Resources.Application.key_email_invoice %></a> </li>
+                    </ul>
+                </asp:View>
+                <asp:View ID="viewDeposit" runat="server">
+                    <ul>
+                        <li id="SubMenuDepositFeesAndProcessing" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.ADDFUNDS))%>">
+                            <%=GetLocalResourceObject("key_fees_and_processing").ToString()%></a> </li>
+                                <% If Not Me.displayBankWireDepositMenu() Then%>
+                        <li id="SubMenuDepositBankWire" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.BANKWIREADDFUNDS))%>">
+                            <%=Resources.Application.key_bank_wire%></a> </li>
+                                <% End If%>
+                        <li id="SubMenuDepositBankTransfer" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.BANKACCOUNTADDFUNDS))%>">
+                            <%=Resources.Application.key_bank_transfer %></a> </li>
+                        <li id="SubMenuDepositCheck" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.CERTIFIEDCHEQUEADDFUNDS))%>">
+                            <%=Resources.Application.key_certified_check___money_order%></a> </li>
+                        <li id="SubMenuCreditCardAddFunds" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.CCADDFUNDS))%>">
+                            <%=Resources.Application.key_credit_card%></a> </li>
+
+                        <li id="SubMenuUnloadDebitCard" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.UNLOADDEBITCARD))%>">
+                            <%=Resources.Application.key_debit_card%></a> </li>
+                                <% If Me.displayInteracDepositMenu Then%>
+                        <li id="SubMenuInteracAddFunds" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.INTERAC_ADD_FUNDS ))%>">
+                            <%=Resources.Application.key_interac_online%></a> </li>
+                        <%End If%>
+                    </ul>
+                </asp:View>
+                <asp:View ID="viewWithdraw" runat="server">
+                    <ul>
+                        <li id="SubMenuWithdrawFundsFeesAndProcessing" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.WITHDRAWFUNDS))%>">
+                            <%=GetLocalResourceObject("key_fees_and_processing").ToString()%></a> </li>
+                        <li id="SubMenuLoadDebitCard" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.LOADDEBITCARD))%>">
+                            <%=Resources.Application.key_debit_card%></a> </li>
+
+                        <li id="SubMenuWithdrawFundsBankTransfer" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.BANKACCOUNTWITHDRAWFUNDS))%>">
+                            <%=Resources.Application.key_bank_transfer%></a> </li>
+                                <% If Me.displayBankWireWithdrawalMenu() Then%>
+                        <li id="SubMenuWithdrawFundsBankWire" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.BANKWIREWITHDRAWFUNDS))%>">
+                            <%=Resources.Application.key_bank_wire%></a> </li>
+                                <% End If%>
+                                <li id="SubMenuWithdrawFundsCheck" runat="server">
+                            <div id="divWithdrawCheck" runat="server">
+                                <a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.CHEQUEWITHDRAWFUNDS))%>"><%=Resources.Application.key_check %></a>
+                            </div>
+                                </li>
+                        <% If Me.displayeGiftCardWithdrawFunds Then%>
+                        <li id="SubMenuWithdrawFundseGiftCard" runat="server"><a href="<%=Page.ResolveUrl( NavigationHelper.AlertPayPages.E_GIFT_CARD_WITHDRAW_FUNDS )%>">
+                            <%=Resources.Application.key_purchase_an_e_gift_card%></a> </li>
+                        <% End If%>
+                    </ul>
+                </asp:View>
+
+                <asp:View ID="viewCreditCards" runat="server">
+                    <ul>
+                        <li id="SubMenuCreditCardsManage" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.VIEWCREDITCARDS))%>">
+                            <%=GetLocalResourceObject("key_manage_credit_cards").ToString()%></a></li>
+                        <li id="SubMenuCreditCardsAdd" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.ADDCREDITCARDS))%>">
+                            <%=GetLocalResourceObject("key_add_a_credit_card").ToString()%></a></li>
+                    </ul>
+                </asp:View>
+
+                <asp:View ID="viewBankAccounts" runat="server">
+                    <ul>
+                        <li id="SubMenuBankAccountsManage" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.BANKACCOUNTSETUP))%>">
+                            <%=GetLocalResourceObject("key_manage_bank_accounts").ToString()%></a> </li>
+                        <li id="SubMenuBankAccountsAdd" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.ADDBANKACCOUNT))%>">
+                            <%=GetLocalResourceObject("key_add_a_bank_account").ToString()%></a> </li>
+                    </ul>
+                </asp:View>
+                <asp:View ID="viewPrepaidCards" runat="server">
+                    <ul>
+                        <li id="liSubMenuPrepaidCardsAboutTheCard" runat="server">
+                            <a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.PREPAIDCARDABOUT))%>">
+                                <%=GetLocalResourceObject("key_about_the_card").ToString()%>
+                            </a>
+                        </li>
+                        <li id="liSubMenuPrepaidCardsManage" runat="server">
+                            <a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.DEBITCARDSELECT))%>">
+                                <%=GetLocalResourceObject("key_manage_prepaid_cards").ToString()%>
+                            </a>
+                        </li>
+                        <li id="liSubMenuPrepaidCardsFeesAndLimits" runat="server">
+                            <a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.DEBITCARDFEESNUMBER))%>">
+                                <%=GetLocalResourceObject("key_card_fees_and_limits").ToString()%>
+                            </a>
+                        </li>
+                        <li id="liSubMenuPrepaidCardsTermsOfService" runat="server">
+                            <a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.PREPAIDCARDTERMS))%>">
+                                <%=GetLocalResourceObject("key_using_your_prepaid_card").ToString()%>
+                            </a>
+                        </li>
+<%--                        <li id="liSubMenuPrepaidCardsOrderCard" runat="server">
+                            <a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.PREPAIDCARDORDERCARD))%>">
+                                <%=GetLocalResourceObject("key_order_a_prepaid_card").ToString()%>
+                            </a>
+                        </li>
+                        <li id="liSubMenuPrepaidCardsOrderStatus" runat="server">
+                            <a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.PREPAIDCARDORDERSTATUS))%>">
+                                <%=GetLocalResourceObject("key_order_status").ToString()%>
+                            </a>
+                        </li>--%>
+                    </ul>
+                </asp:View>
+                <asp:View ID="viewCurrencies" runat="server">
+                    <ul>
+                        <li id="SubMenuCurrenciesManage" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.CURRENCYBALANCE))%>">
+                            <%=GetLocalResourceObject("key_manage_currencies").ToString()%></a> </li>
+                        <li id="SubMenuCurrenciesExchange" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.TRANSFERBALANCES))%>">
+                            <%=GetLocalResourceObject("key_exchange_currencies").ToString()%></a> </li>
+                    </ul>
+                </asp:View>
+
+                <asp:View ID="viewEarnMoney" runat="server">
+                    <ul>
+                        <li id="SubMenuReferralProgramProgramDetails" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.EARNMONEY))%>">
+                            <%=GetLocalResourceObject("key_referral_introduction").ToString()%></a> </li>
+                        <li id="SubMenuReferrals" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.REFERRALS))%>">
+                            <%=Resources.Application.key_referrals %></a> </li>
+                        <li id="SubMenuLinkCode" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.LINKCODE))%>">
+                            <%=Resources.Application.key_link_code %></a> </li>
+                        <li id="SubMenuBannerCode" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.BANNERS))%>">
+                            <%=Resources.Application.key_banner_code %></a> </li>
+                    </ul>
+                </asp:View>
+
+                <asp:View ID="viewBusinessProfiles" runat="server">
+                    <ul>
+                        <li id="SubMenuBusinessProfilesManage" runat="server"><a href="<%=Page.ResolveUrl(NavigationHelper.AlertPayPages.BusinessProfileManageLegacyPage)%>">
+                            <%=GetLocalResourceObject("key_manage_business_profiles").ToString()%></a> </li>
+                        <li id="SubMenuBusinessProfilesAdd" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.ADDMERCHANTPROFILE))%>">
+                            <%=GetLocalResourceObject("key_add_a_business_profile").ToString()%></a> </li>
+                    </ul>
+                </asp:View>
+
+                <asp:View ID="viewWebsites" runat="server">
+                    <ul>
+                        <li id="SubMenuWebsitesManage" runat="server">
+                            <a href="<%=Page.ResolveUrl(NavigationHelper.AlertPayPages.WebsiteManage)%>" >
+                                <%=GetLocalResourceObject("key_manage_websites").ToString()%>
+                            </a>
+                        </li>
+                        <li id="SubMenuWebsitesAdd" runat="server">
+                            <%--<a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.DOMAIN_VERIFICATION))%>">--%>
+                            <a href="<%=Page.ResolveUrl(NavigationHelper.AlertPayPages.WebsiteAddEdit)%>" >
+                                <%=GetLocalResourceObject("key_add_a_website").ToString()%>
+                            </a>
+                        </li>
+                    </ul>
+                </asp:View>
+
+
+
+                <asp:View ID="viewSubscriptions" runat="server">
+                    <ul>
+                        <li id="SubMenuButtonsSubscriptionManage" runat="server"><a href="<%=Page.ResolveUrl(NavigationHelper.AlertPayPages.ButtonManage)%>">
+                            <%=Resources.Application.key_manage_buttons %></a> </li>
+                        <li id="SubMenuSubscriptionsSold" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.SUBSCRIPTIONSSOLD))%>">
+                            <%=GetLocalResourceObject("key_sold_subscriptions").ToString()%></a> </li>
+                    </ul>
+                </asp:View>
+
+                <asp:View ID="viewIpnAdvancedIntegration" runat="server">
+                    <ul>
+                        <li id="SubMenuIpnAdvancedIntegrationInstructions" runat="server"><a href="<%=Page.ResolveUrl(NavigationHelper.AlertPayPages.IntegrationIPN)%>">
+                            <%=GetLocalResourceObject("key_instructions").ToString()%></a> </li>
+                        <li id="SubMenuIpnAdvancedIntegrationSetup" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.MANAGE_IPN))%>">
+                            <%=GetLocalResourceObject("key_ipn_setup").ToString()%></a> </li>
+                        <li id="SubMenuIpnAdvancedIntegrationHistory" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.VIEW_IPN_HISTORY))%>">
+                            <%=GetLocalResourceObject("key_ipn_history").ToString()%></a> </li>
+                        <li id="SubMenuIpnAdvancedIntegrationIpnSimulator" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.IPN_SIMULATOR))%>">
+                            <%=GetLocalResourceObject("key_ipn_simulator").ToString()%></a> </li>
+                    </ul>
+                </asp:View>
+
+                <asp:View ID="viewTermsOfService" runat="server">
+                    <ul>
+                        <li id="SubMenuTermsOfServiceManage" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.VIEWTOS))%>">
+                            <%=GetLocalResourceObject("key_manage_terms_of_service").ToString()%></a> </li>
+                        <li id="SubMenuTermsOfServiceAdd" runat="server"><a href="<%=Page.ResolveUrl(String.Format("~/{0}", NavigationHelper.AlertPayPages.ADDTOS))%>">
+                            <%=GetLocalResourceObject("key_add_terms_of_service").ToString()%></a> </li>
+                    </ul>
+                </asp:View>
+                <asp:View ID="viewVerification" runat="server">
+                    <ul>
+                        <li id="SubMenuVerification" runat="server"><a href="<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.ACCOUNTVERIFICATION))%>">
+                            <%=GetLocalResourceObject("key_overview").ToString()%></a></li>
+                        <li id="SubMenuSubmittedDocuments" runat="server" visible="false"><a href="<%=Page.ResolveURL(String.Format("~/{0}", NavigationHelper.AlertPayPages.SUBMITTEDDOCUMENTS))%>">
+                            <%=GetLocalResourceObject("key_submitted_documents").ToString()%></a> </li>
+                    </ul>
+                </asp:View>
+
+            </asp:MultiView>
+        </asp:PlaceHolder>
+
+
+
+<div data-ng-controller="SignupForm">
+
+<div class="suggestion-popup-absolute-container" data-ng-init="suggestionPopup=1" data-ng-show="suggestionPopup">   
+    <div class="suggestion-popup-relative-container">
+        <div class="suggestion-popup">
+            <div class="close-icon" data-ng-click="suggestionPopup=0"></div>
+            <div class="header">
+                <h3 data-ng-bind-html="resource.weSuggest.title"></h3>
+            </div>
+            <div class="body" data-ng-bind-html="resource.onceYouComplete.title"></div>
+        </div>
+    </div>
+</div>
+
+<div id="confirm-dialog-overlay" data-ng-show="currentStepVisibility"></div>  
+
+<%--<div class="complet-profile" data-ng-init="info={}" data-ng-include="ng-partials/modules/signup/sidebarMenu.html"  data-ng-cloak>--%>
+
+<div class="complet-profile" data-ng-init="info={}" data-ng-if="currentStepVisibility" data-ng-include="'ng-partials/modules/signup/stepsAndSidebarMenu.html'" data-ng-cloak></div>
+
+<%--<div id='loading-indicator-lightbox' data-ng-show="loadingIndicatorLightboxVisible"></div>--%>
+
+<%--TODO delete this--%>
+<%--<div style="position:fixed;left:0;top:0;background-color:#999;opacity:0.8;z-index:1000">
+    <input type="radio" name="currentStep" ng-click="currentStep='0'">&nbsp;&nbsp;
+    <input type="radio" name="currentStep" ng-click="currentStep='1'">
+    <input type="radio" name="currentStep" ng-click="currentStep='2'">
+    <input type="radio" name="currentStep" ng-click="currentStep='3'">
+    <input type="radio" name="currentStep" ng-click="currentStep='4'">&nbsp;&nbsp;
+    <input type="radio" name="currentStep" ng-click="currentStep='5'">&nbsp;&nbsp;
+</div>--%>
+
+</div>
+
+<script src="js/app/modules/signup/signup_step2.js"></script>
+        <script type="text/javascript">
+            var prm = Sys.WebForms.PageRequestManager.getInstance();
+            prm.add_endRequest(bindEvents);
+        </script>
+  <%= AntiForgery.GetHtml()%>
+</asp:Content>
+

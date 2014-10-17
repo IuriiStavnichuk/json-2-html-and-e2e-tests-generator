@@ -1,0 +1,76 @@
+﻿<div data-ng-show="currentStep==3&&currentStepVisibility">
+    <div class="header">
+        <h2>{{resource.whereCanYouBeReached.title}}</h2>
+    </div>
+    <div class="body">
+
+        <form name="phoneForm" novalidate data-ng-init="hideElements('.alert.alert-error')">
+            <div class="form-group">
+                <div class="col-sm-12" data-ng-repeat="message in resource.generalErrorMessages.errorMessage">
+                    <div class='alert alert-error generalErrorMessagesAlert'>
+                        <span data-ng-bind-html="message"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>{{resource.type1.title}}</label>
+                        <select class="form-control" data-ng-model="phoneForm.info.type1.value" data-ng-options="item.id as item.name for item in resource.type1.value" tabindex="610"></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class='alert alert-error' id="number1Alert">
+                            <span data-ng-bind-html="resource.number.errorMessage"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <select class="form-control" data-ng-model="phoneForm.info.countryId1.value" data-ng-options="item.id as item.name for item in countryCodes" tabindex="620"></select>
+                    </div>
+                    <div class="col-sm-7">
+                        <input type="text" id="number1" name="number1" class="form-control" data-ng-required="true"  tabindex="630"
+                            data-ng-model="phoneForm.info.number1.value" 
+                            data-ng-pattern="/^[0-9]{7,10}$/" 
+                            data-ng-keyup="isValid.number1=phoneForm.number1.$valid; showHideAlert('number1')" 
+                            data-ng-blur="showHideAlert( 'number1', 0)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" data-ng-show="number2LinkVisible" data-ng-init="number2LinkVisible=1">
+                        <a class="link" data-ng-click="number2LinkVisible=0;slideDownAnimation('#anotherNumber')">{{resource.addAnotherNumber.title}}</a>
+                    </div>
+                </div>
+                <div id="anotherNumber" data-ng-init="hideElements('#anotherNumber')">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label>{{resource.type1.title}}</label>
+                            <select class="form-control" data-ng-model="phoneForm.info.type2.value" data-ng-options="item.id as item.name for item in resource.type1.value" tabindex="640"></select>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-sm-12">
+                            <div class='alert alert-error' id="number2Alert">
+                                <span data-ng-bind-html="resource.number.errorMessage"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <select class="form-control" data-ng-model="phoneForm.info.countryId2.value" data-ng-options="item.id as item.name for item in countryCodes" tabindex="650"></select>
+                        </div>
+                        <div class="col-sm-7">
+                            <input type="text" id="number2" name="number2" class="form-control" data-ng-required="number2LinkVisible==0&&true"  tabindex="660"
+                            data-ng-model="phoneForm.info.number2.value" 
+                            data-ng-pattern="/^[0-9]{7,10}$/" 
+                            data-ng-keyup="isValid.number2=phoneForm.number2.$valid; showHideAlert('number2')" 
+                            data-ng-blur="showHideAlert( 'number2', 0)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <div class="col-sm-12">
+            <a class="btn btn-info ng-binding" data-ng-class="{'disabled':!phoneForm.$valid}" data-ng-click="submitPersonalSignupData('JSON/SignupApi/SubmitPersonalPhoneNumbers', phoneForm.info, 4)">{{resource.buttonSaveAndContinue.title}}</a> 
+            <a href="#" class="btn btn-link" data-ng-click="submitPersonalSignupData('JSON/SignupApi/SubmitPersonalPhoneNumbers', phoneForm.info); currentStepVisibilityTurnOff(); getProfileProgress()">{{resource.saveAndExit.title}}</a>
+        </div>
+    </div>
+</div>

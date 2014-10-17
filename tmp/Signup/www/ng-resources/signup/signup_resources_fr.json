@@ -1,0 +1,82 @@
+{
+    "generalErrorMessages": { "errorMessage": [] } ,
+	"string": { "errorMessage": "Form validation string error messages cause exception" },
+	"number": { "errorMessage": "Form validation number error messages cause exception" },
+	"loadingContent":{"title": "Loading content..."},
+		
+	"completeProfileSetup": { "title": "COMPLETE PROFILE SETUP" },
+	"workDetailsMenu": { "title": "Profession" },
+	"addressMenu": { "title": "Adresse" },
+	"phoneNumbersMenu": { "title": "Téléphone" },
+	"accountSecurityDetailsMenu": { "title": "Question de sécurité" },
+
+    "personalSignupData": { "title": "Créer votre compte personnel Payza" },
+    "firstName": { "title": "Prénom" ,"errorMessage": "Le prénom ne doit contenir que des caractères alphabétiques." ,"errorMessageIfEmpty": "Votre prénom est nécessaire." },
+    "lastName": { "title": "Nom","errorMessage": "Le nom de famille ne doit contenir que des caractères alphabétiques." ,"errorMessageIfEmpty": "Votre nom de famille est nécessaire." },
+    "emailAddress": { "title": "Courriel", "errorMessage": "Votre adresse e-mail doit être dans le format: nom@exemple.com" ,"errorMessageIfEmpty": "Votre adresse e-mail est requise."  },
+    "password": { "title": "Mot de Passe", "errorMessage": "Votre mot de passe doit contenir au moins 6 caractères. Aucun caractère spécial n'est permis (!,@,#,$,_,%, .. etc)" ,"errorMessageIfEmpty": "Votre mot de passe est requis." },
+
+
+
+    "newsletterSubscription": { "title": "J’aimerais recevoir l’infolettre de Payza ainsi que les informations au sujet des promotions, des services et des conseils." },
+    "agreement": { "title": "En cliquant sur <strong>démarrez</strong> vous acceptez notre <a href='https://www.payza.com/legal-agreements/terms-and-conditions-international'>entente d'utilisation</a>." },
+    "buttonGetStarted": { "title": "Démarrer" },
+	"or": { "title": "ou" },
+    "buttonCancel": { "title": "Annuler" },
+
+    "validateEmail": { "title": "Valider votre adresse courriel" },
+    "weHaveSent": { "title": "Nous avons envoyé un mot de bienvenue à l’adresse courriel suivante" },
+    "changeEmail": { "title": "Changer votre adresse courriel" },
+    "toConfirmThat": { "title": "Pour confirmer votre adresse courriel, cliquer sur le lien de <strong>validation</strong>  que nous vous avons envoyé." },
+    "didNotReceive": { "title": "Vous ne l’avez pas reçu?" },
+	"resubmit": { "title": "Resoumettre votre demande." },
+    "buttonTakeMeHome": { "title": "Retour à la page d’accueil " },
+
+    "whySould": { "title": "Pourquoi compléter mon profil?" },
+    "youWill": { "title": "Vous pourrez charger votre portefeuille, Payza, envoyer et recevoir des fonds." },
+    "howLong": { "title": "Combien de temps cela prendra-t-il?" },
+    "itShould": { "title": "Cela prendra que quelques instants et vous pouvez sauvegarder à n’importe quel moment et terminer plus tard." },
+    "buttonGetStarted": { "title": "Commencer" },	
+	"buttonCloseWindow": { "title": "Fermer" },
+
+	"tellUsWhat": { "title": "Que faites-vous comme travail?" },
+    "jobCategory": { "title": "Industrie" },
+    "occupation": { "title": "Vos tâches" },
+    "buttonSaveAndContinue": { "title": "Sauvegarder et continuer" },
+	"saveAndExit": {"title": "Sauvegarder et quitter" },
+
+    "whereDoYouLive": { "title": "Où habitez-vous?" },
+    "address1": { "title": "Adresse","errorMessage": "L'Adresse ligne 1 contient des caractères invalides." ,"errorMessageIfEmpty": "Votre adresse est nécessaire." },
+	"address2": { "title": "Adresse","errorMessage": "L'Adresse ligne 2 contient des caractères invalides." ,"errorMessageIfEmpty": "Votre adresse est nécessaire." },
+	"addAnotherLine": { "title": "+Ajouter une ligne" },
+	"city": { "title": "Ville","errorMessage": "le champ ville contient des caractères invalides." ,"errorMessageIfEmpty": "Votre ville est nécessaire." },
+    "country": { "title": "Pays" },
+	"region": { "title": "Province","errorMessage": "???." ,"errorMessageIfEmpty": "Votre province est requise." },
+	"iAmCitizenOf": { "title":"Je suis Citoyen de " },
+    "postalCode": { "title": "Code postal","errorMessage": "Le Postal Code ne peut contenir que des chiffres ou des lettres." ,"errorMessageIfEmpty": "Votre code postal est nécessaire." },
+
+	"whereCanYouBeReached": { "title": "Où pouvons-nous vous joindre?" },
+	"type1": {"value":[{ "id": "work", "name": "work" }, { "id": "home", "name": "home" }, { "id": "mobile", "name": "mobile" }], "title": "Téléphone" },
+	"addAnotherNumber": { "title": "+AJouter un numéro" },
+
+    "protectYourAccount": { "title": "Protégez votre compte" },
+	"securityQuestionAnswer": { "placeholder": "Your security question is required" },
+	"securityQuestionId": { "placeholder": "Your answer (not case sensitive)" },
+	"birthdayDay": { "placeholder": "Le jour" },
+	"birthdayYear": { "placeholder": "Année" },
+	
+    "passwordRecovery": { "title": "Réinitialiser votre mot de passe" },
+	"notificationAboutEmailValidation": { "title": "Avant de pouvoir envoyer et recevoir des fonds, vous devez confirmer votre adresse courriel" },
+    "youCanReset": { "title": "Vous pouvez réinitialiser votre mot de passe en répondant à votre question de sécurité" },
+	"dateOfBirth": { "title": "Date de naissance" },
+    "asASecurityMeasure": { "title": "Comme mesure de sécurité, une façon de vérifier votre identité est pas le biais de votre date de naissance." },
+	"monthsList" :{ "value": [{ "id": 0, "name": "--Month--" }, { "id": 1, "name": "January" }, { "id": 2, "name": "February" }, { "id": 1, "name": "March" }, { "id": 2, "name": "April" }, { "id": 1, "name": "June" }, { "id": 2, "name": "July" }, { "id": 1, "name": "August" }, { "id": 2, "name": "September" }, { "id": 1, "name": "October" }, { "id": 2, "name": "November" }, { "id": 1, "name": "December" }] },
+    "securityPIN": { "title": "NIP" },
+	"increaseTheSecurity": { "title": "Accroître le niveau de sécurité de vos transactions  en créant un NIP de 4 à 8 caractères." },
+	"buttonSaveAndFinish": { "title": "Sauvegarder et terminer" },
+
+	"youHaveSuccessfully": { "title": "Vous avez complété votre profil avec succès!" },
+
+    "buttonOkLetMeIn": { "title": "Ok, let me in" }
+
+}

@@ -1,0 +1,111 @@
+﻿<div data-ng-show="currentStep=='signupForPersonal'">
+    <div class="header">
+        <h2>{{resource.personalSignupData.title}}</h2>
+    </div>
+    <div class="body">
+        <form name="signupForm" novalidate autocomplete="off" data-ng-init="hideElements('.alert.alert-error'); signupForm.info.countryId.value=countryId;" >
+            <div class="form-group">
+                <div class="row">
+                <div class="col-sm-12" data-ng-repeat="message in resource.generalErrorMessages.errorMessage">
+                        <div class='alert alert-error generalErrorMessagesAlert'>
+                            <span data-ng-bind-html="message"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class='alert alert-error' id="firstNameAlert">
+                            <span data-ng-bind-html="(signupForm.firstName.$viewValue.length>0?resource.firstName.errorMessage:resource.firstName.errorMessageIfEmpty)"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class='alert alert-error' id="lastNameAlert">
+                            <span data-ng-bind-html="(signupForm.lastName.$viewValue.length>0?resource.lastName.errorMessage:resource.lastName.errorMessageIfEmpty)"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>{{resource.firstName.title}}</label>
+                        <input type="text"  name="firstName" data-ng-required="true" class="form-control" tabindex="100" 
+                            data-ng-model="signupForm.info.firstName.value"  
+                            data-ng-keyup="isValid.firstName=signupForm.firstName.$valid;showHideAlert('firstName');" 
+                            data-ng-blur="isValid.firstName=signupForm.firstName.$valid;showHideAlert( 'firstName', 0)" 
+                            data-ng-pattern="/^[A-Za-z-]{1,40}$/">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>{{resource.lastName.title}}</label>
+                        <input type="text" name="lastName" class="form-control" tabindex="110"
+                            data-ng-model="signupForm.info.lastName.value" 
+                            data-ng-keyup="isValid.lastName=signupForm.lastName.$valid; showHideAlert('lastName')" 
+                            data-ng-blur="isValid.lastName=signupForm.lastName.$valid; showHideAlert('lastName', 0)" 
+                            data-ng-pattern="/^[A-Za-z-]{1,40}$/" 
+                            data-ng-required="true">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class='alert alert-error' id="emailAddressAlert">
+                            <span data-ng-bind-html="(signupForm.emailAddress.$viewValue.length>0?resource.emailAddress.errorMessage:resource.emailAddress.errorMessageIfEmpty)"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>{{resource.emailAddress.title}}</label>
+                        <input type="email" name="emailAddress" class="form-control" tabindex="120"
+                            data-ng-model="signupForm.info.emailAddress.value" 
+                            data-ng-keyup="isValid.emailAddress=signupForm.emailAddress.$valid; validationSignupForm.info.validationEmailAddress.value=signupForm.info.emailAddress.value; showHideAlert( 'emailAddress' )" 
+                            data-ng-blur="isValid.emailAddress=signupForm.emailAddress.$valid; showHideAlert('emailAddress', 0)"  
+                            data-ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{1,66})\.([a-z]{2,9}(?:\.[a-z]{2})?)$/i"
+                            data-ng-required="true"                            
+                            >                      
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class='alert alert-error' id="passwordAlert">
+                            <span data-ng-bind-html="(signupForm.passwordHidden.$viewValue.length>0||signupForm.passwordVisible.$viewValue.length>0?resource.password.errorMessage:resource.password.errorMessageIfEmpty)"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>{{resource.password.title}}</label>
+                        <input type="password" name="passwordHidden" class="form-control" tabindex="130"
+                            data-ng-model="signupForm.info.password.value"  
+                            data-ng-keyup="isValid.password=signupForm.passwordHidden.$valid; showHideAlert( 'password' )" 
+                            data-ng-blur="isValid.password=signupForm.passwordHidden.$valid; showHideAlert('password', 0)" 
+                            data-ng-pattern="/^[A-Za-z0-9]{6,20}$/" 
+                            data-ng-show="!showHidePassword"
+                            data-ng-required="true">
+                        <input type="text" name="passwordVisible" class="form-control" tabindex="140"
+                            data-ng-model="signupForm.info.password.value"  
+                            data-ng-keyup="isValid.password=signupForm.passwordVisible.$valid; showHideAlert( 'password' )" 
+                            data-ng-blur="isValid.password=signupForm.passwordVisible.$valid; showHideAlert('password', 0)" 
+                            data-ng-pattern="/^[A-Za-z0-9]{6,20}$/" 
+                            data-ng-show="showHidePassword"
+                            data-ng-required="true">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>&nbsp;</label>
+                        <div class="checkbox-ios" data-ng-click="showHidePassword=!showHidePassword" data-ng-class="{active:showHidePassword}"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p><span class="checkbox-ordinary" data-ng-model="signupForm.info.newsletterSubscription.value" data-ng-init="signupForm.info.newsletterSubscription.value=false" data-ng-click="signupForm.info.newsletterSubscription.value=!signupForm.info.newsletterSubscription.value"  data-ng-class="{active:signupForm.info.newsletterSubscription.value}" tabindex="150"></span>{{resource.newsletterSubscription.title}}</p>
+                    </div>
+                    <div class="col-sm-12">
+                        <p data-ng-bind-html="resource.agreement.title"></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <div class="col-sm-12">
+            <a class="btn btn-info ng-binding" 
+                data-ng-class="{'disabled':!signupForm.$valid }"
+                data-ng-click="signupForm.$valid&&submitPersonalSignupData('../JSON/SignupApi/SubmitPersonalSignupData', signupForm.info , 'signupEmailValidation')"  
+                tabindex="160">{{resource.buttonGetStarted.title}}
+            </a> or
+            <a href="#" class="botton-link" data-ng-click="currentStepVisibilityTurnOff();" tabindex="170">{{resource.buttonCancel.title}}</a>
+        </div>
+    </div>
+</div>

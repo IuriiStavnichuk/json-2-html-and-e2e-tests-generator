@@ -1,0 +1,35 @@
+﻿<div data-ng-show="currentStep=='1'&&currentStepVisibility">
+
+    <div class="header">
+        <h2>{{resource.tellUsWhat.title}}</h2>
+    </div>
+    <div class="body">
+        <form name="workDetailsForm" novalidate data-ng-init="hideElements('.alert.alert-error')">
+            <div class="form-group">
+                <div class="col-sm-12" data-ng-repeat="message in resource.generalErrorMessages.errorMessage">
+                    <div class='alert alert-error generalErrorMessagesAlert'>
+                        <span data-ng-bind-html="message"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>{{resource.jobCategory.title}}</label>
+                        <select class="form-control"  data-ng-model="workDetailsForm.info.jobCategoryId.value" data-ng-required="true" data-ng-options="item.id as item.name for item in jobCategoryList" data-ng-change="getOccupationList(workDetailsForm.info.jobCategoryId.value)"></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>{{resource.occupation.title}}</label>
+                        <select class="form-control"  data-ng-model="workDetailsForm.info.occupationId.value"  data-ng-init="workDetailsForm.info.occupationId.value = item[0]" data-ng-required="true" data-ng-options="item.id as item.name for item in occupationList"></select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <div class="col-sm-12">
+            <a class="btn btn-info ng-binding" data-ng-class="{'disabled':!workDetailsForm.$valid}" data-ng-click="submitPersonalSignupData('JSON/SignupApi/SubmitWorkDetails',workDetailsForm.info, 2);">{{resource.buttonSaveAndContinue.title}}</a>
+            <a href="#" class="btn btn-link" data-ng-click="submitPersonalSignupData('JSON/SignupApi/SubmitWorkDetails',workDetailsForm.info); currentStepVisibilityTurnOff(); getProfileProgress()">{{resource.saveAndExit.title}}</a>
+        </div>
+    </div>
+</div>

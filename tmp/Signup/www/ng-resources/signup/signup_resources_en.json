@@ -1,0 +1,90 @@
+{
+
+    "generalErrorMessages": { "errorMessage": [] } ,
+	"string": { "errorMessage": "Form validation string error messages cause exception" },
+	"number": { "errorMessage": "Form validation number error messages cause exception" },
+	"postalCode": { "errorMessage": "Form validation Postal Code error messages cause exception" },
+	"loadingContent":{"title": "Loading content..."},
+	
+	"completeProfileSetup": { "title": "COMPLETE PROFILE SETUP" },
+	"workDetailsMenu": { "title": "Work details" },
+	"addressMenu": { "title": "Address" },
+	"phoneNumbersMenu": { "title": "Phone numbers" },
+	"accountSecurityDetailsMenu": { "title": "Account security details" },
+
+	
+
+    "personalSignupData": { "title": "Create your Payza Personal Account" },
+    "firstName": { "title": "First name" ,"errorMessage": "The first name must only contain alphabetical characters." ,"errorMessageIfEmpty": "Your first name is required." },
+    "lastName": { "title": "Last name" ,"errorMessage": "The last name must only contain alphabetical characters." ,"errorMessageIfEmpty": "Your last name is required." },
+    "emailAddress": { "title": "Email address", "errorMessage": "Your email address must be in the format: name@example.com" ,"errorMessageIfEmpty": "Your email address is required." },
+    "password": { "title": "Password" , "errorMessage": "Your password must be at least 6 characters long. No special characters are permitted (!,@,#,$,_,%, .. etc)." ,"errorMessageIfEmpty": "Your password is required."},
+    "newsletterSubscription": { "title": "I'd like to receive Payza's monthly newsletter and the latest info on promotions, services, and tips." },
+    "agreement": { "title": "By clicking <strong>Get started</strong>, you agree to our <a href='https://www.payza.com/legal-agreements/terms-and-conditions-international'>User Agreement</a> and that you are 18 years of age and over." },
+    "buttonGetStarted": { "title": "Get started" },
+	"or": { "title": " or" },
+    "buttonCancel": { "title": "Cancel" },
+
+    "validateEmail": { "title": "Validate your email address" },
+    "weHaveSent": { "title": "We've sent a <strong>\"Welcome to Payza\"</strong>email to:" },
+    "changeEmail": { "title": "Change email address" },
+    "toConfirmThat": { "title": "To confirm that this is your email address, click on the <strong>validation</strong> link in the email we've sent you." },
+    "didNotReceive": { "title": "Didn't receive it?" },
+	"resubmit": { "title": "Resubmit" },
+    "buttonTakeMeHome": { "title": "Take me home " },
+
+    "whySould": { "title": "Why should I complete my profile setup?" },
+    "youWill": { "title": "You'll be able to load your Payza Wallet, and send and receive funds." },
+    "howLong": { "title": "How long does it take?" },
+    "itShould": { "title": "It only takes a few moments. Plus, you can save at any point and finish later." },
+    "buttonGetStarted": { "title": "Get Started" },
+	"buttonCloseWindow": { "title": "Close window" },
+	
+	"tellUsWhat": { "title": "Tell us what you do" },
+    "jobCategory": { "title": "Your industry" },
+    "occupation": { "title": "Your job" },
+    "buttonSaveAndContinue": { "title": "Save and continue" },
+	"saveAndExit": {"title": "Save and exit" },
+
+
+    "whereDoYouLive": { "title": "Where do you live?" },
+    "address1": { "title": "Street address","errorMessage": "Address Line 1 contains invalid characters." ,"errorMessageIfEmpty": "Your contact address is required." },  
+	"address2": { "title": "Street address","errorMessage": "Address Line 2 contains invalid characters." ,"errorMessageIfEmpty": "Your contact address is required." },    
+    "city": { "title": "City","errorMessage": "City/Town contains invalid characters." ,"errorMessageIfEmpty": "Your contact city/town is required." },
+	"addAnotherLine": { "title": "+Add another line" },
+    "country": { "title": "Country" },
+	"region": { "title": "Region","errorMessage": "???." ,"errorMessageIfEmpty": "Your contact province is required." },  
+	"iAmCitizenOf": { "title":"I'm a citizen of " },
+    "postalCode": { "title": "Postal code","errorMessage": "The Postal Code can only contain digits or letters." ,"errorMessageIfEmpty": "Your postal code is required." },  
+
+	"whereCanYouBeReached": { "title": "Where can you be reached?" },
+	"type1": {"value":[{ "id": "work", "name": "work" }, { "id": "home", "name": "home" }, { "id": "mobile", "name": "mobile" }], "title": "Phone type" },
+	"addAnotherNumber": { "title": "+Add another number" },
+
+    "protectYourAccount": { "title": "Protect your account." },
+	"securityQuestionAnswer": { "placeholder": "Your security question is required" },
+	"securityQuestionId": { "placeholder": "Your answer (not case sensitive)" },
+	"birthdayDay": { "placeholder": "Day" },
+	"birthdayYear": { "placeholder": "Year" },
+	
+    "passwordRecovery": { "title": "Password recovery" },
+	"notificationAboutEmailValidation": { "title": "Before you can send and receive funds, you need to validate your email address:" },
+    "youCanReset": { "title": "You can reset your password by answering a recover question." },
+	"dateOfBirth": { "title": "Date of birth" },
+    "asASecurityMeasure": { "title": "As a security measure, one way that we verify your identity is by your date of birth." },
+	"monthsList" :{ "value": [{ "id": 0, "name": "--Month--" }, { "id": 1, "name": "January" }, { "id": 2, "name": "February" }, { "id": 1, "name": "March" }, { "id": 2, "name": "April" }, { "id": 1, "name": "June" }, { "id": 2, "name": "July" }, { "id": 1, "name": "August" }, { "id": 2, "name": "September" }, { "id": 1, "name": "October" }, { "id": 2, "name": "November" }, { "id": 1, "name": "December" }] },
+    "securityPIN": { "title": "Security PIN" },
+	"increaseTheSecurity": { "title": "Increase the security of your money transfers by creating a 4-8 digit transaction PIN." },
+	"buttonSaveAndFinish": { "title": "Save and finish" },
+
+	"youHaveSuccessfully": { "title": "You've successfully setup your profile!" },
+
+    "buttonOkLetMeIn": { "title": "Ok, let me in" },
+
+
+	"weSuggest": { "title": "We suggest to <strong>start here</strong>" },
+	"onceYouComplete": { "title": "<p>Once you <strong>complete profile setup</strong> you can access your account's basic functions.</p><p>Follow this up by <strong>verifying your account</strong> to lift its transaction limits.</p><p>You can save your progress, and pick up where you left off, at any time.</p>" }
+
+
+
+}

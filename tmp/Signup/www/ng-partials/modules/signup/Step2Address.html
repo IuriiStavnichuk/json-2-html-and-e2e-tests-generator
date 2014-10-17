@@ -1,0 +1,133 @@
+﻿<div data-ng-show="currentStep==2&&currentStepVisibility">
+    <div class="header">
+        <h2>{{resource.whereDoYouLive.title}}</h2>
+    </div>
+    <div class="body">
+        <form name="addressForm" novalidate data-ng-init="hideElements('.alert.alert-error')">
+            <div class="form-group">
+                <div class="col-sm-12" data-ng-repeat="message in resource.generalErrorMessages.errorMessage">
+                    <div class='alert alert-error generalErrorMessagesAlert'>
+                        <span data-ng-bind-html="message"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class='alert alert-error' id="address1Alert">
+                            <span data-ng-bind-html="(addressForm.address1.$viewValue.length>0?resource.address1.errorMessage:resource.address1.errorMessageIfEmpty)"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>{{resource.address1.title}}</label>
+                        <input type="text"  name="address1" class="form-control" tabindex="510"
+                            data-ng-model="addressForm.info.address1.value"  
+                            data-ng-keyup="isValid.address1=addressForm.address1.$valid; showHideAlert('address1')" 
+                            data-ng-blur="isValid.address1=addressForm.address1.$valid; showHideAlert( 'address1', 0)" 
+                            data-ng-pattern="/^[A-Za-z0-9]{1,80}$/"
+                            data-ng-required="true">
+                    </div>
+                    <div class="col-sm-12" data-ng-show="address2LinkVisible" data-ng-init="address2LinkVisible=1">
+                        <a class="link" data-ng-click="address2LinkVisible=0;slideDownAnimation('#anotherLine')">{{resource.addAnotherLine.title}}</a>
+                    </div>
+                </div>
+
+                <div class="row" id="anotherLine" data-ng-init="hideElements('#anotherLine')">
+                    <div class="col-sm-12">
+                        <div class='alert alert-error' id="address2Alert">
+                            <span data-ng-bind-html="(addressForm.address2.$viewValue.length>0?resource.address2.errorMessage:resource.address2.errorMessageIfEmpty)"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>{{resource.address2.title}}</label>
+                        <input type="text"  name="address2" class="form-control" tabindex="520"
+                            data-ng-model="addressForm.info.address2.value"  
+                            data-ng-keyup="isValid.address2=addressForm.address2.$valid; showHideAlert('address2')" 
+                            data-ng-blur="isValid.address2=addressForm.address2.$valid; showHideAlert( 'address2', 0)" 
+                            data-ng-pattern="/^[A-Za-z0-9]{1,80}$/"
+                            data-ng-required="!address2LinkVisible">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class='alert alert-error' id="cityAlert">
+                            <span data-ng-bind-html="(addressForm.city.$viewValue.length>0?resource.city.errorMessage:resource.city.errorMessageIfEmpty)"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>{{resource.city.title}}</label>
+                        <input type="text"  name="city"  class="form-control" tabindex="530"
+                            data-ng-model="addressForm.info.city.value"  
+                            data-ng-keyup="isValid.city=addressForm.city.$valid; showHideAlert('city')" 
+                            data-ng-blur="isValid.city=addressForm.city.$valid;showHideAlert('city', 0)" 
+                            data-ng-pattern="/^[A-Za-z-]{2,30}$/" 
+                            data-ng-required="true">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class='alert alert-error'  id="regionAlert">
+                            <span data-ng-bind-html="resource.region.errorMessageIfEmpty"></span>
+                            <!--<span data-ng-bind-html="(addressForm.region.$viewValue.length>0?resource.region.errorMessage:resource.region.errorMessageIfEmpty)"></span>-->
+                        </div>
+                    </div>
+                    <div class="col-sm-12" ng-switch on="regionList.length">
+                        <label>{{accountRegionName}}</label>
+                        <select class="form-control"  data-ng-switch-default data-ng-model="addressForm.info.region.value"  data-ng-options="item.id as item.name for item in regionList"></select>
+                        <input type="text"  data-ng-switch-when="0" name="region" class="form-control" tabindex="535"
+                            data-ng-model="addressForm.info.region.value"  
+                            data-ng-keyup="isValid.region=addressForm.region.$valid; showHideAlert('region')" 
+                            data-ng-blur="isValid.region=addressForm.region.$valid; showHideAlert( 'region', 0)" 
+                            data-ng-pattern="/^.{1,}$/"                 
+                            data-ng-required="true">  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>{{resource.country.title}}</label>
+                        <!--<input type="text"  name="country" data-ng-model="addressForm.info.country.value"  data-ng-keyup="isValid.country=addressForm.country.$valid; showHideAlert('country')" data-ng-blur="showHideAlert( 'country', 0)" data-ng-pattern="/^[A-Za-z-]{2,30}$/" data-ng-required="true" class="form-control" tabindex="550">-->
+                        <div class="vert-gradient"><span class="flag-icon {{accountCountryFlag}}">{{accountCountryName}}</span></div>                       
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="radio">
+                            <input type="radio"  data-ng-model="addressForm.info.sameCountryCitizenship.value" data-ng-value="1" data-ng-init="addressForm.info.sameCountryCitizenship.value=1"  tabindex="560">
+                            <label>{{resource.iAmCitizenOf.title}}<strong>{{accountCountryName}}</strong></label>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="radio">
+                            <input type="radio" data-ng-model="addressForm.info.sameCountryCitizenship.value" data-ng-value="0" tabindex="570">
+                            <label>{{resource.iAmCitizenOf.title}}</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <select class="form-control"  data-ng-model="addressForm.info.citizenshipCountryId.value" data-ng-options="item.id as item.name for item in countryList"></select>
+                        <!--<select class="form-control"  data-ng-model="addressForm.info.citizenshipCountryId.value" data-ng-options="item.id as item.name for item in countryList" data-ng-change="getRegionName(addressForm.info.citizenshipCountryId.value);getRegionList(addressForm.info.citizenshipCountryId.value)"></select>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class='alert alert-error' id="postalCodeAlert">
+                            <span data-ng-bind-html="(addressForm.postalCode.$viewValue.length>0?resource.postalCode.errorMessage:resource.postalCode.errorMessageIfEmpty)"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>{{resource.postalCode.title}}</label>
+                        <input type="text"  name="postalCode" class="form-control" tabindex="550"
+                            data-ng-model="addressForm.info.postalCode.value"  
+                            data-ng-keyup="isValid.postalCode=addressForm.postalCode.$valid; showHideAlert('postalCode')" 
+                            data-ng-blur="isValid.postalCode=addressForm.postalCode.$valid; showHideAlert('postalCode', 0)" 
+                            data-ng-pattern="/^[A-Za-z0-9]{3,20}$/"
+                            data-ng-required="true">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <div class="col-sm-12">
+            <a class="btn btn-info ng-binding" data-ng-class="{'disabled':!addressForm.$valid}" data-ng-click="submitPersonalSignupData('JSON/SignupApi/SubmitResidentialAddress',addressForm.info, 3)">{{resource.buttonSaveAndContinue.title}}</a>
+            <a href="#" class="btn btn-link" data-ng-click="submitPersonalSignupData('JSON/SignupApi/SubmitResidentialAddress',addressForm.info); currentStepVisibilityTurnOff(); getProfileProgress()">{{resource.saveAndExit.title}}</a>
+        </div>
+    </div>
+</div>

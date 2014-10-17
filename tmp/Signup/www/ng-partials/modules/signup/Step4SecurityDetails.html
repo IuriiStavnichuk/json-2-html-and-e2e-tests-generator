@@ -1,0 +1,112 @@
+﻿<div data-ng-show="currentStep==4&&currentStepVisibility">
+    <div class="header">
+        <h2>{{resource.protectYourAccount.title}}</h2>
+    </div>
+    <div class="body">
+        <form name="securityDetailsForm" novalidate data-ng-init="hideElements('.alert.alert-error');securityDetailsForm.info.countryId.value=countryId">
+            <div class="form-group">
+          <div class="col-sm-12" data-ng-repeat="message in resource.generalErrorMessages.errorMessage">
+                    <div class='alert alert-error generalErrorMessagesAlert'>
+                        <span data-ng-bind-html="message"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>{{resource.passwordRecovery.title}}</label>
+                        <p style="margin:0 0 10px 0">{{resource.youCanReset.title}}</p>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                        <div class='alert alert-error' id="securityQuestionIdAlert">
+                            <span data-ng-bind-html="resource.string.errorMessage"></span>
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <select class="form-control" tabindex="710"
+                            data-ng-model="securityDetailsForm.info.securityQuestionId.value" 
+                            data-ng-options="item.id as item.name for item in securityQuestionList" 
+                            data-ng-init="securityDetailsForm.info.securityQuestionId.value=0"
+                            data-ng-required="true">
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class='alert alert-error' id="securityQuestionAnswerAlert">
+                            <span data-ng-bind-html="resource.string.errorMessage"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <input type="text" placeholder="{{resource.securityQuestionAnswer.placeholder}}" name="securityQuestionAnswer"  class="form-control" tabindex="720"
+                            data-ng-model="securityDetailsForm.info.securityQuestionAnswer.value"  
+                            data-ng-keyup="isValid.securityQuestionAnswer=securityDetailsForm.securityQuestionAnswer.$valid; showHideAlert('securityQuestionAnswer')" 
+                            data-ng-blur="showHideAlert( 'securityQuestionAnswer', 0)" 
+                            data-ng-required="true">
+                    </div>
+                </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <label>{{resource.dateOfBirth.title}}</label>
+                        <p style="margin:0">{{resource.asASecurityMeasure.title}}</p>
+                    </div>
+                </div>
+              <div class="row">
+                    <div class="col-sm-12">
+                        <div class='alert alert-error' id="birthdayDayAlert">
+                            <span data-ng-bind-html="resource.number.errorMessage"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class='alert alert-error' id="birthdayYearAlert">
+                            <span data-ng-bind-html="resource.number.errorMessage"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <select class="form-control" data-ng-model="securityDetailsForm.info.birthdayMonth.value" data-ng-options="item.id as item.name for item in resource.monthsList.value" tabindex="730"></select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text"  name="birthdayDay"  placeholder="{{resource.birthdayDay.placeholder}}" data-ng-model="securityDetailsForm.info.birthdayDay.value"  data-ng-keyup="isValid.birthdayDay=securityDetailsForm.birthdayDay.$valid; showHideAlert('birthdayDay')" data-ng-blur="showHideAlert( 'birthdayDay', 0)" data-ng-pattern="/^[0-9]{1,2}$/" data-ng-required="true" class="form-control" tabindex="740">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text"  name="birthdayYear"  placeholder="{{resource.birthdayYear.placeholder}}" data-ng-model="securityDetailsForm.info.birthdayYear.value" data-ng-init="securityDetailsForm.info.birthdayYear.value = 0" data-ng-keyup="isValid.birthdayYear=securityDetailsForm.birthdayYear.$valid; showHideAlert('birthdayYear')" data-ng-blur="showHideAlert( 'birthdayYear', 0)" data-ng-pattern="/^[0-9]{4}$/" data-ng-required="true" class="form-control" tabindex="750" autocomplete="off">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class='alert alert-error' id="securityPinAlert">
+                        <span data-ng-bind-html="resource.number.errorMessage"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>{{resource.securityPIN.title}}</label>
+                        <p style="margin:0">{{resource.increaseTheSecurity.title}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <input type="password" name="securityPinHidden" class="form-control" tabindex="760" 
+                            data-ng-model="securityDetailsForm.info.securityPin.value"  
+                            data-ng-keyup="isValid.securityPin=securityDetailsForm.securityPinHidden.$valid; showHideAlert( 'securityPin' )" 
+                            data-ng-blur="showHideAlert('securityPin', 0)" 
+                            data-ng-pattern="/^[0-9]{4,8}$/" 
+                            data-ng-show="!showHideSecurityPin">
+                        <input type="text" name="securityPinVisible" class="form-control" tabindex="770" 
+                            data-ng-model="securityDetailsForm.info.securityPin.value"  
+                            data-ng-keyup="isValid.securityPin=securityDetailsForm.securityPinVisible.$valid; showHideAlert( 'securityPin' )" 
+                            data-ng-blur="showHideAlert('securityPin', 0)" 
+                            data-ng-pattern="/^[0-9]{4,8}$/" 
+                            data-ng-show="showHideSecurityPin">
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="checkbox-ios" data-ng-click="showHideSecurityPin=!showHideSecurityPin" data-ng-class="{active:showHideSecurityPin}"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="footer">
+        <a class="btn btn-info ng-binding" data-ng-class="{'disabled':!securityDetailsForm.$valid}" data-ng-click="submitPersonalSignupData('JSON/SignupApi/SubmitSecurityDetails',securityDetailsForm.info, 5)">{{resource.buttonSaveAndFinish.title}}</a>
+    </div>
+</div>

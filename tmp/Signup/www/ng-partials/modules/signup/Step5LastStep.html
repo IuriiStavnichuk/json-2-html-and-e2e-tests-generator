@@ -1,0 +1,11 @@
+﻿<div data-ng-show="currentStep==5&&currentStepVisibility">
+    <div data-ng-show="notificationAboutEmailValidation" class='alert alert-warning' style="margin:0; padding: 35px 24px;" id="address1Alert">
+        <span data-ng-bind="resource.notificationAboutEmailValidation.title"></span>
+    </div>
+    <div class="body-complete-profile last-step">      
+        <h2>{{resource.youHaveSuccessfully.title}}</h2>
+    </div>
+    <div class="footer">
+        <a class="btn btn-info ng-binding" data-ng-click="currentStepVisibilityTurnOff(); getProfileProgress()">{{resource.buttonTakeMeHome.title}}</a>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿<div data-ng-show="currentStep=='signupEmailValidation'">
+    <div class="header">
+        <h2>{{resource.validateEmail.title}}</h2>
+    </div>
+    <div class="body">
+        <div class="col-sm-12" data-ng-repeat="message in resource.generalErrorMessages.errorMessage">
+            <div class='alert alert-error generalErrorMessagesAlert'>
+                <span data-ng-bind-html="message"></span>
+            </div>
+        </div>
+        <h3 data-ng-bind-html="resource.weHaveSent.title"></h3>
+<!--    <div class="col-sm-12">          
+            <div class='alert alert-error' id="validationEmailAddressAlert">
+                <span data-ng-bind-html="resource.validationEmailAddress.errorMessage"></span>
+            </div>
+        </div>-->
+    </div>
+    <div class="center">
+        <div class="email-block">
+            <h4 data-ng-bind="validationSignupForm.info.validationEmailAddress.value" style="width:360px;text-align:left"></h4>
+            <!--<a href="#" data-ng-click="showEmailField=1" data-ng-hide="showEmailField">{{resource.changeEmail.title}}</a>
+                <div class="row">
+                    <form name="validationSignupForm" novalidate autocomplete="off" data-ng-init="hideElements('.alert.alert-error')" >
+                        <div class="col-sm-12">
+                        <input type="email" name="validationEmailAddress" class="form-control" tabindex="200"
+                            data-ng-show="showEmailField" 
+                            data-ng-model="validationSignupForm.info.validationEmailAddress.value" 
+                            data-ng-keyup="isValid.validationEmailAddress=validationSignupForm.validationEmailAddress.$valid; signupForm.info.emailAddress.value=validationSignupForm.info.validationEmailAddress.value; showHideAlert( 'validationEmailAddress' )" 
+                            data-ng-blur="showHideAlert('validationEmailAddress', 0)" 
+                            data-ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{2,66})\.([a-z]{2,7}(?:\.[a-z]{2})?)$/i">
+                         </div>
+                    </form>
+                </div>-->
+        </div>
+    </div>
+    <div class="body">
+        <div class="row">
+            <div class="col-sm-12">
+                <p data-ng-bind-html="resource.toConfirmThat.title"></p>
+                <span style="font-size: 14px" data-ng-bind-html="resource.didNotReceive.title"></span>
+                <a href="#" data-ng-click="submitPersonalSignupData('../JSON/SignupApi/ResendValidationEmail', validationSignupForm.info, 'AccountOverview.aspx')">{{resource.resubmit.title}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a class="btn btn-info ng-binding" data-ng-click="redirect('../AccountOverview.aspx')">{{resource.buttonTakeMeHome.title}}</a>
+        <!--submitPersonalSignupData('../JSON/SignupApi/ResendValidationEmail', validationSignupForm.info, 'AccountOverview.aspx')-->
+    </div>
+</div>
+
