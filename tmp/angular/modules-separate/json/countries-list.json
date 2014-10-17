@@ -1,0 +1,209 @@
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "totalCountry": 33,
+    "result": [
+        {
+            "continent": "Northern America",
+            "id": 1,
+            "isSelected": false,
+            "country": [
+                {
+                    "id": 288,
+                    "name": "Antigua and Barbuda",
+                    "isSelected": false
+                },
+                {
+                    "id": 288,
+                    "name": "Barbados",
+                    "isSelected": false
+                },
+                {
+                    "id": 288,
+                    "name": "Canada",
+                    "isSelected": false
+                },
+                {
+                    "id": 288,
+                    "name": "Costa Rica",
+                    "isSelected": false
+                },
+                {
+                    "id": 288,
+                    "name": "Cuba",
+                    "isSelected": false
+                },
+                {
+                    "id": 288,
+                    "name": "Dominica",
+                    "isSelected": false
+                },
+                {
+                    "id": 289,
+                    "name": "Panama",
+                    "isSelected": false
+                },
+                {
+                    "id": 290,
+                    "name": "USA",
+                    "isSelected": false
+                }
+            ]
+        },
+        {
+            "continent": "Asia",
+            "id": 2,
+            "isSelected": false,
+            "country": [
+                {
+                    "id": 293,
+                    "name": "Afghanistan",
+                    "isSelected": false
+                },
+                {
+                    "id": 294,
+                    "name": "Bahrain",
+                    "isSelected": false
+                },
+                {
+                    "id": 295,
+                    "name": "Bangladesh",
+                    "isSelected": false
+                },
+                {
+                    "id": 296,
+                    "name": "Bhutan",
+                    "isSelected": false
+                },
+                {
+                    "id": 297,
+                    "name": "Brunei",
+                    "isSelected": false
+                }
+            ]
+        },
+        {
+            "continent": "Europe",
+            "id": 3,
+            "isSelected": false,
+            "country": [
+                {
+                    "id": 298,
+                    "name": "Albania",
+                    "isSelected": false
+                },
+                {
+                    "id": 299,
+                    "name": "Belgium",
+                    "isSelected": false
+                },
+                {
+                    "id": 300,
+                    "name": "Denmark",
+                    "isSelected": false
+                },
+                {
+                    "id": 301,
+                    "name": "Iceland",
+                    "isSelected": false
+                },
+                {
+                    "id": 302,
+                    "name": "Malta",
+                    "isSelected": false
+                }
+            ]
+        },
+        {
+            "continent": "Africa",
+            "id": 4,
+            "isSelected": false,
+            "country": [
+                {
+                    "id": 303,
+                    "name": "Algeria",
+                    "isSelected": false
+                },
+                {
+                    "id": 304,
+                    "name": "Botswana",
+                    "isSelected": false
+                },
+                {
+                    "id": 305,
+                    "name": "Congo",
+                    "isSelected": false
+                },
+                {
+                    "id": 306,
+                    "name": "Guinea",
+                    "isSelected": false
+                },
+                {
+                    "id": 307,
+                    "name": "Senegal",
+                    "isSelected": false
+                }
+            ]
+        },
+        {
+            "continent": "Latin America",
+            "id": 5,
+            "isSelected": false,
+            "country": [
+                {
+                    "id": 308,
+                    "name": "Argentina",
+                    "isSelected": false
+                },
+                {
+                    "id": 309,
+                    "name": "Chile",
+                    "isSelected": false
+                },
+                {
+                    "id": 310,
+                    "name": "Guyana",
+                    "isSelected": false
+                },
+                {
+                    "id": 311,
+                    "name": "Uruguay",
+                    "isSelected": false
+                },
+                {
+                    "id": 312,
+                    "name": "Venezuela",
+                    "isSelected": false
+                }
+            ]
+        },
+        {
+            "continent": "Oceania",
+            "id": 7,
+            "isSelected": false,
+            "country": [
+                {
+                    "id": 318,
+                    "name": "Australia",
+                    "isSelected": false
+                },
+                {
+                    "id": 319,
+                    "name": "Kiribati",
+                    "isSelected": false
+                },
+                {
+                    "id": 320,
+                    "name": "Nauru",
+                    "isSelected": false
+                },
+                {
+                    "id": 322,
+                    "name": "Tonga",
+                    "isSelected": false
+                }
+            ]
+        }
+    ]
+}

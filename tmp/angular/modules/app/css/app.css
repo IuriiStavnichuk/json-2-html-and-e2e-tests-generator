@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/EInbV5DfGHOiMmvb1Xr-hnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxh_xHqYgAV9Bl_ZQbYUxnQU.woff) format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 600;
+    src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxn5HxGBcBvicCpTp6spHfNo.woff) format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 800;
+    src: local('Open Sans Extrabold Italic'), local('OpenSans-ExtraboldItalic'), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxkCDe67GEgBv_HnyvHTfdew.woff) format('woff');
+}
+
+/*COUNTRIES LIST MODULE*/
+.display-block { display:block; }
+.display-none { display:none; }
+.icon-state-true:before { content:"[−]";}
+.icon-state-false:before { content:"[+]";}
+.countries-list {
+        width:410px;
+        border: 12px solid white;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        background-color: #fff;
+
+        line-height: 1.4;
+}
+.countries-list .column-left {
+        float: left;
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        width:45%;
+        height: 222px;
+        padding:2% 2%;
+
+        background-color:#f1f1f1;
+}
+.countries-list .column-right {
+        float: right;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        width:45%;
+        height: 222px;
+        padding:2% 2%;
+        background-color:#FCFCFC;;
+}
+.countries-list input[type="checkbox"] {
+        position: static;
+        margin: 0 6px 0 18px;
+}
+.countries-list span+input[type="checkbox"] {
+    margin: 0;
+}
+.countries-list .selected-countries {
+    font-size: 12px;
+}
+.countries-list .reset-link {
+    font-size: 12px;
+    cursor: pointer;
+    margin: 0;
+    display: inline-block;
+}
+.continent {
+    cursor: pointer;
+    background-color: #FDFCFC;
+    padding-bottom: 1px;
+}
+
+.clear {
+        clear: both;
+}
+
+.countries-list ul li input, .countries-list ul li span, .countries-list a {
+    vertical-align:middle;
+}
+.countries-list ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+
+/*DonutChart*/
+.donut-chart {margin:20px; font-family: 'Open Sans', Arial, Helvetica, sans-serif;  }
+.donut-chart-title { font-size: 15px;fill:#333333;}
+.donut-chart-svg-text {font-size: 13px; font-weight: 800; fill:#f04d4d;}
+.donut-chart-total-amount {font-weight: 900; font-size: 12px;fill:#5d6268;}
+.donut-chart-unit {font-size: 12px; fill:#c5c7cc;}
+.donut-chart-arc  {stroke: #fff;}
+/*svg {float:left;margin-right:8px;}*/
+
+
+
+

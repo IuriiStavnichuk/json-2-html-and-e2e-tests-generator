@@ -1,0 +1,25 @@
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "total": 3,
+    "result": [
+        {
+            "id": 1,
+            "type": "Email",
+            "is_checked": "true",
+            "response_time": "12 hourse"
+        },
+        {
+            "id": 2,
+            "type": "Call",
+            "is_checked": "true",
+            "response_time": "60 seconds"
+        },
+        {
+            "id": 3,
+            "type": "Chat",
+            "is_checked": "true",
+            "response_time": "45 seconds"
+        }
+    ]
+}

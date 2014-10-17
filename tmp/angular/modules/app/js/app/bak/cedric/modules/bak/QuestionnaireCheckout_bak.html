@@ -1,0 +1,192 @@
+<div class="span5" data-behavior="accordion(header: h5, content: fieldset)">
+    <form name="questionnaireCheckout" novalidate ng-submit="signupForm()">
+        <h4>Check out</h4>
+        <p>
+            Lorem velit ex per, impedit adolescens vel ea. Per ad nullam ornatus gubergren, vim ei dicta aperiam. Pro illum prompta conclusionemque id, at ubique graeco instructior nam.
+        </p>
+        <div class="nav">
+            <a class='btn-link'>Get Started</a>
+        </div>
+        <hr>
+        <!--TODO Delete below-->
+        <!--<div>debug {{answers}}</div>-->
+        <div class="alert alert-info" ng-show="showAlert">
+            <span class="field-label"><strong>You need a website to continue</strong></span>
+        </div>
+        <h5>Introduction</h5>
+        <!--"questionnaireCheckout.url.$valid questionnaireCheckout.url.$dirty>>>" {{questionnaireCheckout.url.$valid}} {{questionnaireCheckout.url.$dirty}}-->
+        <fieldset>
+            <div class="field radio-check-field">
+                <p>Do you have a website for this business?</p>
+                <div class="radio-check-item inline">
+                    <input type="radio" id="10" ng-model="answers.value.special" value="1" ng-click="showAlert=0; showUrl=1 ">
+                    <label for="10">Yes</label>
+                </div>
+                <div class="radio-check-item inline">
+                    <input type="radio" id="11" ng-model="answers.value.special" value="0" ng-click="showAlert=1; answers.value.special2=0; showUrl=0;questionnaireCheckout.url.$valid=0;questionnaireCheckout.url.$dirty=0; answers.value.url=''; answers.value.membersArea='0'">
+                    <label for="11">No</label>
+                </div>
+            </div>
+
+            <div class="field radio-check-field" ng-show="showUrl">
+                <p>Please provide your website address <em style="font-weight: normal">( example: http://yourwebsite.com )</em> :</p>
+                <input id="20" type="url" name="url" ng-model="answers.value.url" ng-change="questionnaireCheckout.url.$dirty=1" ng-change="questionnaireCheckout.url.$dirty=1" tabindex="20">
+                <div style="margin-top:8px; font-size:11px; color:red; font-weight: bold " ng-show="questionnaireCheckout.url.$invalid && questionnaireCheckout.url.$dirty" > That is not a valid website name. Please input a valid website name.</div>
+            </div>
+
+
+            <!--TODO NG MODEL ?????????????????????????????-->
+            <div class="field" ng-show="questionnaireCheckout.url.$valid && questionnaireCheckout.url.$dirty">
+                <p>Does this website fall under the same business model and product/service as?</p>
+                <select name="ctl00" id="30" tabindex="30">
+                    <option selected="selected" value="1">Please select</option>
+                    <option value="2">site1.com</option>
+                    <option value="3">site1.com</option>
+                </select>
+            </div>
+
+            <div class="field radio-check-field" ng-show="questionnaireCheckout.url.$valid && questionnaireCheckout.url.$dirty">
+                <div class="radio-check-item inline">
+                    <input type="radio" id="40" ng-model="answers.value.special2" value="0" ng-init="answers.value.special2='0';answers.value.membersArea='0'">
+                    <label for="10">Yes</label>
+                </div>
+                <div class="radio-check-item inline">
+                    <input type="radio" id="41" ng-model="answers.value.special2" value="1">
+                    <label for="11">No</label></div>
+            </div>
+
+            <div class="field radio-check-field" ng-show="answers.value.special2">
+                <p>What sort of business do you conduct?</p>
+                <div class="radio-check-item">
+                    <input id="51" type="radio" ng-model="answers.value.revenueGenerationMethod" value="2" ng-init="answers.value.revenueGenerationMethod='1'">
+                    <label for="51">I sell products</label>
+                </div>
+                <div class="radio-check-item" >
+                    <input id="52" type="radio" ng-model="answers.value.revenueGenerationMethod" value="1">
+                    <label for="52">I offer services</label>
+                </div>
+                <div class="radio-check-item">
+                    <input id="53" type="radio" ng-model="answers.value.revenueGenerationMethod" value="4">
+                    <label for="53">I sell products and offer services</label>
+                </div>
+            </div>
+
+            <div class="field radio-check-field" ng-show="answers.value.special2">
+                <p>Do you own and control the website?</p>
+                <div class="radio-check-item inline">
+                    <input type="radio" id="61" ng-model="answers.value.urlType" value="1" ng-init="answers.value.urlType='1'">
+                    <label for="61">Yes</label>
+                </div>
+                <div class="radio-check-item inline">
+                    <input type="radio" id="62" ng-model="answers.value.urlType" value="2" >
+                    <label for="62">No</label>
+                </div>
+            </div>
+
+            <div class="field radio-check-field" ng-show="answers.value.special2">
+                <p>Does your website have a members' area?</p>
+                <div class="radio-check-item inline">
+                    <input type="radio" id="63" ng-model="answers.value.membersArea" value="1" ng-init="answers.value.membersArea='0'">
+                    <label for="63">Yes</label>
+                </div>
+                <div class="radio-check-item inline">
+                    <input type="radio" id="64" ng-model="answers.value.membersArea" value="0">
+                    <label for="64">No</label>
+                </div>
+            </div>
+
+            <!--"answers.value.special2>>"{{answers.value.special2}}-->
+            <!--"answers.value.membersArea>>>"{{answers.value.membersArea}}-->
+
+            <div class="field" ng-show="answers.value.membersArea">
+                <p>Please provide the necessary information to access the members' area:</p>
+                <input type="text" id="71" ng-model="answers.value.membersAreaDetails" tabindex="71">
+            </div>
+
+            <div class="nav" ng-show="questionnaireCheckout.url.$valid && questionnaireCheckout.url.$dirty">
+                <a class='btn-link' ng-click="postIntroductionSection()">Next Step</a>
+                <a class='btn-link' ng-click="postIntroductionSection()">Save</a>
+                <span>or</span>
+                <a>Cancel</a>
+            </div>
+            <hr>
+        </fieldset>
+
+        <!--TODO Delete below-->
+        <!--<div>debug {{answers}}</div>-->
+        <h5>Product information</h5>
+        <fieldset>
+
+            <div class="field radio-check-field">
+                <p>What is the average product price (USD)?</p>
+                <input type="text" id="102" ng-model="answers.value.averagePrice" tabindex="102">
+            </div>
+
+            <div class="field" id="'112'"  >
+                <p>Which country is your product shipped from?</p>
+                <select ng-model="answers.value.shippingCountryId" id="112" tabindex="112">
+                    <option value="2">Canada</option>
+                    <option value="3">USA</option>
+                    <option value="4">Brazil</option>
+                </select>
+            </div>
+
+            <div class="field radio-check-field">
+                <p>How do you deliver the product?</p>
+                <div class="radio-check-item">
+                    <input type="radio" id="125" ng-model="answers.value.urlProductDeliveryMethodIdList" value="3" ng-init="answers.value.urlProductDeliveryMethodIdList='3'">
+                    <label for="125" >Online</label>
+                </div>
+                <div class="radio-check-item">
+                    <input type="radio" id="126" ng-model="answers.value.urlProductDeliveryMethodIdList" value="2">
+                    <label for="126" >Regular Post</label>
+                </div>
+                <div class="radio-check-item">
+                    <input type="radio" id="127" ng-model="answers.value.urlProductDeliveryMethodIdList" value="1">
+                    <label for="127" >Registered Mail</label>
+                </div>
+                <div class="radio-check-item">
+                    <input type="radio" id="128" ng-model="answers.value.urlProductDeliveryMethodIdList" value="4">
+                    <label for="128" >In person</label>
+                </div>
+            </div>
+
+            <div class="field" id="'139'"  >
+                <p>On average, how many days after the transaction is the product received by your customer?</p>
+                <input type="text" id="140" ng-model="answers.value.productDeliveryDelayTime" tabindex="140">
+            </div>
+
+            <div class="field radio-check-field">
+                <p>The product you are selling is:</p>
+                <div class="radio-check-item">
+                    <input type="radio" id="150" ng-model="answers.value.urlProductSourceTypeId" value="1" ng-init="answers.value.urlProductSourceTypeId='1'">
+                    <label for="150" >Manufactured by you</label>
+                </div>
+                <div class="radio-check-item">
+                    <input type="radio" id="151" ng-model="answers.value.urlProductSourceTypeId" value="2">
+                    <label for="151" >Personal property</label>
+                </div>
+            </div>
+            <div class="field radio-check-field">
+                <p>Are you an authorized distributor/supplier?</p>
+                <div class="radio-check-item">
+                    <input type="radio" id="162" ng-model="answers.value.urlSupplierTypeId" value="1" ng-init="answers.value.urlSupplierTypeId='1'">
+                    <label for="162" >Yes</label>
+                </div>
+                <div class="radio-check-item">
+                    <input type="radio" id="163" ng-model="answers.value.urlSupplierTypeId" value="2">
+                    <label for="163" >No</label>
+                </div>
+            </div>
+
+
+            <div class="nav">
+                <a class='btn-link'>Next Step</a>
+                <a class='btn-link'>Save</a>
+                <span>or</span>
+                <a>Cancel</a>
+            </div>
+            <hr>
+        </fieldset>
+    </form>
+</div>

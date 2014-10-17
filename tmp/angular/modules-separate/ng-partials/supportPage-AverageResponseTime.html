@@ -1,0 +1,32 @@
+<div class="average-response-time">
+    <h2>Average response times (show when checked):</h2>
+    <div class="show-hide-wrapper">
+        <div class="flex-table-cell vert-align-center">
+            <input type="checkbox" id="email_checker" ng-model='averageResponseTime.isEmailChecked'>
+            <label for="email_checker">Email</label>
+            <input type="text" id="email_input"  ng-model="averageResponseTime.email">
+            <select ng-model="averageResponseTime.unitForEmail" ng-options="unit for unit in unitsForSelect">
+                <option value="">choose the time</option>
+            </select>
+
+            <input type="checkbox"  id="call_checker" ng-model="averageResponseTime.isCallChecked">
+            <label for="call_input">Call</label>
+            <input type="text" id="call_input"  ng-model="averageResponseTime.call">
+            <select ng-model="averageResponseTime.unitForCall" ng-options="unit for unit in unitsForSelect">
+                <option value="">choose the time</option>
+            </select>
+
+            <input type="checkbox" id="chat_checker" ng-model="averageResponseTime.isChatChecked">
+            <label for="chat_checker">Chat</label>
+            <input type="text" id="chat_input" ng-model="averageResponseTime.chat">
+            <select ng-model="averageResponseTime.unitForChat" ng-options="unit for unit in unitsForSelect">
+                <option value="">choose the time</option>
+            </select>
+
+            <input type="submit" class="submit-button status-enabled" ng-click="updateAverageResponseTime(averageResponseTime)" value="Save">
+        </div>
+    </div>
+</div>
+
+
+

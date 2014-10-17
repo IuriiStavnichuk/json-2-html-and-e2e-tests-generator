@@ -1,0 +1,150 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 8px;
+    min-width: 460px;
+    margin:0;
+}
+#wrapper {
+    padding: 0 1%;
+}
+.axis text {
+    color:#566000;
+}
+text {
+    text-align:end;
+    text-anchor:end;
+}
+.textAxis {
+    text-align:end;
+    text-anchor:end;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #bbb;
+    shape-rendering: crispEdges;
+}
+.bar {
+    fill-opacity: 1;
+}
+/*.obj {width:60px;height:60px; background-color:#f00;}*/
+.x.axis path {
+    /*display: none;*/
+}
+/*label2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}*/
+#header {
+    width:100%;
+    height:38px;
+    background-color: #ddd;
+/*  -webkit-box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.49);
+    -moz-box-shadow:    0px 1px 1px rgba(50, 50, 50, 0.49);
+    box-shadow:         0px 1px 1px rgba(50, 50, 50, 0.49);*/
+
+    animation-duration: 0.5s;
+}
+
+@keyframes up {
+    from {
+        margin-top: 0;
+    }
+    to {
+        margin-top: -38px;
+    }
+}
+
+@keyframes down {
+    from {
+        margin-top: -38px;
+    }
+    to {
+        margin-top: 0;
+    }
+}
+
+input {
+    border: 0;
+    color: #444;
+    /*width: 18px;*/
+    font-size:9px;
+}
+
+#radio_field_choice {
+    float:left;
+}
+
+#controlbar {
+    /*margin:40px 0 42px 6px*/
+    padding:10px 0 12px 18px;
+}
+
+#controlbar form label{
+    vertical-align:middle;display: inline-block;margin-top: 5px;
+}
+#radio_field_choice input, #radio_field_choice label {
+    visibility:hidden;
+}
+#controlbar form input{
+    margin-left: 14px;
+    vertical-align:middle;
+}
+#radio {
+    position:absolute;
+    top:4px;
+    right:40px;
+    float:right
+}
+#svgcontainer {
+    float: left;
+    margin-top: 20px
+}
+#slider {
+    position: absolute;
+    margin-top:-26px
+}
+#slider input {
+    width: 42px;
+    margin: 12px -10px;
+    text-align: right;
+}
+#slider-range {
+    height:200px;
+    margin:-4px 0;
+}
+.ui-widget-content {
+    background: none;
+}
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 8px;
+    background: #eee;
+    border: 0px;
+    border-radius: 4px;
+    pointer-events: none;
+}
+#dot_line {
+    width:10%;
+    border-top: 1px dashed #f00;
+    position: absolute;
+}
+#toggle {
+position:absolute;
+    top:7px;
+    right:-5px;
+
+    font-size:13px;
+    padding: 4px 8px;
+    opacity:1
+}
+
+#toggle_icon {
+    display: inline;
+    float:left;
+    margin-right:4px;
+
+}
+

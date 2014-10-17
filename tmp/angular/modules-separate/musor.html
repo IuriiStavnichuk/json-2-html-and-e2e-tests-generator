@@ -1,0 +1,326 @@
+<%@ Page Language="vb" AutoEventWireup="false" Inherits="AlertPay.UI.Pages.eGiftCard.WithdrawFunds"
+MasterPageFile="~/Secure.Master"
+CodeBehind="WithdrawFunds.aspx.vb" %>
+
+<%@ MasterType TypeName="AlertPay.UI.Pages.SecureMasterPage" %>
+<%@ Register TagPrefix="AlertPay" TagName="HelpPopUp" Src="~/UserControls/IconPopup.ascx" %>
+<%@ Register TagPrefix="AlertPay" TagName="InfoPanel" Src="~/UserControls/InfoPanel.ascx" %>
+<%@ Register TagPrefix="AlertPay" TagName="UCMessage" Src="~/UserControls/UCMessage.ascx" %>
+<%@ Register TagPrefix="AlertPay" TagName="CurrencyDropDown" Src="~/UserControls/UCDropDownCurrency.ascx" %>
+<%@ Register TagPrefix="AlertPay" TagName="TransactionPIN" Src="~/UserControls/TransactionPIN.ascx" %>
+
+
+<%@ Register TagPrefix="AlertPay" TagName="Help" Src="~/UserControls/UCHelp.ascx" %>
+<asp:Content ID="content" runat="server" ContentPlaceHolderID="MainContent">
+
+
+<div class="panel">
+<div class="panel-heading">
+    <%=Master.GetBreadcrumbsHtml()%>
+    <span class="sub-nav"><%=Master.GetSubnavHtml()%></span>
+    <h2 class="title">eGiftCards</h2>
+</div>
+<div class="panel-body">
+<div class="wizard-row row">
+<div class="col-sm-12">
+<%--<div class="col-sm-8">--%>
+<asp:Wizard ID="wzWithdrawFundsByeGiftCard" runat="server" DisplayCancelButton="false"
+            ActiveStepIndex="0" FinishPreviousButtonType="Button"
+            CancelButtonText='<%$ Resources: Application, key_Cancel %>'
+            StartNextButtonText='<%$ Resources: key_select_product %>'
+            StepNextButtonText='<%$ Resources: Application, key_next %>'
+            StepPreviousButtonText='<%$ Resources: Application, key_previous %>'
+            FinishPreviousButtonText='<%$ Resources: Application, key_previous %>'
+            FinishCompleteButtonText='<%$ Resources: key_confirm_purchase %>'>
+<WizardSteps>
+<%-- Step 1: Withdraw Funds by eGift Card - Select Product --%>
+<asp:WizardStep ID="wzStepSelectProduct" runat="server" Title='<%$ Resources:  key_select_product %>'>
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+        <div class="withdraw-info">
+            <div class="egiftcard-search">
+                <fieldset>
+                    <div class="styled-select">
+                        <asp:DropDownList ID="ddleGiftCardMerchantCategories" runat="server" ValidationGroup ="vldGroupSearch">
+                        </asp:DropDownList>
+                    </div>
+                    <AlertPay:Textbox ID="txtSearch" runat="server"  ValidationGroup ="vldGroupSearch" OnKeyPress="return EnterEvent(event)"/><a class="clear-input" onclick="cleanInput()"></a>
+                    <AlertPay:Button ID="btnSearch" runat="server" Text='<%$ Resources: key_search %>' ValidationGroup="vldGroupSearch" CssClass="btn btn-info" />
+                </fieldset>
+                <div class="sort-by">
+                    <%: GetLocalResourceObject("key_sort_by").ToString() %>
+                    <AlertPay:LinkButton ID="lnkSortByAZ" runat="server" Text='A-Z' CausesValidation ="false" />
+                    <AlertPay:LinkButton ID="lnkSortByFeatured" runat="server" Text='<%$ Resources : key_featured %>' CausesValidation ="false" />
+                    <AlertPay:LinkButton ID="lnkSortByRecentlyPurchased" runat="server" Text='<%$ Resources : key_recently_purchased %>' CausesValidation ="false" />
+                </div>
+            </div>
+            <AlertPay:UCMessage ID="lblNoProductFound" runat="server" MessageText ='<%$ Resources: key_no_product_found %>' Visible="False"  Mode="Warning" />
+
+            <div class="egiftcard-gallery">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="rblProducts"
+                                            ErrorMessage='<%$ Resources: key_merchant_is_required %>' Display="None" />
+                <AlertPay:GroupedRadioButtonList id="rblProducts" runat ="server" ></AlertPay:GroupedRadioButtonList>
+            </div>
+            <div class="egiftcard-gallery-shadow">
+                <div class="drop-shadow curved curved-vt-2"></div>
+            </div>
+        </div>
+
+    </asp:PlaceHolder>
+</asp:WizardStep>
+
+<%-- Step 2: eGift Details --%>
+
+<asp:WizardStep runat="server" ID="wzStepeGiftDetails" StepType="Step" Title='<%$ Resources:key_egift_details %>'>
+    <asp:PlaceHolder ID="PlaceHolder2" runat="server">
+        <div class="row">
+            <div class="col-sm-12">
+                <AlertPay:ucMessage runat="server" ID="ucFinalPurchaseMessage" Visible="false" Mode="Warning" isModifiable="false" />
+                <div class="selected-egiftcard">
+                    <h3><%=GetLocalResourceObject("key_you_have_selected1").ToString()%>
+                        <strong> <%=Me.SelectedMerchant.Name %> </strong>
+                        <%=GetLocalResourceObject("key_you_have_selected2").ToString()%></h3>
+                    <img src='<%=Page.ResolveUrl("~/" & Me.SelectedMerchant.PreviewImageURL) %>' />
+                    <div class="cash-back-icon" runat="server" id="divCashBackIcon" visible="false">
+                        <div class="cash-back-value">
+                            <span class="amount"><AlertPay:Literal ID="litCashBackAmount" runat="server" /></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <fieldset>
+                            <AlertPay:CurrencyDropDown ID="drpBalances" runat="server" AvailableBalanceFormat="CurrencyBalances" Title='<%$ Resources: Application, key_From_Balance %>' />
+
+                            <%If Me.SelectedMerchant.IsFixedDenomination Then%>
+                            <asp:RequiredFieldValidator ID="vldRblFixedAmounts" runat="server" ControlToValidate="rblFixedAmounts"
+                                                        ErrorMessage='<%$ Resources: key_select_an_amount %>' Display="None" />
+                            <AlertPay:Label ID="lblSelectAmount" runat="server" AssociatedControlID="rblFixedAmounts" Text='<%$ Resources:  key_select_amount %>' />
+                            <AlertPay:RefinedRadioButtonList ID="rblFixedAmounts" runat ="server" />
+                            <asp:CustomValidator ID="FixedAmountCustomValidator" Display="None" runat="server" ControlToValidate="rblFixedAmounts" />
+                            <%Else %>
+                            <div class="form-group">
+                                <AlertPay:Label ID="Label3" runat="server" AssociatedControlID="txtAmount" Text='<%$ Resources: Application, key_Amount %>' />
+                                <AlertPay:Help ID="helpPopupAmount" runat="server" Hint='<%$ Resources: Application, key_Amount_you_want_to_withdraw__O %>' />
+                                <AlertPay:NumericTextBox ID="txtAmount" runat="server" CssClass="form-control" />
+                                <AlertPay:Label ID="litDenominationRange" runat="server" CssClass="help-block" />
+                                <asp:RequiredFieldValidator ID="RequiredAmount" runat="server" ControlToValidate="txtAmount"
+                                                            ErrorMessage='<%$ Resources:  key_please_enter_amount %>'><%=Resources.Application.key__ %>
+                                </asp:RequiredFieldValidator>
+                                <asp:CustomValidator ID="AmountCustomValidator" Display="None" runat="server" ControlToValidate="txtAmount" />
+                            </div>
+                            <%End If  %>
+                            <div runat="server" id="spnGetCashback"  visible="false"  class ="promotional-offer">
+                                <Alertpay:Literal runat="server" ID="litGetCashBack" Text='<%$ Resources: key_get_cashback_when_you_purchase %>'/>
+                            </div>
+                            <div class="form-group">
+                                <AlertPay:Label ID="Label4" runat="server" AssociatedControlID="txtDetails" Text='<%$ Resources: Application, key_Details %>' LabelType="Optional" />
+                                <AlertPay:Help ID="helpPopupDetails" runat="server" Hint='<%$ Resources: Application, key_Any_additional_information_you %>' />
+                                <AlertPay:Textbox ID="txtDetails" runat="server" TextMode="MultiLine" MaxLength="256" CssClass="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <asp:RequiredFieldValidator ID="vldRblEmail" runat="server" ControlToValidate="rblEmails"
+                                                            ErrorMessage='<%$ Resources: key_select_an_email %>' Display="None" />
+                                <AlertPay:Label ID="Label1" runat="server" AssociatedControlID="rblEmails" Text='<%$ Resources:  key_which_email_should_receive %>'   />
+                                <AlertPay:RefinedRadioButtonList id="rblEmails" runat ="server"></AlertPay:RefinedRadioButtonList>
+                            </div>
+
+                            <div class="checkbox">
+                                <AlertPay:RefinedCheckBox runat="server" ID="chkAgree"  Text='<%$ Resources: key_i_understand_and_acknowledge_that_my_purchase_ %>'  />
+                                <asp:CustomValidator ID="vldAgree" runat="server" Display="None"
+                                                     ErrorMessage='<%$ Resources: key_you_must_agree_to_the_terms_an %>'
+                                                     ClientValidationFunction="ValidateAgreeCheckBox"></asp:CustomValidator>
+                            </div>
+                        </fieldset>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:PlaceHolder>
+</asp:WizardStep>
+
+<%-- Step 3: Confirm --%>
+<asp:WizardStep ID="Confirmation" runat="server" Title='<%$ Resources:  Application,key_confirm %>' StepType="Finish" EnableViewState="true">
+    <asp:Panel runat="server">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="selected-egiftcard">
+                    <h3><%=GetLocalResourceObject("key_you_have_selected1").ToString()%>
+                        <strong> <%=Me.SelectedMerchant.Name %> </strong>
+                        <%=GetLocalResourceObject("key_you_have_selected2").ToString()%> </h3>
+                    <img src='<%=Page.ResolveUrl("~/"&Me.SelectedMerchant.PreviewImageURL)%>' />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <asp:Panel ID="pnlcfmTransactionInformation" runat="server" CssClass="process-summary">
+                <div class="col-sm-6">
+                    <div class="summary-list">
+                        <div class="summary-item">
+                            <AlertPay:Label ID="Label5" AssociatedControlID="lblcfmBalance" runat="server" Text='<%$ Resources: Application, key_From_balance_ %>' CssClass="item-label" />
+                                                <span class="item-value">
+                                                    <AlertPay:Literal ID="lblcfmBalance" runat="server" /></span>
+                        </div>
+
+                        <div class="summary-item">
+                            <AlertPay:Label ID="Label6" AssociatedControlID="lblcfmBankAccount" runat="server" Text='<%$ Resources:key_to %>' CssClass="item-label" />
+                                                <span class="item-value">
+                                                    <AlertPay:Literal ID="lblcfmBankAccount" runat="server" /></span>
+                        </div>
+
+                        <div class="summary-item">
+                            <AlertPay:Label ID="Label7" AssociatedControlID="lblcfmAmount" runat="server" Text='<%$ Resources: Application, key_Amount_ %>' CssClass="item-label" />
+                                                <span class="item-value">
+                                                    <AlertPay:Literal ID="lblcfmAmount" runat="server" /></span>
+                        </div>
+
+                        <div runat="server" id="trFees" class="summary-item">
+                            <AlertPay:Label ID="Label8" AssociatedControlID="lblcfmFees" runat="server" Text='<%$ Resources: Application, key_Fees_ %>' CssClass="item-label" />
+                                                <span class="item-value">
+                                                    <AlertPay:Literal ID="lblcfmFees" runat="server" /></span>
+                        </div>
+
+                        <div class="summary-item">
+                            <AlertPay:Label ID="Label9" AssociatedControlID="txtcfmDetails" runat="server" Text='<%$ Resources: Application, key_Details_ %>' CssClass="item-label" />
+                                                <span class="item-value">
+                                                    <AlertPay:Literal ID="txtcfmDetails" runat="server" Encode="false" /></span>
+                        </div>
+                    </div>
+
+
+                    <AlertPay:Label ID="lblForeignEx" runat="server" Text='<%$ Resources: Application, key_Foreign_Exchange_Rate_ %>' Visible="false" />
+                    <AlertPay:Label ID="lblcfmForeignExchangeRate" runat="server" />
+                </div>
+            </asp:Panel>
+            <asp:Panel ID="pnlConversionInformation" runat="server">
+                <div class="col-sm-6">
+                    <div class="process-summary">
+                        <div class="summary-list">
+                            <div class="summary-item">
+                                <AlertPay:Label ID="Label14" runat="server" Text='<%$ Resources: Application, key_Current_Exchange_Rate_ %>' CssClass="item-label" />
+                                                    <span class="item-value">
+                                                        <AlertPay:Literal ID="lblcfmCurrentExchangeRate" runat="server" /></span>
+                            </div>
+
+                            <div class="summary-item">
+                                <AlertPay:Label ID="Label15" runat="server" Text='<%$ Resources: Application, key_Converted_Amount_ %>' CssClass="item-label" />
+                                                    <span class="item-value">
+                                                        <AlertPay:Literal ID="lblcfmConvertedAmount" runat="server" /></span>
+                            </div>
+
+                            <div class="summary-item">
+                                <AlertPay:Label ID="Label16" runat="server" Text='<%$ Resources:key_amount_transferred_to_e_gift_card %>' CssClass="item-label" />
+                                                    <span class="item-value">
+                                                        <AlertPay:Literal ID="lblcfmAmountTransferredToeGiftCard" runat="server" /></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </asp:Panel>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <hr />
+                <asp:PlaceHolder ID="PlaceHolder3" runat="server">
+                    <AlertPay:TransactionPIN ID="ctlPin" runat="server" />
+                </asp:PlaceHolder>
+            </div>
+        </div>
+    </asp:Panel>
+</asp:WizardStep>
+
+<asp:WizardStep ID="Summary" runat="server" Title='<%$ Resources: Application, key_Complete %>'
+                StepType="Complete">
+</asp:WizardStep>
+</WizardSteps>
+</asp:Wizard>
+<div id="disclaimer" class="disclaimer" runat="server" visible="false">
+    <hr>
+    <asp:Literal ID="litDisclaimer" runat="server" />
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+
+    $(window).load(function () {
+        $(".egiftcard-gallery").mCustomScrollbar({ theme: "dark-thick" });
+    });
+
+    // Author:  Jacek Becela
+    // Source:  http://gist.github.com/399624
+    // License: MIT
+    jQuery.fn.single_double_click = function (single_click_callback, double_click_callback, timeout) {
+        return this.each(function () {
+            var clicks = 0, self = this;
+            jQuery(this).click(function (event) {
+                clicks++;
+                if (clicks == 1) {
+                    setTimeout(function () {
+                        if (clicks == 1) {
+                            single_click_callback.call(self, event);
+                        } else {
+                            double_click_callback.call(self, event);
+                        }
+                        clicks = 0;
+                    }, timeout || 300);
+                }
+            });
+        });
+    }
+    $(document).ready(function () {
+
+        var radioButtonsSpans = $(".egiftcard-gallery .radio span");
+        var radioButtonsInputs = $(".egiftcard-gallery .radio input");
+
+        for (var i = 0 ; i < radioButtonsSpans.length; i++) {
+            var imgName = radioButtonsSpans[i].getAttribute("data-faceplate");
+            var inputId = radioButtonsInputs[i].getAttribute("id");
+            var cashBackValue = radioButtonsSpans[i].getAttribute("data-cash-back-amount");
+            addImageToRadioButton(imgName, inputId);
+            if (cashBackValue) {
+                addCashBackIconToRadioButton(inputId, cashBackValue);
+            }
+        }
+
+        function addImageToRadioButton(imgName, inputId) {
+            var img = document.createElement("img");
+            img.src = imgName;
+            $(img).single_double_click(function () {
+                document.getElementById(inputId).checked = true;
+                $("#" + inputId).parent('span').css({ "box-shadow": "0px 0px 0px 7px rgba(0,150,57,1)" });
+            }, function () {
+                document.getElementById(inputId).checked = true;
+                $("#" + inputId).parent('span').css({ "box-shadow": "0px 0px 0px 7px rgba(0,150,57,1)" });
+
+                $("input[name$='StartNextButton']").click();
+            })
+
+            $("label[for='" + inputId + "']").before(img);
+        }
+        function addCashBackIconToRadioButton(inputId, cashBackValue) {
+            var currentElement = document.getElementById(inputId);
+            $("label[for='" + inputId + "']").after('<div class="cash-back-icon"><div class="cash-back-value"><span class="amount">' + cashBackValue + '</span></div></div>');
+        }
+    });
+
+    function EnterEvent(e) {
+        if (e.keyCode == 13) {
+            __doPostBack('<%=Me.btnSearch.UniqueID  %>', 'none');
+        }
+        e.stopPropagation();
+    }
+    function cleanInput() {
+        $(".egiftcard-search input[type='text']").val("")
+    }
+
+</script>
+
+</asp:Content>

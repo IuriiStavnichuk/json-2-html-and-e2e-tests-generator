@@ -1,0 +1,67 @@
+<div class="add-and-edit-notification-message">
+    <h2 id="formTitle">Add new notification</h2>
+
+    <div class="div-table show-hide-wrapper">
+        <div class="table-row">
+            <div class="flex-cell vert-align-top ">
+                <form>
+                    <input type="text" id="email-input"  ng-model="notificationMessage.messageTitle">
+                    <textarea cols="30" rows="10" ng-model="notificationMessage.messageText" id="limitedtextarea" ng-keydown="limitText(this.form.limitedtextarea,this.form.countdown,100);"  ng-keyup="limitText(100);"></textarea>
+                    <div><font size="1">(Maximum characters: 100).  You have <input readonly type="text" name="countdown" id="countdown" size="3" value="100"> characters left.</font></div>
+                    <div class="inline-block">
+                        <input type="submit" id="addNotificationMessageButtonSave" class="submit-button status-enabled" ng-click="saveAddedNotificationMessage( notificationMessage, arrayNotificationMessages, arrayCountriesList, 'numberOfSelectedCountries' )" value="Save">
+                        <input type="submit" id="editNotificationMessageButtonSave" class="submit-button status-enabled" ng-click="saveEditedNotificationMessage( notificationMessage, arrayNotificationMessages, arrayCountriesList, indexOfCurrentMessage, 'numberOfSelectedCountries' )" value="Save">
+                        <input type="submit" id="notificationMessageButtonCancel" class="reset-button status-enabled" ng-click="cancelEditedNotificationMessage( )" value="Cancel">
+                    </div>
+                </form>
+            </div>
+            <div class="empty-cell"></div>
+            <div class="fix-cell vert-align-top ">
+                <div class="block-country-list">
+                    <div class="add-table">
+                        <table border="0">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <input id="selectallcheckers" type="checkbox"  ng-click="selectAllCheckersInCountriesList( arrayCountriesList, 'selectallcheckers', 'numberOfSelectedCountries' )"><span>Select all</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr ng-repeat="continent in  arrayCountriesList">
+                                <td>
+                                    <a id="toggleIcon{{continent.id}}" ng-click="toggleIcon('toggleIcon'+continent.id)">[-]</a>
+                                    <a   ng-click="toggleIcon('toggleIcon'+continent.id)"> {{continent.continent}}</a>
+                                    <ul id="ultoggleIcon{{continent.id}}">
+                                        <li ng-repeat='country in continent.country'>
+                                            <input type="checkbox" ng-model="country.isSelected" ng-click="changeIsSelectedStatus( arrayCountriesList, 'selectallcheckers', 'numberOfSelectedCountries' )"><span>{{country.name}}</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="remove-table">
+                        <ul>
+                            <li>
+                                <span>({{variablesNames['numberOfSelectedCountries2']}}) selected countries </span>&nbsp;
+                                <a ng-click="resetArrayCountriesList( arrayCountriesListForPhoneNumber, 'selectallcheckers2', 'numberOfSelectedCountries2' )">Reset</a>
+                            </li>
+                        </ul>
+                        <ul ng-repeat="continent in arrayCountriesList">
+                            <li ng-repeat='country in continent.country' ng-show="country.isSelected">
+                                <input type="checkbox" ng-model="country.isSelected" ng-click="changeIsSelectedStatus( arrayCountriesList, 'selectallcheckers', 'numberOfSelectedCountries' )"><span>{{country.name}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

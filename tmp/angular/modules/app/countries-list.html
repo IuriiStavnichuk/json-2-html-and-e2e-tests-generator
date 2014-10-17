@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+    <title>AngularJS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!--<script type="text/javascript" src="assets/custom.js"></script>-->
+    <link rel="stylesheet" type="text/css" media="all" href="assets/style.css">
+    <link rel="stylesheet" href="css/application.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/checkout.css"/>
+</head>
+
+<body>
+<div id="top_panel_button">
+    <div id="toggle_button" class="uparrow"></div>
+</div>
+<div id="work_area">
+    <div class="nav">
+        <div class="header-logo"><img src="assets/Payza-logo.png" alt=""></div>
+        <!--<ul>-->
+        <!--<li style="opacity: 1;" class="hor" id="Contacts"><a href="http://fastforward.net.ua/contacts.html">Contacts</a></li>-->
+        <!--<li style="opacity: 1;" class="hor" id="Clients"><a href="http://fastforward.net.ua/clients.html">Clients</a></li>-->
+        <!--<li style="opacity: 1;" class="hor" id="Mobile"><a href="http://fastforward.net.ua/mobile.html">Mobile</a></li>-->
+        <!--<li style="opacity: 1;" class="hor" id="Portfolio"><a href="http://fastforward.net.ua/portfolio.html">Portfolio</a></li>-->
+        <!--<li style="opacity: 1;" class="hor" id="Team"><a style="opacity: 1;" href="http://fastforward.net.ua/team.html">Team</a></li>-->
+        <!--<li style="opacity: 1;" class="hor" id="Technology"><a href="http://fastforward.net.ua/index.html">Technology</a></li>-->
+        <!--</ul>-->
+    </div>
+    <div class="clear"></div>
+    <div style="opacity: 1;" class="divider"></div>
+    <div ng-app="MainWebApp">
+
+        <h2>Countries list</h2>
+        <div ng-controller="CountriesListCtrl">
+            <countries-list class="countries-list" array-countries-list = "arrayCountriesList"></countries-list>
+        </div>
+
+
+    </div>
+
+</div>
+
+<script src="js/lib/jquery/1.8.2/jquery.min.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js' type='text/javascript'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-resource.min.js' type='text/javascript'></script>
+
+<!--<script src="http://d3js.org/d3.v3.min.js"></script>-->
+
+<!--<script src="js/app/app.js"></script>-->
+
+<script src="js/app/modules/donutChart.js"></script>
+
+
+<script src="js/app/modules/countriesList.js"></script>
+
+<!--<script src="js/app/cedric/modules/questionnaireCharity.js"></script>-->
+
+<script>
+    var shiftDown = false;
+    var setShiftDown = function(event){
+        if(event.keyCode === 16 || event.charCode === 16){
+            window.shiftDown = true;
+        }
+    };
+    var setShiftUp = function(event){
+        if(event.keyCode === 16 || event.charCode === 16){
+            window.shiftDown = false;
+        }
+    };
+    window.addEventListener? document.addEventListener('keydown', setShiftDown) : document.attachEvent('keydown', setShiftDown);
+    window.addEventListener? document.addEventListener('keyup', setShiftUp) : document.attachEvent('keyup', setShiftUp);
+</script>
+
+</body>
+</html>
+
+
+
+

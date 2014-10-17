@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head>
+    <title>Donut chart</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" href="assets/style.css">
+    <link rel="stylesheet" href="css/application.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/checkout.css"/>
+
+</head>
+<body>
+
+<div id="top_panel_button">
+    <div id="toggle_button" class="uparrow"></div>
+
+</div>
+<div id="work_area">
+    <div class="nav">
+        <div class="header-logo"><img src="assets/Payza-logo.png" alt=""></div>
+    </div>
+    <div class="clear"></div>
+    <div style="opacity: 1;" class="divider"></div>
+
+    <div ng-app="MainWebApp">
+        <h2>Donut chart</h2>
+        <donut-chart path-to-json = "'json/donutChart/donut-chart.json'"></donut-chart>
+    </div>
+
+</div>
+
+<script src="js/lib/jquery/1.8.2/jquery.min.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js' type='text/javascript'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-resource.min.js' type='text/javascript'></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="js/app/modules/donutChart.js"></script>
+
+
+</body>
+</html>
+
+
+
+

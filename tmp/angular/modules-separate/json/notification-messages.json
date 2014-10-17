@@ -1,0 +1,97 @@
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "total": 4,
+    "result": [
+        {
+            "id": 1,
+            "isSelected": false,
+            "messageTitle": "nulla ad nostrud",
+            "messageText": "officia sit fugiat consequat culpa eu laboris sint cillum tempor ad proident ipsum laborum mollit deserunt ex Lorem",
+            "countryList": "Canada",
+            "isPublish": true,
+            "date": "16/03/1994"
+        },
+        {
+            "id": 2,
+            "isSelected": false,
+            "messageTitle": "esse ad dolor",
+            "messageText": "dolore mollit ipsum esse cillum ea cillum do incididunt aliqua minim eu quis ex veniam in adipisicing esse",
+            "countryList": "Bermuda/Iran/Cyprus/Hong Kong",
+            "isPublish": true,
+            "date": "12/10/1993"
+        },
+        {
+            "id": 3,
+            "isSelected": false,
+            "messageTitle": "adipisicing ea esse",
+            "messageText": "ex nisi duis sint laborum commodo cupidatat deserunt deserunt magna est nulla ex proident mollit ad reprehenderit qui",
+            "countryList": "USA",
+            "isPublish": true,
+            "date": "03/07/2012"
+        },
+        {
+            "id": 2,
+            "isSelected": false,
+            "messageTitle": "esse ad dolor",
+            "messageText": "dolore mollit ipsum esse cillum ea cillum do incididunt aliqua minim eu quis ex veniam in adipisicing esse",
+            "countryList": "All countries",
+            "isPublish": true,
+            "date": "12/10/1993"
+        },
+        {
+            "id": 3,
+            "isSelected": false,
+            "messageTitle": "adipisicing ea esse",
+            "messageText": "ex nisi duis sint laborum commodo cupidatat deserunt deserunt magna est nulla ex proident mollit ad reprehenderit qui",
+            "countryList": "USA",
+            "isPublish": true,
+            "date": "03/07/2012"
+        },
+        {
+            "id": 2,
+            "isSelected": false,
+            "messageTitle": "esse ad dolor",
+            "messageText": "dolore mollit ipsum esse cillum ea cillum do incididunt aliqua minim eu quis ex veniam in adipisicing esse",
+            "countryList": "All countries",
+            "isPublish": true,
+            "date": "12/10/1993"
+        },
+        {
+            "id": 3,
+            "isSelected": false,
+            "messageTitle": "adipisicing ea esse",
+            "messageText": "ex nisi duis sint laborum commodo cupidatat deserunt deserunt magna est nulla ex proident mollit ad reprehenderit qui",
+            "countryList": "USA",
+            "isPublish": true,
+            "date": "03/07/2012"
+        },
+        {
+            "id": 2,
+            "isSelected": false,
+            "messageTitle": "esse ad dolor",
+            "messageText": "dolore mollit ipsum esse cillum ea cillum do incididunt aliqua minim eu quis ex veniam in adipisicing esse",
+            "countryList": "All countries",
+            "isPublish": true,
+            "date": "12/10/1993"
+        },
+        {
+            "id": 3,
+            "isSelected": false,
+            "messageTitle": "adipisicing ea esse",
+            "messageText": "ex nisi duis sint laborum commodo cupidatat deserunt deserunt magna est nulla ex proident mollit ad reprehenderit qui",
+            "countryList": "USA",
+            "isPublish": true,
+            "date": "03/07/2012"
+        },
+        {
+            "id": 4,
+            "isSelected": false,
+            "messageTitle": "ea tempor id",
+            "messageText": "esse laborum ullamco ea commodo esse nostrud nisi laborum veniam ea cillum laborum veniam culpa anim ullamco aute",
+            "countryList": "Bermuda/Iran/Cyprus/Hong Kong",
+            "isPublish": true,
+            "date": "15/04/1989"
+        }
+    ]
+}
