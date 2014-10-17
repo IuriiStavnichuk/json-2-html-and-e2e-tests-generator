@@ -1,0 +1,61 @@
+text-overflow: ellipsis;
+
+TypeCssClass="submit-button status-enabled"
+CssClass="submit-button status-enabled"
+
+
+B2BAB-B9577-69401
+<span class='<%=" flag-16 fl-" & GetBaFlag() & " field-value" %>' >
+
+<ul class="container-action">
+	<li>
+		<a href='<%=String.Format("{0}", NavigationHelper.AlertPayPages.ADDMERCHANTPROFILE)%>' class="icon-16 icn-add"><asp:Literal ID="Literal1" runat="server" Text="<%$ Resources: Application, key_Add%>" /></a>
+	</li>
+</ul>
+
+icon-16 icn-delete
+
+pagination
+PagerType="Refined"
+
+http://localhost/UI-Refinements/AddBankAccount.aspx
+http://localhost/UI-Refinements/AddBankAccount.aspx?CTdEbHfigqxbAg==
+
+
+localhost/UI-Refinements/EditCreditCard.aspx?AWNzcHI7QUF1Y2dUJC80MjE7YkcD
+body {font-size: 100%;}
+td   {font-size: 1.2em;}
+p    {font-size: 1.3em;}
+
+<td><p>TEXT</p></td>
+
+http://localhost/UI-Refinements/CreditCardValidation.aspx?CTo/PTxGbVJMTAA=
+flag
+
+You wouldn' t happen to know where mitzi kinsky is, would you?
+
+
+VERTICAL OBJECT 
+.parent-element {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.element {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+How to create equal height columns
+
+.row {overflow:hidden;}
+
+
+.col{
+        margin-bottom: -99999px;
+        padding-bottom: 99999px;
+}
+
+

@@ -1,0 +1,105 @@
+prototype- обычное свойство функции, по умолчанию является объектом с единственным свойством constructor- которая ссылается на функцию конструктор, используемую для инициализации объекта. 
+
+если объект d создается с помощью конструктора Date(), то свойство d.constructor ссылается на функцию Date
+var d = new Date( );
+d.constructor == Date;
+
+__proto__ — это ссылка на прототип конструктора(prototype)
+__proto__ любого значения (кроме null и undefined) ссылается на prototype соответствующего ему типу данных
+
+
+var animal = { eats: true }
+function Rabbit(name) {
+  this.name = name;
+}
+Rabbit.prototype = animal;
+
+var rabbit = new Rabbit('John');
+
+alert( rabbit.eats ); // true, т.к. rabbit.__proto__ == animal
+
+
+
+
+
+
+var a = Object.getOwnPropertyNames(d3);
+
+function listAllProperties(o){     
+     var objectToInspect;     
+     var result = [];
+    
+     for(objectToInspect = o; objectToInspect !== null; objectToInspect = Object.getPrototypeOf(objectToInspect)){  
+          result = result.concat(Object.getOwnPropertyNames(objectToInspect));  
+    }   
+     return result; 
+}
+
+console.dir( svg)  //show obj property
+
+
+
+document.getElementById("y_axis_text").textContent="7777777777";
+$('#y_axis_text ').text('Hello world');
+
+if (variable1 !== null || variable1 !== undefined || variable1 !== '') { var variable2 = variable1; }
+var variable2 = variable1  || '';
+
+window.log = function() {
+  try {
+    return console.log.apply(console, arguments);
+  } catch (_error) {}
+};
+
+l( JSON.stringify(data))
+
+скопировать имена всех свойств объекта в массив:
+var o = {x:1, y:2, z:3};
+var a = new Array();
+var i = 0;
+for(a[i++] in o) /* пустое тело цикла */;
+
+можно  вызвать анонимную функцию в одном выражении:
+(function( ) { // Это безымянная функция.
+})(); // конец функционального литерала и его вызов.
+
+analyze URL
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) { return pair[1]; }
+            }
+            return (false);
+        }
+		getQueryVariable("somevar") == 456
+		
+		// Retrieve root URL
+var root = location.protocol + '//' + location.host;
+
+Preventing the JSON injection vulnerability
+There is a JSON injection vulnerability that allows evil third party websites to
+access your secure JSON resources, if they return JSON arrays. This is done by
+effectively loading the JSON as a script in a web page, and then executing it. See
+http://haacked.com/archive/2008/11/20/anatomy-of-a-subtle-jsonvulnerability.
+aspx.
+The $http service has a built-in solution to protect against this. To prevent the
+browser from being able to execute the JSON returned from the secure resource,
+you can arrange for your server to prefix all the JSON requests with the ")]}',\n"
+string, which is not legal JavaScript, and so cannot be executed. The $http service
+automatically strips this prefix string, if it appears from any JSON response. For
+example, if your JSON resource returns the following array:
+['a,'b','c']
+This is vulnerable to the JSON injection attack. Instead, the server should return:
+)]}',
+['a','b','c']
+This is not valid JavaScript. It cannot be executed by the browser, and so is no longer
+vulnerable to attack. The $http service will automatically strip off
+
+// TODO:
+// FIXME:
+
+
+
+

@@ -1,0 +1,9 @@
+ Shift+F6 (Refactor | Rename).
+
+To quickly select the currently edited element (class, file, method or field) in any view (Project view, Structure view or other), press Alt+F1 (View | Select In).
+
+The Escape key in any tool window moves the focus to the editor.
+Shift+Escape moves the focus to the editor and also hides the current (or last active) tool window.
+The F12 key moves the focus from the editor to the last focused tool window.
+
+Ctrl+W (select word) in the editor selects the word at the caret and then selects expanding areas of the source code. For example, it may select a method name, then the expression that calls this method, then the whole statement, then the containing block, etc. You can also select the word at the caret and the expanding areas of the source code by double-clicking the target areas in the editor.

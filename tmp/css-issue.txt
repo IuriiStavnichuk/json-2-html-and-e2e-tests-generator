@@ -1,0 +1,14 @@
+http://localhost/businessprofile/AccountOverview.aspx
+the same name (.panel) for styles in the right and left Bar
+I implemenmted new style info-panel-with-grey-info-icon
+
+alert.less
+LINE 14 
+I added word-wrap: break-word; (sometimes width not enough for long URL )
+
+alert.less
+LINE 67
+for adding green background to .alert-success
+.light-green-background {
+    background-color: rgb(234, 255, 240);
+}

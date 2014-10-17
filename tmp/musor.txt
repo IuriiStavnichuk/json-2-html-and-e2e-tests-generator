@@ -1,0 +1,46 @@
+copy settings
+all from this folder
+\\dev-internal\wwwroot\Truk_CSBO\Config
+
+Web.config from this
+\\dev-internal\wwwroot\Trunk_CSBO\Web.config
+line 164  <compilation debug="true"
+
+-----------------
+add JS bundle
+in BundleConfig.vb
+bundles.Add(New ScriptBundle("~/js/mwa_application").Include(
+	"~/js/app/ui.js"
+))
+in HTML (ASPX file)
+<%# System.Web.Optimization.Scripts.Render("~/js/mwa_application")%>
+--------------------------
+
+832582608
+
+webdriver-manager start
+protractor example/chromeConf.js
+
+protractor example/conf.js
+
+
+
+  // Spec patterns are relative to the current working directly when
+  // protractor is called.
+//  specs: ['example_spec.js'],
+//
+//    onPrepare: function() {
+        // The require statement must be down here, since jasmine-reporters
+        // needs jasmine to be in the global and protractor does not guarantee
+        // this until inside the onPrepare function.
+//        require('jasmine-reporters');
+//        jasmine.getEnv().addReporter(
+//            new jasmine.JUnitXmlReporter('xmloutput', true, true));
+//    },
+
+
+
+Hi Alex,
+could you please transfer the remaining money ($1700) for first month to our Ukrainian bank account ?
+
+
